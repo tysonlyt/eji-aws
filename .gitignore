@@ -6,3 +6,4 @@ wp-content/cache/supercache/*
 wp-content/w3tc-cache/*
 
 php_errorlog
+*/php_errorlog
