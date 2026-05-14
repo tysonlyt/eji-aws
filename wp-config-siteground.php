@@ -30,16 +30,16 @@ define( 'WP2FA_ENCRYPT_KEY', 'g7OdmB6a5kH5spKZmNN0yg==' );
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'eji' );
+define( 'DB_NAME', 'dblxnsylfsgmfe' );
 
 /** Database username */
-define( 'DB_USER', 'admin' );
+define( 'DB_USER', 'u7lgdk8icohc6' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'Eji135246' );
+define( 'DB_PASSWORD', 'oryxbgjomewa' );
 
 /** Database hostname */
-define( 'DB_HOST', 'eji.ct8yg6maqlfb.us-west-1.rds.amazonaws.com' );
+define( 'DB_HOST', '127.0.0.1' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
