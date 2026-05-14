@@ -1,0 +1,1030 @@
+[2025-05-25 01:51:33] SMTP configuration applied: 2025-05-25 01:51:33
+[2025-05-25 01:51:33] Host: smtp.gmail.com
+[2025-05-25 01:51:33] Port: 587
+[2025-05-25 01:51:33] Encryption: tls
+[2025-05-25 01:51:33] Authentication: Yes
+[2025-05-25 01:51:33] Debug Level: 0
+[2025-05-25 01:51:33] Username: ffrankie906@gmail.com
+[2025-05-25 01:51:33] --------------------------------------
+[2025-05-25 01:51:36] SMTP configuration applied: 2025-05-25 01:51:36
+[2025-05-25 01:51:36] Host: smtp.gmail.com
+[2025-05-25 01:51:36] Port: 587
+[2025-05-25 01:51:36] Encryption: tls
+[2025-05-25 01:51:36] Authentication: Yes
+[2025-05-25 01:51:36] Debug Level: 0
+[2025-05-25 01:51:36] Username: ffrankie906@gmail.com
+[2025-05-25 01:51:36] --------------------------------------
+[2025-05-25 01:51:37] SMTP configuration applied: 2025-05-25 01:51:37
+[2025-05-25 01:51:37] Host: smtp.gmail.com
+[2025-05-25 01:51:37] Port: 587
+[2025-05-25 01:51:37] Encryption: tls
+[2025-05-25 01:51:37] Authentication: Yes
+[2025-05-25 01:51:37] Debug Level: 0
+[2025-05-25 01:51:37] Username: ffrankie906@gmail.com
+[2025-05-25 01:51:37] --------------------------------------
+[2025-05-25 01:51:39] SMTP configuration applied: 2025-05-25 01:51:39
+[2025-05-25 01:51:39] Host: smtp.gmail.com
+[2025-05-25 01:51:39] Port: 587
+[2025-05-25 01:51:39] Encryption: tls
+[2025-05-25 01:51:39] Authentication: Yes
+[2025-05-25 01:51:39] Debug Level: 0
+[2025-05-25 01:51:39] Username: ffrankie906@gmail.com
+[2025-05-25 01:51:39] --------------------------------------
+[2025-05-29 02:24:27] SMTP configuration applied: 2025-05-29 02:24:27
+[2025-05-29 02:24:27] Host: smtp.gmail.com
+[2025-05-29 02:24:27] Port: 587
+[2025-05-29 02:24:27] Encryption: tls
+[2025-05-29 02:24:27] Authentication: Yes
+[2025-05-29 02:24:27] Debug Level: 0
+[2025-05-29 02:24:27] Username: ffrankie906@gmail.com
+[2025-05-29 02:24:27] --------------------------------------
+[2025-05-29 02:27:01] Starting email send [ID: mail-6837c5f5f2b57]
+[2025-05-29 02:27:02] SMTP configuration applied: 2025-05-29 02:27:02
+[2025-05-29 02:27:02] Host: smtp.gmail.com
+[2025-05-29 02:27:02] Port: 587
+[2025-05-29 02:27:02] Encryption: tls
+[2025-05-29 02:27:02] Authentication: Yes
+[2025-05-29 02:27:02] Debug Level: 0
+[2025-05-29 02:27:02] Username: ffrankie906@gmail.com
+[2025-05-29 02:27:02] --------------------------------------
+[2025-05-29 02:27:02] SMTP configuration applied: 2025-05-29 02:27:02
+[2025-05-29 02:27:02] Host: smtp.gmail.com
+[2025-05-29 02:27:02] Port: 587
+[2025-05-29 02:27:02] Encryption: tls
+[2025-05-29 02:27:02] Authentication: Yes
+[2025-05-29 02:27:02] Debug Level: 0
+[2025-05-29 02:27:02] Username: ffrankie906@gmail.com
+[2025-05-29 02:27:02] --------------------------------------
+[2025-05-29 02:27:06] Email sending [ID: mail-6837c5f5f2b57]:
+[2025-05-29 02:27:06] Recipient: marketing@eji.com.hk
+[2025-05-29 02:27:06] Subject: Testing - testing sent you a wishlist.
+[2025-05-29 02:27:06] Result: Success
+[2025-05-29 02:27:06] --------------------------------------
+[2025-05-30 02:08:17] SMTP Connection Test: Success
+[2025-05-30 02:08:17] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d2e1a72fcca58-747afeab5fesm1992821b3a.42 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-05-30 02:08:17] Starting email send [ID: mail-6839131197a46]
+[2025-05-30 02:08:17] SMTP configuration applied: 2025-05-30 02:08:17
+[2025-05-30 02:08:17] Host: smtp.gmail.com
+[2025-05-30 02:08:17] Port: 587
+[2025-05-30 02:08:17] Encryption: tls
+[2025-05-30 02:08:17] Authentication: Yes
+[2025-05-30 02:08:17] Debug Level: 0
+[2025-05-30 02:08:17] Username: ffrankie906@gmail.com
+[2025-05-30 02:08:17] --------------------------------------
+[2025-05-30 02:08:17] SMTP configuration applied: 2025-05-30 02:08:17
+[2025-05-30 02:08:17] Host: smtp.gmail.com
+[2025-05-30 02:08:17] Port: 587
+[2025-05-30 02:08:17] Encryption: tls
+[2025-05-30 02:08:17] Authentication: Yes
+[2025-05-30 02:08:17] Debug Level: 0
+[2025-05-30 02:08:17] Username: ffrankie906@gmail.com
+[2025-05-30 02:08:17] --------------------------------------
+[2025-05-30 02:08:20] Email sending [ID: mail-6839131197a46]:
+[2025-05-30 02:08:20] Recipient: marketing1.eji@outlook.com
+[2025-05-30 02:08:20] Subject: [Test Email] EJI
+[2025-05-30 02:08:20] Result: Success
+[2025-05-30 02:08:20] --------------------------------------
+[2025-05-30 02:52:03] SMTP Connection Test: Success
+[2025-05-30 02:52:03] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-23506bc8537sm18911435ad.26 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-05-30 02:52:03] Starting email send [ID: mail-68391d536b2d4]
+[2025-05-30 02:52:03] SMTP configuration applied: 2025-05-30 02:52:03
+[2025-05-30 02:52:03] Host: smtp.gmail.com
+[2025-05-30 02:52:03] Port: 587
+[2025-05-30 02:52:03] Encryption: tls
+[2025-05-30 02:52:03] Authentication: Yes
+[2025-05-30 02:52:03] Debug Level: 0
+[2025-05-30 02:52:03] Username: ffrankie906@gmail.com
+[2025-05-30 02:52:03] --------------------------------------
+[2025-05-30 02:52:03] SMTP configuration applied: 2025-05-30 02:52:03
+[2025-05-30 02:52:03] Host: smtp.gmail.com
+[2025-05-30 02:52:03] Port: 587
+[2025-05-30 02:52:03] Encryption: tls
+[2025-05-30 02:52:03] Authentication: Yes
+[2025-05-30 02:52:03] Debug Level: 0
+[2025-05-30 02:52:03] Username: marketing.eji.hkg@gmail.com
+[2025-05-30 02:52:03] --------------------------------------
+[2025-05-30 02:52:05] Email sending [ID: mail-68391d536b2d4]:
+[2025-05-30 02:52:05] Recipient: marketing@eji.com.hk
+[2025-05-30 02:52:05] Subject: [Test Email] EJI
+[2025-05-30 02:52:05] Result: Success
+[2025-05-30 02:52:05] --------------------------------------
+[2025-05-30 02:53:55] SMTP Connection Test: Success
+[2025-05-30 02:53:55] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 98e67ed59e1d1-3124e39742fsm268926a91.27 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-05-30 02:53:55] Starting email send [ID: mail-68391dc352456]
+[2025-05-30 02:53:55] SMTP configuration applied: 2025-05-30 02:53:55
+[2025-05-30 02:53:55] Host: smtp.gmail.com
+[2025-05-30 02:53:55] Port: 587
+[2025-05-30 02:53:55] Encryption: tls
+[2025-05-30 02:53:55] Authentication: Yes
+[2025-05-30 02:53:55] Debug Level: 0
+[2025-05-30 02:53:55] Username: marketing.eji.hkg@gmail.com
+[2025-05-30 02:53:55] --------------------------------------
+[2025-05-30 02:53:55] SMTP configuration applied: 2025-05-30 02:53:55
+[2025-05-30 02:53:55] Host: smtp.gmail.com
+[2025-05-30 02:53:55] Port: 587
+[2025-05-30 02:53:55] Encryption: tls
+[2025-05-30 02:53:55] Authentication: Yes
+[2025-05-30 02:53:55] Debug Level: 0
+[2025-05-30 02:53:55] Username: marketing.eji.hkg@gmail.com
+[2025-05-30 02:53:55] --------------------------------------
+[2025-05-30 02:53:57] Email sending [ID: mail-68391dc352456]:
+[2025-05-30 02:53:57] Recipient: marketing1.eji@outlook.com
+[2025-05-30 02:53:57] Subject: [Test Email] EJI
+[2025-05-30 02:53:57] Result: Success
+[2025-05-30 02:53:57] --------------------------------------
+[2025-05-30 03:09:11] SMTP Connection Test: Success
+[2025-05-30 03:09:11] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-23506d21f40sm18994195ad.248 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-05-30 03:09:11] Starting email send [ID: mail-68392157a4016]
+[2025-05-30 03:09:11] SMTP configuration applied: 2025-05-30 03:09:11
+[2025-05-30 03:09:11] Host: smtp.gmail.com
+[2025-05-30 03:09:11] Port: 587
+[2025-05-30 03:09:11] Encryption: tls
+[2025-05-30 03:09:11] Authentication: Yes
+[2025-05-30 03:09:11] Debug Level: 0
+[2025-05-30 03:09:11] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:09:11] --------------------------------------
+[2025-05-30 03:09:11] SMTP configuration applied: 2025-05-30 03:09:11
+[2025-05-30 03:09:11] Host: smtp.gmail.com
+[2025-05-30 03:09:11] Port: 587
+[2025-05-30 03:09:11] Encryption: tls
+[2025-05-30 03:09:11] Authentication: Yes
+[2025-05-30 03:09:11] Debug Level: 0
+[2025-05-30 03:09:11] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:09:11] --------------------------------------
+[2025-05-30 03:09:14] Email sending [ID: mail-68392157a4016]:
+[2025-05-30 03:09:14] Recipient: marketing@eji.com.hk
+[2025-05-30 03:09:14] Subject: [Test Email] EJI
+[2025-05-30 03:09:14] Result: Success
+[2025-05-30 03:09:14] --------------------------------------
+[2025-05-30 03:10:06] SMTP Connection Test: Success
+[2025-05-30 03:10:06] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 98e67ed59e1d1-3124e3c0db6sm284184a91.34 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-05-30 03:10:06] Starting email send [ID: mail-6839218e6c5ab]
+[2025-05-30 03:10:06] SMTP configuration applied: 2025-05-30 03:10:06
+[2025-05-30 03:10:06] Host: smtp.gmail.com
+[2025-05-30 03:10:06] Port: 587
+[2025-05-30 03:10:06] Encryption: tls
+[2025-05-30 03:10:06] Authentication: Yes
+[2025-05-30 03:10:06] Debug Level: 0
+[2025-05-30 03:10:06] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:10:06] --------------------------------------
+[2025-05-30 03:10:06] SMTP configuration applied: 2025-05-30 03:10:06
+[2025-05-30 03:10:06] Host: smtp.gmail.com
+[2025-05-30 03:10:06] Port: 587
+[2025-05-30 03:10:06] Encryption: tls
+[2025-05-30 03:10:06] Authentication: Yes
+[2025-05-30 03:10:06] Debug Level: 0
+[2025-05-30 03:10:06] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:10:06] --------------------------------------
+[2025-05-30 03:10:09] Email sending [ID: mail-6839218e6c5ab]:
+[2025-05-30 03:10:09] Recipient: marketing1.eji@outlook.com
+[2025-05-30 03:10:09] Subject: [Test Email] EJI
+[2025-05-30 03:10:09] Result: Success
+[2025-05-30 03:10:09] --------------------------------------
+[2025-05-30 03:11:25] SMTP Connection Test: Success
+[2025-05-30 03:11:25] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-23506bc8858sm19159485ad.29 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-05-30 03:11:26] Starting email send [ID: mail-683921de10c58]
+[2025-05-30 03:11:26] SMTP configuration applied: 2025-05-30 03:11:26
+[2025-05-30 03:11:26] Host: smtp.gmail.com
+[2025-05-30 03:11:26] Port: 587
+[2025-05-30 03:11:26] Encryption: tls
+[2025-05-30 03:11:26] Authentication: Yes
+[2025-05-30 03:11:26] Debug Level: 0
+[2025-05-30 03:11:26] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:11:26] --------------------------------------
+[2025-05-30 03:11:26] SMTP configuration applied: 2025-05-30 03:11:26
+[2025-05-30 03:11:26] Host: smtp.gmail.com
+[2025-05-30 03:11:26] Port: 587
+[2025-05-30 03:11:26] Encryption: tls
+[2025-05-30 03:11:26] Authentication: Yes
+[2025-05-30 03:11:26] Debug Level: 0
+[2025-05-30 03:11:26] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:11:26] --------------------------------------
+[2025-05-30 03:11:28] Email sending [ID: mail-683921de10c58]:
+[2025-05-30 03:11:28] Recipient: frankie@everyideas.com
+[2025-05-30 03:11:28] Subject: [Test Email] EJI
+[2025-05-30 03:11:28] Result: Success
+[2025-05-30 03:11:28] --------------------------------------
+[2025-05-30 03:52:13] Starting email send [ID: mail-68392b6dd97cb]
+[2025-05-30 03:52:13] SMTP configuration applied: 2025-05-30 03:52:13
+[2025-05-30 03:52:13] Host: smtp.gmail.com
+[2025-05-30 03:52:13] Port: 587
+[2025-05-30 03:52:13] Encryption: tls
+[2025-05-30 03:52:13] Authentication: Yes
+[2025-05-30 03:52:13] Debug Level: 0
+[2025-05-30 03:52:13] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:52:13] --------------------------------------
+[2025-05-30 03:52:13] SMTP configuration applied: 2025-05-30 03:52:13
+[2025-05-30 03:52:13] Host: smtp.gmail.com
+[2025-05-30 03:52:13] Port: 587
+[2025-05-30 03:52:13] Encryption: tls
+[2025-05-30 03:52:13] Authentication: Yes
+[2025-05-30 03:52:13] Debug Level: 0
+[2025-05-30 03:52:13] Username: eji.hkg.international@gmail.com
+[2025-05-30 03:52:13] --------------------------------------
+[2025-05-30 03:52:16] Email sending [ID: mail-68392b6dd97cb]:
+[2025-05-30 03:52:16] Recipient: eji.hkg.international@gmail.com
+[2025-05-30 03:52:16] Subject: Bob - testing sent you a wishlist.
+[2025-05-30 03:52:16] Result: Success
+[2025-05-30 03:52:16] --------------------------------------
+[2025-05-30 14:45:18] SMTP configuration applied: 2025-05-30 14:45:18
+[2025-05-30 14:45:18] Host: smtp.gmail.com
+[2025-05-30 14:45:18] Port: 587
+[2025-05-30 14:45:18] Encryption: tls
+[2025-05-30 14:45:18] Authentication: Yes
+[2025-05-30 14:45:18] Debug Level: 0
+[2025-05-30 14:45:18] Username: eji.hkg.international@gmail.com
+[2025-05-30 14:45:18] --------------------------------------
+[2025-06-09 07:21:35] SMTP Connection Test: Success
+[2025-06-09 07:21:35] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-236030789b3sm48492735ad.26 - gsmtp
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: STARTTLS
+
+SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+CLIENT -> SERVER: EHLO eji.com.hk
+
+SERVER -> CLIENT: 250-smtp.gmail.com at your service, [35.213.144.185]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+CLIENT -> SERVER: AUTH LOGIN
+
+SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+CLIENT -> SERVER: [credentials hidden]
+SERVER -> CLIENT: 235 2.7.0 Accepted
+
+
+[2025-06-09 07:21:35] Starting email send [ID: mail-68468b7f50fbc]
+[2025-06-09 07:21:35] SMTP configuration applied: 2025-06-09 07:21:35
+[2025-06-09 07:21:35] Host: smtp.gmail.com
+[2025-06-09 07:21:35] Port: 587
+[2025-06-09 07:21:35] Encryption: tls
+[2025-06-09 07:21:35] Authentication: Yes
+[2025-06-09 07:21:35] Debug Level: 0
+[2025-06-09 07:21:35] Username: eji.hkg.international@gmail.com
+[2025-06-09 07:21:35] --------------------------------------
+[2025-06-09 07:21:35] SMTP configuration applied: 2025-06-09 07:21:35
+[2025-06-09 07:21:35] Host: smtp.gmail.com
+[2025-06-09 07:21:35] Port: 587
+[2025-06-09 07:21:35] Encryption: tls
+[2025-06-09 07:21:35] Authentication: Yes
+[2025-06-09 07:21:35] Debug Level: 0
+[2025-06-09 07:21:35] Username: eji.hkg.international@gmail.com
+[2025-06-09 07:21:35] --------------------------------------
+[2025-06-09 07:21:38] Email sending [ID: mail-68468b7f50fbc]:
+[2025-06-09 07:21:38] Recipient: ffrankie906@gmail.com
+[2025-06-09 07:21:38] Subject: [Test Email] EJI
+[2025-06-09 07:21:38] Result: Success
+[2025-06-09 07:21:38] --------------------------------------
+[2025-06-09 15:48:22] SMTP configuration applied: 2025-06-09 15:48:22
+[2025-06-09 15:48:22] Host: smtp.gmail.com
+[2025-06-09 15:48:22] Port: 587
+[2025-06-09 15:48:22] Encryption: tls
+[2025-06-09 15:48:22] Authentication: Yes
+[2025-06-09 15:48:22] Debug Level: 0
+[2025-06-09 15:48:22] Username: eji.hkg.international@gmail.com
+[2025-06-09 15:48:22] --------------------------------------
+[2025-06-11 07:55:25] SMTP configuration applied: 2025-06-11 07:55:25
+[2025-06-11 07:55:25] Host: smtp.gmail.com
+[2025-06-11 07:55:25] Port: 587
+[2025-06-11 07:55:25] Encryption: tls
+[2025-06-11 07:55:25] Authentication: Yes
+[2025-06-11 07:55:25] Debug Level: 0
+[2025-06-11 07:55:25] Username: eji.hkg.international@gmail.com
+[2025-06-11 07:55:25] --------------------------------------
+[2025-06-11 07:55:28] SMTP configuration applied: 2025-06-11 07:55:28
+[2025-06-11 07:55:28] Host: smtp.gmail.com
+[2025-06-11 07:55:28] Port: 587
+[2025-06-11 07:55:28] Encryption: tls
+[2025-06-11 07:55:28] Authentication: Yes
+[2025-06-11 07:55:28] Debug Level: 0
+[2025-06-11 07:55:28] Username: eji.hkg.international@gmail.com
+[2025-06-11 07:55:28] --------------------------------------
+[2025-06-11 07:55:30] SMTP configuration applied: 2025-06-11 07:55:30
+[2025-06-11 07:55:30] Host: smtp.gmail.com
+[2025-06-11 07:55:30] Port: 587
+[2025-06-11 07:55:30] Encryption: tls
+[2025-06-11 07:55:30] Authentication: Yes
+[2025-06-11 07:55:30] Debug Level: 0
+[2025-06-11 07:55:30] Username: eji.hkg.international@gmail.com
+[2025-06-11 07:55:30] --------------------------------------
+[2025-06-11 07:55:31] SMTP configuration applied: 2025-06-11 07:55:31
+[2025-06-11 07:55:31] Host: smtp.gmail.com
+[2025-06-11 07:55:31] Port: 587
+[2025-06-11 07:55:31] Encryption: tls
+[2025-06-11 07:55:31] Authentication: Yes
+[2025-06-11 07:55:31] Debug Level: 0
+[2025-06-11 07:55:31] Username: eji.hkg.international@gmail.com
+[2025-06-11 07:55:31] --------------------------------------
+[2025-06-11 08:37:00] SMTP configuration applied: 2025-06-11 08:37:00
+[2025-06-11 08:37:00] Host: smtp.gmail.com
+[2025-06-11 08:37:00] Port: 587
+[2025-06-11 08:37:00] Encryption: tls
+[2025-06-11 08:37:00] Authentication: Yes
+[2025-06-11 08:37:00] Debug Level: 0
+[2025-06-11 08:37:00] Username: eji.hkg.international@gmail.com
+[2025-06-11 08:37:00] --------------------------------------
+[2025-06-13 01:52:38] SMTP configuration applied: 2025-06-13 01:52:38
+[2025-06-13 01:52:38] Host: smtp.gmail.com
+[2025-06-13 01:52:38] Port: 587
+[2025-06-13 01:52:38] Encryption: tls
+[2025-06-13 01:52:38] Authentication: Yes
+[2025-06-13 01:52:38] Debug Level: 0
+[2025-06-13 01:52:38] Username: eji.hkg.international@gmail.com
+[2025-06-13 01:52:38] --------------------------------------
+[2025-06-13 01:52:41] SMTP configuration applied: 2025-06-13 01:52:41
+[2025-06-13 01:52:41] Host: smtp.gmail.com
+[2025-06-13 01:52:41] Port: 587
+[2025-06-13 01:52:41] Encryption: tls
+[2025-06-13 01:52:41] Authentication: Yes
+[2025-06-13 01:52:41] Debug Level: 0
+[2025-06-13 01:52:41] Username: eji.hkg.international@gmail.com
+[2025-06-13 01:52:41] --------------------------------------
+[2025-06-13 01:52:42] SMTP configuration applied: 2025-06-13 01:52:42
+[2025-06-13 01:52:42] Host: smtp.gmail.com
+[2025-06-13 01:52:42] Port: 587
+[2025-06-13 01:52:42] Encryption: tls
+[2025-06-13 01:52:42] Authentication: Yes
+[2025-06-13 01:52:42] Debug Level: 0
+[2025-06-13 01:52:42] Username: eji.hkg.international@gmail.com
+[2025-06-13 01:52:42] --------------------------------------
+[2025-06-13 01:52:43] SMTP configuration applied: 2025-06-13 01:52:43
+[2025-06-13 01:52:43] Host: smtp.gmail.com
+[2025-06-13 01:52:43] Port: 587
+[2025-06-13 01:52:43] Encryption: tls
+[2025-06-13 01:52:43] Authentication: Yes
+[2025-06-13 01:52:43] Debug Level: 0
+[2025-06-13 01:52:43] Username: eji.hkg.international@gmail.com
+[2025-06-13 01:52:43] --------------------------------------
+[2025-06-13 01:53:24] SMTP configuration applied: 2025-06-13 01:53:24
+[2025-06-13 01:53:24] Host: smtp.gmail.com
+[2025-06-13 01:53:24] Port: 587
+[2025-06-13 01:53:24] Encryption: tls
+[2025-06-13 01:53:24] Authentication: Yes
+[2025-06-13 01:53:24] Debug Level: 0
+[2025-06-13 01:53:24] Username: eji.hkg.international@gmail.com
+[2025-06-13 01:53:24] --------------------------------------
+[2025-06-25 08:12:32] SMTP configuration applied: 2025-06-25 08:12:32
+[2025-06-25 08:12:32] Host: smtp.gmail.com
+[2025-06-25 08:12:32] Port: 587
+[2025-06-25 08:12:32] Encryption: tls
+[2025-06-25 08:12:32] Authentication: Yes
+[2025-06-25 08:12:32] Debug Level: 0
+[2025-06-25 08:12:32] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:12:32] --------------------------------------
+[2025-06-25 08:12:46] SMTP configuration applied: 2025-06-25 08:12:46
+[2025-06-25 08:12:46] Host: smtp.gmail.com
+[2025-06-25 08:12:46] Port: 587
+[2025-06-25 08:12:46] Encryption: tls
+[2025-06-25 08:12:46] Authentication: Yes
+[2025-06-25 08:12:46] Debug Level: 0
+[2025-06-25 08:12:46] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:12:46] --------------------------------------
+[2025-06-25 08:13:00] SMTP configuration applied: 2025-06-25 08:13:00
+[2025-06-25 08:13:00] Host: smtp.gmail.com
+[2025-06-25 08:13:00] Port: 587
+[2025-06-25 08:13:00] Encryption: tls
+[2025-06-25 08:13:00] Authentication: Yes
+[2025-06-25 08:13:00] Debug Level: 0
+[2025-06-25 08:13:00] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:13:00] --------------------------------------
+[2025-06-25 08:13:14] SMTP configuration applied: 2025-06-25 08:13:14
+[2025-06-25 08:13:14] Host: smtp.gmail.com
+[2025-06-25 08:13:14] Port: 587
+[2025-06-25 08:13:14] Encryption: tls
+[2025-06-25 08:13:14] Authentication: Yes
+[2025-06-25 08:13:14] Debug Level: 0
+[2025-06-25 08:13:14] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:13:14] --------------------------------------
+[2025-06-25 08:13:28] SMTP configuration applied: 2025-06-25 08:13:28
+[2025-06-25 08:13:28] Host: smtp.gmail.com
+[2025-06-25 08:13:28] Port: 587
+[2025-06-25 08:13:28] Encryption: tls
+[2025-06-25 08:13:28] Authentication: Yes
+[2025-06-25 08:13:28] Debug Level: 0
+[2025-06-25 08:13:28] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:13:28] --------------------------------------
+[2025-06-25 08:14:52] SMTP configuration applied: 2025-06-25 08:14:52
+[2025-06-25 08:14:52] Host: smtp.gmail.com
+[2025-06-25 08:14:52] Port: 587
+[2025-06-25 08:14:52] Encryption: tls
+[2025-06-25 08:14:52] Authentication: Yes
+[2025-06-25 08:14:52] Debug Level: 0
+[2025-06-25 08:14:52] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:14:52] --------------------------------------
+[2025-06-25 08:16:45] SMTP configuration applied: 2025-06-25 08:16:45
+[2025-06-25 08:16:45] Host: smtp.gmail.com
+[2025-06-25 08:16:45] Port: 587
+[2025-06-25 08:16:45] Encryption: tls
+[2025-06-25 08:16:45] Authentication: Yes
+[2025-06-25 08:16:45] Debug Level: 0
+[2025-06-25 08:16:45] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:16:45] --------------------------------------
+[2025-06-25 08:20:17] SMTP configuration applied: 2025-06-25 08:20:17
+[2025-06-25 08:20:17] Host: smtp.gmail.com
+[2025-06-25 08:20:17] Port: 587
+[2025-06-25 08:20:17] Encryption: tls
+[2025-06-25 08:20:17] Authentication: Yes
+[2025-06-25 08:20:17] Debug Level: 0
+[2025-06-25 08:20:17] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:20:17] --------------------------------------
+[2025-06-25 08:20:51] SMTP configuration applied: 2025-06-25 08:20:51
+[2025-06-25 08:20:51] Host: smtp.gmail.com
+[2025-06-25 08:20:51] Port: 587
+[2025-06-25 08:20:51] Encryption: tls
+[2025-06-25 08:20:51] Authentication: Yes
+[2025-06-25 08:20:51] Debug Level: 0
+[2025-06-25 08:20:51] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:20:51] --------------------------------------
+[2025-06-25 08:21:13] SMTP configuration applied: 2025-06-25 08:21:13
+[2025-06-25 08:21:13] Host: smtp.gmail.com
+[2025-06-25 08:21:13] Port: 587
+[2025-06-25 08:21:13] Encryption: tls
+[2025-06-25 08:21:13] Authentication: Yes
+[2025-06-25 08:21:13] Debug Level: 0
+[2025-06-25 08:21:13] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:21:13] --------------------------------------
+[2025-06-25 08:22:29] SMTP configuration applied: 2025-06-25 08:22:29
+[2025-06-25 08:22:29] Host: smtp.gmail.com
+[2025-06-25 08:22:29] Port: 587
+[2025-06-25 08:22:29] Encryption: tls
+[2025-06-25 08:22:29] Authentication: Yes
+[2025-06-25 08:22:29] Debug Level: 0
+[2025-06-25 08:22:29] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:22:29] --------------------------------------
+[2025-06-25 08:22:59] SMTP configuration applied: 2025-06-25 08:22:59
+[2025-06-25 08:22:59] Host: smtp.gmail.com
+[2025-06-25 08:22:59] Port: 587
+[2025-06-25 08:22:59] Encryption: tls
+[2025-06-25 08:22:59] Authentication: Yes
+[2025-06-25 08:22:59] Debug Level: 0
+[2025-06-25 08:22:59] Username: eji.hkg.international@gmail.com
+[2025-06-25 08:22:59] --------------------------------------
+[2025-06-26 04:59:30] SMTP configuration applied: 2025-06-26 04:59:30
+[2025-06-26 04:59:30] Host: smtp.gmail.com
+[2025-06-26 04:59:30] Port: 587
+[2025-06-26 04:59:30] Encryption: tls
+[2025-06-26 04:59:30] Authentication: Yes
+[2025-06-26 04:59:30] Debug Level: 0
+[2025-06-26 04:59:30] Username: eji.hkg.international@gmail.com
+[2025-06-26 04:59:30] --------------------------------------
+[2025-07-03 04:35:18] SMTP configuration applied: 2025-07-03 04:35:18
+[2025-07-03 04:35:18] Host: smtp.gmail.com
+[2025-07-03 04:35:18] Port: 587
+[2025-07-03 04:35:18] Encryption: tls
+[2025-07-03 04:35:18] Authentication: Yes
+[2025-07-03 04:35:18] Debug Level: 0
+[2025-07-03 04:35:18] Username: eji.hkg.international@gmail.com
+[2025-07-03 04:35:18] --------------------------------------
+[2025-07-03 04:35:36] SMTP configuration applied: 2025-07-03 04:35:36
+[2025-07-03 04:35:36] Host: smtp.gmail.com
+[2025-07-03 04:35:36] Port: 587
+[2025-07-03 04:35:36] Encryption: tls
+[2025-07-03 04:35:36] Authentication: Yes
+[2025-07-03 04:35:36] Debug Level: 0
+[2025-07-03 04:35:36] Username: eji.hkg.international@gmail.com
+[2025-07-03 04:35:36] --------------------------------------
+[2025-07-03 04:35:51] SMTP configuration applied: 2025-07-03 04:35:51
+[2025-07-03 04:35:51] Host: smtp.gmail.com
+[2025-07-03 04:35:51] Port: 587
+[2025-07-03 04:35:51] Encryption: tls
+[2025-07-03 04:35:51] Authentication: Yes
+[2025-07-03 04:35:51] Debug Level: 0
+[2025-07-03 04:35:51] Username: eji.hkg.international@gmail.com
+[2025-07-03 04:35:51] --------------------------------------
+[2025-07-03 04:36:06] SMTP configuration applied: 2025-07-03 04:36:06
+[2025-07-03 04:36:06] Host: smtp.gmail.com
+[2025-07-03 04:36:06] Port: 587
+[2025-07-03 04:36:06] Encryption: tls
+[2025-07-03 04:36:06] Authentication: Yes
+[2025-07-03 04:36:06] Debug Level: 0
+[2025-07-03 04:36:06] Username: eji.hkg.international@gmail.com
+[2025-07-03 04:36:06] --------------------------------------
+[2025-07-03 04:36:20] SMTP configuration applied: 2025-07-03 04:36:20
+[2025-07-03 04:36:20] Host: smtp.gmail.com
+[2025-07-03 04:36:20] Port: 587
+[2025-07-03 04:36:20] Encryption: tls
+[2025-07-03 04:36:20] Authentication: Yes
+[2025-07-03 04:36:20] Debug Level: 0
+[2025-07-03 04:36:20] Username: eji.hkg.international@gmail.com
+[2025-07-03 04:36:20] --------------------------------------
+[2025-07-07 09:10:42] SMTP configuration applied: 2025-07-07 09:10:42
+[2025-07-07 09:10:42] Host: smtp.gmail.com
+[2025-07-07 09:10:42] Port: 587
+[2025-07-07 09:10:42] Encryption: tls
+[2025-07-07 09:10:42] Authentication: Yes
+[2025-07-07 09:10:42] Debug Level: 0
+[2025-07-07 09:10:42] Username: eji.hkg.international@gmail.com
+[2025-07-07 09:10:42] --------------------------------------
+[2025-07-08 03:41:25] SMTP configuration applied: 2025-07-08 03:41:25
+[2025-07-08 03:41:25] Host: smtp.gmail.com
+[2025-07-08 03:41:25] Port: 587
+[2025-07-08 03:41:25] Encryption: tls
+[2025-07-08 03:41:25] Authentication: Yes
+[2025-07-08 03:41:25] Debug Level: 0
+[2025-07-08 03:41:25] Username: eji.hkg.international@gmail.com
+[2025-07-08 03:41:25] --------------------------------------
+[2025-07-22 03:25:37] SMTP configuration applied: 2025-07-22 03:25:37
+[2025-07-22 03:25:37] Host: smtp.gmail.com
+[2025-07-22 03:25:37] Port: 587
+[2025-07-22 03:25:37] Encryption: tls
+[2025-07-22 03:25:37] Authentication: Yes
+[2025-07-22 03:25:37] Debug Level: 0
+[2025-07-22 03:25:37] Username: eji.hkg.international@gmail.com
+[2025-07-22 03:25:37] --------------------------------------
+[2025-07-22 03:26:42] SMTP configuration applied: 2025-07-22 03:26:42
+[2025-07-22 03:26:42] Host: smtp.gmail.com
+[2025-07-22 03:26:42] Port: 587
+[2025-07-22 03:26:42] Encryption: tls
+[2025-07-22 03:26:42] Authentication: Yes
+[2025-07-22 03:26:42] Debug Level: 0
+[2025-07-22 03:26:42] Username: eji.hkg.international@gmail.com
+[2025-07-22 03:26:42] --------------------------------------
+[2025-08-01 08:27:59] SMTP configuration applied: 2025-08-01 08:27:59
+[2025-08-01 08:27:59] Host: smtp.gmail.com
+[2025-08-01 08:27:59] Port: 587
+[2025-08-01 08:27:59] Encryption: tls
+[2025-08-01 08:27:59] Authentication: Yes
+[2025-08-01 08:27:59] Debug Level: 0
+[2025-08-01 08:27:59] Username: eji.hkg.international@gmail.com
+[2025-08-01 08:27:59] --------------------------------------
+[2025-08-15 07:53:00] SMTP configuration applied: 2025-08-15 07:53:00
+[2025-08-15 07:53:00] Host: smtp.gmail.com
+[2025-08-15 07:53:00] Port: 587
+[2025-08-15 07:53:00] Encryption: tls
+[2025-08-15 07:53:00] Authentication: Yes
+[2025-08-15 07:53:00] Debug Level: 0
+[2025-08-15 07:53:00] Username: eji.hkg.international@gmail.com
+[2025-08-15 07:53:00] --------------------------------------
+[2025-08-15 07:54:54] SMTP configuration applied: 2025-08-15 07:54:54
+[2025-08-15 07:54:54] Host: smtp.gmail.com
+[2025-08-15 07:54:54] Port: 587
+[2025-08-15 07:54:54] Encryption: tls
+[2025-08-15 07:54:54] Authentication: Yes
+[2025-08-15 07:54:54] Debug Level: 0
+[2025-08-15 07:54:54] Username: eji.hkg.international@gmail.com
+[2025-08-15 07:54:54] --------------------------------------
+[2025-08-15 07:54:59] SMTP configuration applied: 2025-08-15 07:54:59
+[2025-08-15 07:54:59] Host: smtp.gmail.com
+[2025-08-15 07:54:59] Port: 587
+[2025-08-15 07:54:59] Encryption: tls
+[2025-08-15 07:54:59] Authentication: Yes
+[2025-08-15 07:54:59] Debug Level: 0
+[2025-08-15 07:54:59] Username: eji.hkg.international@gmail.com
+[2025-08-15 07:54:59] --------------------------------------
+[2025-08-15 08:15:59] SMTP configuration applied: 2025-08-15 08:15:59
+[2025-08-15 08:15:59] Host: smtp.gmail.com
+[2025-08-15 08:15:59] Port: 587
+[2025-08-15 08:15:59] Encryption: tls
+[2025-08-15 08:15:59] Authentication: Yes
+[2025-08-15 08:15:59] Debug Level: 0
+[2025-08-15 08:15:59] Username: eji.hkg.international@gmail.com
+[2025-08-15 08:15:59] --------------------------------------
+[2025-08-19 04:01:33] SMTP configuration applied: 2025-08-19 04:01:33
+[2025-08-19 04:01:33] Host: smtp.gmail.com
+[2025-08-19 04:01:33] Port: 587
+[2025-08-19 04:01:33] Encryption: tls
+[2025-08-19 04:01:33] Authentication: Yes
+[2025-08-19 04:01:33] Debug Level: 0
+[2025-08-19 04:01:33] Username: eji.hkg.international@gmail.com
+[2025-08-19 04:01:33] --------------------------------------
+[2025-08-19 04:01:38] SMTP configuration applied: 2025-08-19 04:01:38
+[2025-08-19 04:01:38] Host: smtp.gmail.com
+[2025-08-19 04:01:38] Port: 587
+[2025-08-19 04:01:38] Encryption: tls
+[2025-08-19 04:01:38] Authentication: Yes
+[2025-08-19 04:01:38] Debug Level: 0
+[2025-08-19 04:01:38] Username: eji.hkg.international@gmail.com
+[2025-08-19 04:01:38] --------------------------------------
+[2025-08-19 04:13:53] SMTP configuration applied: 2025-08-19 04:13:53
+[2025-08-19 04:13:53] Host: smtp.gmail.com
+[2025-08-19 04:13:53] Port: 587
+[2025-08-19 04:13:53] Encryption: tls
+[2025-08-19 04:13:53] Authentication: Yes
+[2025-08-19 04:13:53] Debug Level: 0
+[2025-08-19 04:13:53] Username: eji.hkg.international@gmail.com
+[2025-08-19 04:13:53] --------------------------------------
+[2025-08-19 10:39:47] SMTP configuration applied: 2025-08-19 10:39:47
+[2025-08-19 10:39:47] Host: smtp.gmail.com
+[2025-08-19 10:39:47] Port: 587
+[2025-08-19 10:39:47] Encryption: tls
+[2025-08-19 10:39:47] Authentication: Yes
+[2025-08-19 10:39:47] Debug Level: 0
+[2025-08-19 10:39:47] Username: eji.hkg.international@gmail.com
+[2025-08-19 10:39:47] --------------------------------------
+[2025-08-21 03:32:01] SMTP configuration applied: 2025-08-21 03:32:01
+[2025-08-21 03:32:01] Host: smtp.gmail.com
+[2025-08-21 03:32:01] Port: 587
+[2025-08-21 03:32:01] Encryption: tls
+[2025-08-21 03:32:01] Authentication: Yes
+[2025-08-21 03:32:01] Debug Level: 0
+[2025-08-21 03:32:01] Username: eji.hkg.international@gmail.com
+[2025-08-21 03:32:01] --------------------------------------
+[2025-08-26 16:30:59] SMTP configuration applied: 2025-08-26 16:30:59
+[2025-08-26 16:30:59] Host: smtp.gmail.com
+[2025-08-26 16:30:59] Port: 587
+[2025-08-26 16:30:59] Encryption: tls
+[2025-08-26 16:30:59] Authentication: Yes
+[2025-08-26 16:30:59] Debug Level: 0
+[2025-08-26 16:30:59] Username: eji.hkg.international@gmail.com
+[2025-08-26 16:30:59] --------------------------------------
+[2025-08-26 16:31:02] SMTP configuration applied: 2025-08-26 16:31:02
+[2025-08-26 16:31:02] Host: smtp.gmail.com
+[2025-08-26 16:31:02] Port: 587
+[2025-08-26 16:31:02] Encryption: tls
+[2025-08-26 16:31:02] Authentication: Yes
+[2025-08-26 16:31:02] Debug Level: 0
+[2025-08-26 16:31:02] Username: eji.hkg.international@gmail.com
+[2025-08-26 16:31:02] --------------------------------------
+[2025-08-26 16:31:03] SMTP configuration applied: 2025-08-26 16:31:03
+[2025-08-26 16:31:03] Host: smtp.gmail.com
+[2025-08-26 16:31:03] Port: 587
+[2025-08-26 16:31:03] Encryption: tls
+[2025-08-26 16:31:03] Authentication: Yes
+[2025-08-26 16:31:03] Debug Level: 0
+[2025-08-26 16:31:03] Username: eji.hkg.international@gmail.com
+[2025-08-26 16:31:03] --------------------------------------
+[2025-08-26 16:31:05] SMTP configuration applied: 2025-08-26 16:31:05
+[2025-08-26 16:31:05] Host: smtp.gmail.com
+[2025-08-26 16:31:05] Port: 587
+[2025-08-26 16:31:05] Encryption: tls
+[2025-08-26 16:31:05] Authentication: Yes
+[2025-08-26 16:31:05] Debug Level: 0
+[2025-08-26 16:31:05] Username: eji.hkg.international@gmail.com
+[2025-08-26 16:31:05] --------------------------------------
+[2025-09-02 10:16:20] SMTP configuration applied: 2025-09-02 10:16:20
+[2025-09-02 10:16:20] Host: smtp.gmail.com
+[2025-09-02 10:16:20] Port: 587
+[2025-09-02 10:16:20] Encryption: tls
+[2025-09-02 10:16:20] Authentication: Yes
+[2025-09-02 10:16:20] Debug Level: 0
+[2025-09-02 10:16:20] Username: eji.hkg.international@gmail.com
+[2025-09-02 10:16:20] --------------------------------------
+[2025-09-12 15:08:45] SMTP configuration applied: 2025-09-12 15:08:45
+[2025-09-12 15:08:45] Host: smtp.gmail.com
+[2025-09-12 15:08:45] Port: 587
+[2025-09-12 15:08:45] Encryption: tls
+[2025-09-12 15:08:45] Authentication: Yes
+[2025-09-12 15:08:45] Debug Level: 0
+[2025-09-12 15:08:45] Username: eji.hkg.international@gmail.com
+[2025-09-12 15:08:45] --------------------------------------
+[2025-09-26 03:01:28] SMTP configuration applied: 2025-09-26 03:01:28
+[2025-09-26 03:01:28] Host: smtp.gmail.com
+[2025-09-26 03:01:28] Port: 587
+[2025-09-26 03:01:28] Encryption: tls
+[2025-09-26 03:01:28] Authentication: Yes
+[2025-09-26 03:01:28] Debug Level: 0
+[2025-09-26 03:01:28] Username: eji.hkg.international@gmail.com
+[2025-09-26 03:01:28] --------------------------------------
+[2025-09-29 19:50:55] SMTP configuration applied: 2025-09-29 19:50:55
+[2025-09-29 19:50:55] Host: smtp.gmail.com
+[2025-09-29 19:50:55] Port: 587
+[2025-09-29 19:50:55] Encryption: tls
+[2025-09-29 19:50:55] Authentication: Yes
+[2025-09-29 19:50:55] Debug Level: 0
+[2025-09-29 19:50:55] Username: eji.hkg.international@gmail.com
+[2025-09-29 19:50:55] --------------------------------------
+[2025-10-03 01:46:49] SMTP configuration applied: 2025-10-03 01:46:49
+[2025-10-03 01:46:49] Host: smtp.gmail.com
+[2025-10-03 01:46:49] Port: 587
+[2025-10-03 01:46:49] Encryption: tls
+[2025-10-03 01:46:49] Authentication: Yes
+[2025-10-03 01:46:49] Debug Level: 0
+[2025-10-03 01:46:49] Username: eji.hkg.international@gmail.com
+[2025-10-03 01:46:49] --------------------------------------
+[2025-10-03 01:47:20] SMTP configuration applied: 2025-10-03 01:47:20
+[2025-10-03 01:47:20] Host: smtp.gmail.com
+[2025-10-03 01:47:20] Port: 587
+[2025-10-03 01:47:20] Encryption: tls
+[2025-10-03 01:47:20] Authentication: Yes
+[2025-10-03 01:47:20] Debug Level: 0
+[2025-10-03 01:47:20] Username: eji.hkg.international@gmail.com
+[2025-10-03 01:47:20] --------------------------------------
+[2025-10-03 01:57:22] SMTP configuration applied: 2025-10-03 01:57:22
+[2025-10-03 01:57:22] Host: smtp.gmail.com
+[2025-10-03 01:57:22] Port: 587
+[2025-10-03 01:57:22] Encryption: tls
+[2025-10-03 01:57:22] Authentication: Yes
+[2025-10-03 01:57:22] Debug Level: 0
+[2025-10-03 01:57:22] Username: eji.hkg.international@gmail.com
+[2025-10-03 01:57:22] --------------------------------------
+[2025-10-07 01:21:53] SMTP configuration applied: 2025-10-07 01:21:53
+[2025-10-07 01:21:53] Host: smtp.gmail.com
+[2025-10-07 01:21:53] Port: 587
+[2025-10-07 01:21:53] Encryption: tls
+[2025-10-07 01:21:53] Authentication: Yes
+[2025-10-07 01:21:53] Debug Level: 0
+[2025-10-07 01:21:53] Username: eji.hkg.international@gmail.com
+[2025-10-07 01:21:53] --------------------------------------
+[2025-10-10 03:45:55] SMTP configuration applied: 2025-10-10 03:45:55
+[2025-10-10 03:45:55] Host: smtp.gmail.com
+[2025-10-10 03:45:55] Port: 587
+[2025-10-10 03:45:55] Encryption: tls
+[2025-10-10 03:45:55] Authentication: Yes
+[2025-10-10 03:45:55] Debug Level: 0
+[2025-10-10 03:45:55] Username: eji.hkg.international@gmail.com
+[2025-10-10 03:45:55] --------------------------------------
+[2025-10-10 05:05:21] SMTP configuration applied: 2025-10-10 05:05:21
+[2025-10-10 05:05:21] Host: smtp.gmail.com
+[2025-10-10 05:05:21] Port: 587
+[2025-10-10 05:05:21] Encryption: tls
+[2025-10-10 05:05:21] Authentication: Yes
+[2025-10-10 05:05:21] Debug Level: 0
+[2025-10-10 05:05:21] Username: eji.hkg.international@gmail.com
+[2025-10-10 05:05:21] --------------------------------------
+[2025-10-10 05:05:24] SMTP configuration applied: 2025-10-10 05:05:24
+[2025-10-10 05:05:24] Host: smtp.gmail.com
+[2025-10-10 05:05:24] Port: 587
+[2025-10-10 05:05:24] Encryption: tls
+[2025-10-10 05:05:24] Authentication: Yes
+[2025-10-10 05:05:24] Debug Level: 0
+[2025-10-10 05:05:24] Username: eji.hkg.international@gmail.com
+[2025-10-10 05:05:24] --------------------------------------
+[2025-10-10 05:05:25] SMTP configuration applied: 2025-10-10 05:05:25
+[2025-10-10 05:05:25] Host: smtp.gmail.com
+[2025-10-10 05:05:25] Port: 587
+[2025-10-10 05:05:25] Encryption: tls
+[2025-10-10 05:05:25] Authentication: Yes
+[2025-10-10 05:05:25] Debug Level: 0
+[2025-10-10 05:05:25] Username: eji.hkg.international@gmail.com
+[2025-10-10 05:05:25] --------------------------------------
+[2025-10-10 05:05:26] SMTP configuration applied: 2025-10-10 05:05:26
+[2025-10-10 05:05:26] Host: smtp.gmail.com
+[2025-10-10 05:05:26] Port: 587
+[2025-10-10 05:05:26] Encryption: tls
+[2025-10-10 05:05:26] Authentication: Yes
+[2025-10-10 05:05:26] Debug Level: 0
+[2025-10-10 05:05:26] Username: eji.hkg.international@gmail.com
+[2025-10-10 05:05:26] --------------------------------------
+[2025-10-10 07:38:57] SMTP configuration applied: 2025-10-10 07:38:57
+[2025-10-10 07:38:57] Host: smtp.gmail.com
+[2025-10-10 07:38:57] Port: 587
+[2025-10-10 07:38:57] Encryption: tls
+[2025-10-10 07:38:57] Authentication: Yes
+[2025-10-10 07:38:57] Debug Level: 0
+[2025-10-10 07:38:57] Username: eji.hkg.international@gmail.com
+[2025-10-10 07:38:57] --------------------------------------
+[2025-10-10 08:26:08] SMTP configuration applied: 2025-10-10 08:26:08
+[2025-10-10 08:26:08] Host: smtp.gmail.com
+[2025-10-10 08:26:08] Port: 587
+[2025-10-10 08:26:08] Encryption: tls
+[2025-10-10 08:26:08] Authentication: Yes
+[2025-10-10 08:26:08] Debug Level: 0
+[2025-10-10 08:26:08] Username: eji.hkg.international@gmail.com
+[2025-10-10 08:26:08] --------------------------------------
+[2025-10-10 08:26:12] SMTP configuration applied: 2025-10-10 08:26:12
+[2025-10-10 08:26:12] Host: smtp.gmail.com
+[2025-10-10 08:26:12] Port: 587
+[2025-10-10 08:26:12] Encryption: tls
+[2025-10-10 08:26:12] Authentication: Yes
+[2025-10-10 08:26:12] Debug Level: 0
+[2025-10-10 08:26:12] Username: eji.hkg.international@gmail.com
+[2025-10-10 08:26:12] --------------------------------------

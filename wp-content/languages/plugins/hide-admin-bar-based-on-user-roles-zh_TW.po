@@ -1,0 +1,416 @@
+# Translation of Plugins - Hide Admin Bar Based on User Roles - Stable (latest release) in Chinese (Taiwan)
+# This file is distributed under the same license as the Plugins - Hide Admin Bar Based on User Roles - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-02-24 23:46:45+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: zh_TW\n"
+"Project-Id-Version: Plugins - Hide Admin Bar Based on User Roles - Stable (latest release)\n"
+
+#: hide-admin-bar-based-on-user-roles.php:212
+msgid "Dismiss"
+msgstr "關閉"
+
+#. Description of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "Hide the WordPress Admin Bar for specific user roles, capabilities, devices, pages, or time windows. Lightweight and works out of the box."
+msgstr "針對指定使用者角色、權限、裝置、頁面或時間範圍隱藏 WordPress 工具列，輕量化且隨裝即用。"
+
+#. Author URI of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "https://pluginstack.dev"
+msgstr "https://pluginstack.dev"
+
+#. Author of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "PluginStackDev"
+msgstr "PluginStackDev"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:628
+msgid "Lightweight"
+msgstr "輕量化"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:627
+msgid "Fast"
+msgstr "快速"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:612
+msgid "Deep Gravity Forms add-ons: analytics, AI helpers, automations, and UX upgrades that stay lightweight."
+msgstr "Deep Gravity Forms 附加元件: 保持輕量化卻能提供分析工具、AI 人工智慧協助程式，自動化及提升使用者體驗。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:611
+msgid "Enhance Gravity Forms with powerful add-ons."
+msgstr "使用實用的附加元件強化 Gravity Forms 的功能。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:610
+msgid "05 • UltimaKit for Gravity Forms"
+msgstr "05 • UltimaKit for Gravity Forms"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:605
+msgid "Granular visibility rules for roles, users, and paths so teams see only what they need."
+msgstr "針對使用者角色、使用者及路徑的細微可見度進行調整，使團隊僅能查看所需資訊。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:604
+msgid "Clean up your WordPress admin experience."
+msgstr "最佳化使用者的 WordPress 管理後台體驗。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:603
+msgid "04 • Hide Admin Bar Pro"
+msgstr "04 • Hide Admin Bar Pro"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:598
+msgid "AI-assisted meta titles, descriptions, and content scoring with safeguards for speed and brand voice."
+msgstr "AI 人工智慧輔助產生中繼資料標題、內容說明及內容評分，同時兼顧速度及品牌訊息一致性的保證。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:597
+msgid "AI-powered SEO tools for WordPress."
+msgstr "以 AI 人工智慧為導向的 WordPress SEO 工具"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:596
+msgid "03 • xSEOKit"
+msgstr "03 • xSEOKit"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:591
+msgid "First-party, cookie-light analytics with referrers, funnels, heatmaps, and reports you can actually ship to legal."
+msgstr "第一方、輕量化 Cookie 的分析外掛，具備記錄參照網址、漏斗分析、熱力圖及可直接提交給法務部門的報告功能。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:590
+msgid "Privacy-friendly analytics for WordPress."
+msgstr "注重隱私權的 WordPress 分析外掛。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:586
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:593
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:600
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:607
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:614
+msgid "View Details"
+msgstr "檢視詳細資料"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:584
+msgid "192+ performance-tuned modules for SEO, security, publishing, WooCommerce, and Gravity Forms—replace a dozen plugins with one."
+msgstr "超過 192 個針對 SEO、安全性、內容發佈、WooCommerce 及 Gravity Forms 進行效能最佳化的模組，僅需一個外掛便可勝任。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:583
+msgid "All-in-one WordPress operating system."
+msgstr "多功能 WordPress 工具組。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:582
+msgid "01 • UltimaKit for WP"
+msgstr "01 • UltimaKit for WP"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:569
+msgid "See all plugins"
+msgstr "檢視全部外掛"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:568
+msgid "Explore the stack"
+msgstr "進一步了解技術組合"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:565
+msgid "Conversion-safe UX"
+msgstr "可安全轉換的使用者體驗"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:564
+msgid "Editor-loved workflows"
+msgstr "編輯最愛的工作流程"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:563
+msgid "AI-assisted SEO"
+msgstr "人工智慧輔助的 SEO"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:562
+msgid "Privacy-friendly analytics"
+msgstr "注重隱私權的分析工具"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:561
+msgid "Performance-first"
+msgstr "注重效能"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:558
+msgid "A high-polish stack for teams who care about lighthouse scores, privacy, and conversions. Zero duct tape—just fast, interoperable plugins built to ship content and commerce at scale."
+msgstr "為重視 Lighthouse 評分、隱私權及轉換率的團隊專門打造的技術組合，而非臨時拼湊的應急措施。整個解決方案採用快速可協同合作的模組化外掛建置，專為大規模交付內容及電子商務而打造。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:556
+msgid "Build, market, and scale—minus the plugin bloat."
+msgstr "建構、行銷及拓展，擺脫外掛程式碼膨脹的問題。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:554
+msgid "Performance without compromises"
+msgstr "絕不妥協的效能表現"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:553
+msgid "xWPStack • Premium plugin suite"
+msgstr "xWPStack • 付費外掛套件"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:225
+msgid "Get All PluginStack Plugins for 75% OFF!"
+msgstr "取得 PluginStack 全部外掛 25 折優惠！"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:629
+msgid "Easy to Use"
+msgstr "易於使用"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:589
+msgid "02 • Page Visit Counter Analytics"
+msgstr "02 • Page Visit Counter Analytics"
+
+#: admin/partials/review-banner.php:44
+msgid "LEAVE A REVIEW"
+msgstr "撰寫使用者評論"
+
+#: admin/partials/review-banner.php:39
+msgid "If you find this plugin helpful, please consider leaving a review. Your feedback helps us improve and helps other users discover the plugin."
+msgstr "如果這個外掛對網站所有幫助，請考慮撰寫使用者評論。使用者的意見反應能協助我們改進，並讓其他使用者發現這個外掛。"
+
+#: admin/partials/review-banner.php:29
+msgid "⭐ Enjoying Hide Admin Bar Based On User Roles?"
+msgstr "⭐ Hide Admin Bar Based On User Roles 對網站是否有所幫助？"
+
+#: admin/partials/promotional-banner.php:33
+msgid "UPGRADE TO PRO NOW"
+msgstr "立即升級至 Pro 版"
+
+#: admin/partials/promotional-banner.php:27
+msgid "🚀 Over 600,000+ downloads — now go even further with Pro."
+msgstr "🚀 免費版超過 60 萬次下載，現在更提供 Pro 版。"
+
+#: admin/partials/promotional-banner.php:21 admin/partials/review-banner.php:34
+msgid "Never show again"
+msgstr "不再顯示"
+
+#: admin/partials/promotional-banner.php:20 admin/partials/review-banner.php:33
+msgid "Hide for 30 days"
+msgstr "隱藏 30 天"
+
+#: admin/partials/promotional-banner.php:19 admin/partials/review-banner.php:32
+msgid "Hide for now"
+msgstr "立即隱藏"
+
+#: admin/partials/promotional-banner.php:15
+msgid "Launch Offer: 30% OFF"
+msgstr "套用 7 折優惠"
+
+#: admin/partials/promotional-banner.php:13
+msgid "🚀 Hide Admin Bar Pro"
+msgstr "🚀 Hide Admin Bar Pro"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:498
+msgid "Get Pro Now"
+msgstr "立即取得 Pro 版"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:475
+msgid "Page-Specific Control"
+msgstr "依據頁面控制"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:470
+msgid "User-Specific Control"
+msgstr "依據使用者控制"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:465
+msgid "Time-Based Conditions"
+msgstr "依據時間設定條件"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:460
+msgid "Hide for Guests"
+msgstr "為全部網站訪客隱藏工具列"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:455
+msgid "Capability-Based Control"
+msgstr "依據使用者權限控制"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:450
+msgid "Role-Based Control"
+msgstr "依據使用者角色控制"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:445
+msgid "Hide for All Users"
+msgstr "為全部使用者隱藏工具列"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:440
+msgid "Pro"
+msgstr "Pro 版"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:439
+msgid "Free"
+msgstr "免費版"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:438
+msgid "Feature"
+msgstr "功能"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:433
+msgid "Pro vs Free Comparison"
+msgstr "版本比較"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:426
+msgid "View Demo"
+msgstr "觀看功能展示"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:425
+msgid "Upgrade to Pro"
+msgstr "升級至 Pro 版"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:419
+msgid "Get dedicated support from our team of WordPress experts."
+msgstr "獲得我們 WordPress 專家團隊的專屬技術支援。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:418
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:490
+msgid "Priority Support"
+msgstr "優先技術支援"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:409
+msgid "Configure different admin bar behavior for desktop, tablet, and mobile devices."
+msgstr "針對桌面裝置、平板裝置及行動裝置組態不同的工具列行為。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:408
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:480
+msgid "Device-Specific Settings"
+msgstr "依據裝置設定"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:399
+msgid "Add, remove, or modify specific items in the admin bar for different user roles."
+msgstr "為指定使用者角色新增、移除或修改工具列上的指定項目。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:398
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:485
+msgid "Custom Admin Bar Items"
+msgstr "自訂工具列項目"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:389
+msgid "Set the admin bar to automatically hide after a specific time period of inactivity."
+msgstr "設定工具列在使用者不活動一段指定時間後便自訂隱藏。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:388
+msgid "Auto-Hide Timer"
+msgstr "自動隱藏計時器"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:379
+msgid "Show or hide the admin bar on specific pages, posts, or custom post types."
+msgstr "依據指定單篇頁面、文章或自訂內容類型內容顯示或隱藏工具列。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:378
+msgid "Page-Specific Controls"
+msgstr "依據頁面控制"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:369
+msgid "Hide the admin bar for specific users by username, not just by role or capability."
+msgstr "依據指定使用者名稱隱藏工具列，而不是僅依據使用者角色或使用者權限。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:368
+msgid "User-Specific Controls"
+msgstr "依據使用者控制"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:360
+msgid "The Pro version gives you powerful features to customize the admin bar experience for every user on your site."
+msgstr "Pro 版提供網站實用、可為網站全部使用者自訂工具列體驗的功能。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:358
+msgid "Take Complete Control of Your WordPress Admin Bar"
+msgstr "完全控制 WordPress 的工具列"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:353
+msgid "Upgrade to Hide Admin Bar Pro"
+msgstr "升級至 Hide Admin Bar Pro"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:219
+msgid "Pro Features"
+msgstr "Pro 版功能"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:336
+msgid "Add More"
+msgstr "新增權限"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:214
+msgid "Settings"
+msgstr "設定"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:198
+msgid "Leave Feedback"
+msgstr "撰寫意見反應"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:194
+msgid "Current version: "
+msgstr "目前版本: "
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:144
+msgid "Activating plugin..."
+msgstr "正在啟用外掛..."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:143
+msgid "Installing plugin..."
+msgstr "正在安裝外掛..."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:142
+msgid "Downloading plugin..."
+msgstr "正在下載外掛..."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:141
+msgid "Checking plugin status..."
+msgstr "正在檢查外掛狀態..."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:140
+msgid "Already Installed & Active"
+msgstr "已安裝並啟用。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:139
+msgid "Installation Failed"
+msgstr "安裝失敗"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:138
+msgid "Installed & Activated!"
+msgstr "已完成安裝並啟用。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:137
+msgid "Installing..."
+msgstr "正在安裝..."
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:300
+msgid "Capabilities Blacklist"
+msgstr "權限封鎖清單"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:163
+msgid "Hide Admin Bar Settings"
+msgstr "隱藏工具列設定"
+
+#. Plugin URI of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "https://wordpress.org/plugins/hide-admin-bar-based-on-user-roles/"
+msgstr "https://tw.wordpress.org/plugins/hide-admin-bar-based-on-user-roles/"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:323
+msgid "You can reset plugin settings by visiting this url without login to admin panel. Keep it safe."
+msgstr "網站管理員在未登入管理後台的狀況下，存取下方網址便能重設這個外掛的設定。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:302
+msgid "Hide admin bar for selected user capabilities"
+msgstr "為具備特定權限的使用者隱藏工具列。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:253
+msgid "Hide Admin Bar for All Guests Users"
+msgstr "為全部網站訪客隱藏工具列"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:236
+msgid "Hide Admin Bar for All Users"
+msgstr "為全部使用者角色隱藏工具列"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:319
+msgid "Save Changes"
+msgstr "儲存設定"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:271
+msgid "Hide admin bar for selected user roles."
+msgstr "為選取的使用者角色隱藏工具列。"
+
+#: admin/class-hide-admin-bar-based-on-user-roles-admin.php:270
+msgid "User Roles"
+msgstr "使用者角色"
+
+#. Plugin Name of the plugin
+#: hide-admin-bar-based-on-user-roles.php
+msgid "Hide Admin Bar Based on User Roles"
+msgstr "Hide Admin Bar Based on User Roles"

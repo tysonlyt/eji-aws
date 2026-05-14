@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['All'=>'全部','EJI Blog'=>'EJI 博客','It seems we can’t find what you’re looking for.'=>'看来我们找不到您要找的东西。','Next'=>'下一页','No more posts to show'=>'没有更多帖子可显示','Previous'=>'上一页','Show More'=>'显示更多','first_item_title-taxonomy-filter-50b66a5'=>'全部','load_more_no_posts_custom_message-loop-grid-187424b'=>'没有更多帖子可显示','nothing_found_message_text-loop-grid-187424b'=>'看来我们找不到您要找的东西。','pagination_next_label-loop-grid-187424b'=>'下一页','pagination_prev_label-loop-grid-187424b'=>'上一页','text-loop-grid-187424b'=>'显示更多','title-heading-ec3f350'=>'EJI 博客']];

@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Bulk Optimization'=>['urls'=>['/zh-hans/','/zh-hans/%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98/','/zh-hant/my-account/'],'names'=>[],'cmp'=>['imagify',1]],'Documentation'=>['urls'=>['/zh-hans/','/zh-hans/%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98/','/zh-hant/my-account/'],'names'=>[],'cmp'=>['imagify',1]],'Rate Imagify on %s'=>['urls'=>['/zh-hans/','/zh-hans/%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98/','/zh-hant/my-account/'],'names'=>[],'cmp'=>['imagify',1]],'Loading...'=>['urls'=>['/zh-hant/my-account/'],'names'=>[],'cmp'=>['imagify',1]]]];

@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Load More&hellip;'=>['urls'=>['/zh-hans/','/zh-hans/%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98/'],'names'=>['[sb_instagram_settings]sb_instagram_btn_text'],'cmp'=>['wpml-string-translation',1]],'Follow on Instagram'=>['urls'=>['/zh-hans/','/zh-hans/%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98/'],'names'=>['[sb_instagram_settings]sb_instagram_follow_btn_text'],'cmp'=>['wpml-string-translation',1]]]];

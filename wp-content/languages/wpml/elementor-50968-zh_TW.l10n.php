@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['[show_attribute_products slug="material"]'=>'[show_attribute_products slug="material"]','[show_attribute_products slug="metal"]'=>'[show_attribute_products slug="metal"]','[ti_wishlists_addtowishlist]'=>'[ti_wishlists_addtowishlist]','dynamic-a91b5c5-2bbe48a-text-shortcode'=>'[show_attribute_products slug="material"]','dynamic-a91b5c5-afd8420-text-shortcode'=>'[show_attribute_products slug="metal"]','shortcode-shortcode-8049ab7'=>'[ti_wishlists_addtowishlist]']];

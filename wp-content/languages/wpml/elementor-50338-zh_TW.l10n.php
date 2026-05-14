@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['/portfolio_group/jewellery-exhibitions/'=>'https://eji.com.hk/zh-hant/portfolio_group/%e5%b1%95%e8%a6%bd/','Exhibitions'=>'展覽','Home'=>'首頁','[portfolio_details]'=>'[portfolio_details]','dynamic-dd5d928--html-shortcode'=>'[portfolio_details]','icon-list-text-d56b247-23ba1e0'=>'展覽','icon-list-text-d56b247-24b69d8'=>'首頁','icon-list-url-d56b247-23ba1e0'=>'https://eji.com.hk/zh-hant/portfolio_group/%e5%b1%95%e8%a6%bd/']];

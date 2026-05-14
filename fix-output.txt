@@ -1,0 +1,3542 @@
+=== Product Media Carousel Database Fix ===
+
+Step 1: Creating database table...
+✅ Table created successfully!
+
+Step 2: Migrating ACF video data...
+Found 1899 products with videos
+
+Processing Product ID: 28483
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28534
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28533
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28532
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28531
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28530
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28529
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28516
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28526
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28527
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28528
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28523
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28524
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28522
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28525
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28520
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28519
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28521
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28518
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28517
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28515
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28514
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28513
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28511
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28512
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28509
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28510
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28636
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28637
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28638
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28634
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28633
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28632
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28635
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28631
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28629
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28628
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28627
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28625
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28626
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28622
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28623
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28624
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28621
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28619
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28620
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28618
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28614
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28615
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28616
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28617
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28612
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28613
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28611
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28609
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28610
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24005
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28608
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28607
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28605
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28606
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28602
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28603
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28604
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28601
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28600
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28599
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28598
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28597
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28596
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28595
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28594
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28593
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28592
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28591
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28749
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28750
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28756
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28753
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28744
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28743
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28748
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28747
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28758
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28754
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28752
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28751
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28746
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28745
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28742
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28739
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28738
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28736
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28735
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28734
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28733
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28732
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28731
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28818
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28816
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28817
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28815
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28812
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28808
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28803
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28797
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28794
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28795
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28787
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28788
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28789
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28740
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28737
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28730
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28760
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28762
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28790
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28763
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28798
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28792
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28796
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28759
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28761
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28755
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28741
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28809
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28810
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28811
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28805
+Processing Product ID: 28806
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28802
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28804
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28801
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28783
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28780
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28782
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28777
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28778
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28779
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28776
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28773
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28775
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28934
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28937
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28939
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28942
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 28946
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28948
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28950
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28952
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28954
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28956
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28958
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28960
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29002
+Processing Product ID: 29004
+Processing Product ID: 29006
+Processing Product ID: 29008
+Processing Product ID: 29010
+Processing Product ID: 29012
+Processing Product ID: 29014
+Processing Product ID: 29016
+Processing Product ID: 29017
+Processing Product ID: 29019
+Processing Product ID: 29021
+Processing Product ID: 29023
+Processing Product ID: 29026
+Processing Product ID: 29028
+Processing Product ID: 29031
+Processing Product ID: 29033
+Processing Product ID: 29035
+Processing Product ID: 29037
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29039
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29044
+Processing Product ID: 29046
+Processing Product ID: 29048
+Processing Product ID: 29050
+Processing Product ID: 29052
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29054
+Processing Product ID: 29056
+Processing Product ID: 29058
+Processing Product ID: 29060
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28098
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28630
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29135
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27912
+Processing Product ID: 27887
+Processing Product ID: 27863
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27997
+Processing Product ID: 28084
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28056
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28048
+Processing Product ID: 28040
+Processing Product ID: 28032
+Processing Product ID: 27904
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27959
+Processing Product ID: 27838
+Processing Product ID: 24505
+Processing Product ID: 27829
+Processing Product ID: 29679
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29681
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29699
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29696
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29697
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29695
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29694
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29693
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29691
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27932
+Processing Product ID: 28104
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28100
+Processing Product ID: 27935
+Processing Product ID: 29722
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29724
+Processing Product ID: 29726
+Processing Product ID: 29728
+Processing Product ID: 28230
+Processing Product ID: 28096
+Processing Product ID: 27524
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27541
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27178
+Processing Product ID: 27161
+Processing Product ID: 27162
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27163
+Processing Product ID: 27150
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 27151
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28373
+Processing Product ID: 24022
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24150
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24284
+Processing Product ID: 24289
+Processing Product ID: 28094
+Processing Product ID: 27930
+Processing Product ID: 27928
+Processing Product ID: 27783
+Processing Product ID: 27775
+Processing Product ID: 27767
+Processing Product ID: 27752
+Processing Product ID: 27743
+Processing Product ID: 24450
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24463
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24477
+Processing Product ID: 24543
+Processing Product ID: 24566
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24565
+Processing Product ID: 24592
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24579
+Processing Product ID: 27703
+Processing Product ID: 27484
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 26687
+Processing Product ID: 27473
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24470
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 27181
+Processing Product ID: 27179
+Processing Product ID: 27158
+Processing Product ID: 27156
+Processing Product ID: 27155
+Processing Product ID: 27154
+Processing Product ID: 27152
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27080
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 26758
+Processing Product ID: 26792
+Processing Product ID: 26790
+Processing Product ID: 26788
+Processing Product ID: 26786
+Processing Product ID: 26783
+Processing Product ID: 26781
+Processing Product ID: 26777
+Processing Product ID: 26775
+Processing Product ID: 26772
+Processing Product ID: 26771
+Processing Product ID: 26742
+Processing Product ID: 26779
+Processing Product ID: 26724
+Processing Product ID: 28129
+Processing Product ID: 24229
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 26735
+Processing Product ID: 24293
+Processing Product ID: 24410
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24307
+Processing Product ID: 24325
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24397
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24383
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24374
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24367
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24234
+Processing Product ID: 24300
+Processing Product ID: 24332
+Processing Product ID: 24339
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24425
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24360
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24346
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24353
+Processing Product ID: 24277
+Processing Product ID: 28261
+Processing Product ID: 27967
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27446
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27436
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23953
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23972
+Processing Product ID: 24010
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24018
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24035
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24043
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24053
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24042
+Processing Product ID: 29755
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24519
+Processing Product ID: 24664
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27746
+Processing Product ID: 29758
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29773
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29772
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29770
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23928
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23235
+Processing Product ID: 23299
+Processing Product ID: 23285
+Processing Product ID: 24176
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24201
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24169
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27494
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24143
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23941
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23952
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24006
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24014
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24154
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24132
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24132
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27095
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27512
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27503
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23965
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23960
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23939
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24054
+Processing Product ID: 24080
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24091
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24125
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23976
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23983
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24259
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23975
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24023
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24198
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24187
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23998
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24029
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28023
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29844
+Processing Product ID: 29852
+Processing Product ID: 29854
+Processing Product ID: 29855
+Processing Product ID: 29856
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29865
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29874
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29899
+Processing Product ID: 29909
+Processing Product ID: 29917
+Processing Product ID: 24212
+Processing Product ID: 29960
+Processing Product ID: 29967
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29968
+Processing Product ID: 29969
+Processing Product ID: 29970
+Processing Product ID: 29971
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29993
+Processing Product ID: 29994
+Processing Product ID: 29995
+Processing Product ID: 30000
+Processing Product ID: 30001
+Processing Product ID: 30002
+Processing Product ID: 24436
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24118
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24104
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24437
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24554
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27193
+Processing Product ID: 30093
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30092
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30090
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30088
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30087
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30054
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30053
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30052
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30086
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30085
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30084
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30083
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30082
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30081
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30080
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30076
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30074
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30073
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30072
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30070
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30069
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30068
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30067
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30066
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30065
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30063
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30062
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30061
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30059
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30058
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30055
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30044
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30043
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30040
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30039
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30036
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30035
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30034
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30033
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30032
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30029
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30028
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30027
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30025
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30024
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30022
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30021
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30013
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30014
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30015
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30018
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30091
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30089
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30079
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30075
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30071
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30064
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30060
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30056
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30057
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30051
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30050
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30049
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30048
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30047
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30046
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30041
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30042
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30038
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30037
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30031
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30030
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30026
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30023
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30045
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29775
+Processing Product ID: 29768
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29771
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 29767
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24537
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24314
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23310
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23321
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23331
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23402
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 23401
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24644
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 24457
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24484
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24111
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24238
+Processing Product ID: 27463
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24657
+  ⚠️  Skipped: Invalid video data format
+Processing Product ID: 27159
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27102
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24246
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24411
+Processing Product ID: 27920
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24670
+Processing Product ID: 24491
+Processing Product ID: 24498
+Processing Product ID: 24512
+Processing Product ID: 30246
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30245
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30244
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30243
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30241
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30240
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30242
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30239
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30238
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30236
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30230
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30229
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30228
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30227
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30225
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30224
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30222
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30221
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30220
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30218
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30217
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30216
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30215
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30214
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30213
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30212
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30211
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30209
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30207
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30205
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30204
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30203
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30202
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30201
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30200
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30198
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30199
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30196
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30197
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30195
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30193
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30194
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30191
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30192
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30189
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30190
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30188
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30187
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30185
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30184
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30183
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30182
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30181
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30179
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30180
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30178
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30177
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30176
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30175
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30173
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30174
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30169
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30171
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30170
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30167
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30168
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30166
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30165
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30164
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30163
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30162
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30161
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30160
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30159
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30158
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30152
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30154
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30153
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30151
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30150
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30149
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30147
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30145
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30146
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30144
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30143
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30142
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30141
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30140
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30139
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30138
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30137
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30136
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30135
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30134
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30133
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30132
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30254
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30291
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30294
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30296
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30301
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30306
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30308
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30320
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30322
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30016
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30359
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30360
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30361
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30371
+Processing Product ID: 30383
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30382
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30379
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30380
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30377
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30378
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30375
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30374
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30376
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30373
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30372
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30275
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30274
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30273
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30272
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30268
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30265
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30264
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30263
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30262
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30261
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30260
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30467
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30468
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30470
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30459
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30458
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30474
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30475
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30473
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30464
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30465
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30466
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30463
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30461
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30462
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30455
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30456
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30457
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30454
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30483
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30482
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30471
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30472
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30460
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30516
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30515
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30514
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30513
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30512
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30511
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30510
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30509
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30507
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30508
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30506
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30505
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30651
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30654
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30656
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30657
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30658
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30234
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30231
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30232
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30233
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30235
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30845
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30844
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30843
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30842
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30841
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30839
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30248
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30250
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30251
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30252
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30253
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30964
+Processing Product ID: 30966
+Processing Product ID: 30968
+Processing Product ID: 30255
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30256
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30249
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30469
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30237
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 24216
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30267
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31277
+Processing Product ID: 31262
+Processing Product ID: 31264
+Processing Product ID: 31269
+Processing Product ID: 31267
+Processing Product ID: 30017
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31296
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31298
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31299
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 30266
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31300
+Processing Product ID: 31273
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31297
+Processing Product ID: 31295
+Processing Product ID: 31294
+Processing Product ID: 31293
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31272
+Processing Product ID: 31271
+Processing Product ID: 31270
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31289
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31288
+Processing Product ID: 31287
+Processing Product ID: 31285
+Processing Product ID: 31280
+Processing Product ID: 31279
+Processing Product ID: 31281
+Processing Product ID: 31286
+Processing Product ID: 31284
+Processing Product ID: 31282
+Processing Product ID: 31283
+Processing Product ID: 31291
+Processing Product ID: 31292
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31290
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31621
+Processing Product ID: 31623
+Processing Product ID: 31669
+Processing Product ID: 31672
+Processing Product ID: 31681
+Processing Product ID: 31866
+Processing Product ID: 31878
+Processing Product ID: 31890
+Processing Product ID: 32100
+Processing Product ID: 32108
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 32332
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 33676
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 33689
+Processing Product ID: 33912
+Processing Product ID: 33936
+Processing Product ID: 33970
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35260
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35278
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35296
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35315
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35333
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35351
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35387
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35404
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35422
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27978
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28013
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31261
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27950
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 35554
+Processing Product ID: 27871
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28005
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27989
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 31263
+Processing Product ID: 31265
+Processing Product ID: 31266
+Processing Product ID: 31268
+Processing Product ID: 36470
+Processing Product ID: 36490
+Processing Product ID: 36508
+Processing Product ID: 36526
+Processing Product ID: 36544
+Processing Product ID: 36562
+Processing Product ID: 36580
+Processing Product ID: 36598
+Processing Product ID: 36616
+Processing Product ID: 36634
+Processing Product ID: 36652
+Processing Product ID: 36670
+Processing Product ID: 36688
+Processing Product ID: 36706
+Processing Product ID: 36724
+Processing Product ID: 36742
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 36760
+Processing Product ID: 36778
+Processing Product ID: 36796
+Processing Product ID: 36814
+Processing Product ID: 36832
+Processing Product ID: 36850
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 36965
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 36983
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37009
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37124
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37141
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37159
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37176
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37193
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37210
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37227
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37245
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37264
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37281
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37298
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37299
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37334
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37359
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37376
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37393
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37427
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37817
+Processing Product ID: 37816
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37815
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37814
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37811
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37812
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37810
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37808
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37809
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37807
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37805
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37806
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37804
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 37803
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38103
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38120
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38137
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38154
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38171
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38188
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38205
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38223
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38254
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38271
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38288
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38306
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38323
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38356
+Processing Product ID: 38367
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38384
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/gXWmf-YIPv4?feature=share
+Processing Product ID: 38401
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38418
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38435
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38452
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38469
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/TNNuW_Up7iY?feature=share
+Processing Product ID: 38486
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38503
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38520
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38538
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38549
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38560
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38571
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38582
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38593
+Processing Product ID: 38604
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38615
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38626
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38637
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38648
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38715
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38726
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38737
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38748
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38759
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38770
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38781
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38792
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38803
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38814
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38825
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38850
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38861
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38872
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38883
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38894
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38911
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 38945
+Processing Product ID: 38979
+Processing Product ID: 38990
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39001
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39012
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39023
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39034
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39045
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39056
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39067
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39078
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39089
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39100
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39123
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39149
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39166
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39183
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39200
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39217
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39251
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39262
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39273
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39284
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39295
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39312
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39329
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39346
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39363
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39380
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39397
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39414
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39425
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39436
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39447
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39472
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39483
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39494
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39505
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39516
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39541
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39566
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39583
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39600
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39617
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39628
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39639
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39650
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39661
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39672
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39683
+Processing Product ID: 39694
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39705
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39716
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39727
+Processing Product ID: 39738
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39774
+Processing Product ID: 39785
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 39796
+Processing Product ID: 39807
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40102
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40322
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40339
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40356
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40373
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40390
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40407
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40424
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40441
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40458
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40492
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40543
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40560
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40577
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40611
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40628
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40645
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40662
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40679
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40696
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40713
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40730
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40747
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40764
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40781
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40798
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40815
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40832
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40849
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40883
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40900
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40917
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40934
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40951
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40968
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 40985
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41002
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41019
+Processing Product ID: 41036
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41043
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41050
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41057
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41285
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42515
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42374
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42498
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42419
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42391
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42363
+Processing Product ID: 42352
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42341
+Processing Product ID: 42313
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42302
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42212
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42195
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42042
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42059
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42076
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42093
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42161
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42178
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42223
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42240
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42257
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42430
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42481
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41319
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41467
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41520
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41353
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41571
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41622
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41554
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41605
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41944
+Processing Product ID: 41973
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42025
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41537
+Processing Product ID: 41588
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/EOLfAtvuAd0
+Processing Product ID: 41902
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41990
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41933
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41956
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42008
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41639
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41656
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41673
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41690
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41707
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41724
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41741
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41758
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41769
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41780
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41791
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41802
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41813
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41824
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41835
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41846
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41857
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41868
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41879
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41890
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42800
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42802
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42805
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42807
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42810
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42812
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42814
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42817
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42820
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42823
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42826
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42829
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 42832
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 41478
+Processing Product ID: 41336
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/twZilY-MnCw
+Processing Product ID: 28110
+Processing Product ID: 43169
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/4NQvbE6i6UY?feature=share
+Processing Product ID: 43179
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/eBxaV78XLwU?feature=share
+Processing Product ID: 43224
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/9WcHB81Jsrk?feature=share
+Processing Product ID: 43236
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/P6976ESMbME?feature=share
+Processing Product ID: 43254
+Processing Product ID: 43266
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/5E2DektRYdc?feature=share
+Processing Product ID: 43284
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/3TfX5uZjDXQ?feature=share
+Processing Product ID: 43296
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/p33X13MO_K4?feature=share
+Processing Product ID: 43314
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/FKa26pLqmv8?feature=share
+Processing Product ID: 43332
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/Ac2bmrNTzxc?feature=share
+Processing Product ID: 43344
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/gIKsPzzlnT4?feature=share
+Processing Product ID: 43356
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/bqBLofyJSqo?feature=share
+Processing Product ID: 43368
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/OhJNCKpxds0?feature=share
+Processing Product ID: 43386
+Processing Product ID: 43417
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/AD7yRu4n114?feature=share
+Processing Product ID: 43429
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/BfwFuwcOM5Y?feature=share
+Processing Product ID: 43441
+Processing Product ID: 43453
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/H7g0v-87c4M?feature=share
+Processing Product ID: 43468
+Processing Product ID: 43480
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/HWcz664IBHM?feature=share
+Processing Product ID: 43491
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/JuGOnb1v1TM?feature=share
+Processing Product ID: 43503
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/iN6tOT4vydY?feature=share
+Processing Product ID: 43518
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/DWwZgHKxPWY?feature=share
+Processing Product ID: 43530
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/60ZH_2vcwk4?feature=share
+Processing Product ID: 43542
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/9jwgWFtGXC0?feature=share
+Processing Product ID: 43554
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/yfoD8GE7kq8?feature=share
+Processing Product ID: 43566
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/1QIbmDWJsFI?feature=share
+Processing Product ID: 43578
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/nGPdzZrgKjA?feature=share
+Processing Product ID: 43590
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/uil6q1gmbWY?feature=share
+Processing Product ID: 43602
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 43614
+Processing Product ID: 43626
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/vLttBTiXvYk?feature=share
+Processing Product ID: 43638
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/eaqOX1p2mtQ?feature=share
+Processing Product ID: 43650
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/N2hfAdcp0uo?feature=share
+Processing Product ID: 43662
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/zqExirjOu8Q?feature=share
+Processing Product ID: 43675
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/eclV93WJuBk?feature=share
+Processing Product ID: 43687
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/WZZFRHKJuFI?feature=share
+Processing Product ID: 43805
+Processing Product ID: 43817
+Processing Product ID: 43829
+Processing Product ID: 43841
+Processing Product ID: 43854
+Processing Product ID: 43867
+Processing Product ID: 43879
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/EjvmbjvTudA?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/EjvmbjvTudA
+Processing Product ID: 43891
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/VevIQ2HA5pA?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/VevIQ2HA5pA
+Processing Product ID: 43903
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/S5hyMuA7uKI?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/S5hyMuA7uKI
+Processing Product ID: 43915
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/-VGWusr8fWo?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/-VGWusr8fWo
+Processing Product ID: 43927
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 43940
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/GqQPkI54IzM?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/GqQPkI54IzM
+Processing Product ID: 43952
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/u-ymJFbnR08?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/u-ymJFbnR08
+Processing Product ID: 43964
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/eL5nvoX333w?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/eL5nvoX333w
+Processing Product ID: 43976
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/cyLil6vTcDQ?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/cyLil6vTcDQ
+Processing Product ID: 43988
+  ⚠️  Could not extract video ID from: https://www.youtube.com/shorts/RPCbdSXDOG0?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/RPCbdSXDOG0
+Processing Product ID: 44194
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 44260
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 44272
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 44284
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/6H590A6-7Lg?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/6H590A6-7Lg
+Processing Product ID: 44296
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/HOzMqf9AlsI?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/HOzMqf9AlsI
+Processing Product ID: 44308
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/gLPMync6nwo?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/gLPMync6nwo
+Processing Product ID: 44320
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/AZTsZnbQrww?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/AZTsZnbQrww
+Processing Product ID: 44332
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/Vyv5O_ARKls?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/Vyv5O_ARKls
+Processing Product ID: 44346
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/GuCo7J3MPkQ?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/GuCo7J3MPkQ
+Processing Product ID: 44357
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/SyA0YRoKcp4
+Processing Product ID: 44369
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/0Wmf-Ciz2dA?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/0Wmf-Ciz2dA
+Processing Product ID: 44382
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/xagq-6czNbQ?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/xagq-6czNbQ
+Processing Product ID: 44395
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/dw8epWDE6r8?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/dw8epWDE6r8
+Processing Product ID: 44407
+Processing Product ID: 44418
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/M55e8nLQyH8?feature=share
+Processing Product ID: 44430
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/GsO276meglk?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/GsO276meglk
+Processing Product ID: 44442
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/ku7AffvF94I?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/ku7AffvF94I
+Processing Product ID: 44454
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/pteCkb947qk?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/pteCkb947qk
+Processing Product ID: 44476
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 44488
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/ihib0E-BFho?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/ihib0E-BFho
+Processing Product ID: 44531
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 44543
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 44566
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/exCKBqynlOc?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/exCKBqynlOc
+Processing Product ID: 44584
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/h5jTpH7DGgE?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/h5jTpH7DGgE
+Processing Product ID: 44602
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/xAr51UGvCDE?feature=share
+  ⚠️  Could not extract video ID from: https://youtube.com/shorts/xAr51UGvCDE
+Processing Product ID: 27177
+Processing Product ID: 27175
+Processing Product ID: 27160
+Processing Product ID: 27165
+Processing Product ID: 27166
+Processing Product ID: 27167
+Processing Product ID: 27168
+Processing Product ID: 27164
+Processing Product ID: 28238
+Processing Product ID: 24222
+Processing Product ID: 24245
+Processing Product ID: 24266
+Processing Product ID: 53806
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53818
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53819
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53820
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53839
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53840
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53850
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53858
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53862
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53871
+Processing Product ID: 53879
+Processing Product ID: 53885
+Processing Product ID: 53889
+Processing Product ID: 53893
+Processing Product ID: 53899
+Processing Product ID: 53903
+Processing Product ID: 53908
+Processing Product ID: 53913
+Processing Product ID: 53917
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53923
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53940
+Processing Product ID: 53944
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53946
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53951
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53969
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 53970
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 53974
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 53978
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 53982
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 53993
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 53994
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 53998
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54002
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54006
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54010
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54011
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54016
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54023
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54024
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54029
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54033
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54038
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54043
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54047
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54057
+Processing Product ID: 54082
+Processing Product ID: 54083
+Processing Product ID: 54090
+Processing Product ID: 54091
+Processing Product ID: 54099
+Processing Product ID: 54106
+Processing Product ID: 54107
+Processing Product ID: 54108
+Processing Product ID: 54115
+Processing Product ID: 28211
+Processing Product ID: 28075
+Processing Product ID: 28064
+Processing Product ID: 54152
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54157
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54158
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54162
+Processing Product ID: 54175
+Processing Product ID: 54176
+Processing Product ID: 54185
+Processing Product ID: 54186
+Processing Product ID: 54190
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54197
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54198
+Processing Product ID: 54208
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54212
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54216
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54217
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54221
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54229
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54230
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54237
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54238
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54247
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54248
+Processing Product ID: 54249
+Processing Product ID: 54259
+Processing Product ID: 54263
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54270
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54271
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54278
+Processing Product ID: 54283
+Processing Product ID: 54288
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54292
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54293
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54297
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54301
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54308
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54312
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54313
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54317
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54321
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54322
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54331
+Processing Product ID: 54330
+Processing Product ID: 54407
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27895
+Processing Product ID: 27879
+Processing Product ID: 27733
+Processing Product ID: 27723
+Processing Product ID: 27715
+Processing Product ID: 54502
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54507
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54511
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54515
+Processing Product ID: 54519
+Processing Product ID: 54523
+Processing Product ID: 54529
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54533
+Processing Product ID: 54538
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54542
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54547
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54552
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54556
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 54560
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54565
+Processing Product ID: 54569
+Processing Product ID: 54573
+Processing Product ID: 54577
+Processing Product ID: 54581
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54585
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54589
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54598
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54602
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54606
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54610
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54614
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54618
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54622
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54623
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54627
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54634
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54643
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54650
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54661
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54666
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54670
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54675
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54679
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54683
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54688
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54693
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54697
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54744
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54955
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54979
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54984
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54989
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54993
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 54998
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55002
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55006
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55010
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55019
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55027
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55029
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55033
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55037
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55041
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55048
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55052
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55057
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55062
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55066
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55070
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55092
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55093
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55107
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55108
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55116
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55117
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55126
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55130
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55138
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 55142
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55146
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55150
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 55154
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55162
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55163
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55174
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55178
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55183
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55188
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55195
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55199
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55204
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55232
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55234
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55236
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55239
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55240
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55247
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55248
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55249
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55253
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55322
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55323
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55324
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55325
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55326
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55328
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55329
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55330
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55331
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55332
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55333
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55335
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55395
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55399
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55400
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55402
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55404
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55456
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55457
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55573
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55574
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55575
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55594
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55595
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55596
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55601
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55602
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55606
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55607
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55608
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55610
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55609
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55612
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55611
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55613
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55614
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55615
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55616
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55617
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55702
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55703
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55704
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55705
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55706
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55707
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55708
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55709
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55710
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55711
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55712
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55713
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55714
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55716
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55717
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55715
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55769
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55773
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55768
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55767
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55774
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55772
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55771
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55770
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55778
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55776
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55777
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55775
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55782
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 55781
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55780
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55779
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 28342
+Processing Product ID: 55923
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55922
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55927
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55926
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55925
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55924
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55928
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55930
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55929
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55931
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55932
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55933
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55935
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55934
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55936
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55941
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55937
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55943
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55944
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55942
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55945
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55946
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55947
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55938
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55940
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55939
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55953
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55948
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55949
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55956
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55955
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55954
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55957
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55959
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55958
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55951
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55950
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55961
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55952
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 55960
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27855
+Processing Product ID: 27848
+Processing Product ID: 27821
+Processing Product ID: 27808
+Processing Product ID: 27799
+Processing Product ID: 27791
+Processing Product ID: 56173
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56174
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56175
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56170
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56171
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56172
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56168
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56169
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56167
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56163
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56164
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56165
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56166
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56160
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56161
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56157
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56162
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56158
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56154
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56156
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56155
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56159
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56179
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56183
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56180
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56181
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56182
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56185
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56184
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56187
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56186
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56199
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56188
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56191
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56190
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56189
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56192
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56195
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56193
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56194
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56198
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56197
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56512
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56516
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56514
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56513
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56515
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56517
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56521
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56518
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56519
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56520
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56524
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56522
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56523
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56528
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56526
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56527
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56525
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56511
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56506
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56507
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56508
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56509
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56510
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56573
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 56580
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 56574
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56575
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56576
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56577
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56578
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56579
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56581
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56582
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56583
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56584
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56594
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56585
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56586
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56587
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56588
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56589
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56600
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56596
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56597
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56598
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56599
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56595
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56606
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56601
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56602
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56603
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56604
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56605
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56612
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56607
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56608
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56609
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56610
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56611
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56616
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56613
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56614
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56615
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56622
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56617
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56619
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56620
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56621
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56618
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56628
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56623
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56624
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56625
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56626
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56627
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56632
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56629
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27188
+Processing Product ID: 27189
+Processing Product ID: 27190
+Processing Product ID: 27191
+Processing Product ID: 27192
+Processing Product ID: 27194
+Processing Product ID: 27195
+Processing Product ID: 27183
+Processing Product ID: 56733
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56734
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56736
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56738
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56740
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56741
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56743
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 27184
+Processing Product ID: 28150
+Processing Product ID: 28148
+Processing Product ID: 28112
+Processing Product ID: 28106
+Processing Product ID: 28114
+Processing Product ID: 56829
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56824
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56825
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56823
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56826
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56827
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56828
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56830
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56831
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56832
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56833
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56835
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56834
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56838
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56839
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56837
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56836
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56981
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 56980
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56977
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56974
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56975
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 56973
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 56976
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56978
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56979
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56985
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56982
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56983
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56987
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56986
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56984
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57003
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57006
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57005
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57008
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57011
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57013
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57012
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57014
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57015
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 57007
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 57010
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58109
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58107
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58108
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58111
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58110
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58112
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58113
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58114
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58115
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58116
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58117
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58130
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 58124
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58126
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 58125
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58127
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 58128
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 58129
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 58131
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 58119
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58120
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 56630
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 56631
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58448
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58443
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58444
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58451
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58449
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58450
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58445
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58446
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58447
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58616
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 58610
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58612
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58611
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58613
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58614
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58615
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58620
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 58617
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58618
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58619
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58502
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58498
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58505
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58503
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58504
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58506
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58507
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58499
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58508
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58500
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58501
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58558
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58552
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58553
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58554
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58562
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58559
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58560
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58561
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58555
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58556
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58557
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58689
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 58683
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58684
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58692
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58685
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58690
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58691
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58695
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58693
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58694
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58697
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58696
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58698
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58686
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 58688
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58687
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 58798
+  ⚠️  Could not extract video ID from: No Video
+Processing Product ID: 58792
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58793
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58794
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58802
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58800
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58801
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58806
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58803
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58804
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58805
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58795
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58796
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58797
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58799
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58869
+  ⚠️  Could not extract video ID from: Video not upload
+Processing Product ID: 58863
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58864
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58865
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58873
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58870
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58871
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58872
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58875
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58874
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58866
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58867
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58868
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58918
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58913
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58914
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58921
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58920
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58922
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58919
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58923
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58917
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58916
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58915
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58987
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58981
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58982
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58983
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58992
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58984
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58986
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58989
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58993
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58994
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58991
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58995
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58729
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 58730
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59017
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59012
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59013
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59019
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59018
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59022
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59020
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59021
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59026
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59015
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59014
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59161
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59156
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59157
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59158
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59159
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59160
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59168
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59164
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59162
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59169
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59163
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59170
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59171
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59172
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59165
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59166
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59167
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59189
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59186
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59187
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59188
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59194
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59190
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59191
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59193
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59195
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59192
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59302
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59298
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59300
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59299
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59303
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59304
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59301
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59404
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59405
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59406
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59407
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59309
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59305
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59308
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59310
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59306
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59307
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59314
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59311
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59312
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59313
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59315
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59408
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59409
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59410
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59411
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59415
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59416
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59420
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59424
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59428
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59429
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59430
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59431
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59432
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59433
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59434
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59435
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59436
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59437
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59438
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59442
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59446
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59450
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59454
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59458
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59462
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59463
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59464
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59465
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59466
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59467
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59468
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59469
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59470
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59471
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59322
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59323
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59324
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59325
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59326
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59327
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59328
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59337
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59329
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59330
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59331
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59332
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59333
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59334
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59335
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59475
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59479
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59483
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59487
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59491
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59495
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59499
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59503
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59504
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59630
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59505
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59506
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59507
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59508
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59509
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59510
+  ⚠️  Could not extract video ID from: No Video (to be shoot)
+Processing Product ID: 59348
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59345
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59346
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59347
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59356
+  ⚠️  Could not extract video ID from: Video not upload
+Processing Product ID: 59349
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59350
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59351
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59352
+  ⚠️  Could not extract video ID from: Video not upload
+Processing Product ID: 59353
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59354
+  ⚠️  Skipped: Already migrated
+Processing Product ID: 59355
+  ⚠️  Skipped: Already migrated
+
+=== Migration Complete ===
+✅ Migrated: 0 videos
+⚠️  Skipped: 1482 products
+
+=== Testing Product 59630 ===
+✅ Found 1 media items:
+  - Type: youtube, Value: OIsajGrcVpk, Order: 1000
+
+=== Done! ===
+Please refresh your Elementor editor (Ctrl+F5) to see the changes.

@@ -1,0 +1,217 @@
+# Translation of Plugins - Email Templates Customizer and Designer for WordPress and WooCommerce - Stable (latest release) in Chinese (Taiwan)
+# This file is distributed under the same license as the Plugins - Email Templates Customizer and Designer for WordPress and WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-01-24 22:23:57+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: zh_TW\n"
+"Project-Id-Version: Plugins - Email Templates Customizer and Designer for WordPress and WooCommerce - Stable (latest release)\n"
+
+#. Author URI of the plugin
+#: email-templates.php
+msgid "https://www.wpexperts.io/"
+msgstr "https://www.wpexperts.io/"
+
+#. Plugin Name of the plugin
+#: email-templates.php admin/class-mailtpl-admin.php:66
+#: admin/class-mailtpl-admin.php:67 admin/class-mailtpl-admin.php:191
+msgid "Email Templates"
+msgstr "Email Templates"
+
+#: admin/class-mailtpl-admin.php:192
+msgid "Now you can edit your email template right in the Appearance menu"
+msgstr "網站管理員現在可以在 [外觀] 中為網站編輯電子郵件範本"
+
+#: admin/templates/partials/default-message.php:1
+#: templates/default/includes/email-body.php:15
+msgid "Here you will see the email content that is normally sent in WordPress."
+msgstr "這封測試郵件展示了 WordPress 網站套用電子郵件範本後的郵件內容外觀。"
+
+#: admin/templates/partials/default-message.php:2
+#: templates/default/includes/email-body.php:20
+msgid "The email template is responsive an fully customizable. I hope you enjoy it!"
+msgstr "電子郵件範本為回應式設計且可完全自訂，希望你會喜歡 <a href=\"https://tw.wordpress.org/plugins/email-templates/\" target=\"_blank\">Email Templates</a> 這個外掛。"
+
+#: admin/templates/partials/default-message.php:3
+msgid "We would like to ask you a little favour. If you are happy with the plugin and can take a minute please <a href=\"%s\" target=\"_blank\">leave a nice review</a> on WordPress. It will be a tremendous help for us!"
+msgstr "開發者希望你能幫個小忙，如果你對這個外掛的功能感到滿意，請花幾分鐘時間前往 WordPress 網站<a href=\"%s\" target=\"_blank\">為外掛留個好評</a>，這對開發者來說是極大的幫助。"
+
+#: admin/test.php:25
+msgid "MyTheme Options"
+msgstr "MyTheme 設定"
+
+#: admin/test.php:28
+msgid "Allows you to customize some example settings for MyTheme."
+msgstr "可讓網站管理員自訂 MyTheme 特定的示範設定。"
+
+#: admin/test.php:47 includes/class-mailtpl-woomail-settings.php:1584
+msgid "Link Color"
+msgstr "連結色彩"
+
+#: includes/class-mailtpl-customizer.php:85
+msgid "Within the Email Templates customizer you can change how your WordPress Emails looks. It's fully compatible with WooCommerce and Easy Digital Downloads html emails"
+msgstr "在電子郵件範本外觀自訂器中，網站管理員可以修改 WordPress 網站的電子郵件外觀，且完全相容於 WooCommerce 及 Easy Digital Downloads 的 HTML 電子郵件。"
+
+#: includes/class-mailtpl-customizer.php:101
+msgid "Settings"
+msgstr "設定"
+
+#: includes/class-mailtpl-customizer.php:108
+msgid "Template"
+msgstr "範本"
+
+#: includes/class-mailtpl-customizer.php:115
+msgid "Email Header"
+msgstr "範本頁首"
+
+#: includes/class-mailtpl-customizer.php:122
+msgid "Email Body"
+msgstr "範本內文"
+
+#: includes/class-mailtpl-customizer.php:129
+#: includes/class-mailtpl-woomail-settings.php:134
+msgid "Footer"
+msgstr "範本頁尾"
+
+#: includes/settings/settings-section.php:28
+msgid "From name"
+msgstr "寄件者名稱"
+
+#: includes/settings/settings-section.php:32
+#: includes/settings/settings-section.php:57
+msgid "Default: "
+msgstr "預設值: "
+
+#: includes/settings/settings-section.php:53
+msgid "From Email"
+msgstr "寄件者電子郵件地址"
+
+#: includes/settings/template-section.php:61
+msgid "Email body size"
+msgstr "範本內文寬度"
+
+#: includes/settings/template-section.php:64
+msgid "Choose boxed size"
+msgstr "設定範本內文寬度"
+
+#: includes/settings/body-section.php:82
+#: includes/settings/footer-section.php:344
+#: includes/settings/header-section.php:296
+#: includes/settings/template-section.php:91
+msgid "Background Color"
+msgstr "背景色彩"
+
+#: includes/settings/template-section.php:94
+msgid "Choose email background color"
+msgstr "選取電子郵件背景色彩"
+
+#: includes/settings/template-section.php:356
+msgid "Add custom css. Be aware that this may not work on all email clients."
+msgstr "這個欄位可為電子郵件範本新增自訂 CSS。請注意，並非所有電子郵件用戶端程式均能支援這項功能。"
+
+#: includes/settings/header-section.php:33
+msgid "Add an image to use in header. Leave empty to use text instead"
+msgstr "在範本頁首加入圖片，留空便會顯示圖片替代文字"
+
+#: includes/settings/header-section.php:187
+msgid "Add text to your mail header. Used for alt text when Image it's used"
+msgstr "在範本頁首加入文字，使用圖片時便會成為該圖片的替代文字"
+
+#: includes/settings/header-section.php:249
+msgid "Choose alignment for header"
+msgstr "選取範本頁首對齊方式"
+
+#: includes/settings/header-section.php:299
+msgid "Choose header background color"
+msgstr "選取範本頁首背景色彩"
+
+#: includes/settings/body-section.php:110
+#: includes/settings/footer-section.php:167
+#: includes/settings/header-section.php:213
+msgid "Slide to change text size"
+msgstr "撥動滑桿以變更文字大小"
+
+#: includes/class-mailtpl-woomail-settings.php:2502
+#: includes/settings/body-section.php:136
+#: includes/settings/footer-section.php:242
+#: includes/settings/header-section.php:271
+msgid "Text Color"
+msgstr "文字色彩"
+
+#: includes/settings/header-section.php:274
+msgid "Choose header text color"
+msgstr "選取範本頁首文字色彩"
+
+#: includes/settings/body-section.php:85
+msgid "Choose email body background color"
+msgstr "選取範本內文背景色彩"
+
+#: includes/settings/body-section.php:139
+msgid "Choose body text color"
+msgstr "選取範本內文色彩"
+
+#: includes/settings/body-section.php:161
+msgid "Links Color"
+msgstr "連結色彩"
+
+#: includes/settings/body-section.php:164
+msgid "Choose links color"
+msgstr "選取範本內文連結色彩"
+
+#: includes/class-mailtpl-woomail-settings.php:335
+msgid "Footer text"
+msgstr "範本頁尾文字"
+
+#: includes/settings/footer-section.php:322
+msgid "Change the email footer here"
+msgstr "請於下方欄位輸入範本頁尾文字"
+
+#: includes/settings/footer-section.php:141
+msgid "Choose alignment for footer"
+msgstr "選取範本頁尾對齊方式"
+
+#: includes/settings/footer-section.php:347
+msgid "Choose footer background color"
+msgstr "選取範本頁尾背景色彩"
+
+#: includes/settings/footer-section.php:245
+msgid "Choose footer text color"
+msgstr "選取範本頁尾文字色彩"
+
+#: includes/settings/footer-section.php:377
+msgid "Display a tiny link to the plugin page"
+msgstr "顯示前往外掛說明頁的連結"
+
+#: includes/class-mailtpl-customizer.php:430
+msgid "Save the template and then click the button to send a test email to admin email "
+msgstr "儲存範本後點擊 [傳送] 按鈕，便能傳送測試電子郵件至網站管理員的電子郵件地址"
+
+#: includes/class-mailtpl.php:104 includes/class-mailtpl.php:113
+msgid "Cheatin&#8217; huh?"
+msgstr "很抱歉，無法進行這項操作。"
+
+#: includes/customize-controls/class-send-mail-customize-control.php:9
+msgid "Send"
+msgstr "傳送"
+
+#: includes/customize-controls/class-send-mail-customize-control.php:11
+msgid "Email sent!"
+msgstr "電子郵件已傳送！"
+
+#. Plugin URI of the plugin
+#: email-templates.php
+msgid "http://wordpress.org/plugins/email-templates"
+msgstr "https://tw.wordpress.org/plugins/email-templates/"
+
+#. Description of the plugin
+#: email-templates.php
+msgid "Beautify WordPress default emails"
+msgstr "美化 WordPress 預設電子郵件的外觀。"
+
+#: admin/templates/partials/default-message.php:6
+msgid "You can use any of these placeholders in your emails content or templates and they will be automatically replaced"
+msgstr "網站管理員可在電子郵件內容或範本中使用以下變數，這些變數會自動以變數值顯示。"

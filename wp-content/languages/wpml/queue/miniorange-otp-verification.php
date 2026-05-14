@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Your OTP has been sent. The next OTP can be sent after {minutes}:{seconds} minutes'=>['urls'=>[],'names'=>[],'cmp'=>['miniorange-otp-verification',1]],'You have exceeded the limit to send OTP. Please wait for {minutes}:{seconds} minutes'=>['urls'=>[],'names'=>[],'cmp'=>['miniorange-otp-verification',1]],'The next OTP can be sent after {minutes}:{seconds} minutes'=>['urls'=>[],'names'=>[],'cmp'=>['miniorange-otp-verification',1]]]];

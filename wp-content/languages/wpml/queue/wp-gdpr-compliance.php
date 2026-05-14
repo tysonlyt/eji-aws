@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['By using this form you agree with the storage and handling of your data by this website.'=>['urls'=>[],'names'=>[],'cmp'=>['wp-gdpr-compliance',1]],'Please accept the privacy policy'=>['urls'=>[],'names'=>[],'cmp'=>['wp-gdpr-compliance',1]],'You need to accept this checkbox'=>['urls'=>[],'names'=>[],'cmp'=>['wp-gdpr-compliance',1]],'published\\4admin'=>['urls'=>[],'names'=>[],'cmp'=>['wp-gdpr-compliance',1]],'Once a month\\4admin'=>['urls'=>[],'names'=>[],'cmp'=>['wp-gdpr-compliance',1]]]];

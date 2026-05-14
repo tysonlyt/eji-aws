@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['/portfolio_group/jewellery-exhibitions/'=>'https://eji.com.hk/zh-hans/portfolio_group/%e5%b1%95%e8%a7%88/','Exhibitions'=>'展览','Home'=>'首页','[portfolio_details]'=>'[portfolio_details]','dynamic-dd5d928--html-shortcode'=>'[portfolio_details]','icon-list-text-d56b247-23ba1e0'=>'展览','icon-list-text-d56b247-24b69d8'=>'首页','icon-list-url-d56b247-23ba1e0'=>'https://eji.com.hk/zh-hans/portfolio_group/%e5%b1%95%e8%a7%88/']];

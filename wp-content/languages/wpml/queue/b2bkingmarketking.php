@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Show dynamic rules to vendors'=>['urls'=>['/wp-admin/admin-ajax.php?action=as_async_request_queue_runner&nonce=75c3d9d953'],'names'=>[],'cmp'=>['codecanyon-fMbF4Z2O-b2bking-the-ultimate-woocommerce-b2b-plugin',1]],'Allow vendors to set product visibility'=>['urls'=>['/wp-admin/admin-ajax.php?action=as_async_request_queue_runner&nonce=75c3d9d953'],'names'=>[],'cmp'=>['codecanyon-fMbF4Z2O-b2bking-the-ultimate-woocommerce-b2b-plugin',1]]]];

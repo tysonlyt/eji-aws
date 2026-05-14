@@ -1,0 +1,235 @@
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => 0845aaac04
+            [page_id] => 52634
+            [product_ids] => Array
+                (
+                    [0] => 42832
+                    [1] => 40102
+                    [2] => 37141
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-05-29 10:27:01
+    [user] => 271
+    [referrer] => https://eji.com.hk/testing-20250529/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => d80660f81f
+            [page_id] => 52635
+            [product_ids] => Array
+                (
+                    [0] => 44382
+                    [1] => 44357
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-05-30 11:52:13
+    [user] => 271
+    [referrer] => https://eji.com.hk/testing-20250530/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => abf92b8c38
+            [page_id] => 52914
+            [product_ids] => Array
+                (
+                    [0] => 44584
+                    [1] => 44566
+                    [2] => 44543
+                    [3] => 44602
+                    [4] => 44531
+                    [5] => 44488
+                    [6] => 44395
+                    [7] => 44357
+                    [8] => 44296
+                    [9] => 44308
+                    [10] => 44242
+                    [11] => 43903
+                    [12] => 43829
+                    [13] => 44194
+                    [14] => 44260
+                    [15] => 43952
+                    [16] => 43940
+                    [17] => 43854
+                    [18] => 43805
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-06-09 23:48:21
+    [user] => 1
+    [referrer] => https://eji.com.hk/new-test-company/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => fde7aefb0d
+            [page_id] => 52637
+            [product_ids] => Array
+                (
+                    [0] => 44602
+                    [1] => 44584
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-06-26 12:59:30
+    [user] => 1
+    [referrer] => https://eji.com.hk/sunnyside-ltd/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => 6a00ea4328
+            [page_id] => 53494
+            [product_ids] => Array
+                (
+                    [0] => 44224
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-07-22 11:25:37
+    [user] => 1
+    [referrer] => https://eji.com.hk/testing-20250722/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => 6a00ea4328
+            [page_id] => 53494
+            [product_ids] => Array
+                (
+                    [0] => 44212
+                    [1] => 44224
+                    [2] => 44242
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-07-22 11:26:42
+    [user] => 1
+    [referrer] => https://eji.com.hk/testing-20250722/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => c59698af90
+            [page_id] => 55077
+            [product_ids] => Array
+                (
+                    [0] => 53839
+                    [1] => 54581
+                    [2] => 54744
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2025-08-15 16:15:59
+    [user] => 238
+    [referrer] => https://eji.com.hk/houlden-group-september-2025/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [page_id] => 59634
+            [nonce] => 
+            [product_ids] => Array
+                (
+                    [0] => 59630
+                    [1] => 59510
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2026-02-13 14:29:38
+    [user] => 238
+    [referrer] => https://eji.com.hk/2025-q3-eji-bridal-collection/
+)
+
+
+Array
+(
+    [request] => Array
+        (
+            [action] => ucp_send_wishlist_email
+            [nonce] => 95bc562d6d
+            [page_id] => 59633
+            [product_ids] => Array
+                (
+                    [0] => 59351
+                    [1] => 59354
+                )
+
+            [woocommerce-login-nonce] => 
+            [_wpnonce] => 
+            [woocommerce-reset-password-nonce] => 
+        )
+
+    [time] => 2026-02-13 14:38:50
+    [user] => 0
+    [referrer] => https://eji.com.hk/2025-q3-eji-new-collections/
+)
+
+

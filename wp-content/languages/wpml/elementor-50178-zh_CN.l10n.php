@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['It seems we can’t find what you’re looking for.'=>'看来我们找不到您要找的东西。','Load More'=>'加载更多','Next'=>'下一页','No more posts to show'=>'不再显示帖子','Previous'=>'上一页','load_more_no_posts_custom_message-loop-grid-aceef9b'=>'不再显示帖子','nothing_found_message_text-loop-grid-aceef9b'=>'看来我们找不到您要找的东西。','pagination_next_label-loop-grid-aceef9b'=>'下一页','pagination_prev_label-loop-grid-aceef9b'=>'上一页','text-loop-grid-aceef9b'=>'加载更多']];

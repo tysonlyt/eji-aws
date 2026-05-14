@@ -1,0 +1,671 @@
+# Translation of Plugins - Smash Balloon Social Photo Feed – Easy Social Feeds Plugin - Stable (latest release) in Chinese (Taiwan)
+# This file is distributed under the same license as the Plugins - Smash Balloon Social Photo Feed – Easy Social Feeds Plugin - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-05-22 07:56:35+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: zh_TW\n"
+"Project-Id-Version: Plugins - Smash Balloon Social Photo Feed – Easy Social Feeds Plugin - Stable (latest release)\n"
+
+#: admin/SBI_Admin_Notices.php:391 admin/SBI_Admin_Notices.php:475
+#: admin/SBI_Global_Settings.php:910 admin/SBI_Global_Settings.php:1013
+#: admin/SBI_Global_Settings.php:1028 admin/SBI_Support.php:176
+#: inc/Builder/SBI_Feed_Builder.php:755 inc/Builder/SBI_Tooltip_Wizard.php:130
+#: inc/email.php:63
+msgid "Learn More"
+msgstr "進一步了解"
+
+#: inc/email.php:89
+msgid "Sent from %s"
+msgstr "由《%s》傳送"
+
+#: inc/admin/blocks/class-sbi-blocks.php:93
+msgid "Add Settings"
+msgstr "新增設定"
+
+#: inc/admin/blocks/class-sbi-blocks.php:94
+msgid "Shortcode Settings"
+msgstr "短代碼設定"
+
+#: inc/admin/blocks/class-sbi-blocks.php:96
+msgid "Apply Changes"
+msgstr "套用設定"
+
+#: admin/SBI_About_Us.php:322 admin/SBI_Global_Settings.php:932
+#: inc/admin/actions.php:166
+msgid "Deactivate"
+msgstr "停用"
+
+#: inc/admin/actions.php:168
+msgid "Install Addon"
+msgstr "安裝附加元件"
+
+#: inc/admin/actions.php:169 inc/admin/addon-functions.php:88
+msgid "Could not install addon. Please download from wpforms.com and install manually."
+msgstr "無法安裝外掛。請從 wpforms.com 下載並進行手動安裝。"
+
+#: inc/admin/actions.php:170
+msgid "Could not install a plugin. Please download from WordPress.org and install manually."
+msgstr "無法安裝外掛。請從 WordPress.org 下載並進行手動安裝。"
+
+#: inc/admin/actions.php:171
+msgid "Searching Addons"
+msgstr "正在搜尋附加元件..."
+
+#: admin/SBI_oEmbeds.php:215 admin/views/support/support-tools.php:105
+#: inc/admin/actions.php:173 inc/Builder/SBI_Feed_Builder.php:771
+msgid "Cancel"
+msgstr "取消"
+
+#: inc/admin/actions.php:174
+msgid "Close"
+msgstr "關閉"
+
+#: inc/admin/actions.php:176
+msgid "Almost Done"
+msgstr "即將完成"
+
+#: inc/admin/actions.php:177
+msgid "Oops!"
+msgstr "很抱歉！"
+
+#: inc/admin/actions.php:178
+msgid "OK"
+msgstr "確定"
+
+#: inc/admin/actions.php:179
+msgid "Install and Activate"
+msgstr "安裝並啟用"
+
+#: inc/class-sb-instagram-posts-manager.php:1035
+#: inc/class-sb-instagram-posts-manager.php:1071
+msgid "View Feed and Retry"
+msgstr "檢視資訊提供並重試"
+
+#: inc/admin/addon-functions.php:28
+msgid "Plugin deactivated."
+msgstr "外掛已停用。"
+
+#: inc/admin/addon-functions.php:30
+msgid "Addon deactivated."
+msgstr "附加元件已停用。"
+
+#: inc/admin/addon-functions.php:63
+msgid "Plugin activated."
+msgstr "外掛已啟用。"
+
+#: inc/admin/addon-functions.php:65
+msgid "Addon activated."
+msgstr "附加元件已啟用。"
+
+#: admin/SBI_Upgrader.php:237 admin/SBI_Upgrader.php:294
+#: inc/admin/addon-functions.php:168
+msgid "Plugin installed & activated."
+msgstr "外掛已安裝並完成啟用。"
+
+#: inc/admin/addon-functions.php:168
+msgid "Addon installed & activated."
+msgstr "附加元件已安裝並完成啟用。"
+
+#: inc/admin/addon-functions.php:176
+msgid "Plugin installed."
+msgstr "外掛已安裝。"
+
+#: inc/admin/addon-functions.php:176
+msgid "Addon installed."
+msgstr "附加元件已安裝。"
+
+#: admin/SBI_About_Us.php:282
+msgid "WP Mail SMTP"
+msgstr "WP Mail SMTP"
+
+#: admin/SBI_About_Us.php:291
+msgid "RafflePress"
+msgstr "RafflePress"
+
+#: inc/admin/class-sbi-sitehealth.php:47
+msgid "Instagram Feed Errors"
+msgstr "Instagram Feed 發生錯誤"
+
+#: inc/if-functions.php:1408
+msgid "Instagram Feed Critical Issue"
+msgstr "Instagram Feed 重大問題"
+
+#: admin/SBI_About_Us.php:208
+msgid "Custom Facebook Feed"
+msgstr "Custom Facebook Feed"
+
+#: inc/Builder/SBI_Feed_Builder.php:318
+msgid "Custom Facebook Feed Pro"
+msgstr "Custom Facebook Feed Pro"
+
+#: admin/SBI_About_Us.php:217
+msgid "Custom Twitter Feeds"
+msgstr "Custom Twitter Feeds"
+
+#: inc/Builder/SBI_Feed_Builder.php:1194 inc/Builder/SBI_Feed_Builder.php:2082
+msgid "Custom Twitter Feeds is a highly customizable way to display tweets from your Twitter account. Promote your latest content and update your site content automatically."
+msgstr "Custom Twitter Feeds 能以高度可自訂方式顯示指定 Twitter 帳號推文，還能推廣最新內容及自動更新網站內容。"
+
+#: inc/Builder/SBI_Feed_Builder.php:316
+msgid "Custom Twitter Feeds Pro"
+msgstr "Custom Twitter Feeds Pro"
+
+#: admin/SBI_About_Us.php:226 inc/Builder/SBI_Feed_Builder.php:1204
+msgid "Feeds for YouTube"
+msgstr "Feeds for YouTube"
+
+#: admin/SBI_About_Us.php:255 inc/admin/SBI_Onboarding_wizard.php:524
+msgid "WPForms"
+msgstr "WPForms"
+
+#: admin/SBI_About_Us.php:264 inc/admin/SBI_Onboarding_wizard.php:510
+msgid "MonsterInsights"
+msgstr "MonsterInsights"
+
+#: admin/SBI_About_Us.php:273 inc/admin/SBI_Onboarding_wizard.php:552
+msgid "OptinMonster"
+msgstr "OptinMonster"
+
+#: admin/builder/templates/onboarding/success-page.php:50
+#: admin/SBI_About_Us.php:321 admin/SBI_Global_Settings.php:933
+#: inc/admin/actions.php:163 inc/admin/actions.php:181
+#: inc/Builder/SBI_Feed_Builder.php:846 inc/Builder/SBI_Feed_Builder.php:1092
+msgid "Activate"
+msgstr "啟用"
+
+#: inc/admin/actions.php:164
+msgid "Activated"
+msgstr "已啟用"
+
+#: inc/admin/actions.php:167
+msgid "Inactive"
+msgstr "未啟用"
+
+#: admin/SBI_oEmbeds.php:213
+msgid "Install Plugin"
+msgstr "安裝外掛"
+
+#: inc/Builder/SBI_Feed_Builder.php:274 inc/Builder/SBI_Feed_Builder.php:296
+#: inc/Builder/SBI_Feed_Builder.php:338 inc/Builder/SBI_Feed_Builder.php:360
+#: inc/Builder/SBI_Feed_Builder.php:383 inc/Builder/SBI_Feed_Builder.php:406
+#: inc/Builder/SBI_Feed_Builder.php:429 inc/Builder/SBI_Feed_Builder.php:452
+#: inc/Builder/SBI_Feed_Builder.php:878
+msgid "Instagram Stories"
+msgstr "Instagram 限時動態"
+
+#: admin/SBI_Support.php:175
+msgid "Getting Started"
+msgstr "開始使用外掛"
+
+#: admin/SBI_Global_Settings.php:1072
+msgid "Monday"
+msgstr "星期一"
+
+#: admin/SBI_Global_Settings.php:1076
+msgid "Tuesday"
+msgstr "星期二"
+
+#: admin/SBI_Global_Settings.php:1080
+msgid "Wednesday"
+msgstr "星期三"
+
+#: admin/SBI_Global_Settings.php:1084
+msgid "Thursday"
+msgstr "星期四"
+
+#: admin/SBI_Global_Settings.php:1088
+msgid "Friday"
+msgstr "星期五"
+
+#: admin/SBI_Global_Settings.php:1092
+msgid "Saturday"
+msgstr "星期六"
+
+#: admin/SBI_Global_Settings.php:1096
+msgid "Sunday"
+msgstr "星期日"
+
+#: admin/views/support/support-tools.php:135
+msgid "Feed Type"
+msgstr "資訊提供類型"
+
+#: admin/SBI_About_Us.php:58 admin/SBI_About_Us.php:59
+#: admin/SBI_About_Us.php:184 inc/Builder/SBI_Feed_Builder.php:1592
+msgid "About Us"
+msgstr "關於我們"
+
+#: instagram-feed.php:254
+msgid "Weekly"
+msgstr "每週"
+
+#: widget.php:16
+msgid "Display your Instagram feed"
+msgstr "顯示自有的 Instagram 資訊提供"
+
+#: widget.php:42
+msgid "Title:"
+msgstr "標題:"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:598
+msgid "Use Custom Avatar"
+msgstr "使用自訂個人頭像"
+
+#: inc/Builder/SBI_Source.php:392
+msgid "The Instagram account you are logged into is already connected as a \"business\" account. Remove the business account if you'd like to connect as a basic account instead (not recommended)."
+msgstr "目前登入的 Instagram 帳號已連接為商業帳號。如果需要連接為基本帳號 (不建議)，請移除商業帳號。"
+
+#: inc/class-sb-instagram-posts-manager.php:393
+msgid "Error: Cannot retrieve posts for this hashtag."
+msgstr "錯誤: 無法擷取這個主題標籤的貼文。"
+
+#: inc/class-sb-instagram-settings.php:873
+#: inc/class-sb-instagram-settings.php:904
+msgid "plugin Settings page"
+msgstr "外掛 [設定] 頁面"
+
+#: inc/class-sb-instagram-settings.php:907
+msgid "Error: Cannot add access token directly to the shortcode."
+msgstr "錯誤: 無法將存取權杖直接加入短代碼。"
+
+#: inc/class-sb-instagram-settings.php:908
+msgid "Due to recent Instagram platform changes, it's no longer possible to create a feed by adding the access token to the shortcode. Remove the access token from the shortcode and connect an account on the %s instead."
+msgstr "由於近期 Intagram 平台的變更，已不再能將存取權杖加入短代碼中藉以建立資訊提供。請從短代碼中移儲存取權杖，並改以在 %s 上連接帳號。"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:902
+msgid "Medium (320x320)"
+msgstr "中型尺寸 (320x320)"
+
+#: admin/SBI_Global_Settings.php:1041 admin/SBI_Global_Settings.php:1057
+msgid "Initial posts will be loaded using AJAX instead of added to the page directly. If you use page caching, this will allow the feed to update according to the \"Check for new posts every\" setting on the \"Configure\" tab."
+msgstr "最新貼文會使用 AJAX 載入，而不會直接加入頁面。如果這個網站使用頁面快取，便會依據 [設定資訊提供] 分頁中的 [檢查新貼文週期] 設定更新資訊提供資料。"
+
+#: admin/SBI_Global_Settings.php:1031
+msgid "Reset Error Log"
+msgstr "重設錯誤記錄"
+
+#: inc/admin/actions.php:216 inc/class-sb-instagram-posts-manager.php:382
+#: inc/class-sb-instagram-posts-manager.php:398
+#: inc/class-sb-instagram-single.php:182
+msgid "API error %s:"
+msgstr "API 錯誤代碼 %s:"
+
+#: inc/class-sb-instagram-posts-manager.php:385
+msgid "Error: Hashtag limit of 30 unique hashtags per week has been reached."
+msgstr "錯誤: 已達每週 30 個個別主題標籤的數量限制上限。"
+
+#: inc/class-sb-instagram-posts-manager.php:389
+msgid "Error: Connected account for the user %s does not have permission to use this feed type."
+msgstr "錯誤: 使用者 %s 已連接的帳號沒有使用這個資訊提供類型的權限。"
+
+#: inc/admin/actions.php:221 inc/Builder/SBI_Source.php:128
+#: inc/class-sb-instagram-posts-manager.php:358
+msgid "Error connecting to %s."
+msgstr "連接至 %s 發生錯誤。"
+
+#: inc/class-sb-instagram-post.php:463
+msgid "Error updating post."
+msgstr "更新貼文時發生錯誤。"
+
+#: inc/class-sb-instagram-post.php:192 inc/class-sb-instagram-post.php:538
+#: inc/class-sb-instagram-post.php:548
+msgid "Error inserting post."
+msgstr "插入貼文時發生錯誤。"
+
+#: inc/class-sb-instagram-post.php:538
+msgid "No database ID."
+msgstr "找不到指定的資料庫 ID。"
+
+#: inc/class-sb-instagram-settings.php:876
+msgid "Error: There is no connected account for the user %s."
+msgstr "錯誤: 尚未連接至使用者 ID 為 %s 的帳號。"
+
+#: inc/class-sb-instagram-posts-manager.php:390
+msgid "Try using the big blue button on the \"Configure\" tab to reconnect the account and update its permissions."
+msgstr "請使用 [設定資訊提供] 分頁中藍色大型按鈕以重新連接帳號並更新對應的權限。"
+
+#: admin/SBI_Global_Settings.php:968
+msgid "Every hour"
+msgstr "每小時"
+
+#: admin/SBI_Global_Settings.php:969
+msgid "Every 12 hours"
+msgstr "每 12 小時"
+
+#: admin/SBI_Global_Settings.php:970
+msgid "Every 24 hours"
+msgstr "每 24 小時"
+
+#: admin/SBI_Global_Settings.php:1309 admin/SBI_Support.php:405
+msgid "every 30 minutes"
+msgstr "每 30 分鐘"
+
+#: admin/SBI_Global_Settings.php:1310 admin/SBI_Support.php:408
+msgid "every 12 hours"
+msgstr "每 12 小時"
+
+#: admin/SBI_Global_Settings.php:1312 admin/SBI_Support.php:411
+msgid "Next check"
+msgstr "下次檢查時間"
+
+#: admin/SBI_Global_Settings.php:1314
+msgid "Nothing currently scheduled"
+msgstr "目前尚無排程工作"
+
+#: inc/class-sb-instagram-connected-account.php:155
+#: inc/class-sb-instagram-connected-account.php:196
+#: inc/class-sb-instagram-post.php:295
+msgid "Error saving edited image."
+msgstr "儲存已編輯圖片時發生錯誤。"
+
+#: inc/class-sb-instagram-connected-account.php:203
+#: inc/class-sb-instagram-post.php:303
+msgid "Error editing image."
+msgstr "編輯圖片時發生錯誤。"
+
+#: admin/SBI_Global_Settings.php:967 instagram-feed.php:250
+msgid "Every 30 minutes"
+msgstr "每 30 分鐘"
+
+#: inc/class-sb-instagram-feed.php:1476 inc/class-sb-instagram-feed.php:1477
+#: inc/class-sb-instagram-posts-manager.php:1051
+#: inc/class-sb-instagram-settings.php:953
+msgid "Click here to troubleshoot"
+msgstr "點擊這裡以進行疑難排解"
+
+#: inc/class-sb-instagram-feed.php:1285
+msgid "No posts found."
+msgstr "找不到符合條件的貼文。"
+
+#: inc/class-sb-instagram-feed.php:1474
+msgid "Error: No posts found."
+msgstr "錯誤: 找不到符合條件的貼文。"
+
+#: inc/class-sb-instagram-feed.php:1475
+msgid "Make sure this account has posts available on instagram.com."
+msgstr "請確認這個帳號在 instagram.com 有可用的貼文。"
+
+#: inc/class-sb-instagram-posts-manager.php:634 instagram-feed.php:311
+#: instagram-feed.php:333
+msgid "There was an error creating the folder for storing resized images."
+msgstr "建立儲存調整大小圖片的資料夾時發生錯誤。"
+
+#: instagram-feed.php:459 instagram-feed.php:486
+msgid "There was an error when trying to create the database tables used for resizing images."
+msgstr "建立用於調整大小圖片的資料表時發生錯誤。"
+
+#: templates/item.php:33 templates/item.php:44
+msgid "Instagram post %s"
+msgstr "Instagram 貼文 ID: %s"
+
+#. Plugin Name of the plugin
+#: instagram-feed.php
+msgid "Smash Balloon Instagram Feed"
+msgstr "Smash Balloon Instagram Feed"
+
+#: inc/Builder/SBI_Feed_Builder.php:952
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:255
+msgid "Hashtag"
+msgstr "主題標籤"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:176
+msgid "Loop Type"
+msgstr "循環播放方式"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:179
+msgid "Rewind"
+msgstr "倒轉播放"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:180
+msgid "Infinity"
+msgstr "無限循環播放"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:253
+msgid "Pattern"
+msgstr "固定間隔"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:254
+msgid "Post ID"
+msgstr "貼文 ID"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:275
+msgid "Highlight every"
+msgstr "強調顯示間隔數量為每"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:583
+msgid "Header Size"
+msgstr "標題文字大小"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:585
+msgid "Small"
+msgstr "小型"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:586
+msgid "Medium"
+msgstr "中型"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:587
+msgid "Large"
+msgstr "大型"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:798
+msgid "Standard"
+msgstr "標準"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:809
+msgid "Centered"
+msgstr "置中"
+
+#: inc/Builder/SBI_Feed_Builder.php:1447
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:109
+msgid "Grid"
+msgstr "格狀顯示"
+
+#: inc/Builder/SBI_Feed_Builder.php:1448
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:121
+msgid "Masonry"
+msgstr "柱狀顯示"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:127
+msgid "Highlight"
+msgstr "強調顯示"
+
+#: inc/Builder/SBI_Feed_Builder.php:746
+msgid "Remove"
+msgstr "移除"
+
+#: inc/Builder/SBI_Feed_Builder.php:970
+msgid "Connect an Instagram Account"
+msgstr "連接 Instagram 帳號"
+
+#: admin/SBI_Support.php:188
+msgid "Days"
+msgstr "天"
+
+#: admin/SBI_Global_Settings.php:980 inc/admin/class-sbi-new-user.php:372
+#: inc/admin/class-sbi-notifications.php:651
+msgid "No"
+msgstr "否"
+
+#: inc/class-sb-instagram-posts-manager.php:357
+#: inc/class-sb-instagram-posts-manager.php:381
+msgid "Feed will not update."
+msgstr "資訊提供不會進行更新。"
+
+#: inc/if-functions.php:57 inc/if-functions.php:549
+msgid "This error message is only visible to WordPress admins"
+msgstr "只有 WordPress 網站管理員能看到這項錯誤訊息"
+
+#: admin/SBI_About_Us.php:200 inc/admin/actions.php:25 inc/admin/actions.php:26
+#: inc/admin/class-sbi-sitehealth.php:62
+#: inc/Integrations/Divi/SBInstagramFeed.php:51
+#: inc/Integrations/Elementor/SBI_Elementor_Widget.php:57 widget.php:15
+msgid "Instagram Feed"
+msgstr "Instagram Feed"
+
+#: admin/SBI_Global_Settings.php:775 inc/admin/actions.php:138
+#: inc/Builder/SBI_Feed_Builder.php:717 inc/Builder/SBI_Feed_Builder.php:730
+#: inc/Builder/SBI_Feed_Builder.php:1393 inc/Builder/SBI_Feed_Builder.php:1434
+#: inc/Builder/SBI_Feed_Builder.php:1589
+#: inc/Builder/Tabs/SBI_Builder_Customizer_Tab.php:33
+msgid "Settings"
+msgstr "設定"
+
+#: inc/if-functions.php:1689
+msgid "Load More..."
+msgstr "載入更多..."
+
+#: inc/class-sb-instagram-settings.php:1094 inc/if-functions.php:1705
+msgid "Follow on Instagram"
+msgstr "在 Instagram 上追蹤"
+
+#: admin/SBI_Support.php:61 admin/SBI_Support.php:62 admin/SBI_Support.php:174
+#: inc/Builder/SBI_Feed_Builder.php:1593
+msgid "Support"
+msgstr "技術支援"
+
+#: admin/SBI_Global_Settings.php:979 inc/admin/class-sbi-new-user.php:366
+#: inc/admin/class-sbi-notifications.php:645
+msgid "Yes"
+msgstr "是 "
+
+#: inc/Builder/SBI_Feed_Builder.php:777
+msgid "General"
+msgstr "一般"
+
+#: inc/Builder/SBI_Feed_Builder.php:1445
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:103
+msgid "Layout"
+msgstr "版面配置"
+
+#: inc/Builder/SBI_Feed_Builder.php:739
+#: inc/Builder/Tabs/SBI_Settings_Tab.php:188
+msgid "Photos"
+msgstr "照片"
+
+#: inc/Builder/SBI_Feed_Builder.php:1439 inc/Builder/SBI_Feed_Builder.php:1640
+#: inc/Builder/SBI_Feed_Builder.php:1754
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:43
+#: inc/class-sb-instagram-feed-locator.php:646
+msgid "Header"
+msgstr "標題"
+
+#: admin/SBI_Global_Settings.php:1002
+msgid "Custom CSS"
+msgstr "自訂 CSS"
+
+#: inc/Builder/Tabs/SBI_Settings_Tab.php:292
+msgid "Random"
+msgstr "隨機"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:900
+msgid "Auto-detect (recommended)"
+msgstr "自動偵測 (建議)"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:903
+msgid "Full size (640x640)"
+msgstr "完整尺寸 (640x640)"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:1070
+msgid "Information to display"
+msgstr "顯示資訊項目"
+
+#: admin/views/support/support-tools.php:149
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:1078
+msgid "Username"
+msgstr "使用者名稱"
+
+#: inc/Builder/SBI_Feed_Builder.php:756
+msgid "Location"
+msgstr "地點"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:198
+msgid "Show Navigation Arrows"
+msgstr "顯示導覽箭號"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:212
+msgid "Show Pagination"
+msgstr "顯示頁次"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:226
+msgid "Enable Autoplay"
+msgstr "啟用自動播放"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:191
+msgid "Interval Time"
+msgstr "間隔時間"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:669
+msgid "Show Bio Text"
+msgstr "顯示 [個人簡介]"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:794
+msgid "Header Style"
+msgstr "標題樣式"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:803
+msgid "Boxed"
+msgstr "方格"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:640
+msgid "Primary Color"
+msgstr "主要色彩"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:654
+msgid "Secondary Color"
+msgstr "次要色彩"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:941
+msgid "Maximum Text Length"
+msgstr "最大顯示字元數"
+
+#: inc/admin/blocks/class-sbi-blocks.php:95
+msgid "Example"
+msgstr "範例"
+
+#: inc/Builder/SBI_Feed_Builder.php:315
+msgid "Instagram Feed Pro"
+msgstr "Instagram Feed Pro"
+
+#. Plugin URI of the plugin
+#: instagram-feed.php
+msgid "https://smashballoon.com/instagram-feed"
+msgstr "https://smashballoon.com/instagram-feed"
+
+#. Author of the plugin
+#: instagram-feed.php inc/admin/SBI_Onboarding_wizard.php:107
+#: inc/Integrations/Elementor/SBI_Elementor_Base.php:160
+msgid "Smash Balloon"
+msgstr "Smash Balloon"
+
+#. Author URI of the plugin
+#: instagram-feed.php
+msgid "https://smashballoon.com/"
+msgstr "https://smashballoon.com/"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:836
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:1090
+msgid "Caption"
+msgstr "說明文字"
+
+#: inc/Builder/SBI_Feed_Builder.php:1449
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:115
+msgid "Carousel"
+msgstr "輪轉顯示"
+
+#. Description of the plugin
+#: instagram-feed.php
+msgid "Display beautifully clean, customizable, and responsive Instagram feeds."
+msgstr "這個外掛能在網站上展示美觀簡潔、可自訂的回應式設計 Instagram 資訊提供。"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:901
+msgid "Thumbnail (150x150)"
+msgstr "縮圖尺寸 (150x150)"
+
+#: inc/Builder/Tabs/SBI_Customize_Tab.php:1082
+msgid "Date"
+msgstr "發佈日期"

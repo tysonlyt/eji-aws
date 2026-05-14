@@ -1,0 +1,714 @@
+# Translation of Plugins - Schema &amp; Structured Data for WP &amp; AMP - Stable (latest release) in Chinese (Taiwan)
+# This file is distributed under the same license as the Plugins - Schema &amp; Structured Data for WP &amp; AMP - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-04-25 22:58:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: zh_TW\n"
+"Project-Id-Version: Plugins - Schema &amp; Structured Data for WP &amp; AMP - Stable (latest release)\n"
+
+#: modules/elementor/widgets/class-qanda-block.php:271
+msgid "vote"
+msgstr "投票"
+
+#: modules/elementor/widgets/class-qanda-block.php:270
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:12
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:50
+msgid "by"
+msgstr "作者"
+
+#: modules/elementor/widgets/class-qanda-block.php:245
+msgid "By"
+msgstr "作者"
+
+#: modules/elementor/widgets/class-qanda-block.php:199
+msgid "suggested Answers List"
+msgstr "建議的答案清單"
+
+#: modules/elementor/widgets/class-qanda-block.php:152
+#: modules/elementor/widgets/class-qanda-block.php:255
+#: modules/elementor/widgets/class-qanda-block.php:359
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:40
+msgid "Suggested Answers"
+msgstr "建議的答案"
+
+#: modules/elementor/widgets/class-qanda-block.php:138
+msgid "Accepted Answers List"
+msgstr "接受的答案清單"
+
+#: modules/elementor/widgets/class-qanda-block.php:129
+#: modules/elementor/widgets/class-qanda-block.php:190
+msgid "Date Created"
+msgstr "建立日期"
+
+#: modules/elementor/widgets/class-qanda-block.php:91
+#: modules/elementor/widgets/class-qanda-block.php:225
+#: modules/elementor/widgets/class-qanda-block.php:230
+#: modules/elementor/widgets/class-qanda-block.php:318
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:18
+msgid "Accepted Answers"
+msgstr "接受的答案"
+
+#: admin_section/structure-admin.php:941
+#: modules/elementor/widgets/class-qanda-block.php:77
+#: modules/gutenberg/assets/blocks/liveblogposting.js:641
+msgid "Date"
+msgstr "日期"
+
+#: modules/elementor/widgets/class-qanda-block.php:70
+msgid "Enter author name"
+msgstr "輸入作者名字"
+
+#: modules/elementor/widgets/class-qanda-block.php:60
+#: modules/elementor/widgets/class-qanda-block.php:108
+#: modules/elementor/widgets/class-qanda-block.php:169
+#: modules/elementor/widgets/class-qanda-block.php:227
+#: modules/elementor/widgets/class-qanda-block.php:246
+#: modules/elementor/widgets/class-qanda-block.php:345
+#: modules/elementor/widgets/class-qanda-block.php:386
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:14
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:29
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:51
+msgid "Vote"
+msgstr "投票"
+
+#: modules/elementor/widgets/class-qanda-block.php:53
+msgid "Enter Question Description"
+msgstr "輸入問題說明"
+
+#: modules/elementor/widgets/class-qanda-block.php:44
+msgid "Enter Question Name"
+msgstr "輸入問題名稱"
+
+#: modules/elementor/widgets/class-qanda-block.php:18
+msgid "Q&A Block"
+msgstr "Q&A 區塊"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:110
+#: modules/gutenberg/assets/blocks/event.js:401
+#: modules/gutenberg/assets/blocks/liveblogposting.js:578
+msgid "Attendance Mode"
+msgstr "出席模式"
+
+#: modules/elementor/widgets/class-howto-block.php:280
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:314
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:319
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:324
+msgid "minutes"
+msgstr "分"
+
+#: modules/elementor/widgets/class-howto-block.php:221
+#: modules/elementor/widgets/class-howto-block.php:357
+msgid "Material"
+msgstr "材料"
+
+#: modules/elementor/widgets/class-howto-block.php:210
+msgid "Enter material name"
+msgstr "輸入材料名稱"
+
+#: modules/elementor/widgets/class-howto-block.php:208
+msgid "Material Name"
+msgstr "材料名稱"
+
+#: modules/elementor/widgets/class-howto-block.php:199
+msgid "Materials"
+msgstr "材料"
+
+#: modules/elementor/widgets/class-howto-block.php:186
+msgid "Tool"
+msgstr "工具"
+
+#: modules/elementor/widgets/class-howto-block.php:175
+msgid "Enter tool name"
+msgstr "輸入工具名稱"
+
+#: modules/elementor/widgets/class-howto-block.php:173
+msgid "Tool Name"
+msgstr "工具名稱"
+
+#: modules/elementor/widgets/class-howto-block.php:152
+msgid "Step Description. Click the edit button to change this text."
+msgstr "步驟說明. 點擊編輯按鈕以變更此文字."
+
+#: modules/elementor/widgets/class-howto-block.php:151
+msgid "Step Title"
+msgstr "步驟標題"
+
+#: modules/elementor/widgets/class-howto-block.php:127
+msgid "Enter step title"
+msgstr "輸入步驟標題"
+
+#: modules/elementor/widgets/class-howto-block.php:125
+msgid "Step"
+msgstr "步驟"
+
+#: modules/elementor/widgets/class-howto-block.php:116
+#: modules/elementor/widgets/class-howto-block.php:146
+msgid "Steps"
+msgstr "步驟"
+
+#: modules/elementor/widgets/class-howto-block.php:69
+#: modules/elementor/widgets/class-howto-block.php:288
+msgid "Estimate Cost"
+msgstr "預估花費"
+
+#: modules/elementor/widgets/class-howto-block.php:58
+msgid "Minutes"
+msgstr "分"
+
+#: modules/elementor/widgets/class-howto-block.php:49
+msgid "Hours"
+msgstr "小時"
+
+#: modules/elementor/widgets/class-howto-block.php:40
+msgid "Days"
+msgstr "天"
+
+#: admin_section/settings.php:220 admin_section/settings.php:226
+#: admin_section/settings.php:2373
+#: modules/elementor/widgets/class-howto-block.php:274
+msgid "days"
+msgstr "天"
+
+#: modules/elementor/widgets/class-howto-block.php:277
+msgid "hours"
+msgstr "小時"
+
+#: modules/elementor/widgets/class-howto-block.php:32
+#: modules/elementor/widgets/class-howto-block.php:271
+msgid "Time Needed"
+msgstr "所需時間"
+
+#: modules/elementor/widgets/class-howto-block.php:18
+msgid "HowTo Block"
+msgstr "如何做區塊"
+
+#: modules/elementor/widgets/class-faq-block.php:82
+msgid "First Answer. Click the edit button to change this text."
+msgstr "第一個答案. 點擊編輯按鈕以變更此文字."
+
+#: modules/elementor/widgets/class-faq-block.php:81
+msgid "First Question"
+msgstr "第一個問題"
+
+#: modules/elementor/widgets/class-faq-block.php:76
+msgid "Question List"
+msgstr "問題清單"
+
+#: modules/elementor/widgets/class-faq-block.php:32
+msgid "FAQ Block"
+msgstr "FAQ 區塊"
+
+#: modules/divi-builder/includes/modules/FaqBlock/class-saswp-divi-faqblock.php:27
+#: modules/elementor/widgets/class-faq-block.php:67
+#: modules/elementor/widgets/class-howto-block.php:246
+msgid "Order List"
+msgstr "排序清單"
+
+#: modules/divi-builder/includes/modules/FaqBlock/class-saswp-divi-faqblock.php:28
+#: modules/elementor/widgets/class-faq-block.php:68
+#: modules/elementor/widgets/class-howto-block.php:247
+msgid "Unorder List"
+msgstr "未排序清單"
+
+#: modules/divi-builder/includes/modules/FaqBlock/class-saswp-divi-faqblock.php:22
+#: modules/elementor/widgets/class-faq-block.php:63
+#: modules/elementor/widgets/class-howto-block.php:242
+msgid "Order Type"
+msgstr "排序類型"
+
+#: modules/divi-builder/includes/modules/FaqBlock/class-saswp-divi-faqblock.php:15
+#: modules/elementor/widgets/class-faq-block.php:18
+msgid "Faq Block"
+msgstr "Faq 區塊"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:77
+msgid "Input your answer here"
+msgstr "在這裡輸入你的答案"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:74
+#: modules/elementor/widgets/class-faq-block.php:53
+#: modules/elementor/widgets/class-faq-block.php:56
+msgid "Answer"
+msgstr "答案"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:70
+msgid "Input your question here"
+msgstr "在這裡輸入你的問題"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:43
+msgid "Heading Text"
+msgstr "標題文字"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:38
+#: modules/elementor/widgets/class-qanda-block.php:51
+#: modules/elementor/widgets/class-qanda-block.php:100
+#: modules/elementor/widgets/class-qanda-block.php:161
+#: modules/reviews/reviews-setup.php:263
+#: modules/gutenberg/assets/blocks/qanda.js:336
+#: modules/gutenberg/assets/blocks/qanda.js:399
+msgid "Text"
+msgstr "文字"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:26
+msgid "Question Settings"
+msgstr "問題設定"
+
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:25
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:67
+#: modules/elementor/widgets/class-faq-block.php:41
+#: modules/elementor/widgets/class-faq-block.php:44
+#: modules/elementor/widgets/class-qanda-block.php:34
+msgid "Question"
+msgstr "問題"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:900
+msgid "Just Deactivate"
+msgstr "僅停用"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:900
+msgid "Submit and Deactivate"
+msgstr "傳送並停用"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:840
+msgid "Submitting form"
+msgstr "傳送表單"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:800
+msgid "Details (optional)"
+msgstr "詳細說明 (選填)"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:798
+msgid "Didn't work"
+msgstr "無法運作"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:797
+msgid "Only required temporarily"
+msgstr "只是暫時需要"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:796
+msgid "Installed by mistake"
+msgstr "不小心安裝的"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:795
+msgid "Found a better plugin"
+msgstr "找到更好的外掛"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:794
+msgid "Not the features I wanted"
+msgstr "沒有我想要的功能"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:793
+msgid "Lack of documentation"
+msgstr "缺乏說明文件"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:792
+msgid "Set up is too difficult"
+msgstr "設定太困難"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:790
+msgid "Before you deactivate the plugin, would you quickly give us your reason for doing so?"
+msgstr "在停用這個外掛前，能否撥空讓我們瞭解原因？"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:789
+msgid "Sorry to see you go"
+msgstr "很遺憾你不再使用"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:760
+msgid "No Thank You"
+msgstr "不 謝了"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:759
+msgid "Yes Please"
+msgstr "是的 麻煩你"
+
+#. translators: %s: product type
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:752
+msgid "Thank you for opting in to tracking. Would you like to receive occasional news about this %s, including details of new features and special offers?"
+msgstr "感謝您選擇加入追蹤. 您是否想要接收關於 %s 的不定期訊息, 包括新功能及特別優惠的詳細資料?"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:712
+msgid "Sure! I'd love to help"
+msgstr "沒問題! 我很樂意協助"
+
+#. translators: %s: product type
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:700
+msgid "Become a super contributor by opting in to our anonymous %1$s data collection and to our updates. We guarantee no sensitive data is collected."
+msgstr "選擇性的加入我們的 %1$s 匿名資料收集及更新以成為一個超級貢獻者. 我們保證不會有敏感的資料被收集."
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:272
+msgid "We can't detect any product information. This is most probably because you have not included the code snippet."
+msgstr "我們無法偵測任何商品資訊. 最可能的原因是您還沒有加入程式代碼."
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:487
+#: modules/gutenberg/assets/blocks/course.js:217
+msgid "Provider Website"
+msgstr "提供者網站"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:169
+#: modules/gutenberg/assets/blocks/event.js:608
+#: modules/gutenberg/assets/blocks/liveblogposting.js:535
+msgid "Performers"
+msgstr "表演者"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:152
+#: modules/gutenberg/assets/blocks/event.js:537
+#: modules/gutenberg/assets/blocks/liveblogposting.js:464
+msgid "Organizers"
+msgstr "主辦單位"
+
+#. translators: %s: product type
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:703
+msgid "Thank you for installing our %1$s. We'd like your permission to track its usage on your site and subscribe you to our newsletter. We won't record any sensitive data, only information regarding the WordPress environment and %1$s settings, which we will use to help us make improvements to the %1$s. Tracking is completely optional."
+msgstr "感謝您安裝我!的 %1$s. 我們想要您的允許以追蹤它在您網站的用途並訂閱我們的電子報.我們不會記錄任何敏感的資料, 只有關於 WordPress 運行環境資訊以及 %1$s 的設定, 這些將用來協助我們改進 %1$s. 追蹤是完全可選的."
+
+#: admin_section/settings.php:4827
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:160
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:177
+#: modules/gutenberg/assets/blocks/event.js:521
+#: modules/gutenberg/assets/blocks/event.js:592
+#: modules/gutenberg/assets/blocks/liveblogposting.js:448
+#: modules/gutenberg/assets/blocks/liveblogposting.js:519
+msgid "Email"
+msgstr "電子郵件"
+
+#: admin_section/tracking/class-saswp-plugin-usage-tracker.php:713
+msgid "No thanks"
+msgstr "不用了，謝謝"
+
+#: admin_section/settings.php:4839
+#: modules/divi-builder/includes/modules/FaqBlock/class-saswp-divi-faqblock.php:26
+#: modules/elementor/widgets/class-faq-block.php:66
+#: modules/elementor/widgets/class-howto-block.php:245
+msgid "Select"
+msgstr "選擇"
+
+#: admin_section/structure-admin.php:2057
+msgid "Your license key may not belong to this extension."
+msgstr "您的援權金鑰可能不屬於這個擴充功能."
+
+#: modules/elementor/widgets/class-howto-block.php:107
+#: modules/gutenberg/assets/blocks/howto.js:1057
+msgid "Enter how to description"
+msgstr "輸入如何做說明"
+
+#: core/array-list/meta-list.php:64
+msgid "Fixed Image"
+msgstr "固定的圖片"
+
+#: core/array-list/meta-list.php:16
+msgid "Category"
+msgstr "分類"
+
+#: output/class-saswp-output-service.php:79
+#: output/class-saswp-output-service.php:86
+msgid "Advanced Custom Fields"
+msgstr "進階自訂欄位"
+
+#: core/array-list/meta-list.php:58
+msgid "Manual Image URL"
+msgstr "手動圖片網址"
+
+#: core/array-list/meta-list.php:56
+msgid "Manual field"
+msgstr "手動欄位"
+
+#: core/array-list/meta-list.php:51
+msgid "Author image"
+msgstr "作者圖片"
+
+#: core/array-list/meta-list.php:39 core/array-list/meta-list.php:41
+#: core/array-list/meta-list.php:62 core/array-list/meta-list.php:65
+msgid "Custom Field"
+msgstr "自訂欄位"
+
+#: core/array-list/meta-list.php:35
+msgid "Manual Text"
+msgstr "手動文字"
+
+#: core/array-list/meta-list.php:33
+msgid "Manual Field"
+msgstr "手動欄位"
+
+#: core/array-list/meta-list.php:23
+msgid "Last Modify Date"
+msgstr "最後修改日期"
+
+#: core/array-list/meta-list.php:22
+msgid "Publish Date"
+msgstr "發佈日期"
+
+#: core/array-list/meta-list.php:21
+msgid "Author Last Name"
+msgstr "作者姓氏"
+
+#: core/array-list/meta-list.php:20
+msgid "Author First Name"
+msgstr "作者名字"
+
+#: core/array-list/meta-list.php:18
+msgid "Permalink"
+msgstr "永久連結"
+
+#: core/array-list/meta-list.php:17
+msgid "Excerpt"
+msgstr "摘要"
+
+#: core/array-list/meta-list.php:15
+#: modules/divi-builder/includes/modules/FaqBlockChild/class-saswp-divi-faqblockchild.php:32
+msgid "Content"
+msgstr "內容"
+
+#: core/array-list/meta-list.php:13
+msgid "Site URL"
+msgstr "網站網址"
+
+#: core/array-list/meta-list.php:12
+msgid "Tagline"
+msgstr "網站說明"
+
+#: core/array-list/meta-list.php:11
+msgid "Site Title"
+msgstr "網站標題"
+
+#: core/array-list/meta-list.php:9 core/array-list/meta-list.php:48
+msgid "Single Element"
+msgstr "單一元素"
+
+#: core/array-list/meta-list.php:50
+msgid "Featured image"
+msgstr "精選圖片"
+
+#: admin_section/structure-admin.php:927 core/array-list/meta-list.php:19
+msgid "Author Name"
+msgstr "作者名稱"
+
+#: modules/reviews/reviews-setup.php:398
+msgid "Platforms"
+msgstr "平台"
+
+#: modules/reviews/reviews-setup.php:397
+msgid "New Platform Name"
+msgstr "新平台名稱"
+
+#: modules/reviews/reviews-setup.php:396
+msgid "Add New Platform"
+msgstr "新增平台"
+
+#: modules/reviews/reviews-setup.php:395
+msgid "Update Platform"
+msgstr "更新平台"
+
+#: modules/reviews/reviews-setup.php:394
+msgid "Edit Platform"
+msgstr "編輯平台"
+
+#: modules/reviews/reviews-setup.php:393
+msgid "All Platform"
+msgstr "所有平台"
+
+#: modules/reviews/reviews-setup.php:392
+msgid "Search Types"
+msgstr "搜尋類型"
+
+#: modules/reviews/reviews-setup.php:391
+msgctxt "taxonomy singular name"
+msgid "Platform"
+msgstr "平台"
+
+#: modules/reviews/reviews-setup.php:390
+msgctxt "taxonomy general name"
+msgid "Platforms"
+msgstr "平台"
+
+#: modules/reviews/reviews-setup.php:34
+#: modules/gutenberg/assets/blocks/event.js:415
+msgid "Location"
+msgstr "地點"
+
+#: modules/reviews/class-saswp-reviews-widget.php:84
+msgid "Reviews :"
+msgstr "評論"
+
+#: core/array-list/meta-list.php:14
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:396
+#: modules/reviews/reviews-setup.php:262
+msgid "Title"
+msgstr "標題"
+
+#: admin_section/structure-admin.php:2044
+msgid "Invalid license."
+msgstr "無效的授權"
+
+#: admin_section/structure-admin.php:2048
+msgid "Your license is not active for this URL."
+msgstr "您的授權金鑰不是啟用在這個網址"
+
+#: admin_section/structure-admin.php:2054
+msgid "Your license key has reached its activation limit."
+msgstr "您的授權金鑰已經達到它的啟用上限."
+
+#: admin_section/structure-admin.php:2051
+msgid "This appears to be an invalid license key."
+msgstr "這好像是一組無效的授權金鑰"
+
+#. translators: %s: date
+#: admin_section/structure-admin.php:2038
+msgid "Your license key expired on %s."
+msgstr "您的授權金鑰已經在 %s 到期."
+
+#: admin_section/structure-admin.php:1979
+#: admin_section/structure-admin.php:2060
+msgid "An error occurred, please try again."
+msgstr "發生錯誤。請再試一次。"
+
+#: admin_section/structure-admin.php:2041
+msgid "Your license key has been disabled."
+msgstr "這個網站的授權金鑰已停用。"
+
+#. Author of the plugin
+#: structured-data-for-wp.php
+msgid "Magazine3"
+msgstr "Magazine3"
+
+#: modules/elementor/widgets/class-qanda-block.php:115
+#: modules/elementor/widgets/class-qanda-block.php:176
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:176
+#: modules/gutenberg/assets/blocks/event.js:581
+#: modules/gutenberg/assets/blocks/liveblogposting.js:508
+#: modules/gutenberg/assets/blocks/qanda.js:358
+#: modules/gutenberg/assets/blocks/qanda.js:421
+msgid "URL"
+msgstr "網址"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:77
+#: modules/gutenberg/assets/blocks/event.js:308
+msgid "End Date"
+msgstr "結束日期"
+
+#: modules/elementor/widgets/class-howto-block.php:77
+msgid "Currency"
+msgstr "幣值"
+
+#: modules/elementor/widgets/class-howto-block.php:86
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:104
+#: modules/gutenberg/assets/blocks/event.js:371
+msgid "Price"
+msgstr "價格"
+
+#: admin_section/structure-admin.php:926
+#: modules/elementor/widgets/class-qanda-block.php:68
+#: modules/elementor/widgets/class-qanda-block.php:122
+#: modules/elementor/widgets/class-qanda-block.php:183
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:406
+#: modules/gutenberg/assets/blocks/qanda.js:311
+#: modules/gutenberg/assets/blocks/qanda.js:369
+#: modules/gutenberg/assets/blocks/qanda.js:432
+msgid "Author"
+msgstr "作者"
+
+#: modules/elementor/widgets/class-howto-block.php:97
+#: modules/elementor/widgets/class-howto-block.php:105
+#: modules/elementor/widgets/class-howto-block.php:137
+#: modules/rating-box/class-saswp-rating-box-backend.php:138
+#: modules/gutenberg/assets/blocks/course.js:187
+msgid "Description"
+msgstr "說明"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:486
+#: modules/gutenberg/assets/blocks/course.js:202
+msgid "Provider Name"
+msgstr "供應商名稱"
+
+#: admin_section/settings.php:4823
+#: modules/elementor/widgets/class-qanda-block.php:42
+#: modules/gutenberg/assets/blocks/course.js:111
+#: modules/gutenberg/assets/blocks/event.js:417
+#: modules/gutenberg/assets/blocks/event.js:490
+#: modules/gutenberg/assets/blocks/event.js:571
+#: modules/gutenberg/assets/blocks/liveblogposting.js:417
+#: modules/gutenberg/assets/blocks/liveblogposting.js:498
+msgid "Name"
+msgstr "名稱"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:99
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:161
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:243
+#: modules/gutenberg/assets/blocks/event.js:364
+#: modules/gutenberg/assets/blocks/event.js:466
+#: modules/gutenberg/assets/blocks/event.js:510
+#: modules/gutenberg/assets/blocks/liveblogposting.js:437
+msgid "Website"
+msgstr "網站"
+
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:148
+#: modules/gutenberg/includes/class-saswp-gutenberg-render.php:159
+#: modules/gutenberg/assets/blocks/event.js:459
+#: modules/gutenberg/assets/blocks/event.js:500
+#: modules/gutenberg/assets/blocks/liveblogposting.js:427
+msgid "Phone"
+msgstr "電話"
+
+#: core/array-list/meta-list.php:27 core/array-list/meta-list.php:29
+msgid "Taxonomy Term"
+msgstr "分類法項目"
+
+#: admin_section/ajax-selectbox.php:185 admin_section/common-function.php:3172
+#: modules/reviews/class-saswp-reviews-collection.php:807
+#: modules/reviews/reviews-setup.php:601 view/schema-type.php:1279
+msgid "All"
+msgstr "全部"
+
+#: admin_section/plugin-installer/install.php:109
+msgid "Schema and Structured Data Installation Wizard"
+msgstr "架構圖及結構化資料安裝精靈"
+
+#: admin_section/add-schema/add-new.php:133
+msgid "ADD NEW SCHEMA"
+msgstr "新增架構圖"
+
+#: modules/elementor/widgets/class-howto-block.php:164
+#: modules/elementor/widgets/class-howto-block.php:327
+msgid "Tools"
+msgstr "工具"
+
+#: admin_section/settings.php:26 admin_section/settings.php:69
+#: modules/elementor/widgets/class-howto-block.php:234
+#: modules/gutenberg/assets/blocks/event.js:630
+#: modules/gutenberg/assets/blocks/liveblogposting.js:895
+#: modules/gutenberg/assets/blocks/qanda.js:490
+msgid "Settings"
+msgstr "設定"
+
+#. Author URI of the plugin
+#: structured-data-for-wp.php
+msgid "http://structured-data-for-wp.com/"
+msgstr "http://structured-data-for-wp.com/"
+
+#. Plugin Name of the plugin
+#: structured-data-for-wp.php
+msgid "Schema & Structured Data for WP & AMP"
+msgstr "Schema & Structured Data for WP & AMP"
+
+#. Description of the plugin
+#: structured-data-for-wp.php
+msgid "Schema & Structured Data adds Google Rich Snippets markup according to Schema.org guidelines to structure your site for SEO. (AMP Compatible)"
+msgstr "架構圖及結構化資料根據 Schema.org 指導方針加入 Google 複合式資訊卡標記為您的網站架構 SEO. (AMP 相容)"
+
+#: admin_section/add-schema/add-new.php:561
+#: admin_section/plugin-installer/install.php:559
+msgid "Please define default parameters in the form of an array."
+msgstr "請定義用於陣列形式內的預設參數。"
+
+#: admin_section/add-schema/add-new.php:566
+#: admin_section/plugin-installer/install.php:564
+msgid "Please define an SVG icon filename."
+msgstr "請定義 SVG 圖示的檔案名稱。"
+
+#: core/array-list/meta-list.php:52
+msgid "Logo"
+msgstr "標誌"

@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['Company Name'=>'公司名稱','Country and State'=>'國家和州','Enter your first name here...'=>'在這裡輸入您的名字...','Enter your phone here...'=>'在此輸入您的電話...','Enter your postcode / ZIP here...'=>'在此輸入您的郵遞區號/郵遞區號...','Enter your town / city here...'=>'在此輸入您的城鎮/城市...','First Name'=>'名','Last Name'=>'姓','Phone Number'=>'電話號碼','Postcode / ZIP'=>'郵遞區號','Street Address'=>'街道地址','Town / City'=>'城鎮/城市','User Type'=>'使用者類型']];
