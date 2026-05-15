@@ -1,0 +1,131 @@
+/**
+ * CSS用于隐藏unique client page产品中的价格和购物车按钮
+ * 增强版本，增加选择器特异性和网格布局
+ */
+
+/* 隐藏所有可能的价格元素 */
+.ucp-product-price,
+body .ucp-products-grid .ucp-product-price,
+body .ucp-product-item .price,
+body .product .price,
+body.woocommerce ul.products li.product .price,
+.woocommerce-Price-amount,
+.woocommerce ul.products li.product .price {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 隐藏所有可能的购物车按钮 */
+.ucp-add-to-cart,
+body .ucp-products-grid .ucp-add-to-cart,
+body .ucp-product-item .button,
+body .product .button,
+body.woocommerce ul.products li.product .button,
+.add_to_cart_button,
+.woocommerce a.button.add_to_cart_button,
+.woocommerce a.added_to_cart {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 产品卡片布局 - 增强版 */
+body .ucp-products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    grid-gap: 15px !important;
+    margin: 20px 0 !important;
+    width: 100% !important;
+}
+
+body .ucp-product-item {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+    border: 1px solid #eee !important;
+    border-radius: 5px !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: space-between !important;
+    background-color: #fff !important;
+}
+
+body .ucp-product-item:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 产品标题显示 - 增强版 */
+body .ucp-product-title,
+body .ucp-product-item h2.ucp-product-title {
+    width: 100% !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+}
+
+/* 产品标题链接样式 */
+body .ucp-product-title a {
+    color: #333 !important;
+    text-decoration: none !important;
+}
+
+body .ucp-product-title a:hover {
+    color: #0066cc !important;
+}
+
+/* 改进图片显示 - 增强版 */
+body .ucp-product-image {
+    margin-bottom: 10px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding-top: 100% !important; /* 1:1 比例 */
+}
+
+body .ucp-product-image img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+}
+
+body .ucp-product-image:hover img {
+    transform: scale(1.05) !important;
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+    body .ucp-products-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body .ucp-products-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    body .ucp-products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    body .ucp-products-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}

@@ -1,0 +1,54 @@
+<?php
+
+namespace BetterFrameworkPackage\Component\Control\Media;
+
+use BetterFrameworkPackage\Component\Control as LibRoot;
+
+// use standard APIs
+use \BetterFrameworkPackage\Component\Standard\{
+	Control as ControlStandard
+};
+
+class MediaControl extends \BetterFrameworkPackage\Component\Control\BaseDataControl implements
+	\BetterFrameworkPackage\Component\Standard\Control\HaveStyles ,
+	\BetterFrameworkPackage\Component\Standard\Control\HaveScripts {
+
+	/**
+	 * @since 1.0.0
+	 * @return string
+	 */
+	public function control_type(): string {
+
+		return 'media';
+	}
+
+	/**
+	 * @since 1.0.0
+	 * @return string
+	 */
+	public function template_dir(): string {
+
+		return __DIR__ . '/templates';
+	}
+
+	public function scripts_list(): array {
+
+		$this->load_media_assets();
+
+		return [];
+	}
+
+	public function styles_list(): array {
+
+		return [
+			[
+				'id' => 'buttons',
+			],
+		];
+	}
+
+	public function data_type(): string {
+
+		return 'string';
+	}
+}

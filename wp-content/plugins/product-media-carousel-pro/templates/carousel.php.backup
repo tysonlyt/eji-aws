@@ -1,0 +1,460 @@
+<?php
+/**
+ * Product Media Carousel Template
+ * 
+ * Available variables:
+ * $carousel_id - Unique carousel ID
+ * $media_items - Array of media items
+ * $atts - Carousel attributes
+ */
+
+// Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+// Get thumbnail position
+$thumb_position = isset($atts['thumbnail_position']) ? $atts['thumbnail_position'] : 'bottom';
+$navigation_style = isset($atts['navigation_style']) ? $atts['navigation_style'] : 'circle';
+$wrapper_class = 'pmc-carousel-wrapper pmc-thumb-' . $thumb_position . ' pmc-nav-' . $navigation_style;
+
+// Build custom navigation styles
+$nav_custom_styles = '';
+if (!empty($atts['navigation_size']) || !empty($atts['navigation_color']) || !empty($atts['navigation_bg_color']) || !empty($atts['navigation_border_width']) || !empty($atts['navigation_border_color'])) {
+    $nav_custom_styles = '<style>';
+    $nav_custom_styles .= '#' . $carousel_id . ' .pmc-main-carousel .swiper-button-prev,';
+    $nav_custom_styles .= '#' . $carousel_id . ' .pmc-main-carousel .swiper-button-next {';
+    
+    if (!empty($atts['navigation_size'])) {
+        $nav_custom_styles .= 'width: ' . intval($atts['navigation_size']) . 'px;';
+        $nav_custom_styles .= 'height: ' . intval($atts['navigation_size']) . 'px;';
+    }
+    
+    if (!empty($atts['navigation_color'])) {
+        $nav_custom_styles .= 'color: ' . esc_attr($atts['navigation_color']) . ' !important;';
+    }
+    
+    if (!empty($atts['navigation_bg_color'])) {
+        $nav_custom_styles .= 'background: ' . esc_attr($atts['navigation_bg_color']) . ' !important;';
+    }
+    
+    if (!empty($atts['navigation_border_width'])) {
+        $nav_custom_styles .= 'border-width: ' . intval($atts['navigation_border_width']) . 'px;';
+        $nav_custom_styles .= 'border-style: solid;';
+    }
+    
+    if (!empty($atts['navigation_border_color'])) {
+        $nav_custom_styles .= 'border-color: ' . esc_attr($atts['navigation_border_color']) . ' !important;';
+    }
+    
+    $nav_custom_styles .= '}';
+    $nav_custom_styles .= '</style>';
+}
+?>
+
+<?php echo $nav_custom_styles; ?>
+
+<div class="<?php echo esc_attr($wrapper_class); ?>" id="<?php echo esc_attr($carousel_id); ?>">
+    
+    <!-- Main Carousel -->
+    <div class="pmc-main-carousel swiper">
+        <div class="swiper-wrapper">
+            <?php foreach ($media_items as $item): ?>
+                <div class="swiper-slide">
+                    <?php if ($item['type'] === 'image'): ?>
+                        <!-- Image Slide -->
+                        <div class="pmc-slide-image">
+                            <img src="<?php echo esc_url(!empty($item['full_url']) ? $item['full_url'] : $item['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                            <?php if (isset($atts['enable_lightbox']) && $atts['enable_lightbox'] === 'true'): ?>
+                            <a href="<?php echo esc_url(!empty($item['full_url']) ? $item['full_url'] : $item['url']); ?>" 
+                               data-fancybox="gallery-<?php echo esc_attr($carousel_id); ?>" 
+                               class="pmc-zoom-icon"
+                               aria-label="<?php _e('Zoom image', 'product-media-carousel'); ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                                </svg>
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                    <?php elseif ($item['type'] === 'youtube'): ?>
+                        <!-- YouTube Video Slide -->
+                        <div class="pmc-slide-video">
+                            <div class="pmc-video-container">
+                                <?php
+                                // Build YouTube URL with parameters
+                                $youtube_params = array(
+                                    'rel' => 0,
+                                    'modestbranding' => 1,
+                                    'autoplay' => ($atts['youtube_autoplay'] === 'true') ? 1 : 0,
+                                    'loop' => ($atts['youtube_loop'] === 'true') ? 1 : 0,
+                                    'controls' => ($atts['youtube_controls'] === 'true') ? 1 : 0,
+                                    'mute' => ($atts['youtube_mute'] === 'true') ? 1 : 0,
+                                    'iv_load_policy' => 3,
+                                );
+                                
+                                if ($youtube_params['loop'] === 1) {
+                                    $youtube_params['playlist'] = $item['video_id'];
+                                }
+                                
+                                $youtube_url = add_query_arg($youtube_params, $item['embed_url']);
+                                $youtube_url = add_query_arg('enablejsapi', '1', $youtube_url);
+                                $youtube_watch_url = 'https://www.youtube.com/watch?v=' . $item['video_id'];
+                                ?>
+                                <iframe 
+                                    src="<?php echo esc_url($youtube_url); ?>" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    loading="lazy"
+                                    class="pmc-youtube-player">
+                                </iframe>
+                                <?php if (isset($atts['enable_lightbox']) && $atts['enable_lightbox'] === 'true'): ?>
+                                <a href="<?php echo esc_url($youtube_watch_url); ?>" 
+                                   data-fancybox="gallery-<?php echo esc_attr($carousel_id); ?>" 
+                                   class="pmc-zoom-icon"
+                                   aria-label="<?php _e('Open video in lightbox', 'product-media-carousel'); ?>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                                    </svg>
+                                </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php elseif ($item['type'] === 'vimeo'): ?>
+                        <!-- Vimeo Video Slide -->
+                        <div class="pmc-slide-video">
+                            <div class="pmc-video-container">
+                                <?php
+                                $vimeo_params = array(
+                                    'autoplay' => ($atts['youtube_autoplay'] === 'true') ? 1 : 0,
+                                    'loop' => ($atts['youtube_loop'] === 'true') ? 1 : 0,
+                                    'muted' => ($atts['youtube_mute'] === 'true') ? 1 : 0,
+                                    'controls' => ($atts['youtube_controls'] === 'true') ? 1 : 0,
+                                    'title' => 0,
+                                    'byline' => 0,
+                                    'portrait' => 0,
+                                );
+                                
+                                $vimeo_url = 'https://player.vimeo.com/video/' . $item['video_id'];
+                                $vimeo_url = add_query_arg($vimeo_params, $vimeo_url);
+                                $vimeo_watch_url = 'https://vimeo.com/' . $item['video_id'];
+                                ?>
+                                <iframe 
+                                    src="<?php echo esc_url($vimeo_url); ?>" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen
+                                    loading="lazy"
+                                    class="pmc-vimeo-player">
+                                </iframe>
+                                <?php if (isset($atts['enable_lightbox']) && $atts['enable_lightbox'] === 'true'): ?>
+                                <a href="<?php echo esc_url($vimeo_watch_url); ?>" 
+                                   data-fancybox="gallery-<?php echo esc_attr($carousel_id); ?>" 
+                                   class="pmc-zoom-icon"
+                                   aria-label="<?php _e('Open video in lightbox', 'product-media-carousel'); ?>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                                    </svg>
+                                </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php elseif ($item['type'] === 'self_hosted'): ?>
+                        <!-- Self-Hosted Video Slide -->
+                        <div class="pmc-slide-video">
+                            <div class="pmc-video-container">
+                                <video 
+                                    class="pmc-html5-player"
+                                    <?php echo ($atts['youtube_controls'] === 'true') ? 'controls' : ''; ?>
+                                    <?php echo ($atts['youtube_autoplay'] === 'true') ? 'autoplay' : ''; ?>
+                                    <?php echo ($atts['youtube_loop'] === 'true') ? 'loop' : ''; ?>
+                                    <?php echo ($atts['youtube_mute'] === 'true') ? 'muted' : ''; ?>
+                                    <?php if (!empty($item['thumbnail'])): ?>
+                                    poster="<?php echo esc_url($item['thumbnail']); ?>"
+                                    <?php endif; ?>
+                                    playsinline
+                                    preload="metadata">
+                                    <source src="<?php echo esc_url($item['video_id']); ?>" type="video/mp4">
+                                    <?php _e('Your browser does not support the video tag.', 'product-media-carousel'); ?>
+                                </video>
+                                <?php if (isset($atts['enable_lightbox']) && $atts['enable_lightbox'] === 'true'): ?>
+                                <a href="<?php echo esc_url($item['video_id']); ?>" 
+                                   data-fancybox="gallery-<?php echo esc_attr($carousel_id); ?>" 
+                                   class="pmc-zoom-icon"
+                                   aria-label="<?php _e('Open video in lightbox', 'product-media-carousel'); ?>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                                    </svg>
+                                </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        
+        <!-- Navigation -->
+        <?php if ($atts['show_navigation'] === 'true'): ?>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        <?php endif; ?>
+        
+        <!-- Pagination -->
+        <?php if ($atts['show_pagination'] === 'true'): ?>
+            <div class="swiper-pagination"></div>
+        <?php endif; ?>
+    </div>
+    
+    <!-- Thumbnails -->
+    <?php if ($atts['show_thumbnails'] === 'true' && count($media_items) > 1): ?>
+        <div class="pmc-thumbnails-carousel swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($media_items as $item): ?>
+                    <div class="swiper-slide">
+                        <div class="pmc-thumbnail">
+                            <?php if ($item['type'] === 'image'): ?>
+                                <img src="<?php echo esc_url($item['thumbnail']); ?>" alt="" />
+                            <?php elseif ($item['type'] === 'youtube' || $item['type'] === 'vimeo' || $item['type'] === 'self_hosted'): ?>
+                                <?php 
+                                // Ensure thumbnail has a value
+                                if (empty($item['thumbnail']) || $item['thumbnail'] === '') {
+                                    $thumb_url = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect fill=%22%23333%22 width=%22150%22 height=%22150%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2216%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EVideo%3C/text%3E%3C/svg%3E';
+                                } else {
+                                    $thumb_url = $item['thumbnail'];
+                                }
+                                ?>
+                                <img src="<?php echo esc_url($thumb_url); ?>" alt="" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect fill=%22%23333%22 width=%22150%22 height=%22150%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2216%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EVideo%3C/text%3E%3C/svg%3E';" />
+                                <span class="pmc-play-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48">
+                                        <circle cx="24" cy="24" r="24" fill="rgba(0,0,0,0.7)"/>
+                                        <polygon points="18,14 18,34 34,24" fill="#fff"/>
+                                    </svg>
+                                </span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+    <?php if (isset($atts['enable_lightbox']) && $atts['enable_lightbox'] === 'true'): ?>
+    // Prevent Fancybox auto-initialization
+    if (typeof Fancybox !== 'undefined') {
+        // Disable auto-start
+        Fancybox.defaults.autoStart = false;
+        
+        // Manual click handler to prevent double opening
+        $('[data-fancybox="gallery-<?php echo esc_js($carousel_id); ?>"]').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const items = $('[data-fancybox="gallery-<?php echo esc_js($carousel_id); ?>"]').map(function() {
+                const href = $(this).attr('href');
+                let type = 'image';
+                if (href.includes('youtube.com') || href.includes('youtu.be')) {
+                    type = 'iframe';
+                } else if (href.includes('vimeo.com')) {
+                    type = 'iframe';
+                }
+                return {
+                    src: href,
+                    type: type
+                };
+            }).get();
+            
+            const index = $('[data-fancybox="gallery-<?php echo esc_js($carousel_id); ?>"]').index(this);
+            
+            Fancybox.show(items, {
+                startIndex: index,
+                Toolbar: {
+                    display: {
+                        left: ["infobar"],
+                        middle: [],
+                        right: ["slideshow", "thumbs", "close"],
+                    },
+                },
+                Thumbs: {
+                    type: "classic",
+                },
+                animated: true,
+                hideScrollbar: true,
+                compact: false,
+                idle: false,
+                dragToClose: true,
+                contentClick: "toggleZoom",
+                Images: {
+                    zoom: true,
+                },
+            });
+        });
+    }
+    <?php endif; ?>
+    
+    // Load YouTube IFrame API
+    if (typeof YT === 'undefined') {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+    
+    // Initialize carousel
+    const carouselId = '<?php echo esc_js($carousel_id); ?>';
+    const players = {}; // Store YouTube players
+    
+    const mainCarousel = new Swiper('#' + carouselId + ' .pmc-main-carousel', {
+        effect: '<?php echo esc_js($atts['effect']); ?>',
+        loop: <?php echo $atts['loop'] === 'true' ? 'true' : 'false'; ?>,
+        speed: <?php echo intval($atts['speed']); ?>,
+        autoplay: <?php echo $atts['autoplay'] === 'true' ? '{delay: ' . intval($atts['autoplay_delay']) . ', disableOnInteraction: false}' : 'false'; ?>,
+        navigation: {
+            nextEl: '#' + carouselId + ' .swiper-button-next',
+            prevEl: '#' + carouselId + ' .swiper-button-prev',
+        },
+        pagination: {
+            el: '#' + carouselId + ' .swiper-pagination',
+            clickable: true,
+        },
+        on: {
+            init: function() {
+                // Initialize YouTube players
+                const swiper = this;
+                $('#' + carouselId + ' .pmc-youtube-player').each(function(index) {
+                    const iframe = this;
+                    const iframeId = 'pmc-yt-' + carouselId + '-' + index;
+                    $(iframe).attr('id', iframeId);
+                    
+                    // Wait for YouTube API to be ready
+                    function initPlayer() {
+                        if (typeof YT !== 'undefined' && YT.Player) {
+                            players[iframeId] = new YT.Player(iframeId, {
+                                events: {
+                                    'onReady': function(event) {
+                                        // Auto-play first video if it's on the first slide
+                                        if (index === swiper.activeIndex && '<?php echo $atts['youtube_autoplay']; ?>' === 'true') {
+                                            event.target.playVideo();
+                                        }
+                                    }
+                                }
+                            });
+                        } else {
+                            setTimeout(initPlayer, 100);
+                        }
+                    }
+                    initPlayer();
+                });
+            },
+            slideChange: function() {
+                const swiper = this;
+                
+                // Pause all videos
+                Object.keys(players).forEach(function(playerId) {
+                    try {
+                        if (players[playerId] && players[playerId].pauseVideo) {
+                            players[playerId].pauseVideo();
+                        }
+                    } catch(e) {}
+                });
+                
+                // Auto-play video on current slide if enabled
+                if ('<?php echo $atts['youtube_autoplay']; ?>' === 'true') {
+                    const currentSlide = swiper.slides[swiper.activeIndex];
+                    const $currentVideo = $(currentSlide).find('.pmc-youtube-player');
+                    if ($currentVideo.length) {
+                        const playerId = $currentVideo.attr('id');
+                        setTimeout(function() {
+                            try {
+                                if (players[playerId] && players[playerId].playVideo) {
+                                    players[playerId].playVideo();
+                                }
+                            } catch(e) {}
+                        }, 300);
+                    }
+                }
+            }
+        }
+    });
+    
+    <?php if ($atts['show_thumbnails'] === 'true' && count($media_items) > 1): ?>
+    // Initialize thumbnails
+    const thumbsCarousel = new Swiper('#' + carouselId + ' .pmc-thumbnails-carousel', {
+        spaceBetween: <?php echo intval($atts['thumbnail_gap']); ?>,
+        slidesPerView: <?php echo intval($atts['thumbnails_per_view']); ?>,
+        slidesPerGroup: 1,
+        freeMode: false,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+        centeredSlides: false,
+        direction: <?php echo in_array($thumb_position, array('left', 'right')) ? "'vertical'" : "'horizontal'"; ?>,
+        breakpoints: {
+            320: {
+                slidesPerView: 'auto',
+                slidesPerGroup: 1,
+            },
+            640: {
+                slidesPerView: 'auto',
+                slidesPerGroup: 1,
+            },
+            768: {
+                slidesPerView: 'auto',
+                slidesPerGroup: 1,
+            },
+            1024: {
+                slidesPerView: <?php echo intval($atts['thumbnails_per_view']); ?>,
+                slidesPerGroup: 1,
+            }
+        }
+    });
+    
+    // Click thumbnail to change slide
+    $('#' + carouselId + ' .pmc-thumbnails-carousel .swiper-slide').on('click', function() {
+        const index = $(this).index();
+        mainCarousel.slideTo(index);
+    });
+    
+    // Update active thumbnail when main carousel changes
+    mainCarousel.on('slideChange', function() {
+        const currentIndex = mainCarousel.realIndex;
+        
+        // Update active class
+        $('#' + carouselId + ' .pmc-thumbnails-carousel .swiper-slide').removeClass('active');
+        $('#' + carouselId + ' .pmc-thumbnails-carousel .swiper-slide').eq(currentIndex).addClass('active');
+        
+        // Scroll thumbnail into view
+        const thumbsPerView = <?php echo intval($atts['thumbnails_per_view']); ?>;
+        const targetSlide = Math.max(0, currentIndex - Math.floor(thumbsPerView / 2));
+        thumbsCarousel.slideTo(targetSlide);
+    });
+    
+    // Set initial active thumbnail
+    $('#' + carouselId + ' .pmc-thumbnails-carousel .swiper-slide').eq(0).addClass('active');
+    
+    <?php if (in_array($thumb_position, array('left', 'right'))): ?>
+    // Mobile/Tablet: Change direction to horizontal for left/right layouts
+    function updateThumbsDirection() {
+        if (window.innerWidth <= 1024) {
+            if (thumbsCarousel.params.direction !== 'horizontal') {
+                thumbsCarousel.changeDirection('horizontal');
+            }
+        } else {
+            if (thumbsCarousel.params.direction !== 'vertical') {
+                thumbsCarousel.changeDirection('vertical');
+            }
+        }
+    }
+    
+    // Initial check
+    updateThumbsDirection();
+    
+    // Update on resize
+    window.addEventListener('resize', updateThumbsDirection);
+    <?php endif; ?>
+    <?php endif; ?>
+});
+</script>

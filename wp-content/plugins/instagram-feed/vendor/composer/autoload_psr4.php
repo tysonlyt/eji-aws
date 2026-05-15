@@ -8,10 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Smashballoon\\Stubs\\' => array($vendorDir . '/smashballoon/stubs/src'),
     'InstagramFeed\\Vendor\\Smashballoon\\Framework\\' => array($vendorDir . '/smashballoon/framework'),
-    'InstagramFeed\\Vendor\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'InstagramFeed\\Vendor\\PhpDocReader\\' => array($vendorDir . '/php-di/phpdoc-reader/src/PhpDocReader'),
-    'InstagramFeed\\Vendor\\Laravel\\SerializableClosure\\' => array($vendorDir . '/laravel/serializable-closure/src'),
-    'InstagramFeed\\Vendor\\Invoker\\' => array($vendorDir . '/php-di/invoker/src'),
-    'InstagramFeed\\Vendor\\DI\\' => array($vendorDir . '/smashballoon/framework/Packages/php-di/src'),
+    'InstagramFeed\\Vendor\\Brumann\\Polyfill\\' => array($vendorDir . '/brumann/polyfill-unserialize/src'),
     'InstagramFeed\\' => array($baseDir . '/inc'),
 );

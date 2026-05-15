@@ -1,0 +1,344 @@
+/**
+ * Product Details Modal
+ * Handles showing product details in a modal popup when clicking the product image
+ */
+
+// 全局函数，可以从任何地方调用
+// Global function that can be called from anywhere, including inline onclick handlers
+function openProductModal(productId, productTitle) {
+    console.log('Global openProductModal called:', productId, productTitle);
+    
+    if (typeof jQuery !== 'undefined') {
+        // 创建模态框（如果不存在）
+        if (jQuery('#ucp-product-detail-modal').length === 0) {
+            console.log('Creating modal from global function');
+            const modalHTML = `
+                <div id="ucp-product-detail-modal" class="ucp-modal ucp-product-modal">
+                    <div class="ucp-modal-content ucp-product-modal-content">
+                        <span class="ucp-modal-close">&times;</span>
+                        <div class="ucp-modal-body ucp-product-modal-body">
+                            <div class="ucp-modal-loading">
+                                <span class="ucp-spinner"></span>
+                                <p>Loading product details...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            jQuery('body').append(modalHTML);
+            
+            // 绑定关闭按钮事件
+            jQuery(document).on('click', '.ucp-modal-close', function(e) {
+                e.stopPropagation();
+                const $modal = jQuery('#ucp-product-detail-modal');
+                $modal.addClass('hide');
+                setTimeout(() => {
+                    $modal.removeClass('show');
+                }, 200);
+                return false;
+            });
+            
+            // 点击模态框外关闭
+            jQuery(document).on('click', '.ucp-modal', function(e) {
+                if (!jQuery(e.target).closest('.ucp-modal-content').length) {
+                    e.stopPropagation();
+                    const $modal = jQuery(this);
+                    $modal.addClass('hide');
+                    setTimeout(() => {
+                        $modal.removeClass('show');
+                    }, 200);
+                    return false;
+                }
+            });
+        }
+        
+        // 显示模态框
+        const $modal = jQuery('#ucp-product-detail-modal');
+        $modal.removeClass('hide');
+        setTimeout(() => {
+            $modal.addClass('show');
+        }, 100);
+        
+        // 使用产品详情加载函数
+        if (typeof loadProductDetailsModal === 'function') {
+            // 直接调用已存在的函数
+            loadProductDetailsModal(productId, productTitle);
+        } else {
+            console.error('Product details loading function not available');
+            // 尝试直接加载
+            try {
+                // 构建简单模态框内容
+                const $modalBody = jQuery('#ucp-product-detail-modal .ucp-modal-body');
+                $modalBody.html(`<div class="ucp-modal-loading"><p>Loading product ${productId}...</p></div>`);
+                
+                jQuery.ajax({
+                    url: ucp_params.ajax_url,
+                    type: 'POST',
+                    data: {
+                        action: 'ucp_get_product_details',
+                        product_id: productId,
+                        nonce: ucp_params.nonce,
+                        modal_view: true
+                    },
+                    success: function(response) {
+                        if (response.success && response.data) {
+                            // 创建模态框内容
+                            const modalHTML = `
+                                <div class="ucp-modal-product-container">
+                                    <div class="ucp-modal-product-left">
+                                        <div class="ucp-modal-product-image-container">
+                                            <img src="${jQuery(`.ucp-product-card[data-product-id="${productId}"] img`).attr('src') || ''}" 
+                                                 alt="${productTitle || 'Product'}" class="ucp-modal-product-img">
+                                        </div>
+                                    </div>
+                                    <div class="ucp-modal-product-right">
+                                        <h2 class="ucp-modal-product-title">${productTitle || `Product ${productId}`}</h2>
+                                        <div class="ucp-modal-product-details">
+                                            ${response.data.html}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            $modalBody.html(modalHTML);
+                        } else {
+                            $modalBody.html(`<p>Error loading product details</p>`);
+                        }
+                    },
+                    error: function() {
+                        $modalBody.html(`<p>Error loading product details</p>`);
+                    }
+                });
+            } catch (e) {
+                console.error('Error in direct product loading:', e);
+            }
+        }
+    } else {
+        console.error('jQuery not defined');
+        alert('Error: jQuery not available');
+    }
+}
+
+(function($) {
+    'use strict';
+    
+    // 确保全局可访问
+    window.ucpProductDetails = {};
+    
+    // Check if required parameters are available
+    function checkParams() {
+        if (typeof ucp_params === 'undefined') {
+            console.error('UCP parameters not available!');
+            return false;
+        }
+        
+        if (!ucp_params.ajax_url || !ucp_params.nonce) {
+            console.error('Required AJAX parameters missing!');
+            return false;
+        }
+        
+        console.log('UCP parameters validated successfully');
+        return true;
+    }
+
+    // Create modal HTML if it doesn't exist
+    function createModal() {
+        // Check if modal already exists
+        if ($('#ucp-product-detail-modal').length > 0) {
+            console.log('Modal already exists, not creating again');
+            return;
+            // Prevent propagation from modal content
+            $(document).on('click', '.ucp-modal-content', function(e) {
+                e.stopPropagation();
+            });
+        }
+    }
+
+    // Document ready
+    $(document).ready(function() {
+        console.log('UCP Product Details module loaded');
+        
+        // Check parameters
+        checkParams();
+        
+        // Create modal on page load
+        createModal();
+        
+        // Debug information - count product images
+        const productImages = $('.ucp-product-image');
+        console.log(`Found ${productImages.length} product images on page to bind events to`);
+        
+        // Direct binding method as an alternative to document delegation
+        $('.ucp-product-image').on('click', function(e) {
+            console.log('Product image clicked (direct binding)');
+            handleProductImageClick(e, $(this));
+        });
+        
+        // Also keep the delegated binding for dynamically loaded content
+        console.log('Setting up delegated click handler for product images');
+        $(document).on('click', '.ucp-product-image', function(e) {
+            console.log('Product image clicked (delegated binding)');
+            handleProductImageClick(e, $(this));
+        });
+        
+        // Extract the click handling logic to a separate function
+        function handleProductImageClick(e, clickedElement) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Processing product image click...');
+            const $card = clickedElement.closest('.ucp-product-card');
+            
+            if ($card.length === 0) {
+                console.error('Could not find parent .ucp-product-card element!');
+                console.log('HTML structure:', clickedElement.parent().html());
+                return;
+            }
+            
+            const productId = $card.data('product-id');
+            console.log('Product ID:', productId);
+            
+            if (!productId) {
+                console.error('No product-id data attribute found on card!');
+                return;
+            }
+            
+            // Get product title for modal
+            let productTitle = '';
+            const $titleElement = $card.find('.ucp-product-title');
+            if ($titleElement.length > 0) {
+                productTitle = $titleElement.text().trim();
+                console.log('Product title found:', productTitle);
+            } else {
+                console.warn('No product title element found');
+            }
+            
+            // 显示模态框并加载产品详情
+            console.log('Opening modal for product:', productId, productTitle);
+            var modal = $('#ucp-product-detail-modal');
+            
+            if(modal.length === 0) {
+                console.log('Modal not found, creating it first');
+                createModal(); // 主动创建模态框如果不存在
+                modal = $('#ucp-product-detail-modal');
+            }
+            
+            // 使用 CSS 类显示模态框
+            modal.addClass('show');
+            
+            // 加载产品详情
+            loadProductDetailsModal(productId, productTitle);
+        }
+        
+        // Print modal HTML to verify it exists
+        setTimeout(function() {
+            console.log('Modal element exists:', $('#ucp-product-detail-modal').length > 0);
+        }, 1000);
+        
+        // Close modal with ESC key
+        $(document).keydown(function(e) {
+            if (e.key === "Escape") {
+                $('.ucp-modal').removeClass('show');
+                $('body').removeClass('ucp-modal-open');
+            }
+        });
+    });
+
+    /**
+     * Load product details into modal via AJAX
+     */
+    function loadProductDetailsModal(productId, productTitle) {
+        console.log('Loading product details for modal...', productId, productTitle);
+
+        // Safety check
+        if (!productId) {
+            console.error('Invalid product ID for modal');
+            return;
+        }
+
+        // Get modal elements
+        const $modal = $('#ucp-product-detail-modal');
+        const $modalBody = $modal.find('.ucp-modal-body');
+
+        if ($modal.length === 0) {
+            console.error('Modal element not found!');
+            alert('Error: Product detail modal not available.');
+            return;
+        }
+
+        // Show loading state
+        $modalBody.html(`
+            <div class="ucp-modal-loading">
+                <span class="ucp-spinner"></span>
+                <p>Loading product details...</p>
+            </div>
+        `);
+
+        // Make AJAX request
+        $.ajax({
+            url: ucp_params.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'ucp_get_product_details',
+                product_id: productId,
+                nonce: ucp_params.nonce,
+                modal_view: true
+            },
+            success: function(response) {
+                if (response.success && response.data) {
+                    // 创建模态框内容
+                    const modalHTML = `
+                        <div class="ucp-modal-product-container">
+                            <div class="ucp-modal-product-left">
+                                <div class="ucp-modal-product-image-container">
+                                    <img src="${loadProductImage(productId)}" 
+                                         alt="${productTitle || 'Product'}" 
+                                         class="ucp-modal-product-img">
+                                </div>
+                            </div>
+                            <div class="ucp-modal-product-right">
+                                <h2 class="ucp-modal-product-title">${productTitle}</h2>
+                                <div class="ucp-modal-product-details">
+                                    ${response.data.html}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    $modalBody.html(modalHTML);
+                    console.log('Modal content updated successfully');
+                } else {
+                    console.error('Invalid AJAX response:', response);
+                    $modalBody.html(`<p>Error loading product details. Please try again.</p>`);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX error:', status, error);
+                $modalBody.html(`<p>Error loading product details. Please try again.</p>`);
+            }
+        });
+    }
+    
+    /**
+     * Get product image HTML
+     */
+    function loadProductImage(productId) {
+        const $productCard = $(`.ucp-product-card[data-product-id="${productId}"]`);
+        const $existingImage = $productCard.find('img');
+        
+        if ($existingImage.length > 0) {
+            return $existingImage.attr('src') || ucp_params.placeholder_img;
+        }
+        
+        return ucp_params.placeholder_img || '';
+    }
+    
+    /**
+     * Legacy function for backwards compatibility
+     */
+    function loadProductDetails(productId, $container) {
+        // This is kept for backwards compatibility
+        // Now we use loadProductDetailsModal instead
+        $container.html(`<p>This product is now available in modal view.</p>`);
+    }
+
+})(jQuery);

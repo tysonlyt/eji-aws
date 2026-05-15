@@ -1,0 +1,114 @@
+/**
+ * Unique Client Page - Button System
+ * 
+ * A unified button system using black and white theme
+ * Features different sizes and styles while maintaining consistency
+ */
+
+/* Base button style - Black background with white text */
+.ucp-btn {
+  display: inline-block;
+  border: none;
+  background-color: var(--ucp-button-bg);
+  color: var(--ucp-button-text);
+  border-radius: var(--ucp-button-border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: all var(--ucp-transition-fast);
+  padding: var(--ucp-button-padding-md);
+  font-size: var(--ucp-button-font-size-md);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.ucp-btn:hover {
+  background-color: var(--ucp-button-hover-bg);
+  color: var(--ucp-button-text);
+  text-decoration: none;
+}
+
+.ucp-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Secondary button style - White background with black text and border */
+.ucp-btn-secondary {
+  background-color: var(--ucp-button-secondary-bg);
+  color: var(--ucp-button-secondary-text);
+  border: 1px solid var(--ucp-button-secondary-border);
+}
+
+.ucp-btn-secondary:hover {
+  background-color: var(--ucp-button-secondary-hover-bg);
+  color: var(--ucp-button-secondary-text);
+}
+
+/* Button sizes */
+.ucp-btn-sm {
+  padding: var(--ucp-button-padding-sm);
+  font-size: var(--ucp-button-font-size-sm);
+}
+
+.ucp-btn-lg {
+  padding: var(--ucp-button-padding-lg);
+  font-size: var(--ucp-button-font-size-lg);
+}
+
+/* Button states */
+.ucp-btn:disabled,
+.ucp-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #808080;
+}
+
+.ucp-btn-secondary:disabled,
+.ucp-btn-secondary.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  color: #808080;
+  border-color: #cccccc;
+}
+
+/* Full width button */
+.ucp-btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Button with icon */
+.ucp-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ucp-btn-icon i,
+.ucp-btn-icon svg,
+.ucp-btn-icon img {
+  margin-right: 8px;
+}
+
+/* Icon only button - usually for circular buttons */
+.ucp-btn-icon-only {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.ucp-btn-icon-only.ucp-btn-sm {
+  width: 28px;
+  height: 28px;
+}
+
+.ucp-btn-icon-only.ucp-btn-lg {
+  width: 48px;
+  height: 48px;
+}

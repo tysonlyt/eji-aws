@@ -1,0 +1,33 @@
+/**
+ * Unique Client Page - Hide Elements Styles
+ * Centralized styles for hiding specific elements across the plugin
+ */
+
+/* Import variables */
+@import url('variables.css');
+
+/* ----- Hide quick view elements ----- */
+.ucp-quick-view,
+.ucp-quick-view-btn,
+.quick-view-button,
+.ucp-quick-view-wrapper,
+.ucp-quick-view-hidden,
+.quick-view-container,
+.quick-view-panel,
+.quick-view-button-wrap,
+.quick-view-icon,
+.et-quick-view-wrap,
+.yith-wcqv-button {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}

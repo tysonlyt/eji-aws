@@ -1,0 +1,310 @@
+/*
+ * Unique Client Page - Core Styles
+ * Contains basic layout and common component styles
+ */
+
+/* Import variables */
+@import url('variables.css');
+
+/* ----- Basic container styles ----- */
+.ucp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--ucp-spacing-lg) var(--ucp-spacing-md);
+}
+
+/* ----- Debug ----- */
+.ucp-debug-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* ----- Page indicator ----- */
+.ucp-page-indicator {
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ----- Page container ----- */
+.ucp-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ----- Page header ----- */
+.ucp-header {
+    margin-bottom: var(--ucp-spacing-xl);
+}
+
+.ucp-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: var(--ucp-spacing-md);
+    color: var(--ucp-text-primary);
+}
+
+/* Sale Info Form Styles */
+.ucp-sale-info-form {
+    background-color: var(--ucp-bg-light);
+    padding: var(--ucp-spacing-md);
+    border-radius: var(--ucp-border-radius);
+    margin-bottom: var(--ucp-spacing-lg);
+    box-shadow: var(--ucp-shadow-sm);
+}
+
+.ucp-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ucp-spacing-md);
+    align-items: flex-end;
+}
+
+.ucp-form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.ucp-form-group label {
+    display: block;
+    margin-bottom: var(--ucp-spacing-xs);
+    font-weight: 600;
+    color: var(--ucp-text-primary);
+}
+
+.ucp-form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--ucp-border-color);
+    border-radius: var(--ucp-border-radius-sm);
+    font-size: 14px;
+}
+
+.ucp-form-submit {
+    display: flex;
+    align-items: flex-end;
+}
+
+.ucp-submit-button {
+    background-color: var(--ucp-primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--ucp-border-radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--ucp-transition);
+}
+
+.ucp-submit-button:hover {
+    background-color: var(--ucp-primary-dark);
+}
+
+@media (max-width: 768px) {
+    .ucp-form-row {
+        flex-direction: column;
+    }
+    
+    .ucp-form-group,
+    .ucp-form-submit {
+        width: 100%;
+    }
+}
+
+/* ----- Filter area styles ----- */
+.ucp-filter-area {
+    background-color: var(--ucp-bg-light);
+    padding: var(--ucp-spacing-lg);
+    border-radius: var(--ucp-border-radius-lg);
+    margin-bottom: var(--ucp-spacing-xl);
+    box-shadow: var(--ucp-shadow);
+    transition: var(--ucp-transition);
+}
+
+.ucp-filter-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--ucp-spacing-lg);
+}
+
+.ucp-filter-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+.ucp-filter-category {
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.ucp-filter-form label {
+    display: block;
+    margin-bottom: var(--ucp-spacing-sm);
+    font-weight: 500;
+    color: var(--ucp-text-secondary);
+    font-size: 16px;
+}
+
+.ucp-filter-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--ucp-border-color);
+    border-radius: var(--ucp-border-radius);
+    background: var(--ucp-bg-white);
+    font-size: 16px;
+    color: var(--ucp-text-primary);
+    transition: var(--ucp-transition);
+    box-shadow: var(--ucp-shadow-sm);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M0 0h12L6 6z" fill="%23666"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+}
+
+.ucp-filter-form select:focus {
+    border-color: var(--ucp-primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* ----- Button styles ----- */
+.ucp-filter-buttons {
+    display: flex;
+    gap: 6px;
+    margin: 0;
+    flex-shrink: 0;
+    min-width: 220px;
+}
+
+.ucp-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--ucp-border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--ucp-transition);
+    text-align: center;
+}
+
+.ucp-btn--primary {
+    background-color: var(--ucp-primary-color);
+    color: white;
+    box-shadow: 0 2px 5px rgba(76, 175, 80, 0.2);
+}
+
+.ucp-btn--primary:hover {
+    background-color: var(--ucp-primary-dark);
+    transform: translateY(-2px);
+}
+
+.ucp-btn--secondary {
+    background-color: var(--ucp-bg-light);
+    color: var(--ucp-text-secondary);
+    border: 1px solid var(--ucp-border-color);
+}
+
+.ucp-btn--secondary:hover {
+    background-color: #e5e5e5;
+}
+
+.ucp-btn--accent {
+    background-color: var(--ucp-accent-color);
+    color: white;
+}
+
+.ucp-btn--accent:hover {
+    background-color: var(--ucp-accent-dark);
+}
+
+.ucp-btn--disabled,
+.ucp-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ----- Loading state ----- */
+.ucp-loading {
+    position: relative;
+}
+
+.ucp-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    border-radius: var(--ucp-border-radius);
+}
+
+.ucp-loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    display: none;
+}
+
+.ucp-loading .ucp-loading-indicator {
+    display: block;
+}
+
+.ucp-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(76, 175, 80, 0.2);
+    border-radius: 50%;
+    border-left-color: var(--ucp-primary-color);
+    animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ----- Load more button ----- */
+.ucp-load-more {
+    text-align: center;
+    margin: var(--ucp-spacing-xl) 0;
+}
+
+/* ----- Responsive adjustments ----- */
+@media screen and (max-width: var(--ucp-breakpoint-md)) {
+    .ucp-filter-form {
+        flex-direction: column;
+        gap: var(--ucp-spacing-md);
+    }
+    
+    .ucp-filter-category,
+    .ucp-filter-buttons {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media screen and (max-width: var(--ucp-breakpoint-sm)) {
+    .ucp-filter-buttons {
+        flex-direction: column;
+    }
+}

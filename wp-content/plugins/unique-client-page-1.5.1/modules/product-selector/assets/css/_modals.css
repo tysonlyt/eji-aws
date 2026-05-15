@@ -1,0 +1,1273 @@
+/*
+ * Unique Client Page - Modal Styles
+ * Focus on all popup and modal styles
+ *
+ * Structure:
+ * 1. Base Modal Styles
+ * 2. Product Modal Specific
+ * 3. Wishlist Modal Specific
+ * 4. Media Queries
+ */
+
+/* Import variables */
+@import url('../../../../assets/shared/css/_variables.css');
+
+/* ====================
+   1. Base Modal Styles
+   ==================== */
+/* Removed slideOutDown animation for better performance */
+
+/* Using bounce animation effect - Bounce to Top */
+.ucp-modal.show .ucp-modal-container {
+    animation: ucp-popup-bounce-to-top 1.1s both;
+}
+
+@keyframes ucp-popup-bounce-to-top {
+    0% {transform: translateY(500px);animation-timing-function: ease-in;opacity: 0;}
+    38% {transform: translateY(0);animation-timing-function: ease-out;opacity: 1;}
+    55% {transform: translateY(65px);animation-timing-function: ease-in;}
+    72% {transform: translateY(0);animation-timing-function: ease-out;}
+    81% {transform: translateY(28px);animation-timing-function: ease-in;}
+    90% {transform: translateY(0);animation-timing-function: ease-out;}
+    95% {transform: translateY(8px);animation-timing-function: ease-in;}
+    100% {transform: translateY(0);animation-timing-function: ease-out;}
+}
+
+/* Removed fadeOutDown animation class for better performance */
+
+/* Optimized closing animation - more visible slide-down fade-out */
+@keyframes ucp-popup-slide-down {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(200px); opacity: 0;}
+}
+
+.ucp-modal.closing .ucp-modal-container {
+    animation: ucp-popup-slide-down 0.8s ease-in forwards;
+    pointer-events: none;
+}
+
+/* Ensure modal is not hidden before animation completes */
+.ucp-modal.closing {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s, visibility 0s;
+    transition-delay: 0.8s;
+}
+
+.ucp-modal:not(.show):not(.closing) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ucp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ucp-modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    /* Keep transition only for opening */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* ==================== 
+   Modal Container - Unified System 
+   ==================== */
+
+/* Base modal container styles */
+.ucp-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    pointer-events: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow: hidden;
+    margin: 5vh auto;
+}
+
+.ucp-modal.show .ucp-modal-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Removed hide animation classes for instant modal closing */
+
+.ucp-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ucp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ucp-modal-content {
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+    padding: 0;
+    max-height: 60vh;
+    margin: auto;
+}
+
+.ucp-modal-content-wrapper {
+    flex: 1;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fullscreen modal styles */
+.ucp-fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Product details layout in fullscreen modal */
+.ucp-fullscreen-modal .ucp-product-details {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: var(--ucp-spacing-lg);
+    box-sizing: border-box;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Product image container in details view */
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-image-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+    padding-right: var(--ucp-spacing-lg);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Product details container */
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-info {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+    padding-left: var(--ucp-spacing-lg);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Product title in details view */
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: var(--ucp-spacing-md);
+    color: var(--ucp-text-primary);
+}
+
+/* Product price and SKU */
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ucp-accent-color);
+    margin-bottom: var(--ucp-spacing-md);
+}
+
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-sku {
+    font-size: 14px;
+    color: var(--ucp-text-light);
+    margin-bottom: var(--ucp-spacing-lg);
+}
+
+/* Product description */
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ucp-text-secondary);
+    margin-bottom: var(--ucp-spacing-lg);
+}
+
+/* Product actions */
+.ucp-fullscreen-modal .ucp-product-details .ucp-product-actions {
+    display: flex;
+    gap: var(--ucp-spacing-md);
+    margin-top: auto;
+}
+
+.ucp-fullscreen-modal .ucp-modal-content {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    background: #fff !important;
+}
+
+.ucp-fullscreen-modal .ucp-modal-header {
+    position: sticky !important;
+    top: 30px !important;
+    z-index: 10 !important;
+    background: #fff !important;
+    border-bottom: 1px solid var(--ucp-border-color) !important;
+    padding: var(--ucp-spacing-md) !important;
+    flex-shrink: 0 !important;
+}
+
+.ucp-fullscreen-modal .ucp-modal-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding: var(--ucp-spacing-md) !important;
+    position: relative !important;
+}
+
+.ucp-fullscreen-modal .ucp-modal-footer {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 10 !important;
+    background: #fff !important;
+    border-top: 1px solid var(--ucp-border-color) !important;
+    padding: var(--ucp-spacing-md) !important;
+    flex-shrink: 0 !important;
+}
+
+body.ucp-modal-open {
+    overflow: hidden;
+    padding-right: 15px; /* Prevent content shift when scrollbar disappears */
+}
+
+#ucp-product-selector-modal .ucp-modal-content {
+    max-height: calc(90vh - 140px);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#ucp-product-selector-modal .ucp-product-list {
+    width: 100% !important;
+    padding: 15px !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+    gap: 15px !important;
+}
+
+#ucp-product-selector-modal .ucp-modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+}
+
+#ucp-product-selector-modal .ucp-modal-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-top: 1px solid #eee;
+}
+
+.ucp-modal.show .ucp-modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Close button - simplified and standardized across all modals */
+.ucp-modal-close,
+.ucp-modal .ucp-modal-close,
+body .ucp-modal .ucp-modal-close,
+body #ucp-product-detail-modal .ucp-modal-close,
+.ucp-product-modal .ucp-modal-close,
+body [id*="modal"] .ucp-modal-close {
+    position: absolute;
+    top: calc(5vh + 10px); /* align with 5% top spacing */
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    background-color: #333;
+    width: 80px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    border-radius: 0;
+    transition: color 0.2s ease;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+}
+
+.ucp-modal-close:hover,
+.ucp-modal .ucp-modal-close:hover,
+body .ucp-modal .ucp-modal-close:hover,
+body #ucp-product-detail-modal .ucp-modal-close:hover,
+.ucp-product-modal .ucp-modal-close:hover,
+body [id*="modal"] .ucp-modal-close:hover {
+    color: #000;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+}
+
+/* Product detail modal styles moved to assets/css/ucp-styles.css */
+
+#ucp-product-detail-modal .ucp-modal-container,
+#ucp-product-detail-modal .ucp-modal-content,
+#ucp-product-detail-modal.ucp-below-header .ucp-modal-container,
+#ucp-product-detail-modal.ucp-below-header .ucp-modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+}
+
+
+
+/* Hide scrollbars but keep scroll functionality */
+.ucp-modal-body {
+    -ms-overflow-style: none; /* IE and old Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.ucp-modal-body::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
+
+/* Loading state */
+.ucp-modal-loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.ucp-modal.loading .ucp-modal-content {
+    min-height: 300px;
+}
+
+/* Modal overlay */
+.ucp-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Removed redundant modal container styles - see unified styles at the top of the file */
+
+/* ====================
+   2. Product Modal Specific
+   ==================== */
+.ucp-product-detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ucp-modal-product-container {
+    display: flex;
+    gap: 30px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ucp-modal-product-left {
+    flex: 1 1 300px;
+    max-width: 100%;
+}
+
+.ucp-modal-product-right {
+    flex: 1 1 400px;
+    max-width: 100%;
+}
+
+.ucp-modal-product-image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.ucp-modal-product-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.ucp-modal-product-details {
+    line-height: 1.6;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Product images and gallery */
+.ucp-modal-content .woocommerce-product-gallery {
+    margin-bottom: 30px;
+}
+
+.ucp-modal-content .woocommerce-product-gallery__image {
+    text-align: center;
+}
+
+.ucp-modal-content .flex-control-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.ucp-modal-content .flex-control-nav li {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.ucp-modal-content .flex-control-nav li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product summary */
+.ucp-modal-content .summary.entry-summary {
+    margin-top: 30px;
+}
+
+/* Product price and meta */
+.ucp-modal-content .price {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.ucp-modal-content .product_meta {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ====================
+   3. Wishlist Modal Specific
+   ==================== */
+#wishlist-modal-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.wishlist-modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.wishlist-modal-title {
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    color: #333;
+    width: 100%;
+}
+
+.wishlist-modal-content {
+    width: 100%;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-top: 25px; /* Add space between header and table */
+}
+
+/* Loading indicator */
+.ucp-loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.ucp-loading.active {
+    display: flex;
+}
+
+.ucp-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: ucp-spin 1s linear infinite;
+}
+
+@keyframes ucp-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ====================
+   4. Media Queries
+   ==================== */
+@media (max-width: 767px) {
+    .ucp-modal {
+        padding: 20px 10px;
+    }
+    
+    .ucp-modal-content {
+        padding: 15px;
+        max-height: 100%;
+        overflow-y: auto;
+        margin: auto; /* Ensure centering on small screens too */
+    }
+    
+    .ucp-modal-product-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .ucp-modal-product-left,
+    .ucp-modal-product-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .wishlist-modal-title {
+        font-size: 20px;
+    }
+    
+    .ucp-modal-content .price {
+        font-size: 16px;
+    }
+}
+
+/* Import core styles */
+@import url('../core/_variables.css');
+@import url('../core/_base.css');
+
+/* Import components */
+@import url('../components/_buttons.css');
+@import url('../components/_product-list.css');
+@import url('../components/_modals.css');
+
+/* ----- Basic modal styles ----- */
+.ucp-modal {
+    display: none;
+    position: fixed !important;
+    z-index: 9999 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    pointer-events: none !important; /* Click events pass through background layer */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 產品詳情模態框樣式移至 ucp-styles.css，避免衝突 */
+
+/* Disable body scroll when modal is open */
+body.ucp-modal-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+}
+
+/* Add same animation effects to general modal */
+body .ucp-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 產品詳情模態框的所有樣式已移至 ucp-styles.css */
+
+/* Using more specific selector instead of !important */
+/* Close button styles unified at the top of the file */
+
+.ucp-modal-body {
+    padding: var(--ucp-spacing-lg);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* ----- Modal loading state ----- */
+body .ucp-modal .ucp-modal-loading {
+    text-align: center;
+    padding: 20px;
+}
+
+body .ucp-modal .ucp-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: ucp-spin 1s linear infinite;
+}
+
+@keyframes ucp-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ----- Product Modal Container Styles ----- */
+.ucp-modal-product-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+/* ----- Product Modal Content Styles ----- */
+.ucp-product-modal .ucp-modal-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.ucp-modal-product-container {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* ----- Product Image Styles ----- */
+.ucp-modal-product-left {
+    flex: 0 0 40%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.ucp-modal-product-image-container {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    background-color: #f8f8f8;
+}
+
+/* Product image */
+.ucp-modal-product-img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: 1px solid #eee;
+    padding: 5px;
+    display: block;
+}
+
+/* Right details area */
+.ucp-modal-product-right {
+    flex: 0 0 60%;
+    padding: 15px;
+    overflow-y: auto;
+    min-height: 400px;
+    box-sizing: border-box;
+}
+
+.ucp-modal-product-title {
+    font-size: 24px;
+    margin: 0 0 15px;
+    color: #333;
+    padding-right: 20px; /* Space for the close button */
+}
+
+/* Close button styles unified at the top of the file */
+
+.ucp-modal-product-details {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ==================== 
+   Table Styles
+   ==================== */
+
+/* 表格样式已移至 frontend/assets/css/_wishlist.css 文件
+ * 所有表格相关的样式都应该在那里进行修改和维护
+ * 这样做可以减少代码冗余并提高维护性
+ */
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .ucp-modal-content {
+        width: 95%;
+        height: auto;
+        max-height: 90vh;
+        margin: 5% auto;
+        padding: 15px;
+    }
+    
+    .ucp-product-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .ucp-product-image-container {
+        width: 100%;
+        height: auto;
+        max-height: 50vh;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    
+    .ucp-product-info {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.ucp-product-gallery {
+    flex: 0 0 45%;
+    margin-right: 5%;
+}
+
+/* Product information in the product detail modal */
+.ucp-modal .ucp-product-info {
+    flex: 0 0 50%;
+    display: block;
+    overflow: visible;
+}
+
+.ucp-product-title-modal {
+    font-size: 24px;
+    margin-bottom: var(--ucp-spacing-md);
+    color: var(--ucp-text-primary);
+}
+
+.ucp-product-price-modal {
+    font-size: 20px;
+    color: var(--ucp-secondary-color);
+    margin-bottom: var(--ucp-spacing-md);
+    font-weight: 600;
+}
+
+.ucp-product-desc-modal {
+    margin-bottom: var(--ucp-spacing-lg);
+    color: var(--ucp-text-secondary);
+    line-height: 1.6;
+}
+
+/* ----- Product selector fullscreen modal styles ----- */
+.ucp-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: rgba(0,0,0,0.5);
+}
+
+/* Removed redundant modal container styles - see unified styles at the top of the file */
+
+/* Fullscreen modal container variation */
+.ucp-fullscreen-modal .ucp-modal-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+.ucp-modal-header,
+.ucp-modal-filters {
+    flex-shrink: 0;
+}
+
+.ucp-modal-content {
+    flex: 1;
+    overflow-y: auto;
+    height: 100% !important;
+}
+
+/* ----- Product selector modal styles ----- */
+.ucp-modal-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ucp-spacing-md);
+    margin-bottom: var(--ucp-spacing-lg);
+    padding-bottom: var(--ucp-spacing-md);
+    border-bottom: 1px solid var(--ucp-border-light);
+}
+
+.ucp-search-wrap {
+    flex: 1 1 300px;
+    position: relative;
+}
+
+.ucp-search-input {
+    width: 100%;
+    padding: 8px 40px 8px 12px;
+    border: 1px solid var(--ucp-border-color);
+    border-radius: var(--ucp-border-radius);
+    font-size: 14px;
+    transition: border-color var(--ucp-transition-fast);
+}
+
+.ucp-search-input:focus {
+    border-color: var(--ucp-primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* 搜索图标样式已移到 _product-selector.css 文件中
+.ucp-search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ucp-text-light);
+}
+*/
+
+/* ----- Modal footer area ----- */
+.ucp-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--ucp-spacing-md) var(--ucp-spacing-lg);
+    border-top: 1px solid var(--ucp-border-light);
+    background-color: var(--ucp-bg-light);
+}
+
+/* ----- Responsive adjustments ----- */
+@media (max-width: var(--ucp-breakpoint-md)) {
+    .ucp-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .ucp-product-detail {
+        flex-direction: column;
+    }
+    
+    .ucp-product-gallery,
+    .ucp-product-info {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+    
+    .ucp-product-gallery {
+        margin-bottom: var(--ucp-spacing-lg);
+    }
+    
+    .ucp-modal-filters {
+        flex-direction: column;
+        gap: var(--ucp-spacing-sm);
+    }
+    
+    .ucp-modal-footer {
+        flex-direction: column;
+        gap: var(--ucp-spacing-md);
+    }
+}
+
+/* Product Selector Modal Styles */
+#ucp-product-selector-modal {
+    display: none;
+    position: fixed !important;
+    z-index: 99999 !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Header area styles, including search, categories, and select all functionality */
+.ucp-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Close button styles unified at the top of the file */
+
+.ucp-header-left {
+    flex: 0 0 auto;
+}
+
+.ucp-header-filters {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Search area styles - Adjust size to fit header layout */
+.ucp-search-wrap {
+    flex: 2;
+    min-width: 250px;
+    max-width: 400px;
+    position: relative;
+}
+
+/* 搜索图标样式已移到 _product-selector.css 文件中
+.ucp-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+*/
+
+.ucp-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Category selection styles - More compact layout */
+.ucp-category-filter {
+    min-width: 150px;
+    max-width: 200px;
+    flex: 0 0 auto;
+}
+
+.ucp-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* 第一層分類粗體樣式 */
+.ucp-select option.ucp-category-level-0 {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* 子分類正常樣式 */
+.ucp-select option.ucp-category-level-1,
+.ucp-select option.ucp-category-level-2,
+.ucp-select option.ucp-category-level-3 {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* Select all container styles - More compact layout */
+.ucp-select-all-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    padding: 0 10px;
+}
+
+.ucp-select-all-label {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#ucp-product-selector-modal.show {
+    display: block !important;
+}
+
+/* Modal window container layout - see unified styles at the top of the file */
+
+/* Modal window content area styles */
+.ucp-modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.ucp-modal-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ucp-close-modal {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* 增加内边距扩大触摸区域 */
+    margin: -10px; /* 调整位置保持视觉一致性 */
+    z-index: 10;
+    touch-action: manipulation; /* 优化触摸设备响应 */
+}
+
+/* Product list area styles - Larger padding and better scrolling */
+.ucp-modal-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    scrollbar-width: thin;
+}
+
+/* Scrollbar styles */
+.ucp-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ucp-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.ucp-modal-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+/* Product list grid styles - Fixed 4 products per row, increased width */
+.ucp-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* 根据shortcode中设置的列数动态调整 */
+.ucp-products-grid[data-columns="2"] {
+    grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+}
+
+.ucp-products-grid[data-columns="3"] {
+    grid-template-columns: repeat(3, minmax(180px, 1fr)) !important;
+}
+
+.ucp-products-grid[data-columns="5"] {
+    grid-template-columns: repeat(5, minmax(180px, 1fr)) !important;
+}
+
+.ucp-products-grid[data-columns="6"] {
+    grid-template-columns: repeat(6, minmax(180px, 1fr)) !important;
+}
+
+/* Product item styles - Increased size and improved appearance */
+.ucp-product-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    min-height: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* Improve product item hover effect */
+.ucp-product-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    border-color: #ccc;
+}
+
+/* Product image styles */
+.ucp-product-image {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ucp-product-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Product title styles */
+/* 已删除.ucp-product-title的样式定义，统一使用_product-list.css中的定义 */
+
+/* Modal window footer styles */
+.ucp-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Wishlist button styles */
+.wishlist-container {
+    margin: 10px 0;
+}
+
+.ucp-wishlist-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* 内容居中 */
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+    width: 100%; /* 适应容器宽度 */
+    max-width: 200px; /* 限制最大宽度以保持美观 */
+}
+
+.ucp-wishlist-toggle:hover {
+    background-color: #eee;
+}
+
+.ucp-wishlist-toggle[data-action="remove"] {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #e53935;
+}
+
+.ucp-wishlist-toggle[data-action="remove"]:hover {
+    background-color: #ffcdd2;
+}
+
+.ucp-wishlist-toggle .dashicons {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+}
+
+/* ============================================
+  * TEMP: Modal compatibility + debug visibility
+  * Purpose: unify visible state for both .active and .show,
+  *          and temporarily relax overflow/max-height to detect clipping.
+  * Scope: Frontend verification only. Remove after JS/CSS unification.
+  * ============================================ */
+.ucp-modal.active,
+.ucp-modal.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  display: flex !important;
+}
+
+/* Relax container/content overflow during testing */
+.ucp-modal .ucp-modal-container,
+.ucp-modal .ucp-modal-content,
+.ucp-modal .ucp-modal-content-wrapper {
+  overflow: visible !important;
+  max-height: none !important;
+}

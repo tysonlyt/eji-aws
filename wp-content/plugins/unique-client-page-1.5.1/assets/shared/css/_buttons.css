@@ -1,0 +1,74 @@
+/**
+ * Unique Client Page - Simplified Button System
+ * 
+ * A unified button system with minimal CSS
+ * Uses HTML attributes for sizing and styling variations
+ */
+
+/* Single button style - the only class we need */
+.ucp-btn {
+  display: inline-block;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Hover state */
+.ucp-btn:hover {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Focus state */
+.ucp-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Disabled state */
+.ucp-btn:disabled,
+.ucp-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary variant - can be applied with data-variant="secondary" in HTML */
+.ucp-btn[data-variant="secondary"] {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.ucp-btn[data-variant="secondary"]:hover {
+  background-color: #f5f5f5;
+}
+
+/* Full width - can be applied with data-width="full" in HTML */
+.ucp-btn[data-width="full"] {
+  display: block;
+  width: 100%;
+}
+
+/* Icon button - simplified */
+.ucp-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ucp-btn-icon i,
+.ucp-btn-icon svg,
+.ucp-btn-icon img {
+  margin-right: 8px;
+}

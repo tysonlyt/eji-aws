@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'wpshield/content-protector',
+        'pretty_version' => '1.4.0',
+        'version' => '1.4.0.0',
+        'reference' => NULL,
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
+    ),
+    'versions' => array(
+        'betterstudio/core-essentials' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => 'f009e7d9ce5c6fbbce9d1798857cf8b06cf91a76',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../betterstudio/core-essentials',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'betterstudio/rest' => array(
+            'pretty_version' => '1.0.4',
+            'version' => '1.0.4.0',
+            'reference' => 'b8868d22a29cc7fea89265bab2ed21af7147d912',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../betterstudio/rest',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wpshield/content-protector' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => NULL,
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

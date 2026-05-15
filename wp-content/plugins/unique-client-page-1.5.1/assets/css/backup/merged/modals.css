@@ -1,0 +1,754 @@
+/*
+ * Unique Client Page - Modal Styles
+ * Focus on all popup and modal styles
+ */
+
+/* Base modal styles */
+.ucp-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: rgba(0,0,0,0.5);
+}
+
+.ucp-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ucp-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    margin: 2% auto;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 1000000;
+}
+
+/* Price and product meta styles */
+.ucp-modal-content .price {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.ucp-modal-content .product_meta {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* Product images */
+.ucp-modal-content .woocommerce-product-gallery {
+    margin-bottom: 30px;
+}
+
+.ucp-modal-content .woocommerce-product-gallery__image {
+    text-align: center;
+}
+
+.ucp-modal-content .flex-control-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.ucp-modal-content .flex-control-nav li {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.ucp-modal-content .flex-control-nav li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product summary */
+.ucp-modal-content .summary.entry-summary {
+    margin-top: 30px;
+}
+
+/* Loading indicator */
+.ucp-loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.ucp-loading.active {
+    display: flex;
+}
+
+.ucp-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: ucp-spin 1s linear infinite;
+}
+
+/* Import variables */
+@import url('variables.css');
+
+/* ----- Basic modal styles ----- */
+.ucp-modal,
+#ucp-product-detail-modal {
+    display: none;
+    position: fixed !important;
+    z-index: 9999 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    pointer-events: none !important; /* Click events pass through background layer */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ucp-modal.show,
+#ucp-product-detail-modal.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.ucp-modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 700px;
+    width: 80%;
+    background-color: #ffffff !important;
+    margin: 0 !important;
+    padding: 30px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 0 30px rgba(255,255,255,0.1) !important;
+    width: 80% !important;
+    height: 70% !important;
+    max-width: 90% !important;
+    overflow: auto !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    pointer-events: auto !important; /* Ensure content area can receive click events */
+}
+
+.ucp-modal-close {
+    position: absolute !important;
+    right: 10px !important;
+    top: 10px !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    color: #333 !important;
+    z-index: 1 !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    text-align: center !important;
+}
+
+.ucp-modal-close:hover {
+    color: #000 !important;
+}
+
+.ucp-modal-body {
+    padding: var(--ucp-spacing-lg);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* ----- Modal loading state ----- */
+.ucp-modal-loading {
+    text-align: center !important;
+    padding: 20px !important;
+}
+
+.ucp-spinner {
+    display: inline-block !important;
+    width: 40px !important;
+    height: 40px !important;
+    border: 5px solid #f3f3f3 !important;
+    border-top: 5px solid #3498db !important;
+    border-radius: 50% !important;
+    animation: ucp-spin 1s linear infinite !important;
+}
+
+@keyframes ucp-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ----- Product quick view content styles ----- */
+.ucp-product-detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ----- Product Modal Styles ----- */
+.ucp-product-modal .ucp-modal-content {
+    width: 60vh;
+    max-height: 80vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Product container */
+.ucp-modal-product-container {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Left image area */
+.ucp-modal-product-left {
+    flex: 0 0 40% !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.ucp-modal-product-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Product image */
+.ucp-modal-product-img {
+    max-width: 100% !important;
+    height: auto !important;
+    border: 1px solid #eee !important;
+    padding: 5px !important;
+    object-fit: contain;
+}
+
+/* Right details area */
+.ucp-modal-product-right {
+    flex: 0 0 60% !important;
+    padding: 10px !important;
+    overflow-y: auto !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+.ucp-modal-product-title {
+    font-size: 24px;
+    margin: 0 0 15px;
+    color: #333;
+    padding-right: 20px; /* Space for the close button */
+}
+
+.ucp-product-modal .ucp-modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+}
+
+.ucp-modal-product-details {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Common styles */
+.ucp-modal-body, 
+#wishlist-container, 
+.wishlist-table, 
+.wishlist-table * {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .ucp-modal-content {
+        width: 95% !important;
+        height: auto !important;
+        max-height: 90vh !important;
+        margin: 5% auto !important;
+    }
+    
+    .ucp-modal-product-container {
+        flex-direction: column !important;
+    }
+    
+    .ucp-modal-product-left, 
+    .ucp-modal-product-right {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .ucp-modal-product-left {
+        height: 40vh;
+    }
+}
+
+.ucp-product-gallery {
+    flex: 0 0 45%;
+    margin-right: 5%;
+}
+
+/* Product information in the product detail modal */
+.ucp-modal .ucp-product-info {
+    flex: 0 0 50%;
+    display: block;
+    overflow: visible;
+}
+
+.ucp-product-title-modal {
+    font-size: 24px;
+    margin-bottom: var(--ucp-spacing-md);
+    color: var(--ucp-text-primary);
+}
+
+.ucp-product-price-modal {
+    font-size: 20px;
+    color: var(--ucp-secondary-color);
+    margin-bottom: var(--ucp-spacing-md);
+    font-weight: 600;
+}
+
+.ucp-product-desc-modal {
+    margin-bottom: var(--ucp-spacing-lg);
+    color: var(--ucp-text-secondary);
+    line-height: 1.6;
+}
+
+/* ----- Product selector fullscreen modal styles ----- */
+.ucp-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: rgba(0,0,0,0.5);
+}
+
+.ucp-modal-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    margin: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ucp-modal-header,
+.ucp-modal-filters {
+    flex-shrink: 0;
+}
+
+.ucp-modal-content {
+    flex: 1;
+    overflow-y: auto;
+    height: 100% !important;
+}
+
+/* ----- Product selector modal styles ----- */
+.ucp-modal-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ucp-spacing-md);
+    margin-bottom: var(--ucp-spacing-lg);
+    padding-bottom: var(--ucp-spacing-md);
+    border-bottom: 1px solid var(--ucp-border-light);
+}
+
+.ucp-search-wrap {
+    flex: 1 1 300px;
+    position: relative;
+}
+
+.ucp-search-input {
+    width: 100%;
+    padding: 8px 40px 8px 12px;
+    border: 1px solid var(--ucp-border-color);
+    border-radius: var(--ucp-border-radius);
+    font-size: 14px;
+    transition: border-color var(--ucp-transition-fast);
+}
+
+.ucp-search-input:focus {
+    border-color: var(--ucp-primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.ucp-search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ucp-text-light);
+}
+
+/* ----- Modal footer area ----- */
+.ucp-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--ucp-spacing-md) var(--ucp-spacing-lg);
+    border-top: 1px solid var(--ucp-border-light);
+    background-color: var(--ucp-bg-light);
+}
+
+/* ----- Responsive adjustments ----- */
+@media (max-width: var(--ucp-breakpoint-md)) {
+    .ucp-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .ucp-product-detail {
+        flex-direction: column;
+    }
+    
+    .ucp-product-gallery,
+    .ucp-product-info {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+    
+    .ucp-product-gallery {
+        margin-bottom: var(--ucp-spacing-lg);
+    }
+    
+    .ucp-modal-filters {
+        flex-direction: column;
+        gap: var(--ucp-spacing-sm);
+    }
+    
+    .ucp-modal-footer {
+        flex-direction: column;
+        gap: var(--ucp-spacing-md);
+    }
+}
+
+/* Product Selector Modal Styles */
+#ucp-product-selector-modal {
+    display: none;
+    position: fixed !important;
+    z-index: 99999 !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Header area styles, including search, categories, and select all functionality */
+.ucp-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.ucp-modal-close {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ucp-header-left {
+    flex: 0 0 auto;
+}
+
+.ucp-header-filters {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Search area styles - Adjust size to fit header layout */
+.ucp-search-wrap {
+    flex: 2;
+    min-width: 250px;
+    max-width: 400px;
+    position: relative;
+}
+
+.ucp-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.ucp-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Category selection styles - More compact layout */
+.ucp-category-filter {
+    min-width: 150px;
+    max-width: 200px;
+    flex: 0 0 auto;
+}
+
+.ucp-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Select all container styles - More compact layout */
+.ucp-select-all-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    padding: 0 10px;
+}
+
+.ucp-select-all-label {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#ucp-product-selector-modal.show {
+    display: block !important;
+}
+
+/* Modal window container layout */
+.ucp-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal window content area styles */
+.ucp-modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.ucp-modal-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.ucp-close-modal {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Product list area styles - Larger padding and better scrolling */
+.ucp-modal-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    scrollbar-width: thin;
+}
+
+/* Scrollbar styles */
+.ucp-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ucp-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.ucp-modal-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+/* Product list grid styles - Fixed 4 products per row, increased width */
+.ucp-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Product item styles - Increased size and improved appearance */
+.ucp-product-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    min-height: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* Improve product item hover effect */
+.ucp-product-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    border-color: #ccc;
+}
+
+/* Product image styles */
+.ucp-product-image {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ucp-product-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Product title styles */
+.ucp-product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Modal window footer styles */
+.ucp-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Wishlist button styles */
+.wishlist-container {
+    margin: 10px 0;
+}
+
+.ucp-wishlist-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.ucp-wishlist-toggle:hover {
+    background-color: #eee;
+}
+
+.ucp-wishlist-toggle[data-action="remove"] {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #e53935;
+}
+
+.ucp-wishlist-toggle[data-action="remove"]:hover {
+    background-color: #ffcdd2;
+}
+
+.ucp-wishlist-toggle .dashicons {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+}

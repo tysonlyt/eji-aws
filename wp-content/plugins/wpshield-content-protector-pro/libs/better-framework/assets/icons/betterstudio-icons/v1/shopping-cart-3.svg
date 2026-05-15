@@ -1,0 +1,23 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+     y="0px"
+     viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+	.st1{fill:#FFFFFF;}
+	.st2{display:none;fill-rule:evenodd;clip-rule:evenodd;fill:#FF0000;}
+</style>
+    <g>
+	<g id="a">
+		<g transform="translate(-0.29 3.011)">
+			<path class="st0" d="M30,3.5c-0.1-0.3-0.4-0.5-0.8-0.4l-19.7,0L8.5-2.2C8.3-2.7,7.9-3,7.4-3H1.6c-1.7,0-1.8,4.1,0,4.1L5,1.2
+				l1.7,5.4l0.1,11c0.1,0.5,0.5,0.8,1,0.8h18.5c0.5,0,0.9-0.4,1-0.8l2.9-13.3C30.3,4.1,30.3,3.7,30,3.5z"/>
+            <path class="st0" d="M11.8,20.1c1.9,0,3.4,1.6,3.4,3.4c0,1.9-1.5,3.4-3.4,3.4c0,0,0,0,0,0c-1.9,0-3.4-1.5-3.4-3.3
+				c0,0,0-0.1,0-0.1C8.3,21.6,9.9,20.1,11.8,20.1C11.8,20.1,11.8,20.1,11.8,20.1z"/>
+            <path class="st0"
+                  d="M22.5,20.1c1.9,0,3.4,1.6,3.4,3.4c0,1.9-1.5,3.4-3.4,3.4S19,25.4,19,23.5C19,21.6,20.6,20.1,22.5,20.1z"/>
+		</g>
+	</g>
+        <polygon class="st1" points="25.9,9.6 24.3,18 10.4,18.1 10.4,9.6 	"/>
+</g>
+    <rect x="6.8" y="9.5" class="st2" width="3.7" height="10.3"/>
+</svg>

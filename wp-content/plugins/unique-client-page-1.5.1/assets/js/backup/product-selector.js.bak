@@ -1,0 +1,480 @@
+/**
+ * Product Selector JavaScript
+ */
+(function($) {
+    'use strict';
+    
+    // Global variable to store selected product ID list
+    var selectedProductIds = [];
+
+    // Initialize product selector
+    function initProductSelector() {
+        console.log('UCP: Initialize product selector');
+        
+        // Check if button exists
+        var selectorBtn = $('#ucp-create-select-products');
+        if (selectorBtn.length) {
+            console.log('UCP: Found product selection button');
+        } else {
+            console.log('UCP: Product selection button not found');
+        }
+        
+        // Fix scroll event binding for auto lazy loading
+        $('.ucp-modal-content').on('scroll', function() {
+            console.log('UCP: Scroll event detected');
+            var container = $(this);
+            var scrollTop = container.scrollTop();
+            var innerHeight = container.innerHeight();
+            var scrollHeight = container.prop('scrollHeight');
+            
+            console.log('UCP: Scroll position - scrollTop: ' + scrollTop + 
+                      ', innerHeight: ' + innerHeight + 
+                      ', scrollHeight: ' + scrollHeight + 
+                      ', threshold: ' + (scrollHeight - 100));
+            
+            var hasMorePages = container.data('has-more-pages') !== false;
+            console.log('UCP: Has more pages flag: ' + hasMorePages);
+            
+            // Only load more products if there are more pages and we're near the bottom
+            if (hasMorePages && scrollTop + innerHeight >= scrollHeight - 100 && !container.hasClass('loading')) {
+                console.log('UCP: Auto loading next page - scroll threshold reached!');
+                
+                // Get current page
+                var currentPage = parseInt($('#ucp-current-page').val() || 1);
+                console.log('UCP: Current page: ' + currentPage + ', loading page: ' + (currentPage + 1));
+                
+                // Set loading state
+                container.addClass('loading');
+                
+                // Load next page
+                loadProducts(currentPage + 1);
+            }
+        });
+        
+        // Additional scroll check function that runs periodically
+        function checkScroll() {
+            var container = $('.ucp-modal-content');
+            if (container.length) {
+                var scrollTop = container.scrollTop();
+                var innerHeight = container.innerHeight();
+                var scrollHeight = container.prop('scrollHeight');
+                var hasMorePages = container.data('has-more-pages') !== false;
+                
+                console.log('UCP: Scroll check - scrollTop: ' + scrollTop + 
+                          ', innerHeight: ' + innerHeight + 
+                          ', scrollHeight: ' + scrollHeight + 
+                          ', hasMorePages: ' + hasMorePages);
+                
+                // Check if we should load more
+                if (hasMorePages && scrollTop + innerHeight >= scrollHeight - 100 && !container.hasClass('loading')) {
+                    console.log('UCP: Auto loading from checker function');
+                    var currentPage = parseInt($('#ucp-current-page').val() || 1);
+                    container.addClass('loading');
+                    loadProducts(currentPage + 1);
+                }
+            }
+        }
+        
+        // Set up periodic scroll check for more reliable lazy loading
+        setInterval(checkScroll, 2000);
+        
+        // Add manual trigger for lazy loading (for testing)
+        $(document).on('click', '.ucp-modal-content', function() {
+            console.log('UCP: Content area clicked, checking if should load more...');
+            var container = $(this);
+            var hasMorePages = container.data('has-more-pages') !== false;
+            
+            if (hasMorePages && !container.hasClass('loading')) {
+                var currentPage = parseInt($('#ucp-current-page').val() || 1);
+                container.addClass('loading');
+                loadProducts(currentPage + 1);
+            }
+        });
+        
+        // Add click event to open product selector
+        $(document).on('click', '#ucp-create-select-products, .ucp-edit-products-button', function(e) {
+            e.preventDefault();
+            
+            // Get modal element
+            var modal = $('#ucp-product-selector-modal');
+            
+            // Check if modal exists
+            if (modal.length) {
+                console.log('UCP: Modal exists:', true);
+            } else {
+                console.error('UCP ERROR: Modal not found!');
+                return;
+            }
+            
+            // Get clicked button ID/class
+            var clickedEl = $(this).attr('id') || $(this).attr('class');
+            console.log('UCP: Clicked select product button, ID/class:', clickedEl);
+            
+            // Show modal
+            modal.fadeIn(300);
+            
+            // Debug info about modal state 
+            console.log('UCP DEBUG: Modal open state:', modal.is(':visible'));
+            console.log('UCP DEBUG: Modal content scroll height:', modal.find('.ucp-modal-content').prop('scrollHeight'));
+            
+            // Reset selection if appropriate
+            if (clickedEl === 'ucp-create-select-products') {
+                // This is for new page creation
+                console.log('UCP DEBUG: Preparing to load first page of products');
+                
+                // Load products
+                loadProducts(1);
+            } else {
+                // This is for editing existing products
+                var pageId = $('#ucp-page-id').val();
+                console.log('UCP DEBUG: Edit products for page ID:', pageId);
+                
+                // Get selected product IDs
+                var selectedProducts = $('#ucp-selected-products').val();
+                if (selectedProducts) {
+                    selectedProductIds = selectedProducts.split(',');
+                    console.log('UCP DEBUG: Pre-selected products:', selectedProductIds);
+                }
+                
+                // Load products
+                loadProducts(1);
+            }
+        });
+        
+        // Add click event to close modal
+        $(document).on('click', '.ucp-modal-close', function() {
+            $('#ucp-product-selector-modal').fadeOut(300);
+        });
+        
+        // Close modal when clicking outside
+        $(document).on('click', '.ucp-modal', function(e) {
+            if (e.target === this) {
+                $(this).fadeOut(300);
+            }
+        });
+        
+        // Add click event for product selection
+        $(document).on('click', '.ucp-product-item', function() {
+            $(this).toggleClass('selected');
+            updateSelectedCount();
+        });
+        
+        // Add click event for product search
+        $('#ucp-product-search-button').on('click', function() {
+            searchProducts();
+        });
+        
+        // Add keypress event for product search
+        $('#ucp-product-search').on('keypress', function(e) {
+            if (e.which === 13) { // Enter key
+                searchProducts();
+            }
+        });
+        
+        // Add change event for category filter
+        $('#ucp-modal-category').on('change', function() {
+            searchProducts();
+        });
+        
+        // Add click event for loading more products
+        $(document).on('click', '.ucp-load-more-button', function() {
+            var currentPage = parseInt($('#ucp-current-page').val() || 1);
+            loadProducts(currentPage + 1);
+        });
+        
+        // Add click event for adding selected products
+        $(document).on('click', '.ucp-add-selected-products', function() {
+            addSelectedProducts();
+        });
+    }
+    
+    // Load products - Add debug output and error handling
+    function loadProducts(page) {
+        var modal = $('#ucp-product-selector-modal');
+        var container = modal.find('.ucp-product-list');
+        var modalContent = modal.find('.ucp-modal-content');
+        var loadMoreBtn = modal.find('.ucp-load-more-button');
+        var category = $('#ucp-modal-category').val();
+        var search = $('#ucp-product-search').val();
+        
+        // Check if modal window exists and is visible
+        if (!modal.is(':visible')) {
+            console.error('UCP ERROR: Modal window not visible, cannot load products!');
+            return;
+        }
+        
+        // Update current page hidden field
+        $('#ucp-current-page').val(page);
+        
+        console.log('UCP DEBUG: Loading products - Page: ' + page + ', Category: ' + category + ', Search: ' + search);
+        
+        // If this is page 1, clear previous content
+        if (page === 1) {
+            console.log('UCP DEBUG: Clearing product list, preparing to load first page');
+            container.empty();
+            // Reset has more pages flag
+            modalContent.data('has-more-pages', true);
+        }
+        
+        // If already loading, don't execute again
+        if (modalContent.hasClass('loading')) {
+            console.log('UCP: Already loading products, ignoring request');
+            return;
+        }
+        
+        // Show loading state
+        modal.addClass('loading');
+        modalContent.addClass('loading');
+        
+        // Add loading indicator
+        if (container.find('.ucp-loading-indicator').length === 0) {
+            container.append('<div class="ucp-loading-indicator">' + ucp_params.loading_text + '</div>');
+        }
+        
+        // Check if ucp_params exists and has required properties
+        if (typeof ucp_params === 'undefined') {
+            console.error('UCP Error: ucp_params is undefined');
+            showNotice('AJAX parameters missing. Please contact administrator.', 'error');
+            container.html('<p class="ucp-error">Script configuration error. Please reload the page.</p>');
+            return;
+        }
+        
+        // Log the AJAX parameters for debugging
+        console.log('UCP Debug: AJAX Parameters', {
+            'url': ucp_params.ajax_url,
+            'nonce': ucp_params.nonce,
+            'action': 'load_selector_products_ajax'
+        });
+        
+        // Add debug information
+        console.log('UCP: Sending AJAX request to load products');
+        
+        $.ajax({
+            url: ucp_params.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'load_selector_products_ajax',
+                nonce: ucp_params.nonce,
+                page: page,
+                category: category,
+                search: search
+            },
+            success: function(response) {
+                console.log('UCP: Product load response', response);
+                
+                // Add detailed debug info about the response
+                console.log('UCP DEBUG: Response success:', response.success);
+                if (response.data) {
+                    console.log('UCP DEBUG: HTML content length:', response.data.html ? response.data.html.length : 0);
+                    console.log('UCP DEBUG: HTML content preview:', response.data.html ? response.data.html.substring(0, 100) : 'No content');
+                    console.log('UCP DEBUG: Max pages:', response.data.max_pages);
+                    if (response.data.debug) {
+                        console.log('UCP DEBUG: Server debug info:', response.data.debug);
+                    }
+                }
+                
+                // Remove loading indicator
+                container.find('.ucp-loading-indicator').remove();
+                
+                if (response.success && response.data) {
+                    // Check if there is HTML content and it's not the "no more products" marker
+                    if (response.data.html && response.data.html.trim() !== '<!-- no more products -->') {
+                        // Append HTML content
+                        container.append(response.data.html);
+                        console.log('UCP DEBUG: Content after append:', container.html());
+                        
+                        // Update whether there are more pages
+                        var hasMorePages = page < response.data.max_pages;
+                        modalContent.data('has-more-pages', hasMorePages);
+                        console.log('UCP: Has more pages:', hasMorePages);
+                        
+                        // Verify if products were added to DOM
+                        var productsAdded = $('.ucp-product-item').length;
+                        console.log('UCP DEBUG: Product items in DOM after append:', productsAdded);
+                        
+                        // Mark selected products
+                        if (selectedProductIds && selectedProductIds.length > 0) {
+                            // Use setTimeout to ensure DOM is fully loaded
+                            setTimeout(function() {
+                                $('.ucp-product-item').each(function() {
+                                    var productId = $(this).data('product-id');
+                                    
+                                    // Check if product ID is in selected list
+                                    if (selectedProductIds.indexOf(productId) !== -1 || 
+                                        selectedProductIds.indexOf(productId.toString()) !== -1) {
+                                        $(this).addClass('selected');
+                                    }
+                                });
+                                
+                                // Update selected count
+                                updateSelectedCount();
+                            }, 100);
+                        }
+                    } else {
+                        // If no more products or empty response
+                        console.log('UCP: No more products to load');
+                        
+                        // Mark that there are no more pages
+                        modalContent.data('has-more-pages', false);
+                        
+                        // If first page and no products, show no products message
+                        if (page === 1 && container.children().length === 0) {
+                            container.html('<div class="ucp-no-products"><p>' + ucp_params.no_products_text + '</p></div>');
+                        }
+                    }
+                } else {
+                    // Error handling
+                    console.error('UCP: Error loading products', response);
+                    showNotice(ucp_params.error_message, 'error');
+                    
+                    if (page === 1) {
+                        container.html('<p class="ucp-no-products">' + ucp_params.error_message + '</p>');
+                    }
+                    
+                    // Mark that there are no more pages
+                    modalContent.data('has-more-pages', false);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('UCP Error:', status, error);
+
+                // Remove loading indicator
+                container.find('.ucp-loading-indicator').remove();
+
+                // Show error message
+                container.html('<p class="ucp-error">Error loading products. Please try again.</p>');
+
+                // Show specific error message if provided
+                if (xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
+                    showNotice(xhr.responseJSON.data.message, 'error');
+                } else {
+                    showNotice('Error loading products. Server error: ' + status, 'error');
+                }
+                
+                // Mark that there are no more pages
+                modalContent.data('has-more-pages', false);
+            },
+            complete: function() {
+                // Always clean up loading states regardless of success or failure
+                container.find('.ucp-loading-indicator').remove();
+                modal.removeClass('loading');
+                modalContent.removeClass('loading');
+                $('.ucp-modal-content').removeClass('loading');
+                console.log('UCP: AJAX request completed, loading state cleared');
+            }
+        });
+    }
+    
+    // Search products
+    function searchProducts() {
+        loadProducts(1);
+    }
+    
+    // Update selected count
+    function updateSelectedCount() {
+        var count = $('.ucp-product-item.selected').length;
+        $('.ucp-selected-count').text(count);
+        
+        if (count > 0) {
+            $('.ucp-add-selected-products').prop('disabled', false);
+        } else {
+            $('.ucp-add-selected-products').prop('disabled', true);
+        }
+    }
+    
+    // Add selected products
+    function addSelectedProducts() {
+        var selectedProducts = [];
+        
+        $('.ucp-product-item.selected').each(function() {
+            // Use product-id to be consistent with previous
+            selectedProducts.push($(this).data('product-id'));
+            console.log('UCP: Add selected product ID:', $(this).data('product-id'));
+        });
+        
+        if (selectedProducts.length === 0) {
+            showNotice('Please select products first', 'warning');
+            return;
+        }
+        
+        // Get page ID if exists
+        var pageId = $('#ucp-page-id').val();
+        
+        // If used in create page
+        if ($('#ucp-create-select-products').length > 0) {
+            // Set selected product IDs to hidden field
+            $('#ucp-selected-products').val(selectedProducts.join(','));
+            
+            // Show number of selected products
+            $('#ucp-create-select-products').text('Selected ' + selectedProducts.length + ' products');
+            
+            // Close modal
+            $('#ucp-product-selector-modal').fadeOut(300);
+            
+            // Show success message
+            showNotice('Selected ' + selectedProducts.length + ' products', 'success');
+            
+            return;
+        }
+        
+        // Show processing state
+        $('#ucp-product-selector-modal').addClass('processing');
+        $('.ucp-add-selected-products').prop('disabled', true).text('Processing...');
+        
+        // Add products to page AJAX request
+        $.ajax({
+            url: ucp_params.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'ucp_add_products_to_page',
+                nonce: ucp_params.nonce,
+                product_ids: selectedProducts.join(','),
+                page_id: pageId
+            },
+            success: function(response) {
+                if (response.success) {
+                    // Show success message
+                    showNotice('Successfully added ' + selectedProducts.length + ' products to the page', 'success');
+                    
+                    // Close modal
+                    setTimeout(function() {
+                        $('#ucp-product-selector-modal').fadeOut(300);
+                        // Reload page or update product list
+                        if (response.data && response.data.reload) {
+                            window.location.reload();
+                        }
+                    }, 1500);
+                } else {
+                    var errorMsg = response.data && response.data.message ? response.data.message : 'An error occurred while adding products';
+                    showNotice(errorMsg, 'error');
+                    $('.ucp-add-selected-products').prop('disabled', false).text('Add selected products');
+                }
+            },
+            error: function() {
+                showNotice('An error occurred while adding products', 'error');
+                $('.ucp-add-selected-products').prop('disabled', false).text('Add selected products');
+            },
+            complete: function() {
+                $('#ucp-product-selector-modal').removeClass('processing');
+            }
+        });
+    }
+    
+    // Show notification message
+    function showNotice(message, type) {
+        var notice = $('<div class="ucp-notice ' + type + '">' + message + '</div>');
+        $('.ucp-modal-content').prepend(notice);
+        
+        setTimeout(function() {
+            notice.fadeOut(300, function() {
+                $(this).remove();
+            });
+        }, 3000);
+    }
+    
+    // Initialize on document ready
+    $(document).ready(function() {
+        initProductSelector();
+    });
+    
+})(jQuery);

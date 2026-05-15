@@ -34,6 +34,6 @@ $config = array (
   ),
   'output_dir' => '/home/customer/www/eji.com.hk/public_html/wp-content/cache/sgo-cache/',
   'logged_in_cache' => 0,
-  'cache_secret_key' => '6cea156cf1c4f240a1565cd612bea702',
+  'cache_secret_key' => 'c909e30c6ff2188f96fa090d99259dcd',
   'logged_in_cookie' => 'wordpress_logged_in_c36a592d4110e48b390080585de4a071',
 );

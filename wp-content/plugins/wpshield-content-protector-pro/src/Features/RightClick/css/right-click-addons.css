@@ -1,0 +1,596 @@
+/* Style Reset */
+.cp-context-menu,
+.cp-context-menu *:before,
+.cp-context-menu *:after,
+.cp-context-menu * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    line-height: 1;
+}
+
+.cp-context-menu ol,
+.cp-context-menu ul {
+    list-style: none;
+}
+
+.cp-context-menu {
+    --cpr-line-color: #dadce0;
+    --cpr-hr-line-color: var(--cpr-line-color);
+    --cpr-item-font-size: 12px;
+    --cpr-item-line-height: 23px;
+    --cpr-item-color: #000;
+    --cpr-item-hover-color: #000;
+    --cpr-item-disable-color: #a4a6ab;
+    --cpr-item-hover-bg-color: #e7e7e7;
+    --cpr-item-disable-hover-bg-color: transparent;
+    --cpr-item-hotkey-color: #72777c;
+    --cpr-item-hotkey-hover-color: #202124;
+
+    --cpr-bg-color: #fff;
+    width: 330px;
+    background: var(--cpr-bg-color);
+    border: solid 1px var(--cpr-line-color);
+    box-shadow: 3px 3px 2.5px -1px rgb(0 0 0 / 50%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    text-rendering: optimizeSpeed;
+    font-weight: 400;
+    letter-spacing: 0.05px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cp-context-menu.cp-type-selected {
+    width: auto !important;
+    max-width: 360px;
+}
+
+.cp-context-menu div {
+    padding: 0;
+    font-size: var(--cpr-item-font-size);
+    line-height: var(--cpr-item-line-height);
+    color: var(--cpr-item-color);
+    cursor: initial;
+    position: relative;
+}
+
+.cp-context-menu div:hover {
+    background-color: var(--cpr-item-hover-bg-color);
+    color: var(--cpr-item-hover-color);
+}
+
+.cp-context-menu .cp-disable {
+    color: var(--cpr-item-disable-color);
+    --cpr-item-hotkey-hover-color: var(--cpr-item-disable-color);
+    pointer-events: none;
+}
+
+.cp-context-menu div.cp-disable:hover {
+    background-color: var(--cpr-item-disable-hover-bg-color);
+    color: var(--cpr-item-disable-color);
+}
+
+.cp-context-menu div .cp-shortcut {
+    position: absolute;
+    right: 23px;
+    top: 0;
+    height: var(--cpr-item-line-height);
+    line-height: var(--cpr-item-line-height);
+    color: var(--cpr-item-hotkey-color);
+}
+
+.cp-context-menu div:hover .cp-shortcut {
+    color: var(--cpr-item-hotkey-hover-color);
+}
+
+.cp-context-menu div .cp-item-icon {
+    fill: currentColor;
+    position: absolute;
+    left: 9px;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    margin-top: -8.5px;
+}
+
+.cp-context-menu hr {
+    background: var(--cpr-hr-line-color, var(--cpr-line-color));
+    margin: 5px 1px;
+    height: 1px;
+}
+
+/* Windows - Chrome */
+.cp-platform-windows.cp-browser-chrome {
+    padding: 3px 0;
+    width: 330px;
+}
+
+.cp-platform-windows.cp-browser-chrome.cp-type-input,
+.cp-platform-windows.cp-browser-chrome.cp-type-input {
+    width: 235px;
+}
+
+.cp-platform-windows.cp-browser-chrome.cp-type-img {
+    width: 235px;
+}
+
+.cp-platform-windows.cp-browser-chrome div {
+    padding: 0 23px 0 38px;
+}
+
+/* Windows - FireFox */
+.cp-platform-windows.cp-browser-firefox {
+    --cpr-line-color: #cfcfd8;
+    --cpr-item-font-size: 12px;
+    --cpr-item-line-height: 30px;
+    --cpr-item-color: #15141a;
+    --cpr-item-hover-color: #15141a;
+    --cpr-item-disable-color: #9d9da1;
+    --cpr-item-disable-hover-bg-color: #efeff3;
+    --cpr-bg-color: #f9f9fb;
+    box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.85);
+    width: 203px;
+    border-radius: 4px;
+    padding: 4px 0;
+}
+
+.cp-platform-windows.cp-browser-firefox.cp-type-input,
+.cp-platform-windows.cp-browser-firefox.cp-type-img {
+    width: 230px;
+}
+
+.cp-platform-windows.cp-browser-firefox.cp-type-anchor {
+    width: 220px;
+}
+
+.cp-platform-windows.cp-browser-firefox div {
+    padding: 0 12px;
+}
+
+.cp-platform-windows.cp-browser-firefox hr {
+    margin: 2px 12px;
+}
+
+.cp-platform-windows.cp-browser-firefox div.item-inline {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    --cpr-item-line-height: 36px;
+    height: var(--cpr-item-line-height);
+    padding: 0;
+}
+
+.cp-platform-windows.cp-browser-firefox div .cp-item-icon-static {
+    width: 18px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -4px;
+    fill: var(--cpr-item-color);
+}
+
+.cp-platform-windows.cp-browser-firefox div.cp-disable {
+    pointer-events: visible;
+}
+
+.cp-platform-windows.cp-browser-firefox div.cp-disable .cp-item-icon-static {
+    fill: var(--cpr-item-disable-color);
+}
+
+.cp-platform-windows.cp-browser-firefox div b {
+    text-decoration: underline;
+}
+
+.cp-platform-windows.cp-browser-firefox div.item-inline + hr {
+    margin: 4px 0 2px;
+}
+
+/* Windows - Opera */
+.cp-platform-windows.cp-browser-opera {
+    box-shadow: inset 0px 0px 0 1px #d8e2eb;
+    --cpr-item-line-height: 22px;
+    --cpr-item-disable-color: #8a8a8a;
+    --cpr-item-hover-bg-color: #e3e4e4;
+    --cpr-item-hotkey-color: #000000;
+    --cpr-item-hotkey-hover-color: #000000;
+    width: 231px;
+    padding: 7px 0;
+}
+
+.cp-platform-windows.cp-browser-opera.cp-type-anchor {
+    width: 280px;
+}
+
+.cp-platform-windows.cp-browser-opera.cp-type-input {
+    width: 260px;
+}
+
+.cp-platform-windows.cp-browser-opera.cp-type-img {
+    width: 257px;
+}
+
+.cp-platform-windows.cp-browser-opera.cp-type-selected {
+    width: 250px !important;
+}
+
+.cp-platform-windows.cp-browser-opera div {
+    padding: 0 24px 0 24px;
+}
+
+.cp-platform-windows.cp-browser-opera hr {
+    margin: 6px 0 6px 24px;
+}
+
+.cp-platform-windows.cp-context-menu div.cp-disable .cp-shortcut {
+    --cpr-item-hotkey-color: var(--cpr-item-disable-color);
+}
+
+/* Windows - Edge */
+.cp-platform-windows.cp-browser-edge {
+    --cpr-line-color: #c0c0c0;
+    --cpr-hr-line-color: #dadada;
+    --cpr-item-font-size: 12px;
+    --cpr-item-line-height: 28px;
+    --cpr-item-color: #000;
+    --cpr-item-hover-color: #000;
+    --cpr-item-disable-color: #9e9e9e;
+    --cpr-item-hover-bg-color: #eeeeee;
+    --cpr-item-hotkey-color: #000;
+    --cpr-item-hotkey-hover-color: #000;
+    border-radius: 4px;
+    padding: 4px;
+    width: 335px;
+    border-top-color: #e2e2e2;
+    box-shadow: 0px 7px 15px 0px rgb(0 0 0 / 30%);
+}
+
+.cp-platform-windows.cp-browser-edge.cp-type-input {
+    width: 302px;
+}
+
+.cp-platform-windows.cp-browser-edge.cp-type-img {
+    width: 322px;
+}
+
+.cp-platform-windows.cp-browser-edge.cp-type-selected {
+    min-width: 330px;
+    max-width: 420px;
+    width: max-content !important;
+}
+
+.cp-platform-windows.cp-browser-edge div {
+    padding: 0 35px 0 39px;
+    border-radius: 4px;
+}
+
+.cp-platform-windows.cp-browser-edge hr {
+    margin: 4px -4px;
+}
+
+/* Mac - All Browsers */
+.cp-platform-mac {
+    --cpr-item-font-size: 13px;
+    --cpr-item-line-height: 22px;
+    padding: 5px;
+    border: none;
+    border-radius: 7px;
+    width: 200px;
+    box-shadow: 0px 0px 0 1px rgb(0 0 0 / 5%), 0px 0px 16px 0px rgb(0 0 0 / 35%);
+    background: transparent !important;
+    overflow: hidden;
+}
+
+.cp-platform-mac:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cp-platform-mac.cp-color-light {
+    --cpr-line-color: #0000001c;
+    --cpr-item-color: #000;
+    --cpr-item-hover-color: #edf5fd;
+    --cpr-item-disable-color: #00000075;
+    --cpr-item-hover-bg-color: #3696f7;
+    background-color: #e7e8eb;
+}
+
+.cp-platform-mac.cp-color-light:after {
+    opacity: 0.99;
+    backdrop-filter: blur(85px) contrast(145%);
+    background-color: #f0e5e56e;
+}
+
+.cp-platform-mac.cp-color-dark {
+    --cpr-line-color: #8d8c8e;
+    --cpr-item-color: #efefef;
+    --cpr-item-hover-color: #edf5fd;
+    --cpr-item-disable-color: #ffffff7a;
+    --cpr-item-hover-bg-color: #3696f7;
+    border: 1px solid #0009;
+    box-shadow: 0px 0px 13px 0px rgb(0 0 0 / 25%);
+}
+
+.cp-platform-mac.cp-color-dark:after {
+    opacity: 0.99;
+    backdrop-filter: blur(35px) saturate(0.8);
+    background-color: #0000008a;
+}
+
+.cp-platform-mac:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ffffff26;
+}
+
+.cp-platform-mac div {
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.cp-platform-mac hr {
+    margin: 5px 9px;
+}
+
+/* Mac - Chrome */
+.cp-platform-mac.cp-browser-chrome {
+    width: 257px;
+}
+
+.cp-platform-mac.cp-browser-chrome.cp-type-img,
+.cp-platform-mac.cp-browser-chrome.cp-type-anchor {
+    width: 250px;
+}
+
+.cp-platform-mac.cp-browser-chrome.cp-type-input {
+    width: 200px;
+}
+
+/* Mac - Firefox */
+.cp-platform-mac.cp-browser-firefox {
+    width: 220px;
+}
+
+.cp-platform-mac.cp-browser-firefox.cp-type-img {
+    width: 248px;
+}
+
+.cp-platform-mac.cp-browser-firefox.cp-type-input {
+    width: 222px;
+}
+
+.cp-platform-mac.cp-browser-firefox.cp-type-anchor {
+    width: 268px;
+}
+
+
+/* Mac - Opera */
+.cp-platform-mac.cp-browser-opera {
+    width: 150px;
+}
+
+.cp-platform-mac.cp-browser-opera.cp-type-img {
+    width: 180px;
+}
+
+.cp-platform-mac.cp-browser-opera.cp-type-input {
+    width: 200px;
+}
+
+.cp-platform-mac.cp-browser-opera.cp-type-input {
+    width: 238px;
+}
+
+/* Mac - Safari  */
+.cp-platform-mac.cp-browser-safari {
+    width: 192px;
+}
+
+.cp-platform-mac.cp-browser-safari.cp-type-img {
+    width: 230px;
+}
+
+.cp-platform-mac.cp-browser-safari.cp-type-input {
+    width: 224px;
+}
+
+.cp-platform-mac.cp-browser-safari.cp-type-anchor {
+    width: 224px;
+}
+
+/* Linux */
+.cp-context-menu.cp-type-selected.cp-platform-linux {
+    max-width: 420px;
+}
+
+/* Linux - Chrome */
+.cp-platform-linux.cp-browser-chrome {
+    width: 400px;
+    padding: 5px 0;
+    --cpr-line-color: #dadce0;
+    --cpr-hr-line-color: var(--cpr-line-color);
+    --cpr-item-font-size: 15px;
+    --cpr-item-line-height: 24px;
+    --cpr-item-color: #202124;
+    --cpr-item-hover-color: #202124;
+    --cpr-item-disable-color: #a4a6ab;
+    --cpr-item-hover-bg-color: #e8e8e8;
+    --cpr-item-disable-hover-bg-color: transparent;
+    --cpr-item-hotkey-color: #898e92;
+    --cpr-item-hotkey-hover-color: #2b2c2f;
+    box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+}
+
+.cp-platform-linux.cp-browser-chrome div {
+    padding: 0 38px;
+}
+
+.cp-platform-linux.cp-browser-chrome.cp-type-img {
+    width: 290px;
+}
+
+.cp-platform-linux.cp-browser-chrome.cp-type-img div {
+    padding: 0 25px;
+}
+
+.cp-platform-linux.cp-browser-chrome.cp-type-anchor {
+    width: 265px;
+}
+
+.cp-platform-linux.cp-browser-chrome.cp-type-anchor div {
+    padding: 0 25px;
+}
+
+.cp-platform-linux.cp-browser-chrome.cp-type-input {
+    width: 280px;
+}
+
+
+/* Linux - FireFox */
+.cp-platform-linux.cp-browser-firefox {
+    --cpr-line-color: #e1e1e1;
+    --cpr-item-font-size: 12px;
+    --cpr-item-line-height: 25px;
+    --cpr-item-color: #3d3d3d;
+    --cpr-item-hover-color: #3d3d3d;
+    --cpr-item-disable-color: #9c9c9c;
+    --cpr-item-disable-hover-bg-color: transparent;
+    --cpr-bg-color: #f9f9fb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    width: 260px;
+    border-radius: 4px;
+    padding: 3px 0;
+    border-color: #c7c7c7;
+}
+
+.cp-platform-linux.cp-browser-firefox.cp-type-input,
+.cp-platform-linux.cp-browser-firefox.cp-type-img {
+    width: 230px;
+}
+
+.cp-platform-linux.cp-browser-firefox.cp-type-anchor {
+    width: 220px;
+}
+
+.cp-platform-linux.cp-browser-firefox div {
+    padding: 0 28px;
+}
+
+.cp-platform-linux.cp-browser-firefox hr {
+    margin: 0;
+}
+
+.cp-platform-linux.cp-browser-firefox div.item-inline {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    --cpr-item-line-height: 40px;
+    height: var(--cpr-item-line-height);
+    padding: 0;
+}
+
+.cp-platform-linux.cp-browser-firefox div .cp-item-icon-static {
+    width: 18px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -4px;
+    fill: var(--cpr-item-color);
+}
+
+.cp-platform-linux.cp-browser-firefox div.cp-disable {
+    pointer-events: visible;
+}
+
+.cp-platform-linux.cp-browser-firefox div.cp-disable .cp-item-icon-static {
+    fill: var(--cpr-item-disable-color);
+}
+
+.cp-platform-linux.cp-browser-firefox div b {
+    text-decoration: underline;
+}
+
+.cp-platform-linux.cp-browser-firefox.cp-type-anchor {
+    width: 274px;
+}
+
+.cp-platform-linux.cp-browser-firefox.cp-type-input {
+    width: 262px;
+}
+
+
+/* Linux - Opera */
+.cp-platform-linux.cp-browser-opera {
+    --cpr-item-font-size: 14px;
+    --cpr-item-line-height: 25px;
+    --cpr-line-color: #dadce0;
+    --cpr-item-color: #070707;
+    --cpr-item-hover-color: #000000;
+    --cpr-item-disable-color: #8a8a8a;
+    --cpr-item-hover-bg-color: #e3e4e4;
+    --cpr-item-hotkey-color: #090909;
+    --cpr-item-hotkey-hover-color: #090909;
+    box-shadow: 0 0 20px -5px rgb(0 0 0 / 25%);
+    border-color: #d8e2eb;
+    width: 280px;
+    padding: 7px 0;
+}
+
+.cp-platform-linux.cp-browser-opera.cp-type-anchor {
+    width: 340px;
+}
+
+.cp-platform-linux.cp-browser-opera.cp-type-input {
+    width: 320px;
+}
+
+.cp-platform-linux.cp-browser-opera.cp-type-img {
+    width: 257px;
+}
+
+.cp-platform-linux.cp-browser-opera.cp-type-selected {
+    width: 310px !important;
+}
+
+.cp-platform-linux.cp-browser-opera div {
+    padding: 0 25px;
+}
+
+.cp-platform-linux.cp-browser-opera hr {
+    margin: 6px 0 6px 25px;
+}
+
+.cp-platform-linux.cp-context-menu div.cp-disable .cp-shortcut {
+    --cpr-item-hotkey-color: var(--cpr-item-disable-color);
+}
+
+.cp-platform-linux.cp-browser-opera.cp-type-selected div,
+.cp-platform-linux.cp-browser-opera.cp-type-input div {
+    padding: 0 37px;
+}
+
+.cp-platform-linux.cp-browser-opera.cp-type-selected hr,
+.cp-platform-linux.cp-browser-opera.cp-type-input hr {
+    margin: 6px 0 6px 37px;
+}
+

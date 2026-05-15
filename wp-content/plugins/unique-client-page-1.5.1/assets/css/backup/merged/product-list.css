@@ -1,0 +1,226 @@
+/**
+ * Product List Styles
+ * Styling for the product selection modal grid layout
+ */
+
+/* Import variables */
+@import url('variables.css');
+
+/* Import hide elements styles */
+@import url('hide-elements.css');
+
+/* ----- Product List Grid ----- */
+.ucp-admin .ucp-product-list,
+.ucp-modal .ucp-product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ucp-spacing-md);
+    padding: var(--ucp-spacing-lg);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ucp-admin .ucp-product-item,
+.ucp-modal .ucp-product-item {
+    position: relative;
+    border: 1px solid var(--ucp-border-color);
+    border-radius: var(--ucp-border-radius);
+    padding: var(--ucp-spacing-md);
+    transition: var(--ucp-transition-fast);
+    cursor: pointer;
+    background-color: var(--ucp-bg-white);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ucp-admin .ucp-product-item:hover,
+.ucp-modal .ucp-product-item:hover {
+    border-color: #aaa;
+    box-shadow: var(--ucp-shadow);
+}
+
+.ucp-admin .ucp-product-item.selected,
+.ucp-modal .ucp-product-item.selected {
+    border-color: var(--ucp-secondary-color);
+    background-color: rgba(35, 74, 131, 0.05);
+}
+
+.ucp-admin .ucp-product-image,
+.ucp-modal .ucp-product-image {
+    display: block;
+    width: 100%;
+    height: 120px;
+    margin-bottom: var(--ucp-spacing-sm);
+    border-radius: var(--ucp-border-radius-sm);
+    overflow: hidden;
+    text-align: center;
+}
+
+.ucp-admin .ucp-product-image img,
+.ucp-modal .ucp-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ucp-admin .ucp-product-title,
+.ucp-modal .ucp-product-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 var(--ucp-spacing-xs) 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ucp-admin .ucp-product-price,
+.ucp-modal .ucp-product-price {
+    color: var(--ucp-text-primary);
+    font-weight: 600;
+    margin-bottom: var(--ucp-spacing-xs);
+}
+
+.ucp-admin .ucp-product-sku,
+.ucp-admin .ucp-product-category,
+.ucp-modal .ucp-product-sku,
+.ucp-modal .ucp-product-category {
+    margin-top: var(--ucp-spacing-xs);
+    font-size: 12px;
+    color: var(--ucp-text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ucp-admin .ucp-product-checkbox,
+.ucp-modal .ucp-product-checkbox {
+    position: absolute;
+    top: var(--ucp-spacing-sm);
+    right: var(--ucp-spacing-sm);
+    z-index: 1;
+    background: rgba(255,255,255,0.7);
+    border-radius: var(--ucp-border-radius-sm);
+    padding: 2px;
+}
+
+/* ----- Modal Content Styling ----- */
+.ucp-modal-container {
+    background-color: var(--ucp-bg-white);
+    border-radius: var(--ucp-border-radius);
+    max-width: 900px;
+    width: 90%;
+    margin: 3% auto;
+    position: relative;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ucp-modal .ucp-modal-header {
+    padding: var(--ucp-spacing-md) var(--ucp-spacing-lg);
+    border-bottom: 1px solid var(--ucp-border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ucp-modal .ucp-modal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ucp-text-primary);
+}
+
+.ucp-modal .ucp-close-modal {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--ucp-text-light);
+    transition: var(--ucp-transition-fast);
+}
+
+.ucp-modal .ucp-close-modal:hover {
+    color: var(--ucp-text-primary);
+}
+
+.ucp-modal .ucp-modal-content {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(90vh - 130px);
+}
+
+.ucp-modal .ucp-modal-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ucp-spacing-md);
+    padding: var(--ucp-spacing-md) var(--ucp-spacing-lg);
+    border-bottom: 1px solid var(--ucp-border-light);
+}
+
+.ucp-modal .ucp-modal-footer {
+    padding: var(--ucp-spacing-md) var(--ucp-spacing-lg);
+    border-top: 1px solid var(--ucp-border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ucp-bg-light);
+}
+
+.ucp-modal .ucp-add-selected-products {
+    background: var(--ucp-secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--ucp-border-radius-sm);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--ucp-transition-fast);
+}
+
+.ucp-modal .ucp-add-selected-products:hover {
+    background: var(--ucp-secondary-dark);
+}
+
+.ucp-modal .ucp-add-selected-products:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ----- Responsive Layout ----- */
+@media screen and (max-width: var(--ucp-breakpoint-xl)) {
+    .ucp-admin .ucp-product-list,
+    .ucp-modal .ucp-product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: var(--ucp-breakpoint-md)) {
+    .ucp-admin .ucp-product-list,
+    .ucp-modal .ucp-product-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: var(--ucp-spacing-md);
+        gap: var(--ucp-spacing-md);
+    }
+    
+    .ucp-modal .ucp-modal-filters {
+        flex-direction: column;
+    }
+    
+    .ucp-modal .ucp-modal-footer {
+        flex-direction: column;
+        gap: var(--ucp-spacing-sm);
+    }
+}
+
+@media screen and (max-width: var(--ucp-breakpoint-sm)) {
+    .ucp-admin .ucp-product-list,
+    .ucp-modal .ucp-product-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,286 @@
+/**
+ * Unique Client Page - Main Styles
+ *
+ * Imports the button system and other modular components
+ */
+
+/* Import button system */
+@import url('variables.css');
+@import url('buttons.css');
+
+/* Base styles */
+.ucp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Loading indicator */
+.ucp-loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.ucp-loading.active {
+    display: flex;
+}
+
+.ucp-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: ucp-spin 1s linear infinite;
+}
+
+@keyframes ucp-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Product grid */
+.ucp-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.ucp-product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the card fills the grid cell height */
+}
+
+.ucp-product-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ucp-product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ucp-product-info {
+    padding: 15px;
+}
+
+/* Apply flex layout styles only within the product grid */
+.ucp-products-grid .ucp-product-info {
+    flex-grow: 1; /* Allow the product info area to take up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.ucp-product-title {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+/* Apply title styles only within the product grid */
+.ucp-products-grid .ucp-product-title {
+    line-height: 20px; /* Control line height */
+    overflow: hidden; /* Hide overflow content */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 2; /* Standard property for better compatibility */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis; /* Show ellipsis at the end */
+}
+
+.ucp-product-price {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* All buttons now use the unified ucp-btn class system */
+
+/* Modal styles */
+.ucp-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ucp-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ucp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.ucp-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: 2% auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.ucp-modal.active .ucp-modal-container {
+    transform: translateY(0);
+}
+
+/* Close button now uses the unified button system */
+#close-wishlist-modal {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    width: 100px;
+    height: 25px;
+    font-size: 15px;
+    padding: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ucp-modal-content {
+    padding: 30px;
+}
+
+/* Prevent body scroll when modal is open */
+body.ucp-modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ucp-modal-container {
+        width: 95%;
+        margin: 10px auto;
+    }
+    
+    .ucp-modal-content {
+        padding: 20px 15px;
+    }
+}
+
+/* Loading spinner */
+.ucp-loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+}
+
+.ucp-loading.active {
+    display: flex;
+}
+
+.ucp-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: ucp-spin 1s linear infinite;
+}
+
+@keyframes ucp-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ucp-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .ucp-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Custom Send Wishlist button styles */
+#send-wishlist-btn {
+    min-width: 200px;     /* Increase button width */
+    font-size: 18px;      /* Increase font size */
+    padding: 12px 24px;   /* More generous padding */
+    margin: 15px auto;    /* Center display */
+    display: block;       /* Block level display */
+}
+
+/* Small loading spinner inside button */
+.btn-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: btn-spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes btn-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success icon styles */
+.btn-success-icon {
+    display: inline-block;
+    color: #fff;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* 错误按钮样式 */
+.ucp-btn-error {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+

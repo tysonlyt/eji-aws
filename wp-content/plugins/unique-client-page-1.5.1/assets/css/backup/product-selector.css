@@ -1,0 +1,356 @@
+/**
+ * 产品选择器样式
+ */
+
+/* 模态框基础样式 */
+.ucp-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}
+
+.ucp-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ucp-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    margin: 2% auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000000;
+    overflow: hidden;
+    animation: ucp-modal-in 0.3s ease-out;
+}
+
+@keyframes ucp-modal-in {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.ucp-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #f9f9f9;
+}
+
+.ucp-modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ucp-close-modal {
+    font-size: 24px;
+    line-height: 1;
+    color: #777;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.ucp-close-modal:hover {
+    color: #333;
+}
+
+.ucp-modal-content {
+    padding: 20px;
+    max-height: calc(90vh - 120px);
+    overflow-y: auto;
+}
+
+/* 搜索和筛选区域 */
+.ucp-modal-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ucp-search-wrap {
+    flex: 1 1 300px;
+    position: relative;
+}
+
+.ucp-search-input {
+    width: 100%;
+    padding: 8px 40px 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ucp-search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.ucp-category-filter {
+    flex: 0 1 250px;
+}
+
+.ucp-select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ucp-select-all-wrap {
+    flex: 0 1 200px;
+    display: flex;
+    align-items: center;
+}
+
+.ucp-select-all-label {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+/* 产品列表区域 */
+.ucp-product-list {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ucp-product-item {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.ucp-product-item:hover {
+    border-color: #aaa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.ucp-product-item.selected {
+    border-color: #2271b1;
+    background-color: rgba(34, 113, 177, 0.05);
+}
+
+.ucp-product-item.selected:before {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2271b1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.ucp-product-image {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.ucp-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ucp-product-title {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+    height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.ucp-product-price {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.ucp-product-sku {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.ucp-product-category {
+    font-size: 12px;
+    color: #777;
+    background-color: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* 分页和底部区域 */
+.ucp-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #e5e5e5;
+    background-color: #f9f9f9;
+}
+
+.ucp-pagination {
+    flex: 1;
+    text-align: center;
+}
+
+.ucp-load-more-button {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ucp-load-more-button:hover {
+    background-color: #f1f1f1;
+    border-color: #ccc;
+}
+
+.ucp-selection-info {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.ucp-selected-count {
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+.ucp-add-selected-products {
+    background-color: #2271b1;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ucp-add-selected-products:hover {
+    background-color: #135e96;
+}
+
+.ucp-add-selected-products:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 加载状态 */
+.ucp-modal.loading .ucp-modal-content:before,
+.ucp-modal.processing .ucp-modal-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+}
+
+.ucp-modal.loading .ucp-modal-content:after,
+.ucp-modal.processing .ucp-modal-container:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2271b1;
+    border-radius: 50%;
+    animation: ucp-spin 1s linear infinite;
+    z-index: 101;
+}
+
+@keyframes ucp-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 通知消息 */
+.ucp-notice {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ucp-notice.success {
+    background-color: #ecf7ed;
+    color: #2a6f34;
+    border-left: 4px solid #46b450;
+}
+
+.ucp-notice.error {
+    background-color: #fcf0f1;
+    color: #b02b37;
+    border-left: 4px solid #d63638;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 782px) {
+    .ucp-modal-filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .ucp-product-list {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    
+    .ucp-modal-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .ucp-selection-info {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

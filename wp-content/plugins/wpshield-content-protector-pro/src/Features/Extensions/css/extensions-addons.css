@@ -1,0 +1,3 @@
+.cp-no-select::selection{
+    background-color: transparent;
+}

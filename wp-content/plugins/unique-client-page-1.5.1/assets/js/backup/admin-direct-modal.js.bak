@@ -1,0 +1,618 @@
+/**
+ * Admin Direct Modal Controller
+ * 完全接管WordPress管理界面中的模態窗口系統
+ * 提供全屏顯示和增強的交互體驗
+ */
+
+(function($) {
+    'use strict';
+    
+    // 防止多次初始化的標誌
+    if (window.UCPAdminModalControllerInitialized) {
+        console.log('Admin Modal Controller: 已經初始化過，跳過重複初始化');
+        return;
+    }
+    
+    // 設置初始化標誌
+    window.UCPAdminModalControllerInitialized = true;
+    
+    // 檢測是否在WordPress管理界面中
+    const isWPAdmin = $('body').hasClass('wp-admin') || $('body').hasClass('wp-core-ui');
+    
+    // 只在WordPress管理界面執行
+    if (!isWPAdmin) {
+        console.log('Admin Modal Controller: 不在WordPress管理界面，不執行');
+        return;
+    }
+    
+    // 記錄管理界面信息，便於調試
+    console.log('Admin Modal Controller: 已加載，WordPress管理界面檢測成功');
+    console.log('- WP Admin Bar高度:', $('#wpadminbar').height() + 'px');
+    console.log('- 頁面類型:', $('body').attr('class').split(' ').filter(c => c.includes('page')).join(', '));
+    
+    // 攝取原始的ModalManager方法，以便我們可以接管它們
+    let originalModalManager = null;
+    if (window.ModalManager) {
+        console.log('Admin Modal Controller: 攝取原始的ModalManager');
+        originalModalManager = window.ModalManager;
+    }
+    
+    // 清理所有與模態相關的事件處理器
+    function cleanupModalEventHandlers() {
+        console.log('Admin Modal Controller: 清理模態相關事件處理器');
+        
+        // 移除所有以ucpAdminModal為命名空間的事件處理器
+        $(document).off('.ucpAdminModal');
+        $(document).off('.ucpDirectClose');
+        $(document).off('.ucpDirectEsc');
+        $(document).off('.ucpAdminClose');
+        $(document).off('.ucpAdminEsc');
+        $(document).off('.ucpAdminModalFix');
+        
+        // 移除可能存在的拖動事件處理器
+        $(document).off('mousemove.ucpModalDrag');
+        $(document).off('mouseup.ucpModalDrag');
+        
+        console.log('Admin Modal Controller: 事件處理器清理完成');
+    }
+    
+    // 強制關閉模態窗口
+    function closeModal($modal) {
+        if (!$modal || !$modal.length) {
+            console.warn('Admin Modal Controller: 無效的模態窗口，無法關閉');
+            return false;
+        }
+        
+        console.log('Admin Modal Controller: 強制關閉模態窗口', $modal.attr('id'));
+        
+        // 1. 移除顯示類
+        $modal.removeClass('show active visible fullscreen');
+        $modal.addClass('closing hidden');
+        
+        // 2. 通過CSS屬性隱藏
+        $modal.css({
+            'display': 'none',
+            'visibility': 'hidden',
+            'opacity': '0',
+            'z-index': '-1' // 確保完全在其他元素下方
+        });
+        
+        // 3. 移除任何內聯樣式可能導致顯示的屬性
+        $modal.attr('style', function(i, style) {
+            return style.replace(/display:\s*block/g, 'display: none')
+                        .replace(/display:\s*flex/g, 'display: none')
+                        .replace(/visibility:\s*visible/g, 'visibility: hidden')
+                        .replace(/opacity:\s*1/g, 'opacity: 0');
+        });
+        
+        // 4. 移除模態開啟類和樣式
+        $('body').removeClass('ucp-modal-open modal-open')
+            .css('overflow', '');
+        
+        // 5. 解除可能的模態拖動功能
+        $modal.find('.ucp-modal-header').off('mousedown.ucpModalDrag');
+        
+        // 6. 隱藏模態內容和覆蓋層
+        $modal.find('.ucp-modal-container, .ucp-modal-content').css('display', 'none');
+        $modal.find('.ucp-modal-overlay').css('display', 'none');
+        
+        console.log('Admin Modal Controller: 模態窗口已強制關閉');
+        return true;
+    }
+    
+    // 關閉所有可見的模態窗口
+    function closeAllModals() {
+        const $visibleModals = $('.ucp-modal:visible, .ucp-modal.show, .ucp-modal[style*="display: block"], .ucp-modal[style*="display: flex"]');
+        
+        if ($visibleModals.length) {
+            console.log('Admin Modal Controller: 找到', $visibleModals.length, '個可見模態窗口');
+            
+            $visibleModals.each(function() {
+                closeModal($(this));
+            });
+            
+            return true;
+        }
+        
+        return false;
+    }
+    
+    // 打開模態窗口
+    function openModal($modal) {
+        if (!$modal || !$modal.length) {
+            console.warn('Admin Modal Controller: 無效的模態窗口，無法打開');
+            return false;
+        }
+        
+        console.log('Admin Modal Controller: 打開模態窗口', $modal.attr('id'));
+        
+        // 確保模態窗口是全屏顯示的
+        $modal.css({
+            'display': 'flex',
+            'visibility': 'visible',
+            'opacity': '1',
+            'z-index': '999999',
+            'position': 'fixed',
+            'top': '0',
+            'left': '0',
+            'width': '100%',
+            'height': '100%',
+            'overflow': 'hidden'
+        }).addClass('show fullscreen');
+        
+        // 應用增強樣式
+        enhanceModalStyles();
+        
+        // 設置拖動功能
+        setupModalDragHandlers();
+        
+        // 添加body類
+        $('body').addClass('ucp-modal-open');
+        
+        console.log('Admin Modal Controller: 模態窗口已打開');
+        return true;
+    }
+    
+    // 增強模態窗口樣式
+    function enhanceModalStyles() {
+        const $modal = $('.ucp-modal');
+        
+        if (!$modal.length) {
+            console.warn('Admin Modal Controller: 找不到模態窗口，無法應用樣式增強');
+            return;
+        }
+        
+        // 防止重複增強
+        if ($modal.data('styles-enhanced')) {
+            console.log('Admin Modal Controller: 模態窗口樣式已經增強過，跳過');
+            return;
+        }
+        
+        // 標記為已增強
+        $modal.data('styles-enhanced', true);
+        
+        // 將模態設置為全屏顯示
+        $modal.addClass('fullscreen');
+        
+        // 添加針對管理界面的特殊樣式
+        $modal.each(function() {
+            const $modalItem = $(this);
+            
+            // 設置更高的z-index確保在WordPress管理欄之上
+            $modalItem.css('z-index', '999999');
+            
+            // 調整容器位置，考慮WordPress管理欄高度
+            const adminBarHeight = $('#wpadminbar').height() || 32;
+            const $container = $modalItem.find('.ucp-modal-container');
+            
+            if ($container.length) {
+                $container.css({
+                    'position': 'fixed',
+                    'top': adminBarHeight + 'px',
+                    'height': 'calc(100vh - ' + adminBarHeight + 'px)'
+                });
+            }
+            
+            // 確保關閉按鈕清晰可見且易於點擊
+            $modalItem.find('.ucp-modal-close, .ucp-close-modal').css({
+                'cursor': 'pointer',
+                'z-index': '999999',
+                'background-color': '#f0f0f0',
+                'border': '1px solid #ddd',
+                'border-radius': '50%',
+                'box-shadow': '0 1px 3px rgba(0,0,0,0.2)',
+                'color': '#666'
+            }).hover(function() {
+                $(this).css({
+                    'background-color': '#e0e0e0',
+                    'color': '#333'
+                });
+            }, function() {
+                $(this).css({
+                    'background-color': '#f0f0f0',
+                    'color': '#666'
+                });
+            });
+        });
+    }
+    
+    // 設置模態拖動處理
+    function setupModalDragHandlers() {
+        const $modal = $('.ucp-modal');
+        const $header = $modal.find('.ucp-modal-header');
+        
+        if (!$modal.length || !$header.length) {
+            console.warn('Admin Modal Controller: 找不到模態窗口或標題欄，無法設置拖動');
+            return;
+        }
+        
+        // 將標題欄設為可拖動
+        $header.css('cursor', 'move');
+        
+        // 防止重複設置拖動處理
+        if ($header.data('drag-initialized')) {
+            console.log('Admin Modal Controller: 模態窗口拖動功能已經初始化過，跳過');
+            return;
+        }
+        
+        // 標記為已初始化
+        $header.data('drag-initialized', true);
+        
+        $header.each(function() {
+            const $thisHeader = $(this);
+            const $thisModal = $thisHeader.closest('.ucp-modal');
+            
+            let isDragging = false;
+            let startX, startY, startLeft, startTop;
+            
+            // 滑鼠按下開始拖動
+            $thisHeader.on('mousedown.ucpModalDrag', function(e) {
+                // 確保不是點擊按鈕或其他控件
+                if ($(e.target).closest('button, a, input, select').length) {
+                    return;
+                }
+                
+                isDragging = true;
+                $thisHeader.css('cursor', 'grabbing');
+                
+                // 記錄初始位置
+                startX = e.clientX;
+                startY = e.clientY;
+                startLeft = parseInt($thisModal.css('left')) || 0;
+                startTop = parseInt($thisModal.css('top')) || 0;
+                
+                // 防止選中文本
+                e.preventDefault();
+            });
+            
+            // 滑鼠移動時拖動模態窗口
+            $(document).on('mousemove.ucpModalDrag', function(e) {
+                if (!isDragging) return;
+                
+                // 計算新位置
+                const newLeft = startLeft + (e.clientX - startX);
+                const newTop = startTop + (e.clientY - startY);
+                
+                // 應用新位置
+                $thisModal.css({
+                    'left': newLeft + 'px',
+                    'top': newTop + 'px'
+                });
+            });
+            
+            // 滑鼠釋放結束拖動
+            $(document).on('mouseup.ucpModalDrag', function() {
+                if (isDragging) {
+                    isDragging = false;
+                    $thisHeader.css('cursor', 'move');
+                }
+            });
+        });
+    }
+    
+    // 禁用可能衝突的WordPress原生事件
+    function disableConflictingEvents() {
+        // 存儲原始Escape鍵處理器
+        if (typeof window.wpOriginalEscHandlers === 'undefined') {
+            // 暫時存儲原始ESC處理器
+            const originalKeydownHandlers = $._data(document, 'events')?.keydown || [];
+            window.wpOriginalEscHandlers = [];
+            
+            // 尋找可能處理ESC鍵的處理器
+            for (let i = 0; i < originalKeydownHandlers.length; i++) {
+                const handler = originalKeydownHandlers[i];
+                // 檢查函數代碼是否包含ESC或Escape字符串
+                const handlerStr = handler.handler.toString();
+                if (handlerStr.includes('Escape') || handlerStr.includes('Esc') || handlerStr.includes('27')) {
+                    window.wpOriginalEscHandlers.push(handler);
+                    
+                    // 移除WordPress自己的ESC處理器
+                    $(document).off('keydown', handler.handler);
+                    console.log('Admin Modal Controller: 暫時禁用了WordPress ESC鍵處理器');
+                }
+            }
+        }
+        
+        // 如果存在thickbox，暫時禁用它的關閉功能
+        if (typeof window.tb_remove === 'function') {
+            window.originalTbRemove = window.tb_remove;
+            window.tb_remove = function() {
+                console.log('Admin Modal Controller: 攔截了thickbox關閉嘗試');
+                // 不做任何事情，只是攔截調用
+            };
+            console.log('Admin Modal Controller: 暫時禁用了thickbox關閉功能');
+        }
+    }
+    
+    // 恢復原始事件處理器
+    function restoreOriginalHandlers() {
+        // 恢復ESC鍵處理器
+        if (window.wpOriginalEscHandlers && window.wpOriginalEscHandlers.length) {
+            for (let i = 0; i < window.wpOriginalEscHandlers.length; i++) {
+                const handler = window.wpOriginalEscHandlers[i];
+                $(document).on('keydown', handler.handler);
+            }
+            console.log('Admin Modal Controller: 恢復了', window.wpOriginalEscHandlers.length, '個WordPress ESC鍵處理器');
+            window.wpOriginalEscHandlers = [];
+        }
+        
+        // 恢復thickbox功能
+        if (window.originalTbRemove) {
+            window.tb_remove = window.originalTbRemove;
+            window.originalTbRemove = null;
+            console.log('Admin Modal Controller: 恢復了thickbox關閉功能');
+        }
+    }
+    
+    // 初始化函數
+    function init() {
+        console.log('Admin Modal Controller: 初始化開始');
+        
+        // 清理所有與模態相關的事件處理器
+        cleanupModalEventHandlers();
+        
+        // 禁用可能衝突的WordPress原生事件
+        disableConflictingEvents();
+        
+        // 捕獲並替換來自 product-selector.new.js 的 ModalManager
+        if (window.ModalManager) {
+            console.log('Admin Modal Controller: 捕獲並替換全局 ModalManager');
+            
+            // 保存原始引用
+            window._originalModalManager = window.ModalManager;
+            
+            // 替換全局 ModalManager 為我們的 controller
+            window.ModalManager = {
+                openModal: function(modalElement) {
+                    console.log('Admin Modal Controller: ModalManager.openModal 被調用');
+                    return openModal($(modalElement));
+                },
+                closeModal: function(modalElement) {
+                    console.log('Admin Modal Controller: ModalManager.closeModal 被調用');
+                    return closeModal($(modalElement));
+                },
+                createModal: function(id, title, content) {
+                    console.log('Admin Modal Controller: ModalManager.createModal 被調用');
+                    
+                    // 創建模態窗口
+                    const $modal = $('<div/>', {
+                        id: id,
+                        class: 'ucp-modal'
+                    }).html(`
+                        <div class="ucp-modal-container">
+                            <div class="ucp-modal-header">
+                                <h2>${title}</h2>
+                                <button class="ucp-modal-close ucp-btn ucp-btn-sm">Close</button>
+                            </div>
+                            <div class="ucp-modal-content">
+                                ${content}
+                            </div>
+                        </div>
+                    `);
+                    
+                    // 添加到 body
+                    $('body').append($modal);
+                    
+                    // 應用增強樣式
+                    setTimeout(enhanceModalStyles, 10);
+                    
+                    return $modal;
+                },
+                getActiveModals: function() {
+                    // 返回所有可見的模態窗口
+                    const activeModals = [];
+                    $('.ucp-modal:visible, .ucp-modal.show').each(function() {
+                        activeModals.push({
+                            id: $(this).attr('id'),
+                            $element: $(this)
+                        });
+                    });
+                    return activeModals;
+                }
+            };
+        }
+        
+        // 捕獲並替換 UCP_Modal
+        if (window.UCP_Modal) {
+            console.log('Admin Modal Controller: 捕獲並替換全局 UCP_Modal');
+            
+            // 保存原始引用
+            window._originalUCPModal = window.UCP_Modal;
+            
+            // 替換為我們的實現
+            window.UCP_Modal = {
+                open: function(modal) {
+                    console.log('Admin Modal Controller: UCP_Modal.open 被調用');
+                    const $modal = modal.$element || $(modal);
+                    return openModal($modal);
+                },
+                close: function(modal) {
+                    console.log('Admin Modal Controller: UCP_Modal.close 被調用');
+                    const $modal = modal.$element || $(modal);
+                    return closeModal($modal);
+                },
+                create: function(options) {
+                    console.log('Admin Modal Controller: UCP_Modal.create 被調用');
+                    
+                    const $modal = $('<div/>', {
+                        id: options.id,
+                        class: 'ucp-modal ' + (options.classes || '')
+                    }).html(options.content);
+                    
+                    $('body').append($modal);
+                    
+                    setTimeout(enhanceModalStyles, 10);
+                    
+                    return {
+                        id: options.id,
+                        $element: $modal
+                    };
+                },
+                getActiveModals: function() {
+                    const activeModals = [];
+                    $('.ucp-modal:visible, .ucp-modal.show').each(function() {
+                        activeModals.push({
+                            id: $(this).attr('id'),
+                            $element: $(this)
+                        });
+                    });
+                    return activeModals;
+                }
+            };
+        }
+        
+        // 同樣替換 UCP_ModalManager
+        if (window.UCP_ModalManager) {
+            console.log('Admin Modal Controller: 捕獲並替換全局 UCP_ModalManager');
+            window._originalUCPModalManager = window.UCP_ModalManager;
+            window.UCP_ModalManager = window.ModalManager;
+        }
+        
+        // 劫持原始ModalManager方法
+        if (originalModalManager) {
+            console.log('Admin Modal Controller: 劫持原始ModalManager方法');
+            
+            // 保存原始方法引用
+            const originalMethods = {
+                createModal: originalModalManager.createModal,
+                openModal: originalModalManager.openModal,
+                closeModal: originalModalManager.closeModal
+            };
+            
+            // 覆蓋createModal方法
+            if (typeof originalModalManager.createModal === 'function') {
+                originalModalManager.createModal = function() {
+                    console.log('Admin Modal Controller: 劫持createModal調用');
+                    const result = originalMethods.createModal.apply(this, arguments);
+                    setTimeout(enhanceModalStyles, 10);
+                    return result;
+                };
+            }
+            
+            // 覆蓋openModal方法
+            if (typeof originalModalManager.openModal === 'function') {
+                originalModalManager.openModal = function(modalElement) {
+                    console.log('Admin Modal Controller: 劫持openModal調用');
+                    return openModal($(modalElement));
+                };
+            }
+            
+            // 覆蓋closeModal方法
+            if (typeof originalModalManager.closeModal === 'function') {
+                originalModalManager.closeModal = function(modalElement) {
+                    console.log('Admin Modal Controller: 劫持closeModal調用');
+                    return closeModal($(modalElement));
+                };
+            }
+        }
+        
+        // 設置事件處理器
+        setupEventHandlers();
+        
+        console.log('Admin Modal Controller: 初始化完成');
+    }
+    
+    // 設置事件處理器
+    function setupEventHandlers() {
+        // 為關閉按鈕添加事件處理
+        $(document).on('click.ucpAdminModal', '.ucp-modal-close, .ucp-close-modal, .ucp-cancel-selection', function(e) {
+            console.log('Admin Modal Controller: 關閉按鈕被點擊');
+            
+            // 強制停止事件冒泡和默認行為
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            
+            // 查找最近的模態窗口
+            const $modal = $(this).closest('.ucp-modal');
+            
+            if ($modal.length) {
+                console.log('Admin Modal Controller: 找到模態窗口，ID:', $modal.attr('id'));
+                closeModal($modal);
+            } else {
+                console.warn('Admin Modal Controller: 無法找到包含模態窗口');
+            }
+            
+            return false;
+        });
+        
+        // 添加ESC鍵關閉處理器
+        $(document).on('keydown.ucpAdminModal', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                console.log('Admin Modal Controller: ESC鍵被按下');
+                e.stopImmediatePropagation();
+                closeAllModals();
+                return false;
+            }
+        });
+        
+        // 監聽產品選擇器按鈕點擊
+        $(document).on('click.ucpAdminModal', '#ucp-create-select-products, .ucp-product-selector-open', function(e) {
+            console.log('Admin Modal Controller: 產品選擇器按鈕被點擊');
+            
+            // 給系統一點時間創建模態
+            setTimeout(function() {
+                const $modal = $('#ucp-product-selector-modal');
+                if ($modal.length) {
+                    openModal($modal);
+                    console.log('Admin Modal Controller: 成功打開產品選擇器模態窗口');
+                } else {
+                    console.warn('Admin Modal Controller: 找不到產品選擇器模態窗口');
+                }
+            }, 50);
+        });
+    }
+    
+    // 在文檔準備好時初始化
+    $(document).ready(function() {
+        init();
+    });
+    
+    // 將控制器暴露到全局作用域
+    window.UCPAdminModalController = {
+        init: init,
+        openModal: openModal,
+        closeModal: closeModal,
+        closeAllModals: closeAllModals,
+        enhanceModalStyles: enhanceModalStyles,
+        setupModalDragHandlers: setupModalDragHandlers,
+        cleanupModalEventHandlers: cleanupModalEventHandlers,
+        restoreOriginalHandlers: restoreOriginalHandlers,
+        // 添加額外方法以確保與 product-selector.new.js 兼容
+        getActiveModals: function() {
+            const activeModals = [];
+            $('.ucp-modal:visible, .ucp-modal.show').each(function() {
+                activeModals.push({
+                    id: $(this).attr('id'),
+                    $element: $(this)
+                });
+            });
+            return activeModals;
+        },
+        create: function(options) {
+            const $modal = $('<div/>', {
+                id: options.id,
+                class: 'ucp-modal ' + (options.classes || '')
+            }).html(options.content);
+            
+            $('body').append($modal);
+            enhanceModalStyles();
+            
+            return {
+                id: options.id,
+                $element: $modal
+            };
+        },
+        open: function(modal) {
+            const $modal = modal.$element || $(modal);
+            return openModal($modal);
+        },
+        close: function(modal) {
+            const $modal = modal.$element || $(modal);
+            return closeModal($modal);
+        }
+    };
+    
+    // 為向後兼容保留UCPAdminModalFix對象
+    window.UCPAdminModalFix = window.UCPAdminModalController;
+    
+})(jQuery);

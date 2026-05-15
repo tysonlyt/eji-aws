@@ -1,0 +1,364 @@
+# Copyright (C) 2024 OnTheGoSystems
+# This file is distributed under the same license as the WPML Export and Import plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WPML Export and Import 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpml-import\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-01-24T15:26:29-03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: wpml-import\n"
+
+#. Plugin Name of the plugin
+#: classes/Integrations/Base/Notice.php:160
+#: classes/UI/AdminPageHooks.php:63
+msgid "WPML Export and Import"
+msgstr "WPML 导出和导入"
+
+#. Description of the plugin
+msgid "A multipurpose plugin to export and import multilingual content."
+msgstr "多用途插件，用于导出和导入多语言内容。"
+
+#. Author of the plugin
+msgid "OnTheGoSystems"
+msgstr "OnTheGoSystems"
+
+#. Author URI of the plugin
+msgid "http://www.onthegosystems.com"
+msgstr "http://www.onthegosystems.com"
+
+#: classes/Commands/CleanupPostFields.php:11
+msgid "Cleaning Up Post Data"
+msgstr "清理职位数据"
+
+#: classes/Commands/CleanupPostFields.php:18
+msgid "Removing temporary and import-related post meta data."
+msgstr "删除临时和导入相关的职位元数据。"
+
+#: classes/Commands/CleanupTermFields.php:11
+msgid "Cleaning Up Term Data"
+msgstr "清理术语数据"
+
+#: classes/Commands/CleanupTermFields.php:18
+msgid "Removing temporary and import-related term meta data."
+msgstr "删除临时和与导入相关的术语元数据。"
+
+#: classes/Commands/ConnectTermTranslationsByPostsWithOnlyOneAssignment.php:41
+msgid "Connecting Inline Term Translations"
+msgstr "连接内联术语翻译"
+
+#: classes/Commands/ConnectTermTranslationsByPostsWithOnlyOneAssignment.php:48
+msgid "Scanning posts with a single taxonomy term in order to identify and connect the terms assigned to these posts with their translations."
+msgstr "扫描带有单个分类术语的帖子，以识别并连接分配给这些帖子的术语及其翻译。"
+
+#: classes/Commands/DeleteOriginalsOfDuplicatedTerms.php:27
+msgid "Deleting Obsolete Original Terms"
+msgstr "删除过时的原始术语"
+
+#: classes/Commands/DeleteOriginalsOfDuplicatedTerms.php:34
+msgid "Removing original terms that are no longer needed after creating duplicates for same-named terms. Ensuring no posts are linked to these original terms."
+msgstr "为同名术语创建重复术语后，删除不再需要的原始术语。确保没有帖子链接到这些原始术语。"
+
+#: classes/Commands/DuplicateTermsAssignedToPostsInDifferentLanguage.php:54
+msgid "Duplicating Terms with Shared Names Across Languages"
+msgstr "在不同语言中重复名称相同的术语"
+
+#: classes/Commands/DuplicateTermsAssignedToPostsInDifferentLanguage.php:61
+msgid "Creating duplicates in the correct language for terms that share the same name across languages, but belong to posts in different languages."
+msgstr "为不同语言中名称相同但属于不同语言帖子的术语创建正确语言的副本。"
+
+#: classes/Commands/ReassignPostsToTranslatedTerms.php:38
+msgid "Connecting Posts with Correct Term Translations"
+msgstr "用正确的术语翻译连接帖子"
+
+#: classes/Commands/ReassignPostsToTranslatedTerms.php:45
+msgid "Ensuring posts are connected to terms in the correct language, especially if you have the same term names across languages."
+msgstr "确保帖子与正确语言的术语相关联，尤其是在不同语言的术语名称相同的情况下。"
+
+#: classes/Commands/SetFinalPostsStatus.php:30
+msgid "Updating Final Post Status"
+msgstr "更新最终职位状态"
+
+#: classes/Commands/SetFinalPostsStatus.php:37
+msgid "Setting the post status based on the \"_wpml_import_after_process_post_status\" field from the import file (if provided)."
+msgstr "根据导入文件中的 \"_wpml_import_after_process_post_status\" 字段（如果提供）设置职位状态。"
+
+#: classes/Commands/SetInlineTermsLanguage.php:39
+msgid "Identifying Inline Term Languages"
+msgstr "识别内联术语语言"
+
+#: classes/Commands/SetInlineTermsLanguage.php:46
+msgid "Identifying and setting the language of terms created during post imports."
+msgstr "确定和设置后期导入时创建的术语的语言。"
+
+#: classes/Commands/SetPostsLanguage.php:15
+msgid "Setting Posts’ Language"
+msgstr "设置帖子语言"
+
+#: classes/Commands/SetPostsLanguage.php:22
+msgid "Connecting posts to the default language and translations."
+msgstr "将帖子连接到默认语言和翻译。"
+
+#: classes/Commands/SetTermsLanguage.php:16
+msgid "Setting Terms’ Language"
+msgstr "设置条款语言"
+
+#: classes/Commands/SetTermsLanguage.php:23
+msgid "Connecting taxonomy terms to the default (original) language and translations."
+msgstr "将分类术语连接到默认（原始）语言和翻译。"
+
+#. translators: %s is a link.
+#: classes/Integrations/Base/Notice.php:95
+msgid "Migrating your multilingual site? Remember to also install %s on your new site before importing your content so we can restore all the translations."
+msgstr "迁移您的多语言网站？在导入内容之前，请记得在新网站上安装 %s ，以便我们恢复所有翻译。"
+
+#. translators: %1$s and %2$s are both links.
+#: classes/Integrations/Base/Notice.php:107
+msgid "Migrating your multilingual shop? With %1$s and %2$s you can transfer your translated content to a new site, including cross-sells, up-sells, and product attributes."
+msgstr "迁移您的多语言商店？通过 %1$s 和 %2$s ，您可以将翻译内容转移到新网站，包括交叉销售、追加销售和产品属性。"
+
+#. translators: %1$s and %2$s are both links.
+#: classes/Integrations/Base/Notice.php:114
+msgid "Migrating your multilingual shop? Remember to install %1$s and %2$s on your new site before importing your content so we can restore all the translations."
+msgstr "迁移您的多语言商店？在导入内容之前，请记住在新网站上安装 %1$s 和 %2$s ，以便我们恢复所有翻译。"
+
+#. translators: %s is a link.
+#: classes/Integrations/Base/Notice.php:126
+msgid "Looking to import your multilingual content? Remember to install %s in your original site before exporting its content so we can import all the translations here."
+msgstr "想要导入多语言内容？在导出内容之前，请记住在您的原始网站上安装 %s ，这样我们就可以在这里导入所有翻译。"
+
+#. translators: %1$s is a link.
+#: classes/Integrations/Base/Notice.php:138
+msgid "Looking to import your multilingual content? Install %1$s on this site."
+msgstr "想要导入多语言内容？在本网站安装 %1$s 。"
+
+#. translators: %2$s and %3$s are both links.
+#: classes/Integrations/Base/Notice.php:141
+msgid "Remember to also enable %2$s and %3$s in your original shop before exporting its content so we can import all the translations here."
+msgstr "在导出原始商店的内容之前，请记住在原始商店中启用 %2$s 和 %3$s ，这样我们就可以在这里导入所有翻译。"
+
+#. translators: %1$s and %2$s are both links.
+#: classes/Integrations/Base/Notice.php:149
+msgid "Looking to import your multilingual content? Remember to enable %1$s and %2$s in your original shop before exporting its content so we can import all the translations here."
+msgstr "想要导入多语言内容？在导出内容之前，请记住在您的原始商店中启用 %1$s 和 %2$s ，这样我们就可以在这里导入所有翻译。"
+
+#: classes/Integrations/Base/Notice.php:171
+msgid "WooCommerce Multilingual"
+msgstr "WooCommerce 多语化"
+
+#: classes/Integrations/Base/Notice.php:189
+msgid "Switch to all languages"
+msgstr "切换到所有语言"
+
+#: classes/Integrations/WooCommerce/Commands/ConnectAttributesUsedInProductVariations.php:40
+msgid "Linking Product Attribute Translations"
+msgstr "链接产品属性翻译"
+
+#: classes/Integrations/WooCommerce/Commands/ConnectAttributesUsedInProductVariations.php:47
+msgid "Connecting product attributes to their translations based on associated product variations (WooCommerce sites only)."
+msgstr "根据相关产品变化将产品属性与其翻译连接起来（仅限 WooCommerce 网站）。"
+
+#: classes/Integrations/WooCommerce/Commands/ConnectRelatedProducts.php:57
+msgid "Updating Related Products On Translations"
+msgstr "在翻译中更新相关产品"
+
+#: classes/Integrations/WooCommerce/Commands/ConnectRelatedProducts.php:64
+msgid "Setting up-sells, cross-sells and grouped products references in the right language (WooCommerce sites only)."
+msgstr "以正确的语言设置追加销售、交叉销售和分组产品参考信息（仅限 WooCommerce 网站）。"
+
+#: classes/Integrations/WooCommerce/ExportNotice.php:40
+msgid "You are about to export all your products in all languages at once."
+msgstr "您将一次性导出所有语言的所有产品。"
+
+#. translators: %1$s and %2$s are both links.
+#: classes/Integrations/WooCommerce/ExportNotice.php:44
+#: classes/Integrations/WooCommerce/ExportNotice.php:51
+msgid "Remember to install %1$s and %2$s on your new site before importing your content so we can restore all the translations."
+msgstr "在导入内容之前，请记住在新网站上安装 %1$s 和 %2$s ，以便我们恢复所有翻译。"
+
+#. translators: %s is the name of a language.
+#: classes/Integrations/WooCommerce/ExportNotice.php:58
+msgid "You are about to export your products in %s."
+msgstr "您准备在 %s 上出口您的产品。"
+
+#: classes/Integrations/WooCommerce/WCML/Commands/RegisterAttributesAsTranslatableTaxonomies.php:30
+msgid "Registering Product Attributes"
+msgstr "注册产品属性"
+
+#: classes/Integrations/WooCommerce/WCML/Commands/RegisterAttributesAsTranslatableTaxonomies.php:37
+msgid "Identifying and registering attributes created during product imports for translation (WooCommerce Multilingual sites only)."
+msgstr "识别和注册在产品导入过程中创建的属性，以便进行翻译（仅限 WooCommerce 多语言网站）。"
+
+#: classes/Integrations/WooCommerce/WCML/Commands/SetAttributesLanguage.php:42
+msgid "Identifying Product Attribute Languages"
+msgstr "识别产品属性语言"
+
+#: classes/Integrations/WooCommerce/WCML/Commands/SetAttributesLanguage.php:49
+msgid "Identifying and setting the language of attributes created during product imports (WooCommerce Multilingual sites only)."
+msgstr "识别和设置在产品导入过程中创建的属性的语言（仅限 WooCommerce 多语言网站）。"
+
+#: classes/UI/AdminPageHooks.php:41
+msgid "Export and Import"
+msgstr "出口和进口"
+
+#. translators: %s is the label of the tool.
+#: classes/UI/AdminPageHooks.php:131
+msgid "I’m using the built-in %s export/import tool"
+msgstr "我使用内置的 %s 导出/导入工具"
+
+#. translators: %s is the label of the plugin.
+#: classes/UI/AdminPageHooks.php:136
+msgid "I’m using %s plugin"
+msgstr "我使用的是 %s 插件"
+
+#. translators: %1$s is the number of processed items and %2$s is the total number of items.
+#: classes/UI/AdminPageHooks.php:141
+msgid "(%1$d/%2$d items)"
+msgstr "(%1$d/%2$d 项目)"
+
+#: classes/UI/AdminPageHooks.php:142
+msgid "(no items)"
+msgstr "(无项目）"
+
+#: classes/UI/AdminPageHooks.php:143
+msgid "Counting items..."
+msgstr "清点物品..."
+
+#: classes/UI/AdminPageHooks.php:145
+msgid "First, tell us how you’re going to create the content that you’ll be importing:"
+msgstr "首先，请告诉我们您将如何创建要导入的内容："
+
+#: classes/UI/AdminPageHooks.php:146
+msgid "Continue"
+msgstr "继续"
+
+#. translators: %1$s and %2$s are plugin labels.
+#: classes/UI/AdminPageHooks.php:151
+msgid "I’m using %1$s and %2$s plugins"
+msgstr "我使用 %1$s 和 %2$s 插件"
+
+#: classes/UI/AdminPageHooks.php:153
+msgid "I’m using a different method to export from this site"
+msgstr "我使用不同的方法从该网站导出数据"
+
+#: classes/UI/AdminPageHooks.php:155
+msgid "I’m exporting the content from this site"
+msgstr "我正在导出该网站的内容"
+
+#: classes/UI/AdminPageHooks.php:156
+msgid "I’m exporting the content from a different website or system"
+msgstr "我正在从不同的网站或系统导出内容"
+
+#: classes/UI/AdminPageHooks.php:157
+msgid "Before importing, add language columns to your content"
+msgstr "导入前，请为内容添加语言栏"
+
+#: classes/UI/AdminPageHooks.php:158
+msgid "Make sure that your import file includes the following columns (custom fields) with language information:"
+msgstr "确保导入文件包含以下语言信息列（自定义字段）："
+
+#. translators: %s is the field key.
+#: classes/UI/AdminPageHooks.php:161
+msgid "%s: A value that’s the same for all the translations of each item. In e-commerce sites this will often be the SKU."
+msgstr "%s: 每个商品的所有译文都相同的值。在电子商务网站中，这通常是 SKU。"
+
+#. translators: %s is the field key.
+#: classes/UI/AdminPageHooks.php:163
+msgid "%s: The language code for each item."
+msgstr "%s: 每个项目的语言代码。"
+
+#: classes/UI/AdminPageHooks.php:165
+msgid "And, you can include these two columns if needed:"
+msgstr "如果需要，还可以将这两栏包括在内："
+
+#. translators: %s is the field key.
+#: classes/UI/AdminPageHooks.php:168
+msgid "%s: If this item is a translation, set this column to the code of the source language. If it’s not a translation, keep it empty."
+msgstr "%s: 如果该项目是翻译，则将此列设置为源语言的代码。如果不是翻译，则保持为空。"
+
+#. translators: %s is the field key.
+#: classes/UI/AdminPageHooks.php:170
+msgid "%s: Set to “draft” or “published” to determine the publishing status of the post after adjusting languages. Usually, this value will be “published”."
+msgstr "%s: 设置为 \"草稿 \"或 \"已发布\"，以确定调整语言后帖子的发布状态。通常，该值为 \"已发布\"。"
+
+#. translators: %s is a comma-separated list of languages.
+#: classes/UI/AdminPageHooks.php:174
+msgid "Here is an example of importing two items, into your site’s languages (%s):"
+msgstr "下面是将两个项目导入网站语言的示例 (%s)："
+
+#: classes/UI/AdminPageHooks.php:176
+msgid "Once you’ve added language columns to your multilingual content file, import it to your site using whatever import plugin you prefer."
+msgstr "在多语言内容文件中添加语言栏后，使用您喜欢的导入插件将其导入到您的网站。"
+
+#: classes/UI/AdminPageHooks.php:177
+msgid "Before importing, your content needs language information"
+msgstr "在导入之前，您的内容需要语言信息"
+
+#. translators: %s is the label of the plugin.
+#: classes/UI/AdminPageHooks.php:179
+msgid "%s will add the necessary language information to your export."
+msgstr "%s 将为您的导出添加必要的语言信息。"
+
+#: classes/UI/AdminPageHooks.php:180
+msgid "Import your multilingual content file into the site using whatever import plugin you prefer."
+msgstr "使用您喜欢的导入插件，将多语言内容文件导入网站。"
+
+#: classes/UI/AdminPageHooks.php:181
+msgid "Use your favorite import plugin"
+msgstr "使用您最喜欢的导入插件"
+
+#: classes/UI/AdminPageHooks.php:182
+msgid "After you import the content, it will still not show the correct language information. So, we recommend that you import new content as Drafts. If you’re importing updates, you can keep already-published content as published."
+msgstr "导入内容后，仍无法显示正确的语言信息。因此，我们建议您将新内容作为草稿导入。如果您导入的是更新，可以将已发布的内容保留为已发布。"
+
+#. translators: %s is the label of the plugin.
+#: classes/UI/AdminPageHooks.php:184
+msgid "Return here, to %s, to set languages and connect translations"
+msgstr "返回此处， %s ，设置语言和连接翻译"
+
+#. translators: %s is the label of the plugin.
+#: classes/UI/AdminPageHooks.php:186
+msgid "When you visit this page after you’ve imported content with language information, you’ll be able to run %s to apply languages and connect translations."
+msgstr "在导入包含语言信息的内容后，访问此页面时，您可以运行 %s 来应用语言和连接翻译。"
+
+#. translators: %1$s and %3$s are HTML link wrappers / %2$s is the plugin title.
+#: classes/UI/AdminPageHooks.php:190
+msgid "Already imported and still seeing this screen? %1$sTroubleshooting %2$s%3$s."
+msgstr "已导入但仍看到此屏幕？ %1$s故障排除 %2$s%3$s 。"
+
+#: classes/UI/AdminPageHooks.php:197
+msgid "How to Export and Import Content in Multiple Languages"
+msgstr "如何导出和导入多语言内容"
+
+#. translators: %s is the label of the plugin.
+#: classes/UI/AdminPageHooks.php:199
+msgid "%s is ready to update your imported content"
+msgstr "%s 已准备好更新您导入的内容"
+
+#. translators: %1$d is the number of terms and %2$d is the number of posts.
+#: classes/UI/AdminPageHooks.php:202
+msgid "Good job. We see %1$d terms and %2$d posts that are imported and need language information."
+msgstr "做得好。我们看到 %1$d 条款和 %2$d 职位是导入的，需要语言信息。"
+
+#. translators: %d is the number of terms.
+#: classes/UI/AdminPageHooks.php:205
+msgid "Good job. We see %d terms that are imported and need language information."
+msgstr "做得好。我们在 %d 上看到了进口术语，需要语言信息。"
+
+#. translators: %d is the number of posts.
+#: classes/UI/AdminPageHooks.php:207
+msgid "Good job. We see %d posts that are imported and need language information."
+msgstr "做得好。我们在 %d 上看到了导入的帖子，需要语言信息。"
+
+#: classes/UI/AdminPageHooks.php:209
+msgid "Run WPML Import"
+msgstr "运行 WPML 导入"
+
+#: classes/UI/AdminPageHooks.php:210
+msgid "Multilingual Import Complete"
+msgstr "多语种导入完成"

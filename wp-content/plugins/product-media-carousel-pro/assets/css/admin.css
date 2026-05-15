@@ -1,0 +1,372 @@
+/**
+ * Admin Styles for Product Media Carousel
+ */
+
+.pmc-admin-wrapper {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Version Badge */
+.pmc-version-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.pmc-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.pmc-badge-pro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.4);
+}
+
+.pmc-badge-free {
+    background: #f0f0f1;
+    color: #50575e;
+    border: 1px solid #c3c4c7;
+}
+
+.pmc-instructions {
+    background: #f0f6fc;
+    border-left: 4px solid #0073aa;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.pmc-instructions p {
+    margin: 0;
+    color: #0073aa;
+}
+
+/* Add Media Section */
+.pmc-add-media-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.pmc-add-media-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pmc-add-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.pmc-add-form input[type="text"] {
+    flex: 1;
+}
+
+/* Media List */
+.pmc-media-list-section h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pmc-media-list {
+    list-style: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+.pmc-media-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    cursor: move;
+    transition: all 0.2s;
+}
+
+.pmc-media-item:hover {
+    background: #f0f0f0;
+    border-color: #0073aa;
+}
+
+.pmc-media-item.ui-sortable-helper {
+    opacity: 0.8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.pmc-media-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.pmc-media-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pmc-media-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 6px;
+    text-align: center;
+}
+
+.pmc-video-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.pmc-video-label .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.pmc-media-info {
+    flex: 1;
+}
+
+.pmc-media-url {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.pmc-media-source {
+    font-size: 12px;
+    color: #999;
+}
+
+.pmc-media-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pmc-drag-handle {
+    cursor: move;
+    color: #999;
+    font-size: 20px;
+}
+
+.pmc-drag-handle:hover {
+    color: #0073aa;
+}
+
+.pmc-delete-media {
+    padding: 6px 10px !important;
+    height: auto !important;
+    line-height: 1 !important;
+    min-height: 28px !important;
+    background: #dc3232 !important;
+    border-color: #dc3232 !important;
+    color: #fff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+}
+
+.pmc-delete-media:hover {
+    background: #c62d2d !important;
+    border-color: #c62d2d !important;
+    color: #fff !important;
+}
+
+.pmc-delete-media .dashicons {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    line-height: 1 !important;
+}
+
+.pmc-no-media {
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+/* Loading State */
+.pmc-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Notices */
+.pmc-notice {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-left: 4px solid;
+    border-radius: 2px;
+}
+
+.pmc-notice.success {
+    background: #ecf7ed;
+    border-color: #46b450;
+    color: #32373c;
+}
+
+.pmc-notice.error {
+    background: #fef7f1;
+    border-color: #dc3232;
+    color: #32373c;
+}
+
+/* Settings Section */
+.pmc-settings-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.pmc-settings-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pmc-settings-table {
+    background: #fff;
+}
+
+.pmc-settings-table th {
+    width: 200px;
+    padding: 15px 10px;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+.pmc-settings-table td {
+    padding: 15px 10px;
+}
+
+.pmc-settings-table input[type="number"].small-text {
+    width: 80px;
+}
+
+.pmc-settings-table select {
+    min-width: 150px;
+}
+
+.pmc-settings-table .description {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Tabs */
+.pmc-tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.pmc-tab-btn {
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-size: 13px;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.pmc-tab-btn:hover {
+    color: #0073aa;
+}
+
+.pmc-tab-btn.active {
+    color: #0073aa;
+    border-bottom-color: #0073aa;
+    font-weight: 600;
+}
+
+.pmc-pro-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    margin-left: 5px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pmc-tab-content {
+    display: none;
+    padding: 15px 0;
+}
+
+.pmc-tab-content.active {
+    display: block;
+}
+
+/* Bulk Import */
+.pmc-bulk-import-area textarea {
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.pmc-bulk-status {
+    font-size: 13px;
+    color: #666;
+}
+
+.pmc-bulk-status.success {
+    color: #46b450;
+}
+
+.pmc-bulk-status.error {
+    color: #dc3232;
+}
+
+.pmc-pro-notice {
+    padding: 20px;
+    background: #f0f6fc;
+    border-left: 4px solid #0073aa;
+    border-radius: 4px;
+}
+
+.pmc-pro-notice p {
+    margin: 10px 0;
+}

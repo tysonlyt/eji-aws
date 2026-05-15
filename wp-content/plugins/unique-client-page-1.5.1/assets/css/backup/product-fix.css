@@ -1,0 +1,145 @@
+/**
+ * 针对实际产品类名的布局修复CSS
+ */
+
+/* 产品网格布局优化 */
+.products,
+ul.products {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    grid-gap: 20px !important;
+    margin: 20px 0 !important;
+    width: 100% !important;
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+/* 删除任何空元素和浮动清除 */
+.products::before,
+.products::after,
+ul.products::before,
+ul.products::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* 确保所有产品项都有内容和可见 */
+.products > *,
+ul.products > * {
+    visibility: visible !important;
+    min-height: 100px !important;
+}
+
+/* 产品卡片样式优化 */
+.product,
+.products li.product,
+.woocommerce ul.products li.product {
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    border: 1px solid #eee !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    background-color: #fff !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+.product:hover,
+.products li.product:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* 产品图片优化 */
+.product a img,
+.woocommerce ul.products li.product a img {
+    margin: 0 auto 12px !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4px !important;
+    transition: transform 0.5s ease !important;
+}
+
+.product:hover a img,
+.woocommerce ul.products li.product:hover a img {
+    transform: scale(1.05) !important;
+}
+
+/* 产品标题优化 */
+.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+    font-size: 14px !important;
+    padding: 0 !important;
+    margin: 0 0 8px !important;
+    height: 40px !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    font-weight: normal !important;
+    color: #333 !important;
+}
+
+/* 隐藏价格 */
+.product .price,
+.woocommerce ul.products li.product .price {
+    display: none !important;
+}
+
+/* 隐藏购物车按钮 */
+.product .button,
+.woocommerce ul.products li.product .button,
+.add_to_cart_button {
+    display: none !important;
+}
+
+/* 收藏按钮样式 */
+.tinvwl-shortcode-add-to-cart {
+    margin-top: auto !important;
+    padding-top: 10px !important;
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
+    margin-right: 0 !important;
+}
+
+.tinvwl_add_to_wishlist-text {
+    font-size: 12px !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .products,
+    ul.products {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .products,
+    ul.products {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .products,
+    ul.products {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .products,
+    ul.products {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}

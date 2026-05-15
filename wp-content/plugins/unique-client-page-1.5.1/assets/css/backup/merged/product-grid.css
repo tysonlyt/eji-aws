@@ -1,0 +1,196 @@
+/**
+ * Unique Client Page - Product Grid Styles
+ * Focus on all product display related styles
+ */
+
+/* Import variables */
+@import url('variables.css');
+
+/* ----- Responsive styles ----- */
+@media (max-width: 768px) {
+    .ucp-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .wishlist-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .ucp-products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wishlist-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Product grid layout ----- */
+.ucp-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.ucp-product-item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.ucp-product-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ucp-products {
+    position: relative;
+    min-height: 200px;
+}
+
+.ucp-products ul.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ucp-products .product {
+    margin-bottom: 0 !important;
+}
+
+/* Product card basic styles */
+.ucp-product-item,
+.ucp-product-inner {
+    position: relative;
+    padding: var(--ucp-spacing-md);
+    background: var(--ucp-bg-white);
+    border-radius: var(--ucp-border-radius-lg);
+    box-shadow: var(--ucp-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: var(--ucp-transition);
+}
+
+.ucp-product-inner:hover {
+    box-shadow: var(--ucp-shadow-lg);
+}
+
+/* Product image styles */
+.ucp-product-image {
+    position: relative;
+    margin-bottom: var(--ucp-spacing-md);
+    overflow: hidden;
+    border-radius: var(--ucp-border-radius);
+}
+
+.ucp-product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--ucp-transition-slow);
+}
+
+.ucp-product-inner:hover .ucp-product-image img {
+    transform: scale(1.05);
+}
+
+/* Product title styles */
+.ucp-product-inner h2 {
+    font-size: 18px;
+    margin: var(--ucp-spacing-md) 0 var(--ucp-spacing-sm);
+    font-weight: 600;
+    color: var(--ucp-text-primary);
+    line-height: 1.4;
+}
+
+.ucp-product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 var(--ucp-spacing-sm);
+    height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Product price styles */
+.ucp-product-inner .price,
+.ucp-product-price {
+    margin: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ucp-primary-color);
+}
+
+/* Product category styles */
+.ucp-product-category {
+    font-size: 14px;
+    color: var(--ucp-text-light);
+    margin-bottom: var(--ucp-spacing-sm);
+}
+
+/* Product action area */
+.ucp-product-actions {
+    margin-top: auto;
+    padding-top: var(--ucp-spacing-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ucp-spacing-sm);
+}
+
+/* Import hide elements styles */
+@import url('hide-elements.css');
+
+/* Wishlist button styles */
+.ucp-product-inner .tinvwl_add_to_wishlist_button {
+    margin-top: var(--ucp-spacing-sm);
+    font-size: 14px;
+}
+
+.tinvwl_add_to_wishlist-text {
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: var(--ucp-breakpoint-xl)) {
+    .ucp-products ul.products {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: var(--ucp-breakpoint-lg)) {
+    .ucp-products ul.products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: var(--ucp-breakpoint-md)) {
+    .ucp-products ul.products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .ucp-product-title {
+        font-size: 14px;
+        height: 36px;
+    }
+}
+
+@media screen and (max-width: var(--ucp-breakpoint-sm)) {
+    .ucp-products ul.products {
+        grid-template-columns: 1fr;
+    }
+    
+    .ucp-product-title {
+        height: auto;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+    }
+}

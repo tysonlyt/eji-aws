@@ -1,0 +1,72 @@
+
+.wpshield-content-protector-notice,
+.bs-pro-feature-modal.content-protector,
+.better-studio_page_better-studio-wpshield-content-protector,
+.wp-shield_page_bs-product-pages-wpshield-license,
+.panel-wpshield-content-protector {
+    --bf-primary-color: #d60000;
+    --bf-primary-darker-color: #c60000;
+    --bf-panel-max-width: 1000px;
+    --bf-input-box-shadow-hover: var(--bf-primary-color);
+    --bf-input-border-color-hover: var(--bf-primary-color);
+}
+
+.panel-wpshield-content-protector .bs-pro-feature .bs-pro-feature-icon,
+.panel-wpshield-content-protector .lock-icon {
+    color: #4f6d84 !important;
+}
+
+.panel-wpshield-content-protector .bf-section-container .bf-section .bf-controls {
+    max-width: 100%;
+}
+
+.bf-field-have-image[data-param-name="extensions"] > .bf-section {
+    grid-column-gap: 35px;
+}
+
+.panel-wpshield-content-protector #bf-nav {
+    width: 24%;
+}
+
+.panel-wpshield-content-protector #bf-content {
+    width: 76%;
+}
+
+.bf-section-container.bf-admin-panel .bf-section .bf-field-controls-column .bf-heading h3 {
+    font-size: 17px !important;
+    margin-top: 15px !important;
+}
+
+.bf-section-container[data-param-name$="/filters"] > .bf-section {
+    padding-top: 0;
+}
+
+.bf-section-container[data-param-name$="/filters"] > .bf-section > .bf-heading {
+    display: none;
+}
+
+.bf-advanced-select-group .cp-audio-item span svg path {
+    fill: #c8c8c8;
+}
+
+.bf-advanced-select-group .cp-audio-item.active span svg path,
+.bf-advanced-select-group .cp-audio-item.active span svg rect {
+    fill: #fff;
+}
+
+.bf-advanced-select-group span svg.player-icon {
+    position: absolute;
+    right: 6px;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.bf-advanced-select-group li:not(.active) span svg.player-icon:hover path {
+    fill: var(--bf-primary-color);
+}
+
+.bf-multiple-controls .bf-section-container > .bf-section {
+    grid-template-columns: 2fr 5fr !important;
+}

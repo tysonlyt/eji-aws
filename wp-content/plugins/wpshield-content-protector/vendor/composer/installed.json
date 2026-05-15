@@ -1,0 +1,80 @@
+{
+    "packages": [
+        {
+            "name": "betterstudio/core-essentials",
+            "version": "1.1.0",
+            "version_normalized": "1.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/better-projects/libraries/core/core-essentials.git",
+                "reference": "f009e7d9ce5c6fbbce9d1798857cf8b06cf91a76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/20783780/packages/composer/archives/betterstudio/core-essentials.zip?sha=f009e7d9ce5c6fbbce9d1798857cf8b06cf91a76",
+                "reference": "f009e7d9ce5c6fbbce9d1798857cf8b06cf91a76",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "betterstudio/http-utils": "^1.0",
+                "betterstudio/plugin-core-test": "^1.0"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BetterStudio\\Core\\Module\\": "./src/Module"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "BetterStudioTest\\Core\\Module\\": "./tests/Module"
+                }
+            },
+            "install-path": "../betterstudio/core-essentials"
+        },
+        {
+            "name": "betterstudio/rest",
+            "version": "1.0.4",
+            "version_normalized": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/better-projects/libraries/core/rest.git",
+                "reference": "b8868d22a29cc7fea89265bab2ed21af7147d912"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/20797808/packages/composer/archives/betterstudio/rest.zip?sha=b8868d22a29cc7fea89265bab2ed21af7147d912",
+                "reference": "b8868d22a29cc7fea89265bab2ed21af7147d912",
+                "shasum": ""
+            },
+            "require": {
+                "betterstudio/core-essentials": "^1.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "betterstudio/plugin-core-test": "^1.0"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BetterStudio\\Core\\Rest\\": "./src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "BetterStudioTest\\Core\\Rest\\": "./tests/"
+                }
+            },
+            "description": "API to Work with WordPress Rest API.",
+            "homepage": "https://gitlab.com/better-projects/libraries/core/rest.git",
+            "install-path": "../betterstudio/rest"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

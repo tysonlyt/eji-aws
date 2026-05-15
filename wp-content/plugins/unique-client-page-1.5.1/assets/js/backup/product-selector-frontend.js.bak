@@ -1,0 +1,692 @@
+/**
+ * UCP Product Selector - Complete Optimized Version
+ * Enhanced version with better structure, performance and user experience
+ * Optimization date: 2025-05-23
+ */
+
+(function($) {
+    'use strict';
+    
+    // Private data storage using WeakMap to prevent memory leaks
+    const elementData = new WeakMap();
+    
+    /**
+     * Logger - Centralized logging with different levels
+     * Only shows in development mode or when debug is enabled
+     */
+    const Logger = {
+        isDebug: window.location.search.includes('debug=true') || false,
+        timestamps: {},
+        
+        log: function(message, ...args) {
+            if (this.isDebug) console.log(`UCP: ${message}`, ...args);
+        },
+        
+        warn: function(message, ...args) {
+            if (this.isDebug) console.warn(`UCP Warning: ${message}`, ...args);
+        },
+        
+        error: function(message, ...args) {
+            console.error(`UCP Error: ${message}`, ...args);
+        },
+        
+        debug: function(component, message, data) {
+            if (!this.isDebug) return;
+            
+            const timestamp = new Date().toISOString().substr(11, 8);
+            console.log(`[UCP:${component}] ${timestamp} - ${message}`, data || '');
+        },
+        
+        // Performance monitoring - start timer
+        startTimer: function(id) {
+            if (!this.isDebug) return;
+            this.timestamps[id] = performance.now();
+        },
+        
+        // Performance monitoring - end timer and output
+        endTimer: function(id, additionalInfo = '') {
+            if (!this.isDebug || !this.timestamps[id]) return;
+            
+            const duration = performance.now() - this.timestamps[id];
+            console.log(`[UCP:Performance] ${id} - ${duration.toFixed(2)}ms ${additionalInfo}`);
+            delete this.timestamps[id];
+        }
+    };
+    
+    /**
+     * Utility Functions
+     * Optimized general utility functions
+     */
+    const Utils = {
+        // Safe execute function with error handling
+        safeExecute: function(fn, fallbackValue, context) {
+            try {
+                if (context) {
+                    return fn.call(context);
+                }
+                return fn();
+            } catch (error) {
+                Logger.error('Error in safe execution', error);
+                if (window.NotificationManager) {
+                    window.NotificationManager.showNotice('Operation failed. Please try again.', 'error');
+                }
+                return fallbackValue;
+            }
+        },
+        
+        // Debounce function to limit execution frequency
+        debounce: function(func, wait = 300) {
+            let timeout;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), wait);
+            };
+        },
+        
+        // Throttle function, ensures function runs at most once in a given time period
+        throttle: function(func, limit = 300) {
+            let inThrottle;
+            return function(...args) {
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            };
+        },
+        
+        // Add animation class and remove after animation completes
+        // Optimized for performance with requestAnimationFrame
+        animateElement: function(element, animationClass) {
+            return new Promise(resolve => {
+                if (!element || !element.length) {
+                    resolve();
+                    return;
+                }
+                
+                // Check if this is a close animation (fadeOut)
+                const isCloseAnimation = animationClass.includes('fadeOut');
+                
+                // For close animations, use a shorter duration
+                const fallbackTime = isCloseAnimation ? 200 : 400;
+                
+                // Use requestAnimationFrame for better performance
+                requestAnimationFrame(() => {
+                    element.addClass(animationClass);
+                });
+                
+                // Use animationend event if supported, otherwise fallback to timeout
+                const animationEndEvent = 'animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd';
+                
+                const handleAnimationEnd = function() {
+                    element.off(animationEndEvent, handleAnimationEnd);
+                    requestAnimationFrame(() => {
+                        element.removeClass(animationClass);
+                        resolve();
+                    });
+                };
+                
+                element.on(animationEndEvent, handleAnimationEnd);
+                
+                // Fallback if animation event doesn't fire
+                setTimeout(() => {
+                    if (element.hasClass(animationClass)) {
+                        element.off(animationEndEvent, handleAnimationEnd);
+                        requestAnimationFrame(() => {
+                            element.removeClass(animationClass);
+                            resolve();
+                        });
+                    }
+                }, fallbackTime);
+            });
+        },
+        
+        // Check if on edit page
+        isEditPage: function() {
+            return window.location.href.includes('edit-unique-client-page');
+        },
+        
+        // Check if on mobile device
+        isMobile: function() {
+            return window.innerWidth < 768;
+        },
+        
+        // Convert HTML string to DOM element
+        // More efficient DOM creation method
+        createElementFromHTML: function(htmlString) {
+            const div = document.createElement('div');
+            div.innerHTML = htmlString.trim();
+            return div.firstChild;
+        },
+        
+        // Resource cleanup function
+        cleanup: function() {
+            // Clear all timers
+            const timers = document.querySelectorAll('[data-timer-id]');
+            timers.forEach(element => {
+                const timerId = element.getAttribute('data-timer-id');
+                if (timerId && window[timerId]) {
+                    clearTimeout(window[timerId]);
+                    delete window[timerId];
+                }
+            });
+            
+            // Clear specific events
+            $(document).off('.ucpSelector .ucpModal .ucpSearch');
+            $('.ucp-modal-content').off('scroll.ucpAutoLoad');
+            
+            Logger.log('Resources cleaned up');
+        }
+    };
+    
+    /**
+     * Notification Manager
+     * Handles all UI notifications in a consistent way
+     * Optimized for performance and user experience
+     */
+    const NotificationManager = {
+        container: null,
+        noticeMap: new Map(), // Using Map to track all notifications
+        
+        init: function() {
+            // Create notification container if not exists
+            if (!this.container) {
+                this.container = $('<div class="ucp-notification-container"></div>');
+                $('body').append(this.container);
+                
+                // Global event delegation, use one event handler for all notification close buttons
+                this.container.on('click', '.ucp-notice-close', (e) => {
+                    const $notice = $(e.target).closest('.ucp-notice');
+                    const noticeId = $notice.attr('data-notice-id');
+                    if (noticeId) {
+                        this.closeNotice(noticeId);
+                    }
+                });
+                
+                // Add touch swipe close functionality only on mobile devices
+                if (Utils.isMobile() && typeof $.fn.swipe === 'function') {
+                    this.container.swipe({
+                        swipeLeft: (event, direction) => {
+                            const $notice = $(event.target).closest('.ucp-notice');
+                            const noticeId = $notice.attr('data-notice-id');
+                            if (noticeId) {
+                                this.closeNotice(noticeId);
+                            }
+                        },
+                        threshold: 50
+                    });
+                }
+            }
+        },
+        
+        // Generate unique ID
+        generateId: function() {
+            return 'notice-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+        },
+        
+        // Show notification, returns notice ID for later operations
+        showNotice: function(message, type = 'info', autoClose = true, duration = 5000) {
+            try {
+                Logger.startTimer('showNotice');
+                this.init();
+                
+                const noticeId = this.generateId();
+                
+                // Create notification element
+                const notice = $(`
+                    <div class="ucp-notice ${type}" data-notice-id="${noticeId}">
+                        <div class="ucp-notice-icon"></div>
+                        <div class="ucp-notice-content">${message}</div>
+                        <button class="ucp-notice-close" aria-label="Close notification">&times;</button>
+                    </div>
+                `);
+                
+                // Add to container and force reflow
+                this.container.append(notice);
+                notice[0].offsetHeight; // Force reflow
+                
+                // Use requestAnimationFrame to ensure smooth animation
+                requestAnimationFrame(() => {
+                    notice.addClass('show');
+                });
+                
+                // Store close handler
+                const closeHandler = () => this.closeNotice(noticeId);
+                
+                // If auto-close, set timer
+                let timer = null;
+                if (autoClose) {
+                    timer = setTimeout(closeHandler, duration);
+                    
+                    // Pause timer on mouse hover
+                    notice.on('mouseenter', () => {
+                        clearTimeout(timer);
+                        timer = null;
+                    });
+                    
+                    // Resume timer on mouse leave
+                    notice.on('mouseleave', () => {
+                        if (!timer) {
+                            timer = setTimeout(closeHandler, 2000); // Shorter resume time
+                        }
+                    });
+                }
+                
+                // Store notification data
+                this.noticeMap.set(noticeId, {
+                    $element: notice,
+                    timer: timer,
+                    type: type,
+                    closeHandler: closeHandler
+                });
+                
+                Logger.endTimer('showNotice');
+                return noticeId;
+                
+            } catch (error) {
+                Logger.error('Error in showNotice:', error);
+                // If error, use browser native alert as fallback
+                if (type === 'error') {
+                    alert(message);
+                }
+                return null;
+            }
+        },
+        
+        // Close specific notification
+        closeNotice: function(noticeId) {
+            const noticeData = this.noticeMap.get(noticeId);
+            if (!noticeData) return false;
+            
+            const { $element, timer } = noticeData;
+            
+            // Clear timer
+            if (timer) {
+                clearTimeout(timer);
+            }
+            
+            // Remove event listeners
+            $element.off('mouseenter mouseleave');
+            
+            // Animate notification removal
+            $element.removeClass('show');
+            
+            // Remove from DOM and Map after completion
+            setTimeout(() => {
+                $element.remove();
+                this.noticeMap.delete(noticeId);
+            }, 300); // Match CSS transition time
+            
+            return true;
+        },
+        
+        // Clear all notifications
+        clearAll: function() {
+            // Use Array.from to create a copy, avoid modifying collection during iteration
+            const noticeIds = Array.from(this.noticeMap.keys());
+            noticeIds.forEach(id => this.closeNotice(id));
+        }
+    };
+    
+    /**
+     * Modal Management
+     * Uses global UCP_Modal for all modal operations
+     * Optimized for better integration and performance
+     */
+    const ModalManager = {
+        // Store active modals in WeakMap
+        activeModals: new WeakMap(),
+        
+        // Create modal using UCP_Modal
+        createModal: function(options) {
+            try {
+                Logger.startTimer('createModal');
+                
+                // Check if UCP_Modal is available
+                if (typeof window.UCP_Modal === 'undefined') {
+                    Logger.warn('UCP_Modal not available, using fallback modal creation');
+                    return this.createModalFallback(options);
+                }
+                
+                // Prepare options
+                const modalId = options.id || 'ucp-modal-' + Date.now();
+                const modalContent = options.content || '';
+                const modalTitle = options.title || '';
+                
+                // Format modal content
+                const formattedContent = modalTitle ? `
+                    <div class="ucp-modal-container">
+                        <div class="ucp-modal-header">
+                            <h2>${modalTitle}</h2>
+                            <button class="ucp-modal-close ucp-btn ucp-btn-sm">Close</button>
+                        </div>
+                        <div class="ucp-modal-content">
+                            ${modalContent}
+                        </div>
+                    </div>
+                ` : modalContent;
+                
+                // Create modal
+                const modal = window.UCP_Modal.create({
+                    content: formattedContent,
+                    classes: options.classes || 'ucp-custom-modal',
+                    closeOnOverlayClick: options.closeOnOverlayClick !== false,
+                    closeButton: options.closeButton !== false,
+                    onOpen: options.onOpen || null,
+                    onClose: options.onClose || null,
+                    removeOnClose: options.removeOnClose !== false
+                });
+                
+                // Store reference
+                if (modal && modal.$element) {
+                    this.activeModals.set(modal.$element[0], modal);
+                }
+                
+                Logger.endTimer('createModal');
+                return modal;
+                
+            } catch (error) {
+                Logger.error('Error creating modal:', error);
+                return this.createModalFallback(options);
+            }
+        },
+        
+        // Fallback modal creation
+        createModalFallback: function(options) {
+            const modalId = options.id || 'ucp-modal-' + Date.now();
+            const modalContent = options.content || '';
+            const modalTitle = options.title || '';
+            
+            // Create modal HTML
+            const modalHTML = `
+                <div id="${modalId}" class="ucp-modal ${options.classes || ''}">
+                    <div class="ucp-modal-content">
+                        ${options.closeButton !== false ? '<button class="ucp-modal-close">&times;</button>' : ''}
+                        ${modalTitle ? `<div class="ucp-modal-header"><h2>${modalTitle}</h2></div>` : ''}
+                        <div class="ucp-modal-body">${modalContent}</div>
+                    </div>
+                </div>
+            `;
+            
+            // Add to page
+            $('body').append(modalHTML);
+            const $modal = $(`#${modalId}`);
+            
+            // Bind events
+            this.attachEventHandlers($modal, options);
+            
+            // Create modal data object
+            const modalData = {
+                id: modalId,
+                $element: $modal,
+                settings: options,
+                isOpen: false
+            };
+            
+            // Store reference
+            this.activeModals.set($modal[0], modalData);
+            
+            return modalData;
+        },
+        
+        // Open modal
+        openModal: function(modal) {
+            try {
+                Logger.startTimer('openModal');
+                
+                // Support passing element or ID directly
+                if (!modal) return Promise.reject('Invalid modal');
+                
+                let modalData;
+                if (typeof modal === 'string') {
+                    // If ID is passed
+                    const $modal = $(`#${modal}`);
+                    if (!$modal.length) return Promise.reject(`Modal with ID ${modal} not found`);
+                    modalData = this.activeModals.get($modal[0]) || { $element: $modal };
+                } else if (modal.jquery) {
+                    // If jQuery object is passed
+                    modalData = this.activeModals.get(modal[0]) || { $element: modal };
+                } else {
+                    // Assume it's a modal data object
+                    modalData = modal;
+                }
+                
+                // Check if UCP_Modal is available
+                if (typeof window.UCP_Modal !== 'undefined' && typeof window.UCP_Modal.open === 'function') {
+                    // Use UCP_Modal to open modal
+                    window.UCP_Modal.open(modalData);
+                    Logger.endTimer('openModal');
+                    
+                    // Trigger events
+                    $(document).trigger('modalOpened', [modalData]);
+                    
+                    return Promise.resolve(modalData);
+                } else {
+                    // Use fallback method
+                    return this.openModalFallback(modalData);
+                }
+                
+            } catch (error) {
+                Logger.error('Error opening modal:', error);
+                return this.openModalFallback(modal);
+            }
+        },
+        
+        // Fallback open modal method
+        openModalFallback: function(modalData) {
+            return new Promise((resolve, reject) => {
+                try {
+                    if (!modalData || !modalData.$element) {
+                        reject('Invalid modal data');
+                        return;
+                    }
+                    
+                    const $modal = modalData.$element;
+                    
+                    // Show modal
+                    $('body').addClass('ucp-modal-open');
+                    $modal.css({display: 'flex', opacity: 0});
+                    
+                    // Use requestAnimationFrame to ensure smooth transition
+                    requestAnimationFrame(() => {
+                        $modal.css({opacity: 1}).addClass('show');
+                        
+                        // Mark as open
+                        if (modalData.isOpen !== undefined) {
+                            modalData.isOpen = true;
+                        }
+                        
+                        // Call open callback
+                        if (modalData.settings && typeof modalData.settings.onOpen === 'function') {
+                            modalData.settings.onOpen(modalData);
+                        }
+                        
+                        // Trigger events
+                        $(document).trigger('modalOpened', [modalData]);
+                        
+                        resolve(modalData);
+                    });
+                    
+                } catch (error) {
+                    Logger.error('Error in fallback modal open:', error);
+                    reject(error);
+                }
+            });
+        },
+        
+        // Close modal
+        closeModal: function(modal) {
+            try {
+                Logger.startTimer('closeModal');
+                
+                // Support passing element or ID directly
+                if (!modal) return false;
+                
+                let modalData;
+                if (typeof modal === 'string') {
+                    // If ID is passed
+                    const $modal = $(`#${modal}`);
+                    if (!$modal.length) return false;
+                    modalData = this.activeModals.get($modal[0]) || { $element: $modal };
+                } else if (modal.jquery) {
+                    // If jQuery object is passed
+                    modalData = this.activeModals.get(modal[0]) || { $element: modal };
+                } else {
+                    // Assume it's a modal data object
+                    modalData = modal;
+                }
+                
+                // Check if UCP_Modal is available
+                if (typeof window.UCP_Modal !== 'undefined' && typeof window.UCP_Modal.close === 'function') {
+                    // Use UCP_Modal to close modal
+                    window.UCP_Modal.close(modalData);
+                    Logger.endTimer('closeModal');
+                    
+                    // Trigger events
+                    $(document).trigger('modalClosed', [modalData]);
+                    
+                    // Clean up resources
+                    Utils.cleanup();
+                    
+                    return true;
+                } else {
+                    // Use fallback method
+                    return this.closeModalFallback(modalData);
+                }
+                
+            } catch (error) {
+                Logger.error('Error closing modal:', error);
+                return this.closeModalFallback(modal);
+            }
+        },
+        
+        // Fallback close modal method
+        closeModalFallback: function(modalData) {
+            try {
+                if (!modalData || !modalData.$element) return false;
+                
+                const $modal = modalData.$element;
+                
+                // Use requestAnimationFrame to ensure smooth transition
+                requestAnimationFrame(() => {
+                    $modal.removeClass('show').addClass('closing');
+                    
+                    // Mark as closed
+                    if (modalData.isOpen !== undefined) {
+                        modalData.isOpen = false;
+                    }
+                    
+                    // Set appropriate animation time
+                    const animationDuration = 300; // Match CSS animation time
+                    
+                    // Wait for animation to complete before removing
+                    setTimeout(() => {
+                        // Call close callback
+                        if (modalData.settings && typeof modalData.settings.onClose === 'function') {
+                            modalData.settings.onClose(modalData);
+                        }
+                        
+                        // If set to remove on close
+                        if (!modalData.settings || modalData.settings.removeOnClose !== false) {
+                            $modal.remove();
+                            this.activeModals.delete($modal[0]);
+                        } else {
+                            $modal.hide().removeClass('closing');
+                        }
+                        
+                        // If no other modals, restore page scroll
+                        if (!document.querySelector('.ucp-modal.show')) {
+                            $('body').removeClass('ucp-modal-open');
+                        }
+                        
+                        // Trigger events
+                        $(document).trigger('modalClosed', [modalData]);
+                        
+                        // Clean up resources
+                        Utils.cleanup();
+                    }, animationDuration);
+                });
+                
+                return true;
+                
+            } catch (error) {
+                Logger.error('Error in fallback modal close:', error);
+                
+                // Emergency cleanup - force close if normal close fails
+                try {
+                    if (modalData && modalData.$element) {
+                        modalData.$element.remove();
+                    }
+                    if (!document.querySelector('.ucp-modal.show')) {
+                        $('body').removeClass('ucp-modal-open');
+                    }
+                } catch (e) {
+                    Logger.error('Emergency modal cleanup failed:', e);
+                }
+                
+                return false;
+            }
+        },
+        
+        // Attach modal event handlers
+        attachEventHandlers: function($modal, options) {
+            if (!$modal || !$modal.length) return;
+            
+            // Use event delegation to bind close button events
+            $modal.on('click', '.ucp-modal-close, .ucp-close-modal, .ucp-cancel-selection', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeModal($modal);
+            });
+            
+            // Click background to close
+            if (!options || options.closeOnOverlayClick !== false) {
+                $modal.on('click', (e) => {
+                    if (e.target === $modal[0]) {
+                        this.closeModal($modal);
+                    }
+                });
+            }
+            
+            // Prevent clicks in content area from bubbling up
+            $modal.find('.ucp-modal-content').on('click', (e) => {
+                e.stopPropagation();
+            });
+        },
+        
+        // Close all modals
+        closeAll: function() {
+            // Use UCP_Modal to close all modals
+            if (typeof window.UCP_Modal !== 'undefined' && typeof window.UCP_Modal.closeAll === 'function') {
+                window.UCP_Modal.closeAll();
+                return true;
+            }
+            
+            // Fallback method: manually close all modals
+            let closedCount = 0;
+            document.querySelectorAll('.ucp-modal.show').forEach(modal => {
+                const modalData = this.activeModals.get(modal) || { $element: $(modal) };
+                if (this.closeModal(modalData)) {
+                    closedCount++;
+                }
+            });
+            
+            return closedCount > 0;
+        }
+    };
+    
+    // Expose to window
+    window.UCP_NotificationManager = NotificationManager;
+    window.UCP_ModalManager = ModalManager;
+    
+    // Initialize when DOM is ready
+    $(document).ready(function() {
+        // Initialize notifications container
+        NotificationManager.init();
+        
+        Logger.log('UCP Product Selector optimized version initialized');
+    });
+    
+})(jQuery);

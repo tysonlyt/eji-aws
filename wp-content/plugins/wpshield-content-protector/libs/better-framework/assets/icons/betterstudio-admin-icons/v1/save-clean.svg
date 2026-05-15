@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"
+     viewBox="0 0 30 30">
+    <defs>
+        <clipPath id="b">
+            <rect width="30" height="30"/>
+        </clipPath>
+    </defs>
+    <g id="a" clip-path="url(#b)">
+        <g transform="translate(2)">
+            <path d="M70.217,0H60V5.87H70.217Z" transform="translate(-53.478)"/>
+            <path d="M74.13,182.413V171H60v11.413Z" transform="translate(-53.478 -152.413)"/>
+            <path d="M4.348,30V17.5a1.089,1.089,0,0,1,1.087-1.087h16.3A1.169,1.169,0,0,1,22.826,17.5V30h2.935a1.56,1.56,0,0,0,1.413-1.63V8.261L20.543,0h-1.63V6.957a1.169,1.169,0,0,1-1.087,1.087H5.543a1.191,1.191,0,0,1-1.2-1.087V0H1.413A1.56,1.56,0,0,0,0,1.63V28.37A1.56,1.56,0,0,0,1.413,30Z"/>
+        </g>
+    </g>
+</svg>

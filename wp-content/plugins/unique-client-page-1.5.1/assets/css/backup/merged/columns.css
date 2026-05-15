@@ -1,0 +1,48 @@
+/*
+ * Unique Client Page - Product Columns Styles
+ * Focus on grid layouts with different column counts
+ */
+
+/* Product column layout support */
+.ucp-products.columns-2 .products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ucp-spacing-md, 24px);
+}
+
+.ucp-products.columns-3 .products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ucp-spacing-md, 24px);
+}
+
+.ucp-products.columns-4 .products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--ucp-spacing-md, 24px);
+}
+
+/* Ensure each product inside the column is 100% width */
+.ucp-products.columns-2 .products li,
+.ucp-products.columns-3 .products li,
+.ucp-products.columns-4 .products li {
+  width: 100% !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Responsive support */
+@media screen and (max-width: 768px) {
+  .ucp-products.columns-3 .products,
+  .ucp-products.columns-4 .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ucp-products.columns-2 .products,
+  .ucp-products.columns-3 .products,
+  .ucp-products.columns-4 .products {
+    grid-template-columns: 1fr;
+  }
+}

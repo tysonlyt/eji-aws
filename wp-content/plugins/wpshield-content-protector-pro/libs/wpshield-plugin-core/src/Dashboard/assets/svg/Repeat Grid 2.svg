@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220" height="160" viewBox="0 0 220 160">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="220" height="160" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_2" data-name="Repeat Grid 2" clip-path="url(#clip-path)">
+    <g id="Group_772" data-name="Group 772" transform="translate(-1060 -113)">
+      <g id="Ad_Banner" data-name="Ad Banner" transform="translate(60 5)">
+        <g id="Group_732" data-name="Group 732" transform="translate(1000 108)">
+          <g id="Group_731" data-name="Group 731">
+            <rect id="Rectangle_9" data-name="Rectangle 9" width="220" height="160" fill="#efefef"/>
+            <text id="Publisher_Ad_Banner" data-name="Publisher Ad Banner" transform="translate(45.876 85.938)" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" opacity="0.24"><tspan x="0" y="0">Publisher Ad Banner</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

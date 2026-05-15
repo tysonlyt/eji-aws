@@ -1,0 +1,124 @@
+/**
+ * Unique Client Page - Pagination Styles
+ * Styles for product pagination and navigation
+ */
+
+/* ----- Container Styles ----- */
+.ucp-page-indicator {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.ucp-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    gap: 5px;
+}
+
+/* ----- Button Base Styles ----- */
+.ucp-pagination .ucp-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #555;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    min-width: 36px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ----- Button States ----- */
+.ucp-pagination .ucp-btn.current {
+    background-color: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+    font-weight: 600;
+}
+
+.ucp-pagination .ucp-btn:hover:not(.current) {
+    background-color: #f0f0f0;
+    border-color: #999;
+    color: #333;
+}
+
+/* ----- Special Buttons ----- */
+.ucp-pagination .prev-page,
+.ucp-pagination .next-page {
+    padding: 8px 15px;
+    font-weight: 600;
+}
+
+.ucp-pagination .pagination-ellipsis {
+    padding: 8px 12px;
+    color: #666;
+}
+
+/* Loading indicator */
+#ucp-loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ucp-loading-indicator > div {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#ucp-loading-indicator .dashicons {
+    animation: spin 2s linear infinite;
+    display: inline-block;
+}
+
+/* Hidden fields container */
+.ucp-hidden-fields {
+    display: none !important;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .ucp-pagination {
+        margin: 20px 0;
+    }
+    
+    .ucp-pagination .ucp-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+        min-width: 32px;
+    }
+    
+    .ucp-pagination .prev-page,
+    .ucp-pagination .next-page {
+        padding: 6px 12px;
+    }
+}

@@ -1,0 +1,448 @@
+<?php
+/**
+ * UCP Mailer Class
+ */
+
+// Prevent direct file access
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+/**
+ * Email sending class
+ */
+class UCP_Mailer {
+    /**
+     * Email settings
+     */
+    private $settings;
+    
+    /**
+     * Last error message
+     */
+    private $last_error = '';
+    
+    /**
+     * Flag to indicate if we're sending a UCP email
+     */
+    private $is_ucp_email = false;
+    
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        // Get email settings
+        $this->settings = get_option('ucp_email_settings', array(
+            'smtp_enabled'      => 0,
+            'smtp_host'         => '',
+            'smtp_port'         => 587,
+            'smtp_encryption'   => 'tls',
+            'smtp_auth'         => 1,
+            'smtp_username'     => '',
+            'smtp_password'     => '',
+            'from_email'        => get_option('admin_email'),
+            'from_name'         => get_bloginfo('name'),
+            'debug_mode'        => 0,
+        ));
+        
+        // MODIFIED: Only apply hooks when sending UCP emails
+        // If SMTP is enabled, add phpmailer configuration hook (only for UCP emails)
+        if ($this->settings['smtp_enabled']) {
+            add_action('phpmailer_init', array($this, 'configure_smtp_conditionally'));
+        }
+        
+        // Add error handling (only for UCP emails)
+        add_action('wp_mail_failed', array($this, 'handle_wp_mail_failed_conditionally'));
+        
+        // Set default sender (only for UCP emails)
+        add_filter('wp_mail_from', array($this, 'set_from_email_conditionally'));
+        add_filter('wp_mail_from_name', array($this, 'set_from_name_conditionally'));
+    }
+    
+    /**
+     * Conditionally configure SMTP settings (only for UCP emails)
+     *
+     * @param PHPMailer $phpmailer PHPMailer instance
+     */
+    public function configure_smtp_conditionally($phpmailer) {
+        // Only apply SMTP settings if this is a UCP email
+        if (!$this->is_ucp_email) {
+            return;
+        }
+        
+        $this->configure_smtp($phpmailer);
+    }
+    
+    /**
+     * Configure SMTP settings
+     *
+     * @param PHPMailer $phpmailer PHPMailer instance
+     */
+    public function configure_smtp($phpmailer) {
+        // Set SMTP parameters
+        $phpmailer->isSMTP();
+        $phpmailer->Host = $this->settings['smtp_host'];
+        $phpmailer->Port = $this->settings['smtp_port'];
+        
+        // Set encryption type
+        if ($this->settings['smtp_encryption'] === 'ssl') {
+            $phpmailer->SMTPSecure = 'ssl';
+        } elseif ($this->settings['smtp_encryption'] === 'tls') {
+            $phpmailer->SMTPSecure = 'tls';
+        }
+        
+        // Set authentication
+        if ($this->settings['smtp_auth']) {
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Username = $this->settings['smtp_username'];
+            $phpmailer->Password = $this->settings['smtp_password'];
+        } else {
+            $phpmailer->SMTPAuth = false;
+        }
+        
+        // Debug settings
+        $debug_level = isset($this->settings['debug_mode']) ? intval($this->settings['debug_mode']) : 0;
+        $phpmailer->SMTPDebug = $debug_level;
+        
+        // Set debug output handler
+        if ($debug_level > 0) {
+            $phpmailer->Debugoutput = function($str, $level) {
+                $this->log_debug_info("[PHPMailer Debug] $str");
+            };
+        }
+        
+        // Enable verbose errors
+        $phpmailer->SMTPAutoTLS = false; // Disable automatic TLS negotiation for greater control
+        
+        // Set timeout values
+        $phpmailer->Timeout = 30; // Increase timeout to 30 seconds
+        $phpmailer->SMTPKeepAlive = true; // Keep connection alive for multiple emails
+        
+        // Log debug information
+        $this->log_debug_info("SMTP configuration applied: " . date('Y-m-d H:i:s'));
+        $this->log_debug_info("Host: " . $this->settings['smtp_host']);
+        $this->log_debug_info("Port: " . $this->settings['smtp_port']);
+        $this->log_debug_info("Encryption: " . $this->settings['smtp_encryption']);
+        $this->log_debug_info("Authentication: " . ($this->settings['smtp_auth'] ? 'Yes' : 'No'));
+        $this->log_debug_info("Debug Level: " . $debug_level);
+        if ($this->settings['smtp_auth']) {
+            $this->log_debug_info("Username: " . $this->settings['smtp_username']);
+        }
+        $this->log_debug_info("--------------------------------------");
+    }
+    
+    /**
+     * Conditionally set sender email (only for UCP emails)
+     *
+     * @param string $email Default sender email
+     * @return string New sender email
+     */
+    public function set_from_email_conditionally($email) {
+        // Only apply custom from email if this is a UCP email
+        if (!$this->is_ucp_email) {
+            return $email;
+        }
+        
+        return $this->set_from_email($email);
+    }
+    
+    /**
+     * Set sender email
+     *
+     * @param string $email Default sender email
+     * @return string New sender email
+     */
+    public function set_from_email($email) {
+        if (!empty($this->settings['from_email'])) {
+            return $this->settings['from_email'];
+        }
+        return $email;
+    }
+    
+    /**
+     * Conditionally set sender name (only for UCP emails)
+     *
+     * @param string $name Default sender name
+     * @return string New sender name
+     */
+    public function set_from_name_conditionally($name) {
+        // Only apply custom from name if this is a UCP email
+        if (!$this->is_ucp_email) {
+            return $name;
+        }
+        
+        return $this->set_from_name($name);
+    }
+    
+    /**
+     * Set sender name
+     *
+     * @param string $name Default sender name
+     * @return string New sender name
+     */
+    public function set_from_name($name) {
+        if (!empty($this->settings['from_name'])) {
+            return $this->settings['from_name'];
+        }
+        return $name;
+    }
+    
+    /**
+     * Conditionally handle failed emails (only for UCP emails)
+     * 
+     * @param WP_Error $wp_error Error object
+     */
+    public function handle_wp_mail_failed_conditionally($wp_error) {
+        // Only handle errors if this is a UCP email
+        if (!$this->is_ucp_email) {
+            return;
+        }
+        
+        $this->handle_wp_mail_failed($wp_error);
+    }
+    
+    /**
+     * Handle failed emails
+     * 
+     * @param WP_Error $wp_error Error object
+     */
+    public function handle_wp_mail_failed($wp_error) {
+        if (is_wp_error($wp_error)) {
+            // Log error details
+            $error_message = $wp_error->get_error_message();
+            $this->last_error = $error_message;
+            $this->log_debug_info("Email Error: " . $error_message);
+            
+            // Add more detailed diagnostics
+            if (strpos($error_message, 'connect()') !== false) {
+                $this->log_debug_info("Connection Error: Cannot connect to SMTP server. Please check host and port settings.");
+            } elseif (strpos($error_message, 'authentication') !== false) {
+                $this->log_debug_info("Authentication Error: Username or password may be incorrect.");
+            } elseif (strpos($error_message, 'timed out') !== false) {
+                $this->log_debug_info("Timeout Error: SMTP server connection timed out. Server may be down or blocking requests.");
+            } elseif (strpos($error_message, 'certificate') !== false) {
+                $this->log_debug_info("SSL Certificate Error: There's an issue with the server's SSL certificate.");
+            }
+        }
+    }
+    
+    /**
+     * Get the last error message
+     * 
+     * @return string Last error message
+     */
+    public function get_last_error() {
+        return $this->last_error;
+    }
+    
+    /**
+     * Log debug information to file
+     * 
+     * @param string $message Debug message
+     */
+    private function log_debug_info($message) {
+        $log_file = WP_CONTENT_DIR . '/debug-smtp.log';
+        $debug_info = "[" . date('Y-m-d H:i:s') . "] " . $message . "\n";
+        file_put_contents($log_file, $debug_info, FILE_APPEND);
+    }
+    
+    /**
+     * Check SMTP connection
+     * 
+     * @return array Connection test results
+     */
+    public function test_smtp_connection() {
+        require_once ABSPATH . WPINC . '/PHPMailer/PHPMailer.php';
+        require_once ABSPATH . WPINC . '/PHPMailer/SMTP.php';
+        require_once ABSPATH . WPINC . '/PHPMailer/Exception.php';
+        
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+        $result = array('success' => false, 'message' => '');
+        
+        try {
+            // Setup SMTP
+            $mail->isSMTP();
+            $mail->Host = $this->settings['smtp_host'];
+            $mail->Port = $this->settings['smtp_port'];
+            
+            // Set encryption
+            if ($this->settings['smtp_encryption'] === 'ssl') {
+                $mail->SMTPSecure = 'ssl';
+            } elseif ($this->settings['smtp_encryption'] === 'tls') {
+                $mail->SMTPSecure = 'tls';
+            }
+            
+            // Set authentication
+            if ($this->settings['smtp_auth']) {
+                $mail->SMTPAuth = true;
+                $mail->Username = $this->settings['smtp_username'];
+                $mail->Password = $this->settings['smtp_password'];
+            }
+            
+            // Set timeouts
+            $mail->Timeout = 20;
+            
+            // Debug output
+            $debug_output = '';
+            $mail->SMTPDebug = 2;
+            $mail->Debugoutput = function($str, $level) use (&$debug_output) {
+                $debug_output .= $str . "\n";
+            };
+            
+            // Try to connect only
+            $mail->SMTPConnect();
+            $this->log_debug_info("SMTP Connection Test: Success");
+            $this->log_debug_info($debug_output);
+            
+            $result['success'] = true;
+            $result['message'] = 'SMTP connection successful. Server is reachable.';
+            
+            // Close the connection
+            $mail->smtpClose();
+            
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            $this->log_debug_info("SMTP Connection Test Failed: " . $error);
+            $this->log_debug_info($debug_output);
+            
+            $result['message'] = $this->get_friendly_error_message($error);
+        }
+        
+        return $result;
+    }
+    
+    /**
+     * Get user-friendly error message
+     * 
+     * @param string $error Original error message
+     * @return string User-friendly error message
+     */
+    private function get_friendly_error_message($error) {
+        // Connection errors
+        if (strpos($error, 'connect() failed') !== false) {
+            return 'Connection failed: Cannot connect to SMTP server. Please check the host and port settings. The server may be down or blocking connections.';
+        }
+        
+        // Authentication errors
+        if (strpos($error, 'authentication failed') !== false || strpos($error, '535') !== false) {
+            return 'Authentication failed: Username or password is incorrect. Some providers require app passwords for SMTP access.';
+        }
+        
+        // SSL/TLS errors
+        if (strpos($error, 'certificate') !== false) {
+            return 'SSL Certificate Error: There is an issue with the server\'s SSL certificate. Try changing the encryption type or using a different port.';
+        }
+        
+        // Timeout errors
+        if (strpos($error, 'timed out') !== false) {
+            return 'Connection timed out: The SMTP server took too long to respond. Check your internet connection or server settings.';
+        }
+        
+        // Relay access denied
+        if (strpos($error, 'relay') !== false || strpos($error, '550') !== false) {
+            return 'Relay access denied: The SMTP server does not allow sending through this connection. You may need to authenticate or use a different server.';
+        }
+        
+        // Fallback for other errors
+        return 'Error: ' . $error . ' | Please check your SMTP settings and try again.';
+    }
+    
+    /**
+     * Send email
+     *
+     * @param string|array $to Recipient email(s)
+     * @param string $subject Email subject
+     * @param string $message Email content
+     * @param array $headers Email headers
+     * @param array $attachments Attachments
+     * @return bool Whether sending was successful
+     */
+    public function send($to, $subject, $message, $headers = array(), $attachments = array()) {
+        // Reset last error
+        $this->last_error = '';
+        
+        // IMPORTANT: Set flag to indicate this is a UCP email
+        $this->is_ucp_email = true;
+        
+        // If Content-Type header is not set, use HTML format by default
+        if (!preg_grep('/^Content-Type:/i', $headers)) {
+            $headers[] = 'Content-Type: text/html; charset=UTF-8';
+        }
+        
+        // Add tracking ID to subject for debugging
+        $tracking_id = uniqid('mail-');
+        $this->log_debug_info("Starting UCP email send [ID: $tracking_id]");
+        
+        // Use wp_mail to send email
+        $result = wp_mail($to, $subject, $message, $headers, $attachments);
+        
+        // Reset flag after sending
+        $this->is_ucp_email = false;
+        
+        
+        // Log sending result
+        $this->log_debug_info("UCP Email sending [ID: $tracking_id]:");
+        $this->log_debug_info("Recipient: " . (is_array($to) ? implode(', ', $to) : $to));
+        $this->log_debug_info("Subject: " . $subject);
+        $this->log_debug_info("Result: " . ($result ? 'Success' : 'Failed'));
+        if (!empty($this->last_error)) {
+            $this->log_debug_info("Error details: " . $this->last_error);
+        }
+        $this->log_debug_info("--------------------------------------");
+        
+        return $result;
+    }
+    
+    /**
+     * Get troubleshooting information for the current SMTP setup
+     * 
+     * @return array Troubleshooting checks and results
+     */
+    public function get_troubleshooting_info() {
+        $info = array();
+        
+        // Check SMTP host
+        $info['host'] = array(
+            'status' => !empty($this->settings['smtp_host']),
+            'message' => !empty($this->settings['smtp_host']) ? 'SMTP host is set' : 'SMTP host is not set'
+        );
+        
+        // Check port
+        $valid_port = !empty($this->settings['smtp_port']) && is_numeric($this->settings['smtp_port']);
+        $info['port'] = array(
+            'status' => $valid_port,
+            'message' => $valid_port ? 'Port is valid' : 'Port is invalid or not set'
+        );
+        
+        // Check authentication
+        if ($this->settings['smtp_auth']) {
+            $auth_valid = !empty($this->settings['smtp_username']) && !empty($this->settings['smtp_password']);
+            $info['auth'] = array(
+                'status' => $auth_valid,
+                'message' => $auth_valid ? 'Authentication credentials provided' : 'Authentication is enabled but credentials are incomplete'
+            );
+        }
+        
+        // Check from email
+        $from_email_valid = !empty($this->settings['from_email']) && filter_var($this->settings['from_email'], FILTER_VALIDATE_EMAIL);
+        $info['from_email'] = array(
+            'status' => $from_email_valid,
+            'message' => $from_email_valid ? 'From email is valid' : 'From email is invalid or not set'
+        );
+        
+        // Check for common provider-specific issues
+        if (strpos($this->settings['smtp_host'], 'gmail.com') !== false) {
+            $info['provider'] = array(
+                'status' => 'notice',
+                'message' => 'Using Gmail: Make sure you have enabled "Less secure app access" or created an App Password if using 2FA'
+            );
+        } elseif (strpos($this->settings['smtp_host'], 'outlook.com') !== false || strpos($this->settings['smtp_host'], 'office365.com') !== false) {
+            $info['provider'] = array(
+                'status' => 'notice',
+                'message' => 'Using Microsoft: You may need to create an app password or enable SMTP access in your account settings'
+            );
+        }
+        
+        return $info;
+    }
+}

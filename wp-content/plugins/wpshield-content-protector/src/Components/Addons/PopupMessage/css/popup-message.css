@@ -1,0 +1,115 @@
+/* CSS Reset */
+.cp-alert,
+.cp-alert * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+.cp-alert {
+    --cp-primary-color: #DC1F1F;
+    --cp-width: 530px;
+    --cp-border-radius: 3px;
+    --cp-bg-color: #fff;
+    --cp-box-shadow: 0 4px 6px #00000020;
+    --cp-box-padding: 30px;
+    --cp-text-align: center;
+    line-height: 1;
+}
+
+.cp-alert .cp-close {
+    border-radius: 50%;
+    font-size: 13px;
+    padding: 7px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--cp-primary-color);
+}
+
+.cp-alert-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000075;
+    z-index: 999999;
+}
+
+.cp-alert {
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: var(--cp-width);
+    background: var(--cp-bg-color);
+    border-radius: var(--cp-border-radius);
+    box-shadow: var(--cp-box-shadow);
+    text-align: var(--cp-text-align);
+}
+
+.cp-alert .cp-alert-inner {
+    position: relative;
+    padding: var(--cp-box-padding);
+    overflow: hidden;
+    border-radius: var(--cp-border-radius);
+}
+
+.cp-alert .cp-alert-heading {
+    font-size: 22px;
+}
+
+.cp-alert .cp-alert-message {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* Style 1 */
+.cp-alert.cp-alert-1 {
+    --cp-width: 500px;
+    --cp-box-padding: 45px;
+}
+
+.cp-alert.cp-alert-1 .cp-alert-inner {
+    padding-top: 215px;
+    min-height: 310px;
+}
+
+.cp-alert.cp-alert-1 .cp-alert-inner:before {
+    position: absolute;
+    width: 660px;
+    left: 50%;
+    margin-left: -330px;
+    top: -170px;
+    height: 360px;
+    background-color: var(--cp-primary-color);
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.cp-alert.cp-alert-1 .cp-icon {
+    font-size: 90px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    top: 55px;
+    color: var(--cp-primary-color);
+}
+
+.cp-alert.cp-alert-1 .cp-alert-heading {
+    margin-bottom: 15px;
+}

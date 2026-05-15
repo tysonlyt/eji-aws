@@ -1,0 +1,670 @@
+/**
+ * Unique Client Page JavaScript - Modular Version
+ *
+ * Provides product filtering, load more, and UI interaction functionality.
+ */
+
+// Create namespace
+var UCP = UCP || {};
+
+// Global function definition for external calls
+var filterProducts;
+
+(function($) {
+    'use strict';
+
+    // -------------------------
+    // Product Filter Module
+    // -------------------------
+    UCP.ProductFilter = {
+        /**
+         * Initialize filter module
+         */
+        init: function() {
+            console.log('Initializing product filter module...');
+            this.bindEvents();
+            
+            // Validate after binding events
+            console.log('Filter button binding status:', $('.ucp-filter-button').length > 0 ? 'Button found' : 'Button not found');
+            console.log('Product ID value:', $('#ucp-product-ids').val());
+        },
+        
+        /**
+         * Bind events
+         */
+        bindEvents: function() {
+            // Filter form submit event
+            $(document).off('submit.ucp').on('submit.ucp', '.ucp-filter-form', this.handleFormSubmit);
+            
+            // Filter button click event
+            $(document).off('click.ucp').on('click.ucp', '.ucp-filter-button', this.handleButtonClick);
+            
+            // Reset button click event
+            $(document).off('click.ucpReset').on('click.ucpReset', '.ucp-reset-button', this.handleReset);
+        },
+        
+        /**
+         * Handle form submission
+         */
+        handleFormSubmit: function(e) {
+            e.preventDefault();
+            UCP.ProductFilter.doFilter();
+            return false;
+        },
+        
+        /**
+         * Handle button click
+         */
+        handleButtonClick: function(e) {
+            e.preventDefault();
+            console.log('Filter button clicked, starting filter...');
+            
+            try {
+                // Directly get all parameters from the form
+                const category = $('#ucp-category').val();
+                const productIds = $('#ucp-product-ids').val();
+                
+                // Output debug info
+                console.log('Filter parameter - Category:', category);
+                console.log('Filter parameter - Product IDs:', productIds);
+                
+                // Directly build AJAX request, bypass doFilter function
+                $.ajax({
+                    url: ucp_params.ajax_url,
+                    type: 'POST',
+                    data: {
+                        action: 'ucp_ajax_handler',
+                        custom_action: 'load_products',
+                        nonce: ucp_params.nonce,
+                        category: category,
+                        product_ids: productIds
+                    },
+                    beforeSend: function() {
+                        UCP.UI.showLoading();
+                        console.log('Sending AJAX filter request...');
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            console.log('Filter successful, preparing to update product list');
+                            // Directly update product list via innerHTML
+                            $('.ucp-products-grid').html(response.data.html);
+                            
+                            // Update pagination status
+                            UCP.Pagination.update(response.data.max_pages);
+                        } else if (response.data && response.data.message) {
+                            alert(response.data.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX error:', error);
+                        alert('Error retrieving product data, please refresh the page and try again.');
+                    },
+                    complete: function() {
+                        UCP.UI.hideLoading();
+                        console.log('AJAX request completed');
+                    }
+                });
+            } catch(err) {
+                console.error('Filter button handle error:', err);
+                alert('An error occurred while processing the filter, please refresh the page and try again.');
+            }
+        },
+        
+        /**
+         * Handle reset button
+         */
+        handleReset: function(e) {
+            e.preventDefault();
+            
+            // Reset all filter conditions
+            $('.ucp-filter-form select').val('');
+            
+            // Execute filter
+            UCP.ProductFilter.doFilter();
+        },
+        
+        /**
+         * Execute filter
+         */
+        doFilter: function() {
+            console.log('Executing filter...');
+            
+            // Get filter parameters
+            const category = $('#ucp-category').val();
+            const orderby = $('#ucp-orderby').val();
+            const productIds = $('#ucp-product-ids').val();
+            
+            console.log('Filter parameter - Category:', category);
+            console.log('Filter parameter - Order:', orderby);
+            console.log('Filter parameter - Product IDs:', productIds);
+            
+            // 发送AJAX请求
+            $.ajax({
+                url: ucp_params.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'ucp_ajax_handler',
+                    custom_action: 'filter_products',
+                    nonce: ucp_params.nonce,
+                    category: category,
+                    orderby: orderby,
+                    product_ids: productIds
+                },
+                beforeSend: function() {
+                    UCP.UI.showLoading();
+                    console.log('Sending AJAX filter request...');
+                },
+                success: function(response) {
+                    if (response.success) {
+                        console.log('Filter successful, updating product list');
+                        // Update product list
+                        $('.ucp-products-grid').html(response.data.html);
+                        
+                        // Update pagination status
+                        UCP.Pagination.update(response.data.max_pages);
+                    } else if (response.data && response.data.message) {
+                        alert(response.data.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX error:', error);
+                    alert('Error filtering products, please refresh the page and try again.');
+                },
+                complete: function() {
+                    UCP.UI.hideLoading();
+                    console.log('Filter request completed');
+                }
+            });
+        }
+    };
+    
+    // -------------------------
+    // Pagination Module
+    // -------------------------
+    UCP.Pagination = {
+        /**
+         * Initialize pagination module
+         */
+        init: function() {
+            console.log('Initializing pagination module...');
+            
+            // Bind load more button click event
+            $(document).off('click.ucpLoadMore').on('click.ucpLoadMore', '.ucp-load-more-button', this.handleLoadMore);
+            
+            // Check button status
+            const loadMoreBtn = $('.ucp-load-more-button');
+            if (loadMoreBtn.length) {
+                console.log('Load more button found');
+                // Get max pages
+                const maxPages = loadMoreBtn.data('max');
+                if (maxPages > 1) {
+                    loadMoreBtn.show();
+                    console.log('Show load more button, max pages:', maxPages);
+                } else {
+                    loadMoreBtn.hide();
+                    console.log('Hide load more button, only one page');
+                }
+            } else {
+                console.log('Warning: Load more button not found');
+            }
+        },
+        
+        /**
+         * Update pagination
+         */
+        update: function(maxPages) {
+            const loadMoreBtn = $('.ucp-load-more-button');
+            const currentPage = parseInt(loadMoreBtn.data('page'), 10);
+            
+            console.log('Update pagination: current page', currentPage, 'max pages', maxPages);
+            
+            // Update current page number
+            loadMoreBtn.data('page', currentPage);
+            
+            // Hide load more button if last page reached
+            if (currentPage >= maxPages) {
+                loadMoreBtn.hide();
+            } else {
+                loadMoreBtn.show();
+            }
+        },
+        
+        /**
+         * Handle load more
+         */
+        handleLoadMore: function(e) {
+            e.preventDefault();
+            
+            const button = $(this);
+            const currentPage = parseInt(button.data('page'), 10);
+            const maxPages = parseInt(button.data('max'), 10);
+            
+            console.log('Load more: current page', currentPage, 'max pages', maxPages);
+            
+            // Load next page products
+            UCP.Pagination.loadMore(button, currentPage + 1, maxPages);
+        },
+        
+        /**
+         * Load more products
+         */
+        loadMore: function(button, nextPage, maxPages) {
+            console.log('Loading more products, page:', nextPage);
+            
+            // Get product IDs
+            const productIds = button.data('product-ids') || '';
+            console.log('Load more button data:', {
+                'buttonElement': button[0],
+                'page': nextPage,
+                'maxPages': maxPages,
+                'productIDs': productIds,
+                'allDataAttributes': button.data()
+            });
+            
+            // 发送AJAX请求
+            $.ajax({
+                url: ucp_params.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'ucp_ajax_handler',
+                    custom_action: 'load_more',
+                    nonce: ucp_params.nonce,
+                    page: nextPage,
+                    product_ids: productIds
+                },
+                beforeSend: function() {
+                    console.log('Sending AJAX request, params:', {
+                        'action': 'ucp_ajax_handler',
+                        'custom_action': 'load_more',
+                        'nonce': ucp_params.nonce,
+                        'page': nextPage,
+                        'product_ids': productIds
+                    });
+                    UCP.UI.showLoading();
+                    button.prop('disabled', true).text(ucp_params.loading_text || 'Loading...');
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Append product list
+                        // Check and handle different HTML structures
+                        console.log('Trying to append products to DOM...');
+                        
+                        if ($('.ucp-products-grid').length > 0) {
+                            console.log('Found product grid container, appending to .ucp-products-grid');
+                            $('.ucp-products-grid').append(response.data.html);
+                        } else if ($('.ucp-products ul.products').length > 0) {
+                            console.log('Found WooCommerce product container, appending to .ucp-products ul.products');
+                            $('.ucp-products ul.products').append(response.data.html);
+                        } else {
+                            console.error('Suitable product container not found, here is the current HTML structure:');
+                            console.log('HTML content:', $('body').html());
+                        }
+                        
+                        // Update button state
+                        button.data('page', nextPage);
+                        button.prop('disabled', false).text(ucp_params.load_more_text);
+                        
+                        // Hide load more button if last page reached
+                        if (nextPage >= maxPages) {
+                            button.hide();
+                        }
+                    } else {
+                        alert('Error loading products');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX error:', {
+                        'status': status,
+                        'error': error,
+                        'response': xhr.responseText
+                    });
+                    // Try to parse response
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        console.log('Parsed response content:', response);
+                    } catch(e) {
+                        console.log('Unable to parse response content:', xhr.responseText);
+                    }
+                    button.prop('disabled', false).text(ucp_params.load_more_text || 'Load more');
+                    alert('Error loading products, please check the console for details');
+                },
+                complete: function() {
+                    UCP.UI.hideLoading();
+                }
+            });
+        }
+    };
+    
+    // -------------------------
+    // UI Module
+    // -------------------------
+    UCP.UI = {
+        /**
+         * Initialize UI module
+         */
+        init: function() {
+            console.log('Initializing UI module...');
+            // Check if UI elements exist
+            if ($('.ucp-product-area').length) {
+                console.log('UI element found');
+            } else {
+                console.log('Warning: Product area element not found');
+            }
+            
+            $('.ucp-product-area').removeClass('loading');
+            $('.ucp-loading-icon').hide();
+        }
+    };
+    
+    // -------------------------
+    // Product Quick View Module
+    // -------------------------
+    UCP.QuickView = {
+        /**
+         * Initialize quick view module
+         */
+        init: function() {
+            console.log('Initializing quick view module...');
+            this.bindEvents();
+        },
+        
+        /**
+         * Bind quick view events
+         */
+        bindEvents: function() {
+            console.log('Binding quick view events...');
+            
+            // Bind quick view button click event
+            $(document).off('click.ucpQuickView').on('click.ucpQuickView', '.ucp-quick-view, .ucp-quick-view-btn', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const productId = $(this).data('id');
+                console.log('Quick view button clicked, Product ID:', productId);
+                
+                if (productId) {
+                    UCP.QuickView.openModal(productId, true); // 显式传递 true 使用页面内容模式
+                }
+                
+                return false;
+            });
+            
+            // Bind product image click event
+            $(document).off('click.ucpProductImage').on('click.ucpProductImage', '.ucp-product-item a img', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const productId = $(this).closest('.ucp-product-item').data('id');
+                console.log('Product image clicked, Product ID:', productId);
+                
+                if (productId) {
+                    UCP.QuickView.openModal(productId, true); // 显式传递 true 使用页面内容模式
+                }
+                
+                return false;
+            });
+            
+            // Bind product title click event
+            $(document).off('click.ucpProductTitle').on('click.ucpProductTitle', '.ucp-product-item .woocommerce-loop-product__title, .ucp-product-item h2, .ucp-product-item .product-title, .ucp-product-item .product-name', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const productId = $(this).closest('.ucp-product-item').data('id');
+                console.log('Product title clicked, Product ID:', productId);
+                
+                if (productId) {
+                    UCP.QuickView.openModal(productId, true);
+                }
+                
+                return false;
+            });
+            
+            // Bind modal close button click event
+            $(document).off('click.ucpModalClose').on('click.ucpModalClose', '.ucp-modal-close, .ucp-modal-overlay', function(e) {
+                if (e.target === this) {
+                    UCP.QuickView.closeModal();
+                }
+            });
+            
+            // Bind ESC key to close modal
+            $(document).off('keydown.ucpEscClose').on('keydown.ucpEscClose', function(e) {
+                if (e.keyCode === 27) { // ESC key
+                    UCP.QuickView.closeModal();
+                }
+            });
+        },
+        
+        /**
+         * Open modal
+         * @param {number} productId - Product ID
+         * @param {boolean} usePageContent - Whether to load full page content
+         */
+        openModal: function(productId, usePageContent) {
+            console.log('Opening product quick view, Product ID:', productId, 'Load page content:', usePageContent ? 'Yes' : 'No');
+            
+            // Get or create modal
+            let modal = $('#ucp-product-modal');
+            if (!modal.length) {
+                $('body').append(`
+                    <div id="ucp-product-modal" class="ucp-modal" style="display: none;">
+                        <div class="ucp-modal-overlay"></div>
+                        <div class="ucp-modal-container">
+                            <div class="ucp-modal-header">
+                                <h3 class="ucp-modal-title">Product Details</h3>
+                                <button class="ucp-modal-close">&times;</button>
+                            </div>
+                            <div class="ucp-modal-body">
+                                <div class="ucp-modal-loading">
+                                    <div class="ucp-spinner"></div>
+                                    <p>Loading product details...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                modal = $('#ucp-product-modal');
+            }
+            
+            // Show loading state
+            modal.find('.ucp-modal-body').html(modal.find('.ucp-modal-loading').parent().html());
+            modal.fadeIn(300);
+            $('body').addClass('ucp-modal-open');
+            
+            // Close modal when clicking overlay or close button
+            modal.off('click', '.ucp-modal-close, .ucp-modal-overlay').on('click', '.ucp-modal-close, .ucp-modal-overlay', function(e) {
+                e.preventDefault();
+                UCP.QuickView.closeModal();
+            });
+            
+            // Close with ESC key
+            $(document).off('keyup.ucpModal').on('keyup.ucpModal', function(e) {
+                if (e.key === 'Escape') {
+                    UCP.QuickView.closeModal();
+                }
+            });
+            
+            // Load product details via AJAX
+            $.ajax({
+                url: ucp_params.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'ucp_ajax_handler',
+                    custom_action: 'load_product_detail',
+                    nonce: ucp_params.nonce,
+                    product_id: productId,
+                    use_page_content: usePageContent ? 'true' : 'false'
+                },
+                success: function(response) {
+                    console.log('AJAX Response:', response);
+                    if (response.success) {
+                        modal.find('.ucp-modal-body').html(response.data.html);
+                        console.log('Product details loaded successfully');
+                    } else {
+                        const errorMsg = response.data && response.data.message ? response.data.message : 'Unknown error occurred';
+                        modal.find('.ucp-modal-body').html(`
+                            <div class="ucp-modal-error">
+                                <p>Failed to load product details. Please try again.</p>
+                                <p><small>Error: ${errorMsg}</small></p>
+                            </div>
+                        `);
+                        console.error('Failed to load product:', response);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    let errorMsg = 'Error loading product details. Please try again later.';
+                    if (xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
+                        errorMsg = xhr.responseJSON.data.message;
+                    } else if (xhr.responseText) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            errorMsg = response.data && response.data.message ? response.data.message : xhr.responseText.substring(0, 200);
+                        } catch (e) {
+                            errorMsg = xhr.responseText.substring(0, 200);
+                        }
+                    }
+                    
+                    modal.find('.ucp-modal-body').html(`
+                        <div class="ucp-modal-error">
+                            <p>Error loading product details.</p>
+                            <p><small>${errorMsg}</small></p>
+                        </div>
+                    `);
+                    console.error('AJAX Error:', {
+                        status: xhr.status,
+                        statusText: xhr.statusText,
+                        response: xhr.responseText,
+                        error: error
+                    });
+                }
+            });
+        },
+        
+        /**
+         * Close modal
+         */
+        closeModal: function() {
+            const modal = $('#ucp-product-modal');
+            modal.fadeOut(300, function() {
+                modal.find('.ucp-modal-body').html('<div class="ucp-modal-loading"><div class="ucp-spinner"></div><p>Loading product details...</p></div>');
+                $('body').removeClass('ucp-modal-open');
+            });
+            
+            // Remove ESC key event
+            $(document).off('keyup.ucpModal');
+        }
+    };
+    
+    // -------------------------
+    // Load More Module
+    // -------------------------
+    UCP.LoadMore = {
+        /**
+         * Initialize load more module
+         */
+        init: function() {
+            console.log('Initializing load more module...');
+            
+            // Bind load more button click event
+            $(document).off('click.ucpLoadMore').on('click.ucpLoadMore', '.ucp-load-more-button', this.handleLoadMore.bind(this));
+            
+            // Check and show load more button
+            const maxPages = $('.ucp-load-more-button').data('max');
+            if (maxPages > 1) {
+                $('.ucp-load-more-button').show();
+            }
+            
+            console.log('Load more module initialized, max pages:', maxPages);
+        },
+        
+        /**
+         * Handle load more button click
+         */
+        handleLoadMore: function(e) {
+            e.preventDefault();
+            
+            const button = $(e.currentTarget);
+            const container = $('.ucp-product-grid');
+            const nextPage = parseInt(button.data('page') || 1) + 1;
+            const maxPages = parseInt(button.data('max') || 1);
+            
+            if (nextPage > maxPages) return;
+            
+            button.addClass('loading').text('Loading...');
+            
+            $.ajax({
+                url: ucp_params.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'ucp_ajax_handler',
+                    custom_action: 'load_more_products',
+                    nonce: ucp_params.nonce,
+                    page: nextPage,
+                    category: button.data('category') || ''
+                },
+                success: function(response) {
+                    if (response.success) {
+                        container.append(response.data.html);
+                        button.data('page', nextPage);
+                        
+                        if (nextPage >= maxPages) {
+                            button.hide();
+                        } else {
+                            button.removeClass('loading').text('Load More');
+                        }
+                        
+                        // Reinitialize quick view for new products
+                        if (typeof UCP.QuickView !== 'undefined') {
+                            UCP.QuickView.init();
+                        }
+                    } else {
+                        console.error('Failed to load more products:', response);
+                        button.removeClass('loading').text('Error - Click to retry');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error loading more products:', error);
+                    button.removeClass('loading').text('Error - Click to retry');
+                }
+            });
+        }
+    };
+    
+    // -------------------------
+    // Initialization
+    // -------------------------
+    $(document).ready(function() {
+        // Initialize all modules
+        console.log('Starting initialization of all modules...');
+        
+        // Initialize UI and core modules
+        if (typeof UCP.UI !== 'undefined') UCP.UI.init();
+        if (typeof UCP.ProductFilter !== 'undefined') UCP.ProductFilter.init();
+        if (typeof UCP.Pagination !== 'undefined') UCP.Pagination.init();
+        
+        // Initialize QuickView module
+        if (typeof UCP.QuickView !== 'undefined') {
+            console.log('Initializing quick view module...');
+            UCP.QuickView.init();
+        } else {
+            console.error('Quick view module not defined!');
+        }
+        
+        // Initialize LoadMore module
+        if (typeof UCP.LoadMore !== 'undefined') {
+            console.log('Initializing load more module...');
+            UCP.LoadMore.init();
+        } else {
+            console.error('Load more module not defined!');
+        }
+        
+        // Debug info
+        console.log('Number of quick view buttons on page:', $('.ucp-quick-view, .ucp-quick-view-btn').length);
+        console.log('Number of product items on page:', $('.ucp-product-item').length);
+        
+        // Retain function reference for global compatibility
+        if (typeof UCP.ProductFilter !== 'undefined') {
+            window.filterProducts = UCP.ProductFilter.doFilter;
+        }
+    });
+    
+})(jQuery);

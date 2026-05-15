@@ -1,0 +1,12 @@
+#toplevel_page_bs-product-pages-wpshield-settings ul.wp-submenu li:last-child{
+    margin-top: 10px;
+    background: #CA4A1F;
+}
+
+#toplevel_page_bs-product-pages-wpshield-settings ul.wp-submenu li:last-child a{
+    color: #fff;
+}
+
+#toplevel_page_bs-product-pages-wpshield-settings ul.wp-submenu li:last-child:hover a{
+    color: #ffffff;
+}

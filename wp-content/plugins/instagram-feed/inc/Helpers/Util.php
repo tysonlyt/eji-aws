@@ -3,6 +3,7 @@
 namespace InstagramFeed\Helpers;
 
 use DateTime;
+use InstagramFeed\Vendor\Brumann\Polyfill\Unserialize;
 
 /**
  * @since 6.1.2
@@ -241,12 +242,8 @@ class Util
 	/**
 	 * Safely unserialize data
 	 *
-	 * Uses native PHP unserialize with allowed_classes option for security.
-	 * This prevents object injection attacks by disallowing class instantiation.
-	 *
-	 * @param mixed $data Data to unserialize
-	 * @return mixed Unserialized data
-	 * @since 6.1.2
+	 * @param $data
+	 * @return mixed
 	 */
 	public static function safe_unserialize($data)
 	{
@@ -254,9 +251,7 @@ class Util
 			return $data;
 		}
 
-		// Use native PHP 7.0+ unserialize with allowed_classes option
-		// This is safe since minimum PHP version is 7.4
-		$data = unserialize($data, ['allowed_classes' => false]);
+		$data = Unserialize::unserialize($data, ['allowed_classes' => false]);
 		return $data;
 	}
 }

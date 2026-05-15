@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('jquery', 'lodash', 'wp-autop', 'wp-i18n', 'wp-polyfill', 'wp-api-request', 'wp-color-picker'), 'version' => 'e09a0ae3a06d0e9e22d8f90274256612');

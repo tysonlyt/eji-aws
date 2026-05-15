@@ -1,0 +1,82 @@
+/*
+ * Unique Client Page - CSS Variable System
+ * Centralized management of all style variables for easy global modification and theme customization
+ */
+
+:root {
+  /* Color system */
+  --ucp-primary-color: #4CAF50;      /* Primary color - Green */
+  --ucp-primary-dark: #45a049;       /* Primary color dark */
+  --ucp-primary-light: #ecf7ed;      /* Primary color light */
+  
+  --ucp-secondary-color: #234a83;    /* Secondary color - Blue */
+  --ucp-secondary-dark: #1a3761;     /* Secondary color dark */
+  --ucp-secondary-light: #e8f0f9;    /* Secondary color light */
+  
+  --ucp-accent-color: #2196F3;       /* Accent color - Blue */
+  --ucp-accent-dark: #0b7dda;        /* Accent color dark */
+  
+  --ucp-success-color: #46b450;      /* Success color */
+  --ucp-error-color: #d63638;        /* Error color */
+  --ucp-warning-color: #ffb900;      /* Warning color */
+  
+  --ucp-text-primary: #333;          /* Primary text color */
+  --ucp-text-secondary: #555;        /* Secondary text color */
+  --ucp-text-light: #777;            /* Light text */
+  
+  --ucp-bg-light: #f9f9f9;           /* Light background */
+  --ucp-bg-white: #fff;              /* White background */
+  
+  --ucp-border-color: #e0e0e0;       /* Border color */
+  --ucp-border-light: #eee;          /* Light border */
+  
+  /* Spacing system */
+  --ucp-spacing-xs: 5px;             /* Extra small spacing */
+  --ucp-spacing-sm: 10px;            /* Small spacing */
+  --ucp-spacing-md: 15px;            /* Medium spacing */
+  --ucp-spacing-lg: 20px;            /* Large spacing */
+  --ucp-spacing-xl: 30px;            /* Extra large spacing */
+  --ucp-spacing-xxl: 40px;           /* Extra extra large spacing */
+  
+  /* Border radius */
+  --ucp-border-radius-sm: 3px;       /* Small radius */
+  --ucp-border-radius: 6px;          /* Standard radius */
+  --ucp-border-radius-lg: 8px;       /* Large radius */
+  
+  /* Shadow system */
+  --ucp-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);         /* Small shadow */
+  --ucp-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);           /* Standard shadow */
+  --ucp-shadow-lg: 0 5px 15px rgba(0, 0, 0, 0.1);         /* Large shadow */
+  --ucp-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.07);    /* Hover shadow */
+  
+  /* Transition effects */
+  --ucp-transition-fast: 0.2s ease;   /* Fast transition */
+  --ucp-transition: 0.3s ease;        /* Standard transition */
+  --ucp-transition-slow: 0.5s ease;   /* Slow transition */
+  
+  /* Breakpoint system */
+  --ucp-breakpoint-xs: 400px;        /* Extra small device breakpoint */
+  --ucp-breakpoint-sm: 576px;        /* Small device breakpoint */
+  --ucp-breakpoint-md: 768px;        /* Medium device breakpoint */
+  --ucp-breakpoint-lg: 992px;        /* Large device breakpoint */
+  --ucp-breakpoint-xl: 1200px;       /* Extra large device breakpoint */
+  
+  /* Button system - Black & White theme */
+  --ucp-button-bg: #000000;          /* Button background - Black */
+  --ucp-button-hover-bg: #333333;    /* Button hover background */
+  --ucp-button-text: #ffffff;        /* Button text - White */
+  --ucp-button-border-radius: 4px;   /* Button border radius */
+  
+  --ucp-button-secondary-bg: #ffffff;       /* Secondary button background - White */
+  --ucp-button-secondary-border: #000000;   /* Secondary button border - Black */
+  --ucp-button-secondary-text: #000000;     /* Secondary button text - Black */
+  --ucp-button-secondary-hover-bg: #f1f1f1; /* Secondary button hover */
+  
+  /* Button sizes */
+  --ucp-button-padding-sm: 6px 12px;  /* Small button padding */
+  --ucp-button-padding-md: 8px 16px;  /* Medium button padding */
+  --ucp-button-padding-lg: 10px 20px; /* Large button padding */
+  --ucp-button-font-size-sm: 12px;    /* Small button font size */
+  --ucp-button-font-size-md: 14px;    /* Medium button font size */
+  --ucp-button-font-size-lg: 16px;    /* Large button font size */
+}

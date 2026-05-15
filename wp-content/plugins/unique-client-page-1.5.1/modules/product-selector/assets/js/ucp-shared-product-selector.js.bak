@@ -1,0 +1,1016 @@
+/**
+ * UCP Product Selector - Simplified Implementation with Tabs
+ * Version: 2.0 - Added tab interface for selected products
+ * Optimized version with streamlined structure, improved performance and better user experience
+ */
+
+(function($) {
+    'use strict';
+    
+    // Version check - confirm new version is loaded
+    console.log('🔄 UCP Product Selector v2.0 with Tabs - Loaded at ' + new Date().toLocaleTimeString());
+    
+    // Core configuration and state
+    const Config = {
+        isDebug: false, // 強制關閉調試模式
+        ajaxUrl: typeof ucp_params !== 'undefined' ? ucp_params.ajax_url : '',
+        nonce: typeof ucp_params !== 'undefined' ? ucp_params.nonce : '',
+        selectors: {
+            modal: '#ucp-product-selector-modal',
+            productGrid: '.ucp-product-list',
+            searchInput: '#ucp-product-search',
+            categoryFilter: '#ucp-modal-category',
+            selectAllCheckbox: '#ucp-select-all',
+            cancelButton: '.ucp-product-selector-close',
+            closeButton: '.ucp-product-selector-close',
+            productItem: '.ucp-product-item',
+            selectButton: '.ucp-select-btn',
+            modalContent: '.ucp-product-selector-content',
+            loader: '.ucp-loader',
+            selectedCount: '.ucp-selected-count'
+        }
+    };
+    
+    // Centralized state management
+    const State = {
+        selectedProducts: [],
+        currentPage: 1,
+        totalPages: 1,
+        currentCategory: '',
+        currentSearch: '',
+        isLoading: false,
+        cache: {}
+    };
+    
+    // Utility functions
+    const Utils = {
+        log: function(message, ...args) {
+            // 調試訊息已註釋掉
+            // if (Config.isDebug) {
+            //     console.log(`UCP: ${message}`, ...args);
+            // }
+        },
+        
+        error: function(message, ...args) {
+            // 調試訊息已註釋掉
+            // console.error(`UCP Error: ${message}`, ...args);
+        },
+        
+        debounce: function(func, wait = 300) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        },
+        
+        showNotice: function(message, type = 'info') {
+            try {
+                // Create notification container if not exists
+                let container = $('.ucp-notification-container');
+                if (!container.length) {
+                    container = $('<div class="ucp-notification-container"></div>');
+                    $('body').append(container);
+                }
+                
+                // Create notice with close button
+                const notice = $(`
+                    <div class="ucp-notice ${type}">
+                        <div class="ucp-notice-content">${message}</div>
+                        <button class="ucp-notice-close" aria-label="Close notification">&times;</button>
+                    </div>
+                `);
+                
+                // Add to container
+                container.append(notice);
+                
+                // Force reflow to ensure animation works
+                notice[0].offsetHeight;
+                
+                // Add show class with animation
+                notice.addClass('show');
+                
+                // Add click handler for close button
+                notice.find('.ucp-notice-close').on('click', function(e) {
+                    e.preventDefault();
+                    notice.removeClass('show');
+                    setTimeout(() => notice.remove(), 300);
+                });
+                
+                // Auto-close after 5 seconds
+                setTimeout(() => {
+                    if (notice.hasClass('show')) {
+                        notice.removeClass('show');
+                        setTimeout(() => notice.remove(), 300);
+                    }
+                }, 5000);
+                
+                return notice;
+            } catch (error) {
+                // console.error('Error showing notification:', error);
+                if (type === 'error') alert(message);
+                return $('<div>');
+            }
+        },
+        
+        getCacheKey: function(page, category, search) {
+            return `page_${page}_cat_${category || 'all'}_search_${search || 'none'}`;
+        }
+    };
+    
+    // Modal management
+    const Modal = {
+        open: function() {
+            const modalSelector = Config.selectors.modal;
+            let $modal = $(modalSelector);
+            
+            // Create modal if it doesn't exist
+            if (!$modal.length) {
+                $modal = this.create();
+            }
+            
+            // Show modal
+            $modal.css({
+                'display': 'flex',
+                'visibility': 'visible',
+                'opacity': '1',
+                'z-index': '999999'
+            });
+            
+            $('body').addClass('ucp-modal-open');
+            
+            // Trigger event for other components
+            $(document).trigger('modalOpened');
+            
+            return $modal;
+        },
+        
+        close: function() {
+            const $modal = $(Config.selectors.modal);
+            
+            if (!$modal.length) return;
+            
+            // Hide modal
+            $modal.css({
+                'opacity': '0',
+                'visibility': 'hidden'
+            });
+            
+            setTimeout(() => {
+                $modal.css('display', 'none');
+                $('body').removeClass('ucp-modal-open');
+            }, 300);
+        },
+        
+        create: function() {
+            // Remove any existing modals
+            $('.ucp-modal').not('#wishlist-modal').remove();
+            
+            // Create modal HTML with tabs
+            const modalHtml = `
+                <div id="ucp-product-selector-modal" class="ucp-modal">
+                    <div class="ucp-modal-content">
+                        <div class="ucp-modal-header">
+                            <h3>Select Products</h3>
+                            <button class="ucp-modal-close">&times;</button>
+                        </div>
+                        <div class="ucp-modal-tabs">
+                            <button class="ucp-tab-btn active" data-tab="select">選擇產品</button>
+                            <button class="ucp-tab-btn" data-tab="selected">已選產品 (<span class="ucp-selected-count">0</span>)</button>
+                        </div>
+                        <div class="ucp-modal-body">
+                            <!-- Tab 1: Select Products -->
+                            <div class="ucp-tab-content active" data-tab-content="select">
+                                <div class="ucp-modal-toolbar">
+                                    <div class="ucp-search-container">
+                                        <input type="text" id="ucp-product-search" placeholder="Search products">
+                                        <button id="ucp-search-btn" class="ucp-btn ucp-btn-sm">Search</button>
+                                    </div>
+                                    <div class="ucp-category-filter">
+                                        <select id="ucp-category-filter">
+                                            <option value="">All categories</option>
+                                        </select>
+                                    </div>
+                                    <div class="ucp-select-all-wrap">
+                                        <input type="checkbox" id="ucp-select-all">
+                                        <label for="ucp-select-all" class="ucp-select-all-label">Select All</label>
+                                    </div>
+                                </div>
+                                <div class="ucp-products-container">
+                                    <div class="ucp-products-grid"></div>
+                                    <div class="ucp-loader" style="display: none;">
+                                        <div class="ucp-spinner"></div>
+                                        <p>Loading...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tab 2: Selected Products -->
+                            <div class="ucp-tab-content" data-tab-content="selected">
+                                <div class="ucp-selected-products-list"></div>
+                            </div>
+                        </div>
+                        <div class="ucp-modal-footer">
+                            <div class="ucp-selected-info">
+                                Selected <span class="ucp-selected-count">0</span> products
+                            </div>
+                            <div class="ucp-modal-actions">
+                                <button class="ucp-btn ucp-btn-secondary ucp-cancel-selection">Cancel</button>
+                                <button class="ucp-btn ucp-btn-primary ucp-add-selected-products" disabled>
+                                    Add selected products
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                
+            // Add to page
+            $('body').append(modalHtml);
+            
+            return $(Config.selectors.modal);
+        }
+    };
+    
+    // Data loading
+    const Data = {
+        loadNextPage: function() {
+            // 加载下一页
+            if (State.isLoading || State.currentPage >= State.totalPages) {
+                return Promise.resolve();
+            }
+            
+            return this.load(State.currentPage + 1, State.currentCategory, State.currentSearch);
+        },
+        
+        load: function(currentPage = 1, currentCategory = '', currentSearch = '') {
+            // 調試訊息已註釋掉
+            // console.log({
+            //     page: currentPage,
+            //     category: currentCategory,
+            //     search: currentSearch,
+            //     ajax_url: Config.ajaxUrl
+            // });
+            
+            if (!Config.ajaxUrl) {
+                // console.error('错误: AJAX URL不存在，无法加载产品');
+                UI.hideLoading();
+                State.isLoading = false;
+                Utils.showNotice('Unable to load products: AJAX URL not defined', 'error');
+                return Promise.reject('Missing AJAX URL');
+            }
+            
+            State.isLoading = true;
+            UI.showLoading();
+            
+            // Update state
+            State.currentPage = currentPage;
+            State.currentCategory = currentCategory;
+            State.currentSearch = currentSearch;
+            
+            // Check cache first
+            const cacheKey = Utils.getCacheKey(currentPage, currentCategory, currentSearch);
+            if (State.cache[cacheKey]) {
+                const cachedData = State.cache[cacheKey];
+                UI.renderProducts(cachedData.products);
+                UI.updatePagination(currentPage, cachedData.total_pages);
+                State.totalPages = cachedData.total_pages;
+                State.isLoading = false;
+                UI.hideLoading();
+                return Promise.resolve(cachedData);
+            }
+            
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: Config.ajaxUrl,
+                    type: 'POST',
+                    data: {
+                        action: 'ucp_load_selector_products',
+                        nonce: Config.nonce,
+                        page: currentPage,
+                        category: currentCategory,
+                        search: currentSearch
+                    },
+                    timeout: 20000, // 20 second timeout
+                    success: (response) => {
+                        if (response.success) {
+                            // Store in cache
+                            State.cache[cacheKey] = response.data;
+                            
+                            // 調試訊息已註釋掉
+                            // console.log({
+                            //     totalProducts: response.data.total_products,
+                            //     totalPages: response.data.total_pages,
+                            //     productsCount: response.data.products ? response.data.products.length : 0
+                            // });
+                            
+                            // Update UI
+                            UI.renderProducts(response.data.products);
+                            UI.updatePagination(currentPage, response.data.total_pages);
+                            
+                            // Update state
+                            State.totalPages = response.data.total_pages;
+                            
+                            resolve(response.data);
+                        } else {
+                            const errorMsg = response.data && response.data.message 
+                                ? response.data.message 
+                                : 'Failed to load products';
+                                
+                            // console.error('产品加载失败:', response);
+                            Utils.showNotice(errorMsg, 'error');
+                            reject(errorMsg);
+                        }
+                    },
+                    error: (xhr, status, error) => {
+                        // 調試訊息已註釋掉
+                        // console.error('AJAX请求错误:', {
+                        //     status: status,
+                        //     error: error,
+                        //     responseText: xhr.responseText,
+                        //     statusCode: xhr.status
+                        // });
+                        
+                        Utils.error('AJAX error', status, error);
+                        
+                        let errorMessage = 'Failed to load products. Please try again.';
+                        
+                        // 嘗試解析響應文本中的錯誤信息
+                        try {
+                            if (xhr.responseText) {
+                                const jsonResponse = JSON.parse(xhr.responseText);
+                                if (jsonResponse && jsonResponse.data && jsonResponse.data.message) {
+                                    errorMessage = jsonResponse.data.message;
+                                }
+                            }
+                        } catch (e) {
+                            // console.error('无法解析错误响应:', e);
+                        }
+                        
+                        if (status === 'timeout') {
+                            Utils.showNotice('Request timed out. Please try again.', 'error');
+                        } else {
+                            Utils.showNotice(errorMessage, 'error');
+                        }
+                        
+                        reject(error);
+                    },
+                    complete: () => {
+                        State.isLoading = false;
+                        UI.hideLoading();
+                    }
+                });
+            });
+        },
+        
+        loadNextPage: function() {
+            if (State.currentPage < State.totalPages) {
+                return this.load(State.currentPage + 1, State.currentCategory, State.currentSearch);
+            }
+            return Promise.reject('No more pages');
+        },
+        
+        loadPreviousPage: function() {
+            if (State.currentPage > 1) {
+                return this.load(State.currentPage - 1, State.currentCategory, State.currentSearch);
+            }
+            return Promise.reject('Already on first page');
+        }
+    };
+    
+    // UI management
+    const UI = {
+        init: function() {
+            // Initialize product grid
+            if (!$(Config.selectors.productGrid).length) {
+                $(Config.selectors.modalContent).append('<div class="ucp-products-grid"></div>');
+            }
+            // If on edit page, show selected count
+            if (window.location.href.includes('edit-unique-client-page')) {
+                this.updateSelectedCount = function() {
+                    $(Config.selectors.selectedCount).text(State.selectedProducts.length);
+                };
+            }
+        },
+        
+        showLoading: function() {
+            $(Config.selectors.modal).addClass('loading');
+            
+            // Create loader if not exists
+            if (!$(Config.selectors.loader).length) {
+                $(Config.selectors.productGrid).before('<div class="ucp-loader"><div class="ucp-spinner"></div><div>Loading products...</div></div>');
+            } else {
+                $(Config.selectors.loader).show();
+            }
+        },
+        
+        hideLoading: function() {
+            $(Config.selectors.modal).removeClass('loading');
+            $(Config.selectors.loader).hide();
+        },
+        
+        renderProducts: function(products) {
+            if (!products || !products.length) {
+                $(Config.selectors.productGrid).html('<div class="ucp-no-products">No products found</div>');
+                return;
+            }
+            
+            // Clear grid or append based on page
+            if (State.currentPage === 1) {
+                $(Config.selectors.productGrid).empty();
+            }
+            
+            // Generate product items HTML
+            const productsHtml = products.map(product => {
+                const isSelected = State.selectedProducts.includes(product.id.toString());
+                const selectedClass = isSelected ? 'selected' : '';
+                
+                return `
+                    <div class="ucp-product-item ${selectedClass}" data-product-id="${product.id}">
+                        <div class="ucp-product-image">
+                            <img src="${product.image || 'placeholder.jpg'}" alt="${product.name}">
+                        </div>
+                        <div class="ucp-product-details">
+                            <h3 class="ucp-product-name">${product.name}</h3>
+                            <div class="ucp-product-sku">SKU: ${product.sku || '-'}</div>
+                        </div>
+                        <div class="ucp-product-select">
+                            <button class="ucp-btn ucp-select-btn ${isSelected ? 'selected' : ''}">
+                                ${isSelected ? 'Selected' : 'Select'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Append to grid
+            $(Config.selectors.productGrid).append(productsHtml);
+            
+            // Update selected count
+            this.updateSelectedCount();
+        },
+        
+        updatePagination: function(currentPage, totalPages) {
+            // Show a simple message if all products are loaded
+            if (currentPage >= totalPages && totalPages > 0) {
+                // Remove existing pagination container
+                $('.ucp-pagination').remove();
+                
+                // Add message when all products are loaded
+                $(Config.selectors.productGrid).after('<div class="ucp-pagination"><div class="ucp-all-loaded">All products loaded</div></div>');
+            } else if (!$('.ucp-pagination').length) {
+                // Show loading indicator
+                $(Config.selectors.productGrid).after('<div class="ucp-pagination"><div class="ucp-loading-more">Scroll to load more...</div></div>');
+            }
+        },
+        
+        updateSelectedCount: function() {
+            const count = State.selectedProducts.length;
+            $(Config.selectors.selectedCount).text(count);
+        },
+        
+        
+        selectAll: function(isChecked) {
+            const $products = $(Config.selectors.productItem);
+            
+            if (isChecked) {
+                // Select all products on current page (add to existing selection)
+                $products.each((index, product) => {
+                    const $product = $(product);
+                    const productId = $product.data('product-id');
+                    if (productId) {
+                        const productIdStr = productId.toString();
+                        // Only add if not already selected
+                        if (!State.selectedProducts.includes(productIdStr)) {
+                            State.selectedProducts.push(productIdStr);
+                        }
+                        $product.addClass('selected');
+                        $product.find(Config.selectors.selectButton).addClass('selected').text('Selected');
+                    }
+                });
+            } else {
+                // Deselect only products on current page (keep others)
+                $products.each((index, product) => {
+                    const $product = $(product);
+                    const productId = $product.data('product-id');
+                    if (productId) {
+                        const productIdStr = productId.toString();
+                        // Remove from selected list
+                        const index = State.selectedProducts.indexOf(productIdStr);
+                        if (index > -1) {
+                            State.selectedProducts.splice(index, 1);
+                        }
+                        $product.removeClass('selected');
+                        $product.find(Config.selectors.selectButton).removeClass('selected').text('Select');
+                    }
+                });
+            }
+            
+            // Update selected count display
+            this.updateSelectedCount();
+            
+            // 添加自动保存
+            this.autoSaveSelection();
+        },
+        
+        /**
+         * 自动保存选择的产品，无需点击"添加"按钮
+         * 在创建页面直接保存到隐藏字段，在编辑页面通过AJAX保存
+         */
+        /**
+         * 切换产品选择状态
+         * @param {jQuery} $product 产品元素jQuery对象
+         */
+        toggleProductSelection: function($product) {
+            try {
+                const productId = $product.data('product-id');
+                if (!productId) {
+                    return;
+                }
+                
+                const productIdStr = productId.toString();
+                const $selectBtn = $product.find(Config.selectors.selectButton);
+                
+                // 检查产品是否已选中
+                const isSelected = State.selectedProducts.includes(productIdStr);
+                
+                if (isSelected) {
+                    // 移除选中状态
+                    $product.removeClass('selected');
+                    $selectBtn.removeClass('selected').text('Select');
+                    
+                    // 从选中列表移除
+                    const index = State.selectedProducts.indexOf(productIdStr);
+                    if (index > -1) {
+                        State.selectedProducts.splice(index, 1);
+                    }
+                } else {
+                    // 添加选中状态
+                    $product.addClass('selected');
+                    $selectBtn.addClass('selected').text('Selected');
+                    
+                    // 添加到选中列表
+                    if (!State.selectedProducts.includes(productIdStr)) {
+                        State.selectedProducts.push(productIdStr);
+                    }
+                }
+                
+                // 更新选中数量
+                this.updateSelectedCount();
+                
+                // 自动保存选择
+                this.autoSaveSelection();
+            } catch (error) {
+                Utils.error('Error toggling product selection state:', error);
+            }
+        },
+        
+        autoSaveSelection: function() {
+            try {
+                // 详细日志：记录函数调用
+                // console.log('UCP DEBUG: autoSaveSelection被调用');
+                
+                // 如果没有选择产品，不执行任何操作
+                if (State.selectedProducts.length === 0) {
+                    // console.log('UCP DEBUG: 没有选择产品，不执行保存');
+                    return;
+                }
+                
+                // console.log('UCP DEBUG: 自动保存选择的产品');
+                
+                // 检查页面上是否有隐藏字段 - 不再检查按钮ID
+                // console.log('UCP DEBUG: 隐藏字段存在');
+                
+                // 只要隐藏字段存在，就保存产品ID
+                if ($('#ucp-selected-products').length > 0) {
+                    // 保存前记录隐藏字段当前值
+                    var oldValue = $('#ucp-selected-products').val();
+                    // console.log('UCP DEBUG: 保存前隐藏字段值');
+                    
+                    // 更新隐藏字段值
+                    var newValue = State.selectedProducts.join(',');
+                    $('#ucp-selected-products').val(newValue);
+                    
+                    // 验证值是否正确设置
+                    var verifyValue = $('#ucp-selected-products').val();
+                    // console.log('UCP DEBUG: 保存后隐藏字段值');
+                    // console.log('UCP DEBUG: 保存是否成功');
+                    
+                    // 给隐藏字段添加更改事件，当表单提交前再次验证
+                    $('#ucp-selected-products').closest('form').on('submit', function() {
+                        // console.log('UCP DEBUG: 表单提交时，隐藏字段值');
+                        return true;
+                    });
+                    
+                    Utils.showNotice(`Selected ${State.selectedProducts.length} products`, 'success', 1500);
+                    return;
+                }
+                
+                // 在编辑页面中，通过AJAX保存
+                const pageId = $('#ucp-page-id').val();
+                if (!pageId) {
+                    Utils.error('Unable to get page ID, cannot save product selection');
+                    return;
+                }
+                
+                // 使用节流函数防止频繁请求
+                if (this._saveTimeout) {
+                    clearTimeout(this._saveTimeout);
+                }
+                
+                this._saveTimeout = setTimeout(() => {
+                    $.ajax({
+                        url: Config.ajaxUrl,
+                        type: 'POST',
+                        data: {
+                            action: 'ucp_add_products_to_page',
+                            nonce: Config.nonce,
+                            // Send as array for robust backend parsing
+                            product_ids: State.selectedProducts,
+                            page_id: pageId
+                        },
+                        beforeSend: function() {
+                            Utils.showNotice('Saving product selection...', 'info');
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                Utils.showNotice(`Successfully saved ${State.selectedProducts.length} products`, 'success', 1500);
+                            } else {
+                                Utils.showNotice(response.data || 'Failed to save product selection', 'error');
+                            }
+                        },
+                        error: function(xhr) {
+                            Utils.error('AJAX请求失败:', xhr);
+                            Utils.showNotice('Failed to save product selection, please try again', 'error');
+                        }
+                    });
+                }, 1000); // 延迟1000ms执行，进一步降低频繁请求
+            } catch (error) {
+                Utils.error('Error during auto-save of product selection:', error);
+                Utils.showNotice('Failed to save product selection, please try again', 'error');
+            }
+        },
+        
+        /**
+         * Render selected products list in the "已選產品" tab
+         */
+        renderSelectedProducts: function() {
+            const $container = $('.ucp-selected-products-list');
+            
+            if (!State.selectedProducts.length) {
+                $container.html('<div class="ucp-no-products">尚未選擇任何產品</div>');
+                return;
+            }
+            
+            // Need to fetch product details for selected IDs
+            this.fetchSelectedProductDetails().then(products => {
+                const productsHtml = products.map(product => {
+                    return `
+                        <div class="ucp-selected-product-item" data-product-id="${product.id}">
+                            <div class="ucp-selected-product-image">
+                                <img src="${product.image || 'placeholder.jpg'}" alt="${product.name}">
+                            </div>
+                            <div class="ucp-selected-product-details">
+                                <h4 class="ucp-selected-product-name">${product.name}</h4>
+                                <div class="ucp-selected-product-sku">SKU: ${product.sku || '-'}</div>
+                            </div>
+                            <button class="ucp-btn ucp-btn-remove" data-product-id="${product.id}" title="移除">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+                
+                $container.html(productsHtml);
+            }).catch(error => {
+                $container.html('<div class="ucp-error">無法載入已選產品</div>');
+                Utils.error('Failed to load selected products:', error);
+            });
+        },
+        
+        /**
+         * Fetch product details for selected product IDs
+         */
+        fetchSelectedProductDetails: function() {
+            return new Promise((resolve, reject) => {
+                if (!State.selectedProducts.length) {
+                    resolve([]);
+                    return;
+                }
+                
+                $.ajax({
+                    url: Config.ajaxUrl,
+                    type: 'POST',
+                    data: {
+                        action: 'ucp_get_products_by_ids',
+                        nonce: Config.nonce,
+                        product_ids: State.selectedProducts
+                    },
+                    success: (response) => {
+                        if (response.success && response.data) {
+                            resolve(response.data);
+                        } else {
+                            reject('Failed to fetch product details');
+                        }
+                    },
+                    error: (xhr, status, error) => {
+                        reject(error);
+                    }
+                });
+            });
+        },
+        
+        /**
+         * Remove a product from selection
+         */
+        removeSelectedProduct: function(productId) {
+            const productIdStr = productId.toString();
+            const index = State.selectedProducts.indexOf(productIdStr);
+            
+            if (index > -1) {
+                State.selectedProducts.splice(index, 1);
+                
+                // Update UI
+                this.updateSelectedCount();
+                this.renderSelectedProducts();
+                
+                // Update product item in select tab if visible
+                const $productItem = $(`.ucp-product-item[data-product-id="${productId}"]`);
+                if ($productItem.length) {
+                    $productItem.removeClass('selected');
+                    $productItem.find(Config.selectors.selectButton).removeClass('selected').text('Select');
+                }
+                
+                // Auto save
+                this.autoSaveSelection();
+                
+                Utils.showNotice('產品已移除', 'success', 1500);
+            }
+        },
+        
+        /**
+         * Switch between tabs
+         */
+        switchTab: function(tabName) {
+            // Update tab buttons
+            $('.ucp-tab-btn').removeClass('active');
+            $(`.ucp-tab-btn[data-tab="${tabName}"]`).addClass('active');
+            
+            // Update tab content
+            $('.ucp-tab-content').removeClass('active');
+            $(`.ucp-tab-content[data-tab-content="${tabName}"]`).addClass('active');
+            
+            // If switching to selected tab, render the list
+            if (tabName === 'selected') {
+                this.renderSelectedProducts();
+            }
+        }
+    };
+    
+    // Event handlers
+    const Events = {
+        init: function() {
+            // 调试检查ucp_params参数
+            console.log('DEBUG ucp_params:', {
+                exists: typeof ucp_params !== 'undefined',
+                ajaxUrl: Config.ajaxUrl,
+                nonce: Config.nonce ? '存在' : '不存在'
+            });
+            
+            this.initButtonHandler();
+            this.initModalHandlers();
+            this.initSelectionHandlers();
+            this.initSearchHandlers();
+            this.initScrollHandlers();
+            this.initTabHandlers();
+        },
+        
+        initButtonHandler: function() {
+            console.log('初始化产品选择按钮事件');
+            
+            // 更精确地选择产品选择器按钮
+            $(document).on('click', 'button#ucp-create-select-products, button.ucp-select-products-btn', function(e) {
+                // 确保点击的是按钮本身，而不是其子元素
+                if (e.target !== this) {
+                    return;
+                }
+                
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('点击产品选择按钮: ', e.target);
+                
+                // 显示模态框
+                const $modal = Modal.open();
+                console.log('模态框已打开: ', $modal.length > 0);
+                
+                // 初始化UI
+                UI.init();
+                console.log('UI已初始化');
+                
+                // 预载已选产品（从隐藏栏位或数组栏位）
+                try {
+                    let preselected = [];
+                    const $hidden = $('#ucp-selected-products');
+                    if ($hidden.length) {
+                        const val = ($hidden.val() || '').toString().trim();
+                        if (val.length) {
+                            preselected = val.split(',')
+                                .map(v => v.trim())
+                                .filter(v => v !== '' && !isNaN(v))
+                                .map(v => parseInt(v, 10))
+                                .filter(v => v > 0)
+                                .map(v => v.toString());
+                        }
+                    } else {
+                        // 兼容 selected_products[] 多个隐藏栏位
+                        $('input[name="selected_products[]"]').each(function() {
+                            const v = ($(this).val() || '').toString().trim();
+                            if (v !== '' && !isNaN(v)) {
+                                const n = parseInt(v, 10);
+                                if (n > 0) preselected.push(n.toString());
+                            }
+                        });
+                    }
+                    // 去重并设置状态
+                    State.selectedProducts = Array.from(new Set(preselected));
+                    // 更新计数（若有显示）
+                    if (typeof UI.updateSelectedCount === 'function') {
+                        UI.updateSelectedCount();
+                    }
+                } catch (e) {
+                    // 静默失败，不阻止后续流程
+                }
+                
+                try {
+                    // 加载产品
+                    console.log('准备加载产品...');
+                    Data.load(1, '', '');
+                } catch (error) {
+                    console.error('加载产品时出错: ', error);
+                }
+            });
+        },
+        
+        initModalHandlers: function() {
+            // Close button handler
+            $(document).on('click', Config.selectors.closeButton + ', ' + Config.selectors.cancelButton, function(e) {
+                e.preventDefault();
+                Modal.close();
+            });
+            
+            // Click outside to close
+            $(document).on('click', Config.selectors.modal, function(e) {
+                if (e.target === this) {
+                    Modal.close();
+                }
+            });
+            
+            // ESC key to close
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Escape' && $(Config.selectors.modal).is(':visible')) {
+                    Modal.close();
+                }
+            });
+        },
+        
+        initSelectionHandlers: function() {
+            // Product selection event
+            $(document).on('click', Config.selectors.productItem + ', ' + Config.selectors.selectButton, function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const $product = $(this).closest(Config.selectors.productItem);
+                UI.toggleProductSelection($product);
+            });
+            
+            // Select all checkbox
+            $(document).on('change', Config.selectors.selectAllCheckbox, function() {
+                const isChecked = $(this).prop('checked');
+                UI.selectAll(isChecked);
+            });
+        },
+        
+        initSearchHandlers: function() {
+            // Search input with debounce
+            $(document).on('keyup', Config.selectors.searchInput, Utils.debounce(function() {
+                const searchTerm = $(this).val().trim();
+                if (searchTerm.length >= 2 || searchTerm.length === 0) {
+                    Data.load(1, State.currentCategory, searchTerm);
+                }
+            }, 200));
+            
+            // Category filter
+            $(document).on('change', Config.selectors.categoryFilter, function() {
+                const category = $(this).val();
+                const searchTerm = $(Config.selectors.searchInput).val().trim();
+                Data.load(1, category, searchTerm);
+            });
+        },
+        
+        initScrollHandlers: function() {
+            // Infinite scroll
+            $(document).on('modalOpened', function(e, $modal) {
+                console.log('模态框已打开，准备加载产品');
+                
+                // 在模态框打开时立即加载产品
+                Data.load(1, '', '');
+                
+                // 绑定无限滚动事件
+                $(Config.selectors.modalContent).on('scroll', Utils.debounce(function() {
+                    if (State.isLoading || State.currentPage >= State.totalPages) {
+                        return;
+                    }
+                    
+                    const scrollHeight = $(this).prop('scrollHeight');
+                    const scrollPosition = $(this).height() + $(this).scrollTop();
+                    const scrollThreshold = 200;
+                    
+                    if (scrollHeight - scrollPosition < scrollThreshold) {
+                        Data.loadNextPage();
+                    }
+                }, 200));
+            });
+        },
+        
+        initTabHandlers: function() {
+            // Tab switching
+            $(document).on('click', '.ucp-tab-btn', function(e) {
+                e.preventDefault();
+                const tabName = $(this).data('tab');
+                UI.switchTab(tabName);
+            });
+            
+            // Remove product from selected list
+            $(document).on('click', '.ucp-btn-remove', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const productId = $(this).data('product-id');
+                if (productId) {
+                    UI.removeSelectedProduct(productId);
+                }
+            });
+        }
+    };
+    
+    // Global error handling
+    function setupErrorHandling() {
+        window.addEventListener('error', function(e) {
+            Utils.error('Global error:', e.message, e);
+            Utils.showNotice('An error occurred. Please try again.', 'error');
+            return false;
+        });
+        
+        window.addEventListener('unhandledrejection', function(e) {
+            Utils.error('Unhandled promise rejection:', e.reason);
+            Utils.showNotice('Operation failed. Please try again.', 'error');
+            return false;
+        });
+    }
+    
+    // Initialize product selector
+    function init() {
+        Utils.log('Initializing UCP Product Selector');
+        
+        // Setup error handling
+        setupErrorHandling();
+        
+        // Initialize events
+        Events.init();
+        
+        // Make available globally
+        window.UCPProductSelector = {
+            init: init,
+            showNotice: Utils.showNotice,
+            openSelector: function() {
+                $('#ucp-create-select-products').trigger('click');
+            },
+            debug: {
+                getState: function() {
+                    return {
+                        selectedProducts: State.selectedProducts,
+                        currentPage: State.currentPage,
+                        totalPages: State.totalPages,
+                        isLoading: State.isLoading,
+                        modalExists: $(Config.selectors.modal).length > 0,
+                        buttonExists: $('#ucp-create-select-products').length > 0
+                    };
+                }
+            }
+        };
+    }
+    
+    // Initialize on document ready
+    $(document).ready(function() {
+        try {
+            init();
+        } catch (error) {
+            console.error('Error initializing UCP Product Selector:', error);
+            Utils.showNotice('Error occurred while initializing product selector, please refresh the page and try again', 'error');
+        }
+    });
+    
+    // Expose functions globally
+    window.initProductSelectorButton = function() {
+        Events.initButtonHandler();
+        return true;
+    };
+    
+})(jQuery);

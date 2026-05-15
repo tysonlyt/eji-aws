@@ -1,0 +1,436 @@
+/**
+ * Bulk Import Page Styles
+ * Product Media Carousel Pro
+ */
+
+/* Page Container */
+.pmc-bulk-import-page {
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+.pmc-bulk-import-page h1 {
+    margin-bottom: 20px;
+}
+
+/* Tabs */
+.pmc-tabs {
+    margin: 20px 0;
+    border-bottom: 1px solid #ccd0d4;
+}
+
+.pmc-tabs-nav {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pmc-tabs-nav li {
+    margin: 0;
+}
+
+.pmc-tabs-nav button {
+    background: #f0f0f1;
+    border: 1px solid #ccd0d4;
+    border-bottom: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #50575e;
+    transition: all 0.2s;
+    border-radius: 4px 4px 0 0;
+    margin-right: -1px;
+}
+
+.pmc-tabs-nav button:hover {
+    background: #fff;
+    color: #2271b1;
+}
+
+.pmc-tabs-nav button.active {
+    background: #fff;
+    color: #2271b1;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+}
+
+.pmc-tab-content {
+    display: none;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.pmc-tab-content.active {
+    display: block;
+}
+
+/* CSV Upload Section */
+.pmc-csv-upload {
+    max-width: 800px;
+}
+
+.pmc-upload-area {
+    border: 2px dashed #ccd0d4;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    background: #f9f9f9;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.pmc-upload-area:hover {
+    border-color: #2271b1;
+    background: #f0f6fc;
+}
+
+.pmc-upload-area.dragover {
+    border-color: #2271b1;
+    background: #e0f0ff;
+}
+
+.pmc-upload-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.pmc-upload-area h3 {
+    margin: 0 0 10px 0;
+    color: #1d2327;
+}
+
+.pmc-upload-area p {
+    color: #646970;
+    margin: 0 0 20px 0;
+}
+
+.pmc-file-input {
+    display: none;
+}
+
+/* CSV Format Help */
+.pmc-csv-format {
+    background: #f0f6fc;
+    border-left: 4px solid #2271b1;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pmc-csv-format h4 {
+    margin: 0 0 15px 0;
+    color: #1d2327;
+}
+
+.pmc-csv-format code {
+    display: block;
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    margin: 10px 0;
+    overflow-x: auto;
+}
+
+.pmc-csv-format ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.pmc-csv-format li {
+    margin: 5px 0;
+    color: #646970;
+}
+
+/* Manual Input Section */
+.pmc-manual-input {
+    max-width: 1000px;
+}
+
+.pmc-input-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.pmc-input-table th {
+    background: #f0f0f1;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #ccd0d4;
+}
+
+.pmc-input-table td {
+    padding: 10px;
+    border: 1px solid #ccd0d4;
+}
+
+.pmc-input-table input[type="text"],
+.pmc-input-table select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+}
+
+.pmc-input-table input[type="text"]:focus,
+.pmc-input-table select:focus {
+    border-color: #2271b1;
+    outline: none;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.pmc-product-search {
+    position: relative;
+}
+
+.pmc-product-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #8c8f94;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.pmc-product-suggestion {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.pmc-product-suggestion:hover {
+    background: #f0f6fc;
+}
+
+.pmc-product-suggestion strong {
+    color: #2271b1;
+}
+
+.pmc-remove-row {
+    background: #dc3232;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.pmc-remove-row:hover {
+    background: #c32222;
+}
+
+.pmc-add-row {
+    margin: 10px 0;
+}
+
+/* Import History */
+.pmc-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.pmc-history-table th {
+    background: #f0f0f1;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #ccd0d4;
+}
+
+.pmc-history-table td {
+    padding: 12px;
+    border: 1px solid #ccd0d4;
+}
+
+.pmc-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pmc-status-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.pmc-status-partial {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.pmc-status-failed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.pmc-view-details {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.pmc-view-details:hover {
+    text-decoration: underline;
+}
+
+/* Progress Section */
+.pmc-progress-section {
+    display: none;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.pmc-progress-section.active {
+    display: block;
+}
+
+.pmc-progress-bar {
+    width: 100%;
+    height: 30px;
+    background: #f0f0f1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.pmc-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2271b1, #135e96);
+    transition: width 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pmc-progress-status {
+    text-align: center;
+    color: #646970;
+    margin: 10px 0;
+}
+
+/* Results Section */
+.pmc-results {
+    margin: 20px 0;
+}
+
+.pmc-results-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.pmc-result-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+}
+
+.pmc-result-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.pmc-result-card.success h3 {
+    color: #00a32a;
+}
+
+.pmc-result-card.failed h3 {
+    color: #dc3232;
+}
+
+.pmc-result-card p {
+    margin: 0;
+    color: #646970;
+    font-size: 14px;
+}
+
+.pmc-results-details {
+    background: #f9f9f9;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.pmc-result-item {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.pmc-result-item.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.pmc-result-item.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Buttons */
+.pmc-button-group {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .pmc-bulk-import-page {
+        margin: 10px;
+    }
+    
+    .pmc-tab-content {
+        padding: 20px;
+    }
+    
+    .pmc-upload-area {
+        padding: 30px 20px;
+    }
+    
+    .pmc-input-table {
+        font-size: 14px;
+    }
+    
+    .pmc-input-table th,
+    .pmc-input-table td {
+        padding: 8px;
+    }
+    
+    .pmc-results-summary {
+        grid-template-columns: 1fr;
+    }
+}

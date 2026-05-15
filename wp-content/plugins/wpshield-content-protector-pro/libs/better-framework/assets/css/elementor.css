@@ -1,0 +1,153 @@
+/* Branding Changes */
+.bf-elementor-widget-panel #elementor-panel-header {
+    background-color: var(--bf-primary-color);
+}
+
+.elementor-panel .bf-elementor-widget-panel .elementor-panel-navigation .elementor-panel-navigation-tab.elementor-active {
+    border-bottom-color: var(--bf-primary-color);
+}
+
+.elementor-panel .bf-elementor-widget-panel a {
+    color: var(--bf-primary-color);
+}
+
+.elementor-panel .bf-elementor-widget-panel a:hover {
+    color: var(--bf-primary-color);
+}
+
+.elementor-panel .bf-elementor-widget-panel .elementor-element:hover .icon,
+.elementor-panel .bf-elementor-widget-panel .elementor-element:hover .title {
+    color: var(--bf-primary-color);
+}
+
+.elementor-panel .bf-elementor-widget-panel #elementor-mode-switcher:hover {
+    background-color: var(--bf-primary-color);
+}
+
+.elementor-panel .bf-elementor-element:hover .icon,
+.elementor-panel .bf-elementor-element:hover .title {
+    color: var(--bf-primary-color, #93003c);
+}
+
+.elementor-panel .elementor-element.bf-elementor-element .icon img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Style improvements */
+.elementor-control .elementor-control-heading-wrapper {
+    width: 100%;
+}
+
+.elementor-control .elementor-control-betterstudio {
+    --bf-input-height: 28px;
+    --bf-input-border-color: #d5dadf;
+    --bf-input-border-color-hover: #a4afb7;
+    --bf-input-box-shadow-hover: transparent;
+    --bf-input-color: #6d7882;
+    --bf-input-font-size: 12px;
+    --bf-input-padding: 4px;
+    --bf-input-max-width: 100%;
+    --bf-input-max-width-bk: 100%;
+    align-items: flex-start;
+}
+
+.elementor-control .elementor-control-hr .elementor-control-title {
+    display: none;
+}
+
+.elementor-control.bs-control-is-loading .elementor-control-betterstudio {
+    opacity: 0.3;
+}
+
+.elementor-control.bs-control-is-loading .bs-loading-wrapper {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+}
+
+.elementor-control .bs-control-loading > div {
+    background: var(--bf-elementor-color-scheme, "#ccc");
+}
+
+/* fields layout and width changes */
+.elementor-control-betterstudio .elementor-control-input-wrapper {
+    width: 52%;
+    max-width: 400px;
+    margin-left: auto;
+}
+
+.elementor-control-betterstudio .elementor-control-input-wrapper.elementor-control-heading-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+}
+
+.elementor-control-betterstudio .elementor-control-title {
+    width: calc(48% - 5px);
+    line-height: 1.3;
+    padding-top: 7px;
+}
+
+.elementor-control-betterstudio.elementor-control-custom,
+.elementor-control-betterstudio.elementor-control-media_image,
+.elementor-control-betterstudio.elementor-control-sorter_checkbox,
+.elementor-control-betterstudio.elementor-control-image_select,
+.elementor-control-betterstudio.elementor-control-sorter,
+.elementor-control-betterstudio.elementor-control-slider,
+.elementor-control-betterstudio.elementor-control-info,
+.elementor-control-betterstudio.elementor-control-media,
+.elementor-control-betterstudio.elementor-control-code,
+.elementor-control-betterstudio.elementor-control-checkbox,
+.elementor-control-betterstudio.elementor-control-radio,
+.elementor-control-betterstudio.elementor-control-textarea,
+.elementor-control-betterstudio.elementor-control-ajax_select,
+.elementor-control-betterstudio.elementor-control-term_select,
+.elementor-control-betterstudio.elementor-control-select_popup,
+.elementor-control-betterstudio.elementor-control-advance_select {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.elementor-control-betterstudio.elementor-control-custom > *,
+.elementor-control-betterstudio.elementor-control-media_image > *,
+.elementor-control-betterstudio.elementor-control-sorter_checkbox > *,
+.elementor-control-betterstudio.elementor-control-image_select > *,
+.elementor-control-betterstudio.elementor-control-sorter > *,
+.elementor-control-betterstudio.elementor-control-slider > *,
+.elementor-control-betterstudio.elementor-control-info > *,
+.elementor-control-betterstudio.elementor-control-media > *,
+.elementor-control-betterstudio.elementor-control-code > *,
+.elementor-control-betterstudio.elementor-control-checkbox > *,
+.elementor-control-betterstudio.elementor-control-radio > *,
+.elementor-control-betterstudio.elementor-control-textarea > *,
+.elementor-control-betterstudio.elementor-control-ajax_select > *,
+.elementor-control-betterstudio.elementor-control-term_select > *,
+.elementor-control-betterstudio.elementor-control-select_popup > *,
+.elementor-control-betterstudio.elementor-control-advance_select > * {
+    width: 100%;
+}
+
+.elementor-control .bf-input-max-width-50 {
+    flex-wrap: nowrap;
+    gap: 0;
+}
+
+.elementor-control-betterstudio.bf-input-max-width-50 .elementor-control-title {
+    width: calc(48% - 5px) !important;
+}
+
+.elementor-control-betterstudio.bf-input-max-width-50 .elementor-control-input-wrapper {
+    width: 52% !important;
+}
+
+.elementor-control .bf-input-max-width-100 {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.elementor-control .bf-input-max-width-100 > * {
+    width: 100% !important;
+}

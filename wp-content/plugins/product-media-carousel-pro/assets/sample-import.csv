@@ -1,0 +1,6 @@
+product_id,video_url,video_type
+100,https://www.youtube.com/watch?v=dQw4w9WgXcQ,youtube
+101,https://vimeo.com/148751763,vimeo
+102,https://example.com/video.mp4,self_hosted
+100,https://www.youtube.com/watch?v=9bZkp7q19f0,youtube
+103,https://www.youtube.com/watch?v=jNQXAC9IVRw,youtube
